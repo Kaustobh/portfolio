@@ -1,0 +1,13 @@
+# System / OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# OneNote files
+*.onetoc2
+*.one
+
+# Temp files
+*.tmp
+*.log
