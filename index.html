@@ -1387,15 +1387,16 @@
 
             <!-- CV details (Print layout optimized stylesheet) -->
             <div class="p-6 md:p-8 overflow-y-auto space-y-6 select-text text-neutral-600 dark:text-neutral-300 font-body text-xs md:text-sm print:text-black" id="printable-cv-area">
-                <div class="flex flex-col md:flex-row justify-between md:items-center border-b border-neutral-200 dark:border-surface/40 pb-4 gap-2">
+                <div class="flex flex-col md:flex-row justify-between md:items-center border-b border-neutral-200 dark:border-surface/40 pb-4 gap-4">
                     <div>
                         <h5 class="text-xl font-bold font-display text-charcoal dark:text-white print:text-black">Kaustobh Bhattacharya</h5>
-                        <p class="font-mono text-neon-cyan dark:text-neon-cyan light:text-electric-blue text-[10px] tracking-wider uppercase font-semibold">Junior UX/UI Designer & Web Engineer</p>
+                        <p class="font-mono text-neon-cyan dark:text-neon-cyan light:text-electric-blue text-[10px] tracking-wider uppercase font-semibold">UX Designer & Aspiring UX Engineer</p>
                     </div>
-                    <div class="font-mono text-[9px] text-neutral-400 space-y-0.5">
-                        <p>Location: New Delhi, India // Remote ok</p>
-                        <p>Web: example.com</p>
-                        <p>Email: hello@example.com</p>
+                    <div class="font-mono text-[9px] text-neutral-400 space-y-1 text-left md:text-right">
+                        <p>📍 Delhi, India // Remote ok</p>
+                        <p>📧 <a href="mailto:kaustobh1920@gmail.com" class="hover:underline text-neon-cyan transition-colors">kaustobh1920@gmail.com</a> // 📞 +91-7703957947</p>
+                        <p>🔗 <a href="https://kaustobh.github.io/portfolio/" target="_blank" class="hover:underline text-neon-cyan transition-colors">kaustobh.github.io/portfolio/</a></p>
+                        <p>💼 <a href="https://www.linkedin.com/in/kaustobh-bhattacharya-tech" target="_blank" class="hover:underline text-neon-cyan transition-colors">linkedin.com/in/kaustobh-bhattacharya-tech</a></p>
                     </div>
                 </div>
 
@@ -1403,32 +1404,66 @@
                 <div class="space-y-2">
                     <h6 class="font-mono text-[10px] text-charcoal dark:text-white font-bold uppercase tracking-widest">[01 // Professional Narrative]</h6>
                     <p>
-                        Design engineer dedicated to shipping metrics-focused digital products. I combine comprehensive visual UX workflows with robust front-end layout engineering (React, Next.js, WebGL) to bridge the gap between creative visual designs and high-performance, responsive codebases.
+                        UX Designer and aspiring UX Engineer with experience in user-centered design, interface design, usability testing, wireframing, prototyping, Full Stack Web Development, responsive High-Fidelity Prototypes, and game UI/UX. Background in computer science, network administration, and AI-assisted workflow tools. Strong portfolio with case studies in dashboard redesign, checkout optimization, and immersive gallery experiences.
                     </p>
                 </div>
 
                 <!-- Skillsets -->
                 <div class="space-y-2">
                     <h6 class="font-mono text-[10px] text-charcoal dark:text-white font-bold uppercase tracking-widest">[02 // Core Capabilities Matrix]</h6>
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 pt-1 text-[11px] font-mono">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-1 text-[11px] font-mono">
                         <div>
-                            <p class="font-bold text-charcoal dark:text-white print:text-black">&bull; Core Frameworks</p>
-                            <p class="text-neutral-400">React, Next.js, Vanilla HTML5/JS</p>
+                            <p class="font-bold text-charcoal dark:text-white print:text-black">&bull; UX/UI Design & Research</p>
+                            <p class="text-neutral-400">User Experience, User Interface, UX Research, Usability Testing, Wireframing, Prototyping, Figma, Interaction Design, Information Architecture, User Flows, Journey Mapping, Design Thinking, Human-Computer Interaction, Accessibility, Design Systems, Responsive Design</p>
                         </div>
                         <div>
-                            <p class="font-bold text-charcoal dark:text-white print:text-black">&bull; Styling Systems</p>
-                            <p class="text-neutral-400">Tailwind CSS, Vanilla CSS, Figma Design Tokens</p>
+                            <p class="font-bold text-charcoal dark:text-white print:text-black">&bull; Front-End & Web Tech</p>
+                            <p class="text-neutral-400">React, JavaScript (JS), Node.js, Three.js, Responsive Design, Full Stack Prototyping</p>
                         </div>
                         <div>
-                            <p class="font-bold text-charcoal dark:text-white print:text-black">&bull; Graphics Kinematics</p>
-                            <p class="text-neutral-400">Three.js, WebGL, Canvas2D, SVG Morphing</p>
+                            <p class="font-bold text-charcoal dark:text-white print:text-black">&bull; Game UI/UX & Workflows</p>
+                            <p class="text-neutral-400">Game UI, Game UX, Unreal Engine UI, AI-Assisted Workflows, Prompt Engineering</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Selected Projects -->
+                <div class="space-y-3">
+                    <h6 class="font-mono text-[10px] text-charcoal dark:text-white font-bold uppercase tracking-widest">[03 // Selected Projects]</h6>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-[11px]">
+                        <div class="bg-neutral-50 dark:bg-surface/30 p-2.5 rounded border border-neutral-200 dark:border-white/5">
+                            <p class="font-bold text-charcoal dark:text-white print:text-black">Fintech Dashboard</p>
+                            <p class="font-mono text-[8px] text-neon-cyan uppercase tracking-wider mb-1">Case Study // Deployable</p>
+                            <ul class="list-disc pl-3 text-neutral-400 space-y-1">
+                                <li>Re-engineered legacy wealth dashboard, reducing cognitive load and streamlining user flows.</li>
+                                <li>Conducted UX audits, draggable A/B wireframing, and high-fidelity dashboard design.</li>
+                                <li>Delivered a measured <strong class="text-acid-lime">40% reduction</strong> in task completion time.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-neutral-50 dark:bg-surface/30 p-2.5 rounded border border-neutral-200 dark:border-white/5">
+                            <p class="font-bold text-charcoal dark:text-white print:text-black">E-Comm Checkout</p>
+                            <p class="font-mono text-[8px] text-neon-magenta uppercase tracking-wider mb-1">Case Study // Interaction</p>
+                            <ul class="list-disc pl-3 text-neutral-400 space-y-1">
+                                <li>Engineered frictionless device configuration & checkout with interactive micro-interactions.</li>
+                                <li>Designed validation loops and haptic confirmation steps.</li>
+                                <li>Achieved a measured <strong class="text-neon-magenta">+18% conversion lift</strong> in checkout rate.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-neutral-50 dark:bg-surface/30 p-2.5 rounded border border-neutral-200 dark:border-white/5">
+                            <p class="font-bold text-charcoal dark:text-white print:text-black">Graphic Art Gallery</p>
+                            <p class="font-mono text-[8px] text-acid-lime uppercase tracking-wider mb-1">Case Study // Deployable</p>
+                            <ul class="list-disc pl-3 text-neutral-400 space-y-1">
+                                <li>Designed immersive gallery portal and inquiry experience to maximize acquisition engagement.</li>
+                                <li>Created fluid canvas interactions and wall-scale dynamic visualizer models.</li>
+                                <li>Delivered a measured <strong class="text-acid-lime">+28% increase</strong> in collector inquiry rates.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
                 <!-- Work history -->
                 <div class="space-y-4">
-                    <h6 class="font-mono text-[10px] text-charcoal dark:text-white font-bold uppercase tracking-widest">[03 // Professional Milestones]</h6>
+                    <h6 class="font-mono text-[10px] text-charcoal dark:text-white font-bold uppercase tracking-widest">[04 // Professional Milestones]</h6>
                     <div class="space-y-3">
                         <div class="border-l border-neutral-200 dark:border-surface pl-3 relative">
                             <span class="absolute left-[-4.5px] top-1.5 w-2.5 h-2.5 rounded-full bg-neon-cyan border border-white dark:border-void"></span>
@@ -1441,6 +1476,16 @@
                             </p>
                         </div>
                         <div class="border-l border-neutral-200 dark:border-surface pl-3 relative">
+                            <span class="absolute left-[-4.5px] top-1.5 w-2.5 h-2.5 rounded-full bg-neon-magenta border border-white dark:border-void"></span>
+                            <div class="flex justify-between items-baseline">
+                                <span class="font-bold text-charcoal dark:text-white print:text-black">Logistics Specialist // LOGO Fulfilment GmbH, Germany</span>
+                                <span class="font-mono text-[10px] text-neutral-400">Jan 2025 &mdash; Jun 2025</span>
+                            </div>
+                            <p class="text-[11px] text-neutral-400 mt-1">
+                                Optimized B2B luxury product fulfillment operations for high-end e-commerce clients. Leveraged data analytics and AI tools to streamline logistics, ensure precise order handling, and enhance supply chain efficiency.
+                            </p>
+                        </div>
+                        <div class="border-l border-neutral-200 dark:border-surface pl-3 relative">
                             <span class="absolute left-[-4.5px] top-1.5 w-2.5 h-2.5 rounded-full bg-neutral-400 dark:bg-surface border border-white dark:border-void"></span>
                             <div class="flex justify-between items-baseline">
                                 <span class="font-bold text-charcoal dark:text-white print:text-black">Web Engineering Consult</span>
@@ -1450,15 +1495,65 @@
                                 Built single-page interactive portfolios, customized low-resource HTML5 canvas animation systems, and consulted clients on conversion rate optimization (CRO) strategies.
                             </p>
                         </div>
+                        <div class="border-l border-neutral-200 dark:border-surface pl-3 relative">
+                            <span class="absolute left-[-4.5px] top-1.5 w-2.5 h-2.5 rounded-full bg-neutral-400 dark:bg-surface border border-white dark:border-void"></span>
+                            <div class="flex justify-between items-baseline">
+                                <span class="font-bold text-charcoal dark:text-white print:text-black">Network Administrator Intern // Trishna Biotech Pvt. Ltd., Gurgaon, India</span>
+                                <span class="font-mono text-[10px] text-neutral-400">Apr 2020 &mdash; Sep 2021</span>
+                            </div>
+                            <p class="text-[11px] text-neutral-400 mt-1">
+                                Designed and implemented Wi-Fi, storage, and secure server network infrastructures. Supported software/hardware updates and threat mitigation protocols while maintaining reliable system uptime.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Education -->
+                <div class="space-y-3">
+                    <h6 class="font-mono text-[10px] text-charcoal dark:text-white font-bold uppercase tracking-widest">[05 // Academic Credentials]</h6>
+                    <div class="space-y-2.5">
+                        <div class="flex justify-between items-start text-[11px]">
+                            <div>
+                                <span class="font-bold text-charcoal dark:text-white print:text-black">Hochschule Hof University of Applied Sciences, Hof, Germany</span>
+                                <p class="text-neutral-400">B.Sc. Computer Science</p>
+                            </div>
+                            <span class="font-mono text-[10px] text-neutral-400">Mar 2023 &mdash; Sep 2027</span>
+                        </div>
+                        <div class="flex justify-between items-start text-[11px]">
+                            <div>
+                                <span class="font-bold text-charcoal dark:text-white print:text-black">Amity University, Noida, India</span>
+                                <p class="text-neutral-400">Bachelor of Computer Applications (BCA) // CGPA: 8.00/10.00 (First Division)</p>
+                                <p class="text-[10px] text-neutral-400/80 italic mt-0.5">Relevant coursework: Human-Computer Interaction, Programming in C, Data Structures, Software Engineering, Python Programming, Cloud Computing, Cyber Security, Artificial Intelligence.</p>
+                            </div>
+                            <span class="font-mono text-[10px] text-neutral-400">Sep 2020 &mdash; Sep 2023</span>
+                        </div>
+                        <div class="flex justify-between items-start text-[11px]">
+                            <div>
+                                <span class="font-bold text-charcoal dark:text-white print:text-black">Delhi Public School, Gurgaon, India</span>
+                                <p class="text-neutral-400">CBSE Class XII</p>
+                            </div>
+                            <span class="font-mono text-[10px] text-neutral-400">2020</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
                 <div class="space-y-2">
-                    <h6 class="font-mono text-[10px] text-charcoal dark:text-white font-bold uppercase tracking-widest">[04 // Academic Credentials]</h6>
-                    <div class="flex justify-between items-baseline">
-                        <span class="font-bold text-charcoal dark:text-white print:text-black">B.Tech in Computer Science & Systems</span>
-                        <span class="font-mono text-[10px] text-neutral-400">Graduated 2023</span>
+                    <h6 class="font-mono text-[10px] text-charcoal dark:text-white font-bold uppercase tracking-widest">[06 // Professional Certifications]</h6>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1.5 text-[11px] font-mono text-neutral-400">
+                        <div>
+                            <p class="text-charcoal dark:text-white font-semibold">&bull; Google UX Design Professional Certificate</p>
+                            <p class="text-[10px] pl-3 text-neutral-400/80">&bull; Foundations of UX Design // Start the UX Design Process</p>
+                            <p class="text-[10px] pl-3 text-neutral-400/80">&bull; Wireframes & Low-Fi Prototypes // UX Research & Testing</p>
+                            <p class="text-[10px] pl-3 text-neutral-400/80">&bull; High-Fidelity Figma Designs // Build Dynamic Web UIs</p>
+                        </div>
+                        <div>
+                            <p class="text-charcoal dark:text-white font-semibold">&bull; Specialized Game & AI Design</p>
+                            <p class="text-[10px] pl-3 text-neutral-400/80">&bull; User Experience in Game Design // User Interface in Game Design</p>
+                            <p class="text-[10px] pl-3 text-neutral-400/80">&bull; IBM Enterprise Design Thinking Practitioner</p>
+                            <p class="text-[10px] pl-3 text-neutral-400/80">&bull; IBM Team Essentials for Designing AI Solutions</p>
+                            <p class="text-[10px] pl-3 text-neutral-400/80">&bull; Prompt Engineering for AI Models // Microsoft 365 Training</p>
+                        </div>
                     </div>
                 </div>
             </div>
