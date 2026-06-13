@@ -32,17 +32,6 @@
                         'electric-blue': '#005DFF',
                         'deep-rose': '#D3108E',
                         'forest-lime': '#008A3B',
-
-                        // Doodh Organic Theme Colors
-                        'doodh-bg': '#F8FBF7',
-                        'doodh-surface': '#F3F8F0',
-                        'doodh-pista': '#A8CFA1',
-                        'doodh-deep': '#5F8F68',
-                        'doodh-dark': '#234236',
-                        'doodh-border': '#DDEAD8',
-                        'doodh-accent': '#F2D6A2',
-                        'doodh-warning': '#F0B85F',
-                        'doodh-danger': '#D96C63',
                     },
                     fontFamily: {
                         display: ['"Space Grotesk"', 'sans-serif'],
@@ -369,7 +358,6 @@
         <a href="#project-fintech" class="hud-dot w-3 h-3 rounded-full bg-neutral-600 hover:bg-neon-cyan dark:hover:bg-neon-cyan light:hover:bg-electric-blue transition-all duration-300 border border-transparent" data-section="fintech" title="Fintech Overhaul"></a>
         <a href="#project-checkout" class="hud-dot w-3 h-3 rounded-full bg-neutral-600 hover:bg-neon-magenta dark:hover:bg-neon-magenta light:hover:bg-deep-rose transition-all duration-300 border border-transparent" data-section="checkout" title="Checkout frictionless"></a>
         <a href="#project-gallery" class="hud-dot w-3 h-3 rounded-full bg-neutral-600 hover:bg-acid-lime dark:hover:bg-acid-lime light:hover:bg-forest-lime transition-all duration-300 border border-transparent" data-section="gallery" title="Art Gallery"></a>
-        <a href="#project-doodh" class="hud-dot w-3 h-3 rounded-full bg-neutral-600 hover:bg-doodh-pista dark:hover:bg-doodh-pista transition-all duration-300 border border-transparent" data-section="doodh" title="Doodh Subscription"></a>
         <a href="#recruiter-briefing" class="hud-dot w-3 h-3 rounded-full bg-neutral-600 hover:bg-neutral-400 transition-all duration-300 border border-transparent" data-section="briefing" title="Hiring Briefing"></a>
     </nav>
 
@@ -905,459 +893,7 @@
                 </div>
             </div>
         </section>
-
-        <!-- Project 4: Doodh Delivery -->
-        <section id="project-doodh" class="h-screen w-full snap-center flex flex-col md:flex-row items-center justify-between px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-20 md:pt-0">
-            <div class="w-full md:w-1/2 pr-0 md:pr-12 flex flex-col justify-center">
-                <span class="text-xs font-mono text-doodh-pista dark:text-doodh-pista uppercase tracking-widest mb-2 block">[Case Study // App Design]</span>
-                <h3 class="text-4xl md:text-5xl font-display font-bold mb-4 text-doodh-pista dark:text-doodh-pista">Doodh Subscription</h3>
-                <p class="text-neutral-500 dark:text-gray-400 font-body text-base md:text-lg mb-6 max-w-md leading-relaxed">
-                    Designed a flexible, subscription-first daily milk delivery mobile app, eliminating dark patterns and optimizing user control through <strong class="text-neutral-700 dark:text-white">per-day quantity scheduling</strong>, <strong class="text-neutral-700 dark:text-white">frictionless date-range pauses</strong>, and a <strong class="text-neutral-700 dark:text-white">highly transparent exit flow</strong>.
-                </p>
-                
-                <!-- Neon Timeline -->
-                <div class="flex flex-col gap-3 pl-4 border-l-2 border-neutral-200 dark:border-surface relative">
-                    <div class="absolute left-[-2px] top-0 h-1/3 w-[2px] bg-gradient-to-b from-doodh-pista to-transparent dark:from-doodh-pista shadow-[0_0_10px_#A8CFA1]"></div>
-                    <p class="text-xs font-mono text-neutral-800 dark:text-white flex items-center"><span class="text-doodh-pista font-bold mr-2">01</span> Onboarding Setup Flow</p>
-                    <p class="text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">02</span> Dynamic Schedule Customizer</p>
-                    <p class="text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">03</span> Vacation date-range Pauses</p>
-                </div>
-
-                <div class="mt-8">
-                    <button onclick="openModal('doodh-modal')" class="group flex items-center gap-2 text-charcoal dark:text-white font-bold hover:text-doodh-pista dark:hover:text-doodh-pista transition-colors cursor-pointer text-sm font-mono border-b border-transparent hover:border-doodh-pista pb-1 w-fit">
-                        Open case study 
-                        <span class="transform group-hover:translate-x-1.5 transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="inline"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Visual Mockup Widget (Doodh Subscription App Mockup) -->
-            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 glass-panel rounded-xl border border-neutral-200 dark:border-white/5 relative overflow-hidden group flex items-center justify-center p-4 cursor-default" id="doodh-mockup-card">
-                <!-- Phone Mockup Container (scaled to fit nicely inside the parent) -->
-                <div class="w-[280px] h-[480px] bg-charcoal rounded-[36px] p-2.5 border-[6px] border-neutral-700/80 dark:border-neutral-800/80 relative shadow-2xl flex flex-col overflow-hidden">
-                    <!-- Notch / Dynamic Island -->
-                    <div class="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-4 bg-black rounded-full z-30 flex items-center justify-between px-2.5 text-[8px] text-white">
-                        <span class="font-mono text-[5px]">9:41</span>
-                        <div class="w-2.5 h-2.5 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center"><div class="w-1 h-1 rounded-full bg-blue-500"></div></div>
-                    </div>
-                    
-                    <!-- Screen Root -->
-                    <div class="w-full h-full bg-[#F8FBF7] dark:bg-[#111c16] rounded-[26px] overflow-hidden flex flex-col text-[11px] text-doodh-dark dark:text-doodh-bg relative border border-doodh-border/20" id="doodh-screen-root">
-                        
-                        <!-- Header with dynamic title and status badge -->
-                        <div class="pt-8 px-4 pb-2 flex justify-between items-center bg-[#F8FBF7] dark:bg-[#111c16] border-b border-doodh-border/30 dark:border-white/5 z-20">
-                            <div>
-                                <span class="font-mono text-[6px] text-doodh-deep dark:text-doodh-pista uppercase tracking-widest" id="doodh-header-state">[Onboarding // Setup]</span>
-                                <h4 class="text-xs font-bold text-doodh-dark dark:text-white" id="doodh-header-title">Welcome</h4>
-                            </div>
-                            <span class="px-2 py-0.5 rounded-full text-[7px] font-bold bg-neutral-100 dark:bg-neutral-800 text-neutral-500 border border-neutral-300 dark:border-neutral-700" id="doodh-header-badge">New User</span>
-                        </div>
-
-                        <!-- Scrollable Screen Content Container -->
-                        <div class="grow overflow-y-auto px-3.5 py-3 space-y-3 pb-8 select-none scrollbar-none" id="doodh-screen-content">
-                            <!-- Screen 1: Welcome & Onboarding -->
-                            <div id="doodh-screen-welcome" class="space-y-3">
-                                <div class="text-center py-2">
-                                    <span class="text-3xl block">🥛</span>
-                                    <h5 class="text-[11px] font-bold font-display mt-2 text-doodh-dark dark:text-white">Welcome to Doodh</h5>
-                                    <p class="text-[8px] text-doodh-deep dark:text-gray-400 mt-1">Fresh organic milk delivered daily. Subscription-only.</p>
-                                </div>
-                                <div class="p-3 bg-white dark:bg-neutral-900 rounded-xl border border-doodh-border dark:border-white/5 text-center shadow-sm">
-                                    <p class="text-[9px] font-bold text-doodh-dark dark:text-white">Fresh Milk Plan</p>
-                                    <p class="text-[8px] text-doodh-deep dark:text-gray-400 mt-0.5">Set up in just 2 minutes</p>
-                                    <p class="text-[7px] text-neutral-400 mt-2">Configure weekly quantities, drop-off spot, and billing cycle before delivery.</p>
-                                </div>
-                                <button onclick="switchDoodhScreen('address')" class="w-full bg-[#5F8F68] hover:bg-[#234236] text-white font-bold py-2 rounded-xl text-center cursor-pointer text-[8px] uppercase tracking-wider font-mono">
-                                    Schedule Fresh Milk
-                                </button>
-                            </div>
-
-                            <!-- Screen 2: Address Setup -->
-                            <div id="doodh-screen-address" class="hidden space-y-2.5">
-                                <div class="space-y-2">
-                                    <div>
-                                        <label class="text-[7px] font-mono text-doodh-deep uppercase">Delivery Address</label>
-                                        <input type="text" value="A-24, Green Park, Delhi" class="w-full bg-white dark:bg-neutral-900 border border-doodh-border dark:border-neutral-800 rounded-lg p-2 text-[8px] text-doodh-dark dark:text-white mt-0.5 outline-none" disabled>
-                                    </div>
-                                    <div>
-                                        <label class="text-[7px] font-mono text-doodh-deep uppercase">Landmark</label>
-                                        <input type="text" value="Near Green Park Metro" class="w-full bg-white dark:bg-neutral-900 border border-doodh-border dark:border-neutral-800 rounded-lg p-2 text-[8px] text-doodh-dark dark:text-white mt-0.5 outline-none" disabled>
-                                    </div>
-                                    <div>
-                                        <label class="text-[7px] font-mono text-doodh-deep uppercase">Delivery Instructions</label>
-                                        <input type="text" value="Leave at doorstep" class="w-full bg-white dark:bg-neutral-900 border border-doodh-border dark:border-neutral-800 rounded-lg p-2 text-[8px] text-doodh-dark dark:text-white mt-0.5 outline-none" disabled>
-                                    </div>
-                                </div>
-                                <div class="flex gap-2 pt-1">
-                                    <button onclick="switchDoodhScreen('welcome')" class="w-1/3 border border-doodh-border dark:border-neutral-800 text-doodh-dark dark:text-white py-1.5 rounded-lg text-center cursor-pointer text-[8px] font-mono">
-                                        Back
-                                    </button>
-                                    <button onclick="switchDoodhScreen('location')" class="w-2/3 bg-[#5F8F68] text-white font-bold py-1.5 rounded-lg text-center cursor-pointer text-[8px] uppercase tracking-wider font-mono">
-                                        Continue
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Screen 3: Delivery Location Option -->
-                            <div id="doodh-screen-location" class="hidden space-y-2.5">
-                                <p class="text-[8px] text-doodh-deep dark:text-gray-400">Choose a safe place where the milk should be left:</p>
-                                <div class="space-y-1.5">
-                                    <div class="p-2 bg-white dark:bg-neutral-900 rounded-lg border-2 border-[#5F8F68] flex items-center justify-between shadow-sm">
-                                        <div>
-                                            <p class="text-[8px] font-bold text-[#234236] dark:text-white">Doorstep <span class="text-[6px] text-[#2f8f57] font-mono bg-[#A8CFA1]/25 px-1 rounded ml-1 font-semibold">Recommended</span></p>
-                                            <p class="text-[6px] text-neutral-400 mt-0.5">Left right outside your main door.</p>
-                                        </div>
-                                        <div class="w-3 h-3 rounded-full border-[3px] border-[#5F8F68] bg-[#F8FBF7]"></div>
-                                    </div>
-                                    <div class="p-2 bg-white dark:bg-neutral-900 rounded-lg border border-doodh-border dark:border-neutral-800 flex items-center justify-between opacity-80 shadow-sm">
-                                        <div>
-                                            <p class="text-[8px] font-bold text-doodh-dark dark:text-white">Gate</p>
-                                            <p class="text-[6px] text-neutral-400 mt-0.5">Left near entry gate.</p>
-                                        </div>
-                                        <div class="w-3 h-3 rounded-full border border-neutral-300 dark:border-neutral-700 bg-white"></div>
-                                    </div>
-                                    <div class="p-2 bg-white dark:bg-neutral-900 rounded-lg border border-doodh-border dark:border-neutral-800 flex items-center justify-between opacity-80 shadow-sm">
-                                        <div>
-                                            <p class="text-[8px] font-bold text-doodh-dark dark:text-white">Blue Crate</p>
-                                            <p class="text-[6px] text-neutral-400 mt-0.5">Left inside a custom safe place.</p>
-                                        </div>
-                                        <div class="w-3 h-3 rounded-full border border-neutral-300 dark:border-neutral-700 bg-white"></div>
-                                    </div>
-                                </div>
-                                <div class="flex gap-2 pt-1">
-                                    <button onclick="switchDoodhScreen('address')" class="w-1/3 border border-doodh-border dark:border-neutral-800 text-doodh-dark dark:text-white py-1.5 rounded-lg text-center cursor-pointer text-[8px] font-mono">
-                                        Back
-                                    </button>
-                                    <button onclick="switchDoodhScreen('billing')" class="w-2/3 bg-[#5F8F68] text-white font-bold py-1.5 rounded-lg text-center cursor-pointer text-[8px] uppercase tracking-wider font-mono">
-                                        Continue
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Screen 4: Choose Billing Cycle -->
-                            <div id="doodh-screen-billing" class="hidden space-y-3">
-                                <div class="flex gap-2 bg-white dark:bg-neutral-900 p-1 rounded-xl border border-doodh-border dark:border-neutral-800">
-                                    <button class="w-1/2 py-1 rounded-lg text-center font-bold text-[7px] border border-doodh-border dark:border-neutral-800 text-doodh-dark dark:text-white bg-[#F3F8F0] dark:bg-neutral-800">WEEKLY</button>
-                                    <button class="w-1/2 py-1 rounded-lg text-center text-[7px] text-neutral-400 hover:text-doodh-dark dark:hover:text-white">MONTHLY</button>
-                                </div>
-                                <div class="p-3 bg-white dark:bg-neutral-900 rounded-xl border-2 border-[#5F8F68] relative shadow-sm">
-                                    <span class="absolute top-2 right-2 text-[6px] font-bold text-[#a67a2a] bg-[#F2D6A2]/50 border border-[#F2D6A2] px-1 rounded uppercase tracking-wider">Popular</span>
-                                    <p class="text-[9px] font-bold text-doodh-dark dark:text-white">Weekly Plan</p>
-                                    <p class="text-xs font-bold text-[#2f8f57] mt-1">₹999 <span class="text-[7px] text-neutral-400 font-normal">/ 10L week</span></p>
-                                    <p class="text-[7px] text-neutral-400 mt-2">Best for regular families and lower effort. Balanced weekly dairy.</p>
-                                </div>
-                                <div class="flex gap-2 pt-2">
-                                    <button onclick="switchDoodhScreen('location')" class="w-1/3 border border-doodh-border dark:border-neutral-800 text-doodh-dark dark:text-white py-1.5 rounded-lg text-center cursor-pointer text-[8px] font-mono">
-                                        Back
-                                    </button>
-                                    <button onclick="switchDoodhScreen('active')" class="w-2/3 bg-[#5F8F68] text-white font-bold py-1.5 rounded-lg text-center cursor-pointer text-[8px] uppercase tracking-wider font-mono">
-                                        Start Plan
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Screen 5: Active Subscriber Home Dashboard -->
-                            <div id="doodh-screen-active" class="hidden space-y-2.5">
-                                <!-- Today Card -->
-                                <div class="p-2.5 bg-gradient-to-b from-[#A8CFA1]/15 to-[#A8CFA1]/5 dark:from-[#2f8f57]/15 dark:to-transparent rounded-lg border border-[#A8CFA1]/30 dark:border-[#2f8f57]/20 shadow-sm">
-                                    <div class="flex justify-between items-start">
-                                        <div>
-                                            <p class="text-[6px] text-doodh-deep dark:text-doodh-pista uppercase tracking-widest">Today's Delivery</p>
-                                            <p class="text-[10px] font-bold text-doodh-dark dark:text-white mt-0.5" id="doodh-today-qty">1L Organic Milk</p>
-                                        </div>
-                                        <div class="text-right">
-                                            <p class="text-[6px] text-doodh-deep dark:text-doodh-pista uppercase tracking-widest">Arrives</p>
-                                            <p class="text-[8px] font-bold text-doodh-dark dark:text-white mt-0.5">5:30–5:45 AM</p>
-                                        </div>
-                                    </div>
-                                    <p class="text-[6px] text-neutral-400 mt-1.5">Leave at doorstep. Delivery happens only between 5 AM and 7 AM.</p>
-                                </div>
-
-                                <!-- Actions row -->
-                                <div class="flex gap-1 justify-between">
-                                    <button onclick="switchDoodhScreen('pause')" class="w-1/3 py-1.5 bg-white dark:bg-neutral-900 border border-doodh-border dark:border-neutral-800 hover:border-[#5F8F68] text-[7px] font-bold rounded-md cursor-pointer text-doodh-dark dark:text-white">Pause</button>
-                                    <button onclick="switchDoodhScreen('schedule')" class="w-1/3 py-1.5 bg-white dark:bg-neutral-900 border border-doodh-border dark:border-neutral-800 hover:border-[#5F8F68] text-[7px] font-bold rounded-md cursor-pointer text-doodh-dark dark:text-white">Schedule</button>
-                                    <button onclick="switchDoodhScreen('billing-summary')" class="w-1/3 py-1.5 bg-white dark:bg-neutral-900 border border-doodh-border dark:border-neutral-800 hover:border-[#5F8F68] text-[7px] font-bold rounded-md cursor-pointer text-doodh-dark dark:text-white">Plan</button>
-                                </div>
-
-                                <!-- Weekly schedule display -->
-                                <div class="p-2 bg-white dark:bg-neutral-900 rounded-lg border border-doodh-border dark:border-white/5 shadow-sm">
-                                    <div class="flex justify-between items-center pb-1 border-b border-doodh-border/40 dark:border-white/5 mb-1">
-                                        <span class="font-bold text-[7px] uppercase tracking-wider text-doodh-dark dark:text-white">Weekly Schedule</span>
-                                        <span class="text-[6px] text-doodh-deep dark:text-doodh-pista font-mono" id="doodh-weekly-total">Total: 10L/week</span>
-                                    </div>
-                                    <div class="flex flex-wrap gap-0.5" id="doodh-schedule-chips">
-                                        <span class="px-1 py-0.5 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 text-[6px] text-doodh-deep dark:text-gray-300 font-mono">Mon 1L</span>
-                                        <span class="px-1 py-0.5 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 text-[6px] text-doodh-deep dark:text-gray-300 font-mono">Tue 1L</span>
-                                        <span class="px-1 py-0.5 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 text-[6px] text-doodh-deep dark:text-gray-300 font-mono">Wed 1L</span>
-                                        <span class="px-1 py-0.5 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 text-[6px] text-doodh-deep dark:text-gray-300 font-mono">Thu 1L</span>
-                                        <span class="px-1 py-0.5 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 text-[6px] text-doodh-deep dark:text-gray-300 font-mono">Fri 1L</span>
-                                        <span class="px-1 py-0.5 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 text-[6px] text-doodh-deep dark:text-gray-300 font-mono">Sat 2L</span>
-                                        <span class="px-1 py-0.5 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 text-[6px] text-doodh-deep dark:text-gray-300 font-mono">Sun 2L</span>
-                                    </div>
-                                </div>
-
-                                <!-- Billing card -->
-                                <div class="p-2 bg-white dark:bg-neutral-900 rounded-lg border border-doodh-border dark:border-white/5 shadow-sm">
-                                    <div class="flex justify-between items-center mb-0.5">
-                                        <span class="font-bold text-[7px] uppercase tracking-wider text-doodh-dark dark:text-white">Billing Status</span>
-                                        <span class="px-1 py-0.5 rounded bg-[#A8CFA1]/25 text-[#1d7d73] font-bold text-[6px] uppercase font-mono">Paid</span>
-                                    </div>
-                                    <!-- Progress bar -->
-                                    <div class="h-1 w-full bg-neutral-100 dark:bg-neutral-800 rounded-full overflow-hidden mt-1">
-                                        <div class="h-full bg-[#5F8F68] rounded-full w-[70%]"></div>
-                                    </div>
-                                    <p class="text-[6px] text-neutral-400 mt-1">Pre-paid monthly plan. Renewal due in 30 days.</p>
-                                </div>
-
-                                <div class="pt-0.5 text-center">
-                                    <button onclick="switchDoodhScreen('cancel')" class="text-neutral-400 dark:text-gray-500 hover:text-doodh-danger text-[6px] cursor-pointer hover:underline uppercase font-mono">Cancel Subscription</button>
-                                </div>
-                            </div>
-
-                            <!-- Screen 6: Edit Schedule (steppers) -->
-                            <div id="doodh-screen-schedule" class="hidden space-y-2">
-                                <p class="text-[7px] text-doodh-deep dark:text-gray-400">Set daily quantities (0L skips day):</p>
-                                
-                                <div class="space-y-0.5 max-h-[145px] overflow-y-auto scrollbar-none" id="doodh-schedule-steppers-list">
-                                    <div class="flex justify-between items-center p-1 bg-white dark:bg-neutral-900 rounded-md border border-doodh-border dark:border-neutral-800">
-                                        <span class="font-bold font-mono text-[7px]">Mon</span>
-                                        <div class="flex items-center gap-1.5">
-                                            <button class="w-4 h-4 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 font-bold hover:bg-[#A8CFA1]/35 cursor-pointer text-[7px]" onclick="doodhAdjustQty('mon', -1)">-</button>
-                                            <span class="font-bold text-[7px] min-w-[10px] text-center" id="doodh-qty-mon">1L</span>
-                                            <button class="w-4 h-4 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 font-bold hover:bg-[#A8CFA1]/35 cursor-pointer text-[7px]" onclick="doodhAdjustQty('mon', 1)">+</button>
-                                        </div>
-                                    </div>
-                                    <div class="flex justify-between items-center p-1 bg-white dark:bg-neutral-900 rounded-md border border-doodh-border dark:border-neutral-800">
-                                        <span class="font-bold font-mono text-[7px]">Tue</span>
-                                        <div class="flex items-center gap-1.5">
-                                            <button class="w-4 h-4 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 font-bold hover:bg-[#A8CFA1]/35 cursor-pointer text-[7px]" onclick="doodhAdjustQty('tue', -1)">-</button>
-                                            <span class="font-bold text-[7px] min-w-[10px] text-center" id="doodh-qty-tue">1L</span>
-                                            <button class="w-4 h-4 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 font-bold hover:bg-[#A8CFA1]/35 cursor-pointer text-[7px]" onclick="doodhAdjustQty('tue', 1)">+</button>
-                                        </div>
-                                    </div>
-                                    <div class="flex justify-between items-center p-1 bg-white dark:bg-neutral-900 rounded-md border border-doodh-border dark:border-neutral-800">
-                                        <span class="font-bold font-mono text-[7px]">Wed</span>
-                                        <div class="flex items-center gap-1.5">
-                                            <button class="w-4 h-4 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 font-bold hover:bg-[#A8CFA1]/35 cursor-pointer text-[7px]" onclick="doodhAdjustQty('wed', -1)">-</button>
-                                            <span class="font-bold text-[7px] min-w-[10px] text-center" id="doodh-qty-wed">1L</span>
-                                            <button class="w-4 h-4 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 font-bold hover:bg-[#A8CFA1]/35 cursor-pointer text-[7px]" onclick="doodhAdjustQty('wed', 1)">+</button>
-                                        </div>
-                                    </div>
-                                    <div class="flex justify-between items-center p-1 bg-white dark:bg-neutral-900 rounded-md border border-doodh-border dark:border-neutral-800">
-                                        <span class="font-bold font-mono text-[7px]">Thu</span>
-                                        <div class="flex items-center gap-1.5">
-                                            <button class="w-4 h-4 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 font-bold hover:bg-[#A8CFA1]/35 cursor-pointer text-[7px]" onclick="doodhAdjustQty('thu', -1)">-</button>
-                                            <span class="font-bold text-[7px] min-w-[10px] text-center" id="doodh-qty-thu">1L</span>
-                                            <button class="w-4 h-4 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 font-bold hover:bg-[#A8CFA1]/35 cursor-pointer text-[7px]" onclick="doodhAdjustQty('thu', 1)">+</button>
-                                        </div>
-                                    </div>
-                                    <div class="flex justify-between items-center p-1 bg-white dark:bg-neutral-900 rounded-md border border-doodh-border dark:border-neutral-800">
-                                        <span class="font-bold font-mono text-[7px]">Fri</span>
-                                        <div class="flex items-center gap-1.5">
-                                            <button class="w-4 h-4 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 font-bold hover:bg-[#A8CFA1]/35 cursor-pointer text-[7px]" onclick="doodhAdjustQty('fri', -1)">-</button>
-                                            <span class="font-bold text-[7px] min-w-[10px] text-center" id="doodh-qty-fri">1L</span>
-                                            <button class="w-4 h-4 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 font-bold hover:bg-[#A8CFA1]/35 cursor-pointer text-[7px]" onclick="doodhAdjustQty('fri', 1)">+</button>
-                                        </div>
-                                    </div>
-                                    <div class="flex justify-between items-center p-1 bg-white dark:bg-neutral-900 rounded-md border border-doodh-border dark:border-neutral-800">
-                                        <span class="font-bold font-mono text-[7px]">Sat</span>
-                                        <div class="flex items-center gap-1.5">
-                                            <button class="w-4 h-4 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 font-bold hover:bg-[#A8CFA1]/35 cursor-pointer text-[7px]" onclick="doodhAdjustQty('sat', -1)">-</button>
-                                            <span class="font-bold text-[7px] min-w-[10px] text-center" id="doodh-qty-sat">2L</span>
-                                            <button class="w-4 h-4 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 font-bold hover:bg-[#A8CFA1]/35 cursor-pointer text-[7px]" onclick="doodhAdjustQty('sat', 1)">+</button>
-                                        </div>
-                                    </div>
-                                    <div class="flex justify-between items-center p-1 bg-white dark:bg-neutral-900 rounded-md border border-doodh-border dark:border-neutral-800">
-                                        <span class="font-bold font-mono text-[7px]">Sun</span>
-                                        <div class="flex items-center gap-1.5">
-                                            <button class="w-4 h-4 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 font-bold hover:bg-[#A8CFA1]/35 cursor-pointer text-[7px]" onclick="doodhAdjustQty('sun', -1)">-</button>
-                                            <span class="font-bold text-[7px] min-w-[10px] text-center" id="doodh-qty-sun">2L</span>
-                                            <button class="w-4 h-4 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 font-bold hover:bg-[#A8CFA1]/35 cursor-pointer text-[7px]" onclick="doodhAdjustQty('sun', 1)">+</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="doodh-schedule-validation-error" class="hidden text-[#D96C63] text-[6px] text-center font-bold">At least one delivery day must remain active.</div>
-                                <div class="flex gap-2 pt-1">
-                                    <button onclick="switchDoodhScreen('active')" class="w-1/3 border border-doodh-border dark:border-neutral-800 text-doodh-dark dark:text-white py-1 rounded-lg text-center cursor-pointer text-[8px] font-mono">
-                                        Back
-                                    </button>
-                                    <button onclick="doodhSaveSchedule()" class="w-2/3 bg-[#5F8F68] text-white font-bold py-1 rounded-lg text-center cursor-pointer text-[8px] uppercase tracking-wider font-mono">
-                                        Save Plan
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Screen 7: Pause Delivery (date picker simulation) -->
-                            <div id="doodh-screen-pause" class="hidden space-y-2.5">
-                                <p class="text-[7px] text-doodh-deep dark:text-gray-400">Select pause duration for vacation:</p>
-                                <div class="space-y-1.5">
-                                    <div class="grid grid-cols-2 gap-1.5">
-                                        <div>
-                                            <span class="text-[6px] font-mono text-doodh-deep uppercase">Start Date</span>
-                                            <div class="bg-white dark:bg-neutral-900 border border-doodh-border dark:border-neutral-800 rounded-md py-1.5 text-[8px] font-bold text-center">15 Jun 2026</div>
-                                        </div>
-                                        <div>
-                                            <span class="text-[6px] font-mono text-doodh-deep uppercase">End Date</span>
-                                            <div class="bg-white dark:bg-neutral-900 border border-doodh-border dark:border-neutral-800 rounded-md py-1.5 text-[8px] font-bold text-center">25 Jun 2026</div>
-                                        </div>
-                                    </div>
-                                    <div class="p-2 bg-[#F3F8F0] dark:bg-neutral-900 border border-dashed border-[#DDEAD8] dark:border-neutral-800 rounded-lg space-y-1">
-                                        <div class="flex justify-between items-center">
-                                            <span class="font-bold text-[7px]">Paused days</span>
-                                            <span class="font-bold text-doodh-deep dark:text-doodh-pista text-[8px]">11 days</span>
-                                        </div>
-                                        <p class="text-[7px] text-neutral-400 leading-normal">Billing credit: <strong class="text-[#2f8f57]">₹330</strong> applied to next cycle. Schedule resumes automatically on 26 Jun.</p>
-                                    </div>
-                                </div>
-                                <div class="flex gap-2 pt-1.5">
-                                    <button onclick="switchDoodhScreen('active')" class="w-1/3 border border-doodh-border dark:border-neutral-800 text-doodh-dark dark:text-white py-1 rounded-lg text-center cursor-pointer text-[8px] font-mono">
-                                        Back
-                                    </button>
-                                    <button onclick="switchDoodhScreen('paused-home')" class="w-2/3 bg-[#F0B85F] hover:bg-[#d4993d] text-void font-bold py-1 rounded-lg text-center cursor-pointer text-[8px] uppercase tracking-wider font-mono">
-                                        Confirm Pause
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Screen 8: Paused Home screen state -->
-                            <div id="doodh-screen-paused-home" class="hidden space-y-4 py-4 text-center">
-                                <div class="w-10 h-10 rounded-full bg-[#F0B85F]/15 border border-[#F0B85F] flex items-center justify-center mx-auto shadow-sm">
-                                    <span class="text-sm text-[#d4993d]">⏸</span>
-                                </div>
-                                <div>
-                                    <h5 class="text-[10px] font-bold font-display text-doodh-dark dark:text-white">Delivery is Paused</h5>
-                                    <p class="text-[7px] text-doodh-deep dark:text-gray-400 mt-1 max-w-[150px] mx-auto leading-normal">No milk will be delivered from 15 Jun to 25 Jun. Deliveries will resume on 26 Jun.</p>
-                                </div>
-                                <div class="pt-2 space-y-1">
-                                    <button onclick="switchDoodhScreen('active')" class="w-full bg-[#5F8F68] text-white font-bold py-1.5 rounded-lg text-center cursor-pointer text-[8px] uppercase tracking-wider font-mono">
-                                        Resume Delivery Now
-                                    </button>
-                                    <button onclick="switchDoodhScreen('active')" class="w-full border border-doodh-border dark:border-neutral-800 text-doodh-dark dark:text-white py-1 rounded-lg text-center cursor-pointer text-[7px] font-mono">
-                                        View Schedule
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Screen 9: Cancellation flow exit screen -->
-                            <div id="doodh-screen-cancel" class="hidden space-y-2.5">
-                                <div class="p-2 bg-white dark:bg-neutral-900 rounded-lg border border-doodh-border dark:border-neutral-800">
-                                    <p class="text-[6px] font-mono text-neutral-400 uppercase tracking-widest mb-1">Why are you leaving? (Optional)</p>
-                                    <div class="flex flex-wrap gap-0.5">
-                                        <span class="px-1 py-0.5 rounded-full border border-neutral-300 dark:border-neutral-700 text-[5px] text-neutral-400 cursor-pointer hover:border-doodh-danger">Moved away</span>
-                                        <span class="px-1 py-0.5 rounded-full border border-neutral-300 dark:border-neutral-700 text-[5px] text-neutral-400 cursor-pointer hover:border-doodh-danger">Too expensive</span>
-                                        <span class="px-1 py-0.5 rounded-full border border-neutral-300 dark:border-neutral-700 text-[5px] text-neutral-400 cursor-pointer hover:border-doodh-danger">Quality issue</span>
-                                    </div>
-                                </div>
-                                <div class="p-2 bg-white dark:bg-neutral-900 border border-doodh-border dark:border-neutral-800 rounded-lg">
-                                    <p class="font-bold text-[7px] text-doodh-dark dark:text-white">Before you cancel</p>
-                                    <p class="text-[6px] text-neutral-400 mt-0.5 leading-normal">Daily delivery stops immediately. You will lose your saved schedule, active subscription benefits, and automatic billing renewals.</p>
-                                </div>
-                                <div class="p-1.5 bg-[#D96C63]/10 border border-[#D96C63]/20 rounded-lg text-center">
-                                    <p class="text-[6px] text-[#b0433d] font-bold uppercase tracking-wider">No Hidden Dark Patterns</p>
-                                </div>
-                                <div class="flex gap-2 pt-1">
-                                    <button onclick="switchDoodhScreen('active')" class="w-1/2 border border-doodh-border dark:border-neutral-800 text-doodh-dark dark:text-white py-1.5 rounded-lg text-center cursor-pointer text-[8px] font-mono">
-                                        Keep Plan
-                                    </button>
-                                    <button onclick="switchDoodhScreen('cancelled-home')" class="w-1/2 bg-[#D96C63] hover:bg-[#b54a42] text-white font-bold py-1.5 rounded-lg text-center cursor-pointer text-[8px] uppercase tracking-wider font-mono">
-                                        Yes, Cancel
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Screen 10: Cancelled Home state -->
-                            <div id="doodh-screen-cancelled-home" class="hidden space-y-4 py-4 text-center">
-                                <div class="w-10 h-10 rounded-full bg-[#D96C63]/15 border border-[#D96C63] flex items-center justify-center mx-auto shadow-sm">
-                                    <span class="text-sm text-[#D96C63]">✕</span>
-                                </div>
-                                <div>
-                                    <h5 class="text-[10px] font-bold font-display text-doodh-dark dark:text-white">Plan Cancelled</h5>
-                                    <p class="text-[7px] text-doodh-deep dark:text-gray-400 mt-1 max-w-[150px] mx-auto leading-normal">Deliveries stopped. Automatic renewals terminated. You can reactivate a new plan anytime.</p>
-                                </div>
-                                <div class="pt-2 space-y-1">
-                                    <button onclick="switchDoodhScreen('welcome')" class="w-full bg-[#5F8F68] text-white font-bold py-1.5 rounded-lg text-center cursor-pointer text-[8px] uppercase tracking-wider font-mono">
-                                        Start New Plan
-                                    </button>
-                                    <button onclick="switchDoodhScreen('active')" class="w-full border border-doodh-border dark:border-neutral-800 text-neutral-400 py-1 rounded-lg text-center cursor-pointer text-[6px] font-mono">
-                                        Help Center
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Screen 11: View Plan & Billing details -->
-                            <div id="doodh-screen-billing-summary" class="hidden space-y-2.5">
-                                <div class="p-2.5 bg-gradient-to-b from-[#A8CFA1]/15 to-[#A8CFA1]/5 dark:from-[#2f8f57]/15 dark:to-transparent rounded-lg border border-[#A8CFA1]/30 dark:border-[#2f8f57]/20 shadow-sm">
-                                    <div class="row">
-                                        <div class="kpi"><span class="text-[6px] text-doodh-deep dark:text-doodh-pista uppercase tracking-widest font-mono">Plan</span><div class="text-[8px] font-bold text-doodh-dark dark:text-white">Daily Organic Plan</div></div>
-                                        <div class="kpi text-right"><span class="text-[6px] text-doodh-deep dark:text-doodh-pista uppercase tracking-widest font-mono">Cycle</span><div class="text-[8px] font-bold text-doodh-dark dark:text-white">Monthly</div></div>
-                                    </div>
-                                </div>
-                                <div class="p-2 bg-white dark:bg-neutral-900 rounded-lg border border-doodh-border dark:border-white/5 space-y-1.5 shadow-sm">
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-[7px] text-neutral-400">Total litres/week</span>
-                                        <span class="font-bold text-[7px]" id="doodh-summary-weekly-litres">10L</span>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-[7px] text-neutral-400">Next billing date</span>
-                                        <span class="font-bold text-[7px]">21 Jun 2026</span>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-[7px] text-neutral-400">Payment method</span>
-                                        <span class="font-mono text-[7px]">UPI •••• 4821</span>
-                                    </div>
-                                </div>
-                                <div class="p-2 bg-white dark:bg-neutral-900 border border-doodh-border dark:border-neutral-800 rounded-lg">
-                                    <p class="font-bold text-[7px] text-doodh-dark dark:text-white">What is included</p>
-                                    <p class="text-[6px] text-neutral-400 mt-0.5 leading-normal">Daily doorstep delivery between 5 AM and 7 AM, editable weekly quantity, pause support, and subscription management.</p>
-                                </div>
-                                <div class="flex gap-2 pt-1">
-                                    <button onclick="switchDoodhScreen('active')" class="w-1/2 border border-doodh-border dark:border-neutral-800 text-doodh-dark dark:text-white py-1.5 rounded-lg text-center cursor-pointer text-[8px] font-mono">
-                                        Back
-                                    </button>
-                                    <button onclick="switchDoodhScreen('cancel')" class="w-1/2 bg-[#D96C63]/10 border border-[#D96C63]/20 text-[#D96C63] font-bold py-1.5 rounded-lg text-center cursor-pointer text-[8px] uppercase tracking-wider font-mono">
-                                        Cancel Plan
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Footer bar -->
-                        <div class="absolute bottom-0 left-0 right-0 h-4 bg-white dark:bg-neutral-950 flex items-center justify-center border-t border-neutral-100 dark:border-neutral-900 z-20">
-                            <div class="w-24 h-1 bg-neutral-300 dark:bg-neutral-700 rounded-full"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Primary Metric glass-panel indicator overlay with Video -->
-                <div class="absolute bottom-6 right-6 glass-panel p-3 rounded-lg z-20 border border-neutral-300/60 dark:border-white/10 shadow-lg w-[220px]">
-                    <!-- Clickable video thumbnail with play overlay -->
-                    <div class="w-full h-[100px] rounded overflow-hidden mb-2 border border-neutral-300/30 dark:border-white/5 bg-black relative cursor-pointer group/vid" onclick="openVideoModal('doodh.mp4', 'Doodh // Daily Delivery Prototype', 'Subscription State Control', 'doodh-modal')" title="Click to expand video">
-                        <video 
-                            id="doodh-kpi-video-thumb"
-                            muted 
-                            loop 
-                            playsinline
-                            class="w-full h-full object-cover"
-                        >
-                            <source src="doodh.mp4" type="video/mp4">
-                        </video>
-                        <!-- Play icon overlay -->
-                        <div class="absolute inset-0 flex items-center justify-center bg-void/30 group-hover/vid:bg-void/50 transition-colors">
-                            <div class="w-8 h-8 rounded-full bg-doodh-pista/90 dark:bg-doodh-pista/90 flex items-center justify-center shadow-neon group-hover/vid:scale-110 transition-transform">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-doodh-deep dark:text-doodh-pista font-mono text-[9px] uppercase tracking-wider font-bold">Subscription Metrics</p>
-                    <p class="text-sm font-bold font-display text-charcoal dark:text-white mb-2">Flexible Quantity Control</p>
-                    <a href="#" onclick="event.preventDefault(); openVideoModal('doodh.mp4', 'Doodh // Daily Delivery Prototype', 'Subscription State Control', 'doodh-modal');" class="flex items-center gap-1.5 text-neon-cyan dark:text-neon-cyan light:text-electric-blue font-mono text-[9px] font-bold hover:underline cursor-pointer group/link transition-colors">
-                        See projects
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transform group-hover/link:translate-x-0.5 transition-transform"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                    </a>
-                </div>
-            </div>
-        </section>
-
+        
         <!-- Recruiter / Contact Footer -->
         <section id="recruiter-briefing" class="h-[100vh] w-full snap-center flex flex-col items-center justify-center px-8 text-center relative z-10 bg-solar dark:bg-void transition-colors duration-500">
             <div class="max-w-2xl mx-auto flex flex-col items-center">
@@ -1787,195 +1323,6 @@
         </div>
     </div>
 
-    <!-- Modal 4: Doodh Subscription Management Case Study -->
-    <div id="doodh-modal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden opacity-0 pointer-events-none transition-all duration-300 bg-void/80 backdrop-blur-xl flex items-center justify-center p-4">
-        <!-- Close overlay trigger -->
-        <div class="absolute inset-0 cursor-zoom-out" onclick="closeModal('doodh-modal')"></div>
-        
-        <!-- Modal panel box -->
-        <div class="glass-panel border border-neutral-300 dark:border-white/5 w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl relative z-10 max-h-[90vh] flex flex-col bg-white dark:bg-void transition-transform duration-300 scale-95" id="doodh-modal-content">
-            <!-- Modal Header -->
-            <div class="flex justify-between items-center p-5 border-b border-neutral-200 dark:border-surface">
-                <div>
-                    <span class="text-[9px] font-mono text-doodh-pista uppercase tracking-widest font-semibold">[Subscription Experience]</span>
-                    <h4 class="text-2xl font-bold font-display text-charcoal dark:text-white">Doodh subscription management</h4>
-                </div>
-                <button onclick="closeModal('doodh-modal')" class="glass-panel p-2.5 rounded-full hover:bg-neutral-100 dark:hover:bg-surface transition-colors cursor-pointer text-neutral-400 hover:text-doodh-pista">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                </button>
-            </div>
-
-            <!-- Scrollable Body content -->
-            <div class="p-6 md:p-8 overflow-y-auto space-y-8 select-text font-body text-xs md:text-sm leading-relaxed text-neutral-600 dark:text-neutral-300 max-w-full">
-                <!-- Grid summary stats -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="bg-neutral-100 dark:bg-surface/50 p-3 rounded-lg border border-neutral-200 dark:border-white/5">
-                        <span class="text-[9px] font-mono text-neutral-400 uppercase tracking-widest">Cognitive Load</span>
-                        <h5 class="text-xl font-bold font-display text-charcoal dark:text-white mt-1">-40% Friction</h5>
-                    </div>
-                    <div class="bg-neutral-100 dark:bg-surface/50 p-3 rounded-lg border border-neutral-200 dark:border-white/5">
-                        <span class="text-[9px] font-mono text-neutral-400 uppercase tracking-widest">User Control</span>
-                        <h5 class="text-xl font-bold font-display text-charcoal dark:text-white mt-1">100% Granular</h5>
-                    </div>
-                    <div class="bg-neutral-100 dark:bg-surface/50 p-3 rounded-lg border border-neutral-200 dark:border-white/5">
-                        <span class="text-[9px] font-mono text-neutral-400 uppercase tracking-widest">Pause Adoption</span>
-                        <h5 class="text-xl font-bold font-display text-charcoal dark:text-white mt-1">+25% Retention</h5>
-                    </div>
-                    <div class="bg-neutral-100 dark:bg-surface/50 p-3 rounded-lg border border-neutral-200 dark:border-white/5">
-                        <span class="text-[9px] font-mono text-neutral-400 uppercase tracking-widest">Exit Patterns</span>
-                        <h5 class="text-xl font-bold font-display text-charcoal dark:text-white mt-1">0% Dark UX</h5>
-                    </div>
-                </div>
-
-                <div class="space-y-4">
-                    <h5 class="text-base font-bold font-display text-charcoal dark:text-white flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-doodh-pista"></span>
-                        Overview & Problem Statement
-                    </h5>
-                    <p>
-                        Doodh is a subscription-based milk delivery app designed to help users manage daily deliveries with absolute clarity and control. Traditional subscription apps often treat delivery like a generic e-commerce checkout flow, but milk delivery has unique real-world behaviors: quantities vary daily based on household usage, users pause services temporarily during vacations, and plans need to be cancelled respectfully. The challenge was designing a robust system supporting these complexities without adding friction or UI clutter.
-                    </p>
-                </div>
-
-                <!-- Color Scheme Showcase -->
-                <div class="space-y-4">
-                    <h5 class="text-base font-bold font-display text-charcoal dark:text-white flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-doodh-pista"></span>
-                        Visual System & Color Palette
-                    </h5>
-                    <p class="mb-4">
-                        To reflect brand promises of freshness, daily reliability, and minimal organic aesthetics, we designed a calm, soft-toned green system. White dominates for cleanliness, soft background tones manage separation, and pista green serves as the brand accent. Warm warning tones and red danger borders indicate temporary paused and permanent cancelled states.
-                    </p>
-                    <div class="grid grid-cols-2 md:grid-cols-5 gap-3 pt-2">
-                        <div class="flex flex-col items-center p-2 rounded-lg border border-neutral-200 dark:border-white/5 bg-neutral-50 dark:bg-[#121214]">
-                            <div class="w-full h-10 rounded bg-white border border-neutral-300 mb-2 shadow-sm"></div>
-                            <span class="font-bold text-[9px] font-mono text-charcoal dark:text-white">White</span>
-                            <span class="text-[8px] text-neutral-400">#FFFFFF // 45%</span>
-                            <span class="text-[8px] text-neutral-400 text-center mt-1">Base surfaces</span>
-                        </div>
-                        <div class="flex flex-col items-center p-2 rounded-lg border border-neutral-200 dark:border-white/5 bg-neutral-50 dark:bg-[#121214]">
-                            <div class="w-full h-10 rounded bg-[#F8FBF7] border border-[#DDEAD8] mb-2 shadow-sm"></div>
-                            <span class="font-bold text-[9px] font-mono text-[#234236] dark:text-white">Soft Green</span>
-                            <span class="text-[8px] text-neutral-400">#F8FBF7 // 20%</span>
-                            <span class="text-[8px] text-neutral-400 text-center mt-1">App background</span>
-                        </div>
-                        <div class="flex flex-col items-center p-2 rounded-lg border border-[#DDEAD8] dark:border-white/5 bg-neutral-50 dark:bg-[#121214]">
-                            <div class="w-full h-10 rounded bg-[#F3F8F0] border border-[#DDEAD8] mb-2 shadow-sm"></div>
-                            <span class="font-bold text-[9px] font-mono text-[#234236] dark:text-white">Surface Green</span>
-                            <span class="text-[8px] text-neutral-400">#F3F8F0 // 10%</span>
-                            <span class="text-[8px] text-neutral-400 text-center mt-1">Cards & list panels</span>
-                        </div>
-                        <div class="flex flex-col items-center p-2 rounded-lg border border-neutral-200 dark:border-white/5 bg-neutral-50 dark:bg-[#121214]">
-                            <div class="w-full h-10 rounded bg-[#A8CFA1] mb-2 shadow-sm"></div>
-                            <span class="font-bold text-[9px] font-mono text-[#234236] dark:text-white">Pista Green</span>
-                            <span class="text-[8px] text-neutral-400">#A8CFA1 // 12%</span>
-                            <span class="text-[8px] text-neutral-400 text-center mt-1">Brand accent</span>
-                        </div>
-                        <div class="flex flex-col items-center p-2 rounded-lg border border-neutral-200 dark:border-white/5 bg-neutral-50 dark:bg-[#121214]">
-                            <div class="w-full h-10 rounded bg-[#5F8F68] mb-2 shadow-sm"></div>
-                            <span class="font-bold text-[9px] font-mono text-white">Deep Green</span>
-                            <span class="text-[8px] text-neutral-400">#5F8F68 // 6%</span>
-                            <span class="text-[8px] text-neutral-400 text-center mt-1">Primary buttons</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Wireframe Showcase Gallery -->
-                <div class="space-y-4">
-                    <h5 class="text-base font-bold font-display text-charcoal dark:text-white flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-doodh-pista"></span>
-                        Low-Fidelity Screen Wireframes
-                    </h5>
-                    <p class="mb-4">
-                        To prioritize information hierarchy, state visibility, and user trust, we laid out the key subscriber journeys in structured wireframes. This organic scaffolding guides users from onboarding setups directly to daily control panels.
-                    </p>
-                    
-                    <!-- Horizontal scrollable wireframe strip -->
-                    <div class="flex gap-4 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-neutral-400 select-none">
-                        <div class="flex-none w-[170px] space-y-2">
-                            <div class="border border-neutral-200 dark:border-surface rounded-xl overflow-hidden bg-neutral-100 dark:bg-surface/30">
-                                <img src="doodh_wireframe_welcome.png" alt="Onboarding Welcome" class="w-full h-auto object-contain pointer-events-none">
-                            </div>
-                            <p class="font-bold text-[10px] text-charcoal dark:text-white text-center">1. Welcome Onboarding</p>
-                        </div>
-                        <div class="flex-none w-[170px] space-y-2">
-                            <div class="border border-neutral-200 dark:border-surface rounded-xl overflow-hidden bg-neutral-100 dark:bg-surface/30">
-                                <img src="doodh_wireframe_address.png" alt="Address Setup" class="w-full h-auto object-contain pointer-events-none">
-                            </div>
-                            <p class="font-bold text-[10px] text-charcoal dark:text-white text-center">2. Address Setup</p>
-                        </div>
-                        <div class="flex-none w-[170px] space-y-2">
-                            <div class="border border-neutral-200 dark:border-surface rounded-xl overflow-hidden bg-neutral-100 dark:bg-surface/30">
-                                <img src="doodh_wireframe_location.png" alt="Drop-off Spot" class="w-full h-auto object-contain pointer-events-none">
-                            </div>
-                            <p class="font-bold text-[10px] text-charcoal dark:text-white text-center">3. Drop-off Spot</p>
-                        </div>
-                        <div class="flex-none w-[170px] space-y-2">
-                            <div class="border border-neutral-200 dark:border-surface rounded-xl overflow-hidden bg-neutral-100 dark:bg-surface/30">
-                                <img src="doodh_wireframe_billing.png" alt="Billing Cycle" class="w-full h-auto object-contain pointer-events-none">
-                            </div>
-                            <p class="font-bold text-[10px] text-charcoal dark:text-white text-center">4. Billing Cycle</p>
-                        </div>
-                        <div class="flex-none w-[170px] space-y-2">
-                            <div class="border border-neutral-200 dark:border-surface rounded-xl overflow-hidden bg-neutral-100 dark:bg-surface/30">
-                                <img src="doodh_wireframe_home.png" alt="Subscriber Home Dashboard" class="w-full h-auto object-contain pointer-events-none">
-                            </div>
-                            <p class="font-bold text-[10px] text-charcoal dark:text-white text-center">5. Home Dashboard</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="space-y-4">
-                    <h5 class="text-base font-bold font-display text-charcoal dark:text-white flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-doodh-pista"></span>
-                        Key UX Decisions
-                    </h5>
-                    <div class="space-y-3 pl-4 border-l border-neutral-200 dark:border-surface">
-                        <p>
-                            <strong>1. Home Screen as the Daily Control Panel:</strong> 
-                            We built the landing view to display the active state, today's quantity, the 5:30-5:45 AM arrival window, the delivery spot, and quick actions (pause, edit, view plan) immediately, giving repeat users fast access.
-                        </p>
-                        <p>
-                            <strong>2. Granular Weekly scheduling:</strong>
-                            Instead of a single global quantity, households can configure different milk volumes day-by-day (e.g., 1L during weekdays, 2L on weekends) to match usage patterns and reduce waste.
-                        </p>
-                        <p>
-                            <strong>3. Date-Range Vacation Pause:</strong>
-                            Pausing is framed as a temporary vacation calendar rather than subscription ending. Estimated refund adjustments (e.g., ₹330 credits) are calculated in real time, increasing customer retention.
-                        </p>
-                        <p>
-                            <strong>4. Respectful Exit (Zero Dark Patterns):</strong>
-                            Cancellation flows respect user decisions. The exit path includes an optional reason survey, a clear summary of lost benefits, and a prominent "Yes, Cancel" action with no hidden traps or emotional manipulation.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="space-y-4">
-                    <h5 class="text-base font-bold font-display text-charcoal dark:text-white flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-doodh-pista"></span>
-                        Assumptions & Edge Cases
-                    </h5>
-                    <ul class="list-disc list-inside space-y-1.5 pl-2 text-neutral-500 dark:text-gray-400">
-                        <li><strong>0L Allowances:</strong> Users can set quantities to 0L for select weekdays to skip, but at least one active delivery day must remain configured. Setting all days to 0L triggers validation errors.</li>
-                        <li><strong>Pause Constraints:</strong> Dates selected for pauses cannot overlap with existing suspensions.</li>
-                        <li><strong>Failed Payments:</strong> If monthly pre-paid renewals fail, a prominent warning indicator triggers on the Home Screen without immediately cutting deliveries.</li>
-                        <li><strong>Subscription Recovery:</strong> Cancelled subscribers see a modified Home state providing single-tap options to restart a plan.</li>
-                    </ul>
-                </div>
-
-                <div class="space-y-4">
-                    <h5 class="text-base font-bold font-display text-charcoal dark:text-white flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-doodh-pista"></span>
-                        Key Takeaway
-                    </h5>
-                    <p>
-                        Milk subscriptions represent a highly recurring daily product lifecycle. By prioritizing transparency (cancellation clarity), granular flexibility (per-day quantity scheduling), and clean state changes (Active vs. Paused), we convert potential subscription cancellations into simple temporary pauses, yielding long-term client lifetime value.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- VIDEO POPUP MODAL -->
     <div id="video-modal" class="fixed inset-0 z-[60] opacity-0 pointer-events-none transition-all duration-300 bg-void/90 backdrop-blur-2xl flex items-center justify-center p-4">
         <!-- Close overlay trigger -->
@@ -1993,11 +1340,12 @@
             <div class="glass-panel border border-neutral-300 dark:border-white/5 rounded-2xl overflow-hidden shadow-2xl">
                 <video 
                     id="video-modal-player"
-                    src="NexusFin_tech.mp4"
                     controls 
                     autoplay
                     class="w-full max-h-[75vh] object-contain bg-black"
-                ></video>
+                >
+                    <source src="NexusFin_tech.mp4" type="video/mp4">
+                </video>
                 <!-- Video info bar -->
                 <div class="p-4 flex justify-between items-center border-t border-neutral-300/30 dark:border-white/5">
                     <div>
@@ -2254,7 +1602,6 @@
                 <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-neon-cyan dark:hover:border-neon-cyan light:hover:border-electric-blue rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" data-question="Explore Fintech Case Study">Fintech Redesign</button>
                 <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-neon-cyan dark:hover:border-neon-cyan light:hover:border-electric-blue rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" data-question="Explore E-Comm Case Study">Checkout Friction</button>
                 <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-neon-cyan dark:hover:border-neon-cyan light:hover:border-electric-blue rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" data-question="Explore Art Gallery Case Study">Art Gallery</button>
-                <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-doodh-pista rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" data-question="Explore Doodh Subscription">Doodh Delivery</button>
                 <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-neon-cyan dark:hover:border-neon-cyan light:hover:border-electric-blue rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" data-question="Book walkthrough slot">Book brief call</button>
             </div>
 
@@ -2592,7 +1939,6 @@
                 checkout: "The E-Commerce Checkout project optimized cart friction, leading to an 18% lift in conversions through progressive disclosure and validation animations. <button onclick=\"openModal('checkout-modal')\" class='mt-2 block px-2.5 py-1 bg-neon-magenta text-white rounded font-mono font-bold text-[9px] hover:shadow-neon-pink cursor-pointer'>Open Case Study Modal</button>",
                 gallery: "The Graphic Art Gallery case study focuses on spatial digital acquisition. It features fluid canvas interactions, a contextual wall-scaler, and low-friction inquiry flows, yielding +28% inquiry conversions and +35% immersion lift. <button onclick=\"openModal('gallery-modal')\" class='mt-2 block px-2.5 py-1 bg-[#79C000] text-void rounded font-mono font-bold text-[9px] cursor-pointer'>Open Case Study Modal</button>",
                 book: "You can book a 20-minute slot directly on his automated calendar widget in the footer! Let me open it for you. <button onclick=\"document.getElementById('recruiter-briefing').scrollIntoView(); setTimeout(openBookingScheduler, 500);\" class='mt-2 block px-2.5 py-1 bg-acid-lime text-void rounded font-mono font-bold text-[9px] cursor-pointer'>Initialize Booking Calendar</button>",
-                doodh: "Doodh is an organic milk delivery subscription app focusing on daily management, pause date ranges, and respectful cancellation flows (zero dark patterns). It optimized user control and states. <button onclick=\"openModal('doodh-modal')\" class='mt-2 block px-2.5 py-1 bg-doodh-pista text-[#234236] rounded font-mono font-bold text-[9px] cursor-pointer'>Open Case Study Modal</button>",
                 fallback: "Query processed, but response yields low certainty. Try selecting a suggested capability matrix chip or typing 'Who is Kaustobh?' or 'Book a briefing'."
             };
 
@@ -2963,7 +2309,6 @@
                 fintech: document.getElementById('project-fintech'),
                 checkout: document.getElementById('project-checkout'),
                 gallery: document.getElementById('project-gallery'),
-                doodh: document.getElementById('project-doodh'),
                 briefing: document.getElementById('recruiter-briefing')
             };
 
@@ -2991,10 +2336,8 @@
                     updateActiveHUDDot('fintech');
                 } else if (scrollPos >= sections.checkout.offsetTop && scrollPos < sections.gallery.offsetTop) {
                     updateActiveHUDDot('checkout');
-                } else if (scrollPos >= sections.gallery.offsetTop && scrollPos < sections.doodh.offsetTop) {
+                } else if (scrollPos >= sections.gallery.offsetTop && scrollPos < sections.briefing.offsetTop) {
                     updateActiveHUDDot('gallery');
-                } else if (scrollPos >= sections.doodh.offsetTop && scrollPos < sections.briefing.offsetTop) {
-                    updateActiveHUDDot('doodh');
                 } else {
                     updateActiveHUDDot('briefing');
                 }
@@ -3011,8 +2354,6 @@
                     updateActiveHUDDot('checkout');
                 } else if (scrollerPos >= sectionHeight * 2 && scrollerPos < sectionHeight * 3) {
                     updateActiveHUDDot('gallery');
-                } else if (scrollerPos >= sectionHeight * 3 && scrollerPos < sectionHeight * 4) {
-                    updateActiveHUDDot('doodh');
                 } else {
                     updateActiveHUDDot('briefing');
                 }
@@ -3441,171 +2782,6 @@
 
 
             // ==========================================
-            // G3. MOCKUP ENGINE 4: DOODH SUBSCRIPTION APP
-            // ==========================================
-            const doodhScreens = {
-                welcome: document.getElementById('doodh-screen-welcome'),
-                address: document.getElementById('doodh-screen-address'),
-                location: document.getElementById('doodh-screen-location'),
-                billing: document.getElementById('doodh-screen-billing'),
-                active: document.getElementById('doodh-screen-active'),
-                schedule: document.getElementById('doodh-screen-schedule'),
-                pause: document.getElementById('doodh-screen-pause'),
-                'paused-home': document.getElementById('doodh-screen-paused-home'),
-                cancel: document.getElementById('doodh-screen-cancel'),
-                'cancelled-home': document.getElementById('doodh-screen-cancelled-home'),
-                'billing-summary': document.getElementById('doodh-screen-billing-summary')
-            };
-
-            const doodhHeaderTitle = document.getElementById('doodh-header-title');
-            const doodhHeaderBadge = document.getElementById('doodh-header-badge');
-            const doodhHeaderState = document.getElementById('doodh-header-state');
-
-            const doodhQtys = { mon: 1, tue: 1, wed: 2, thu: 2, fri: 1, sat: 1, sun: 1 };
-
-            window.switchDoodhScreen = function(screenId) {
-                // Play a clicking sound if initialized
-                playSyntheticClick('mechanical');
-
-                // Hide all screens
-                Object.keys(doodhScreens).forEach(k => {
-                    if (doodhScreens[k]) {
-                        doodhScreens[k].classList.add('hidden');
-                    }
-                });
-
-                // Show target screen
-                if (doodhScreens[screenId]) {
-                    doodhScreens[screenId].classList.remove('hidden');
-                }
-
-                // Update headers
-                if (screenId === 'welcome') {
-                    doodhHeaderTitle.innerText = 'Welcome';
-                    doodhHeaderBadge.innerText = 'New User';
-                    doodhHeaderBadge.className = 'px-2 py-0.5 rounded-full text-[7px] font-bold bg-neutral-100 dark:bg-neutral-800 text-neutral-500 border border-neutral-300 dark:border-neutral-700';
-                    doodhHeaderState.innerText = '[Onboarding // Setup]';
-                } else if (screenId === 'address') {
-                    doodhHeaderTitle.innerText = 'Address';
-                    doodhHeaderBadge.innerText = 'Step 1 of 4';
-                    doodhHeaderBadge.className = 'px-2 py-0.5 rounded-full text-[7px] font-bold bg-[#A8CFA1]/20 text-[#2f8f57] border border-[#A8CFA1]/30';
-                    doodhHeaderState.innerText = '[Onboarding // Setup]';
-                } else if (screenId === 'location') {
-                    doodhHeaderTitle.innerText = 'Drop-off';
-                    doodhHeaderBadge.innerText = 'Step 2 of 4';
-                    doodhHeaderBadge.className = 'px-2 py-0.5 rounded-full text-[7px] font-bold bg-[#A8CFA1]/20 text-[#2f8f57] border border-[#A8CFA1]/30';
-                    doodhHeaderState.innerText = '[Onboarding // Setup]';
-                } else if (screenId === 'billing') {
-                    doodhHeaderTitle.innerText = 'Billing Plan';
-                    doodhHeaderBadge.innerText = 'Step 4 of 4';
-                    doodhHeaderBadge.className = 'px-2 py-0.5 rounded-full text-[7px] font-bold bg-[#A8CFA1]/20 text-[#2f8f57] border border-[#A8CFA1]/30';
-                    doodhHeaderState.innerText = '[Onboarding // Setup]';
-                } else if (screenId === 'active') {
-                    doodhHeaderTitle.innerText = 'Home';
-                    doodhHeaderBadge.innerText = 'Active';
-                    doodhHeaderBadge.className = 'px-2 py-0.5 rounded-full text-[7px] font-bold bg-green-100 dark:bg-green-950/40 text-green-700 dark:text-green-400 border border-green-300 dark:border-green-800';
-                    doodhHeaderState.innerText = '[Subscription // Active]';
-                } else if (screenId === 'schedule') {
-                    doodhHeaderTitle.innerText = 'Weekly Schedule';
-                    doodhHeaderBadge.innerText = 'Editable';
-                    doodhHeaderBadge.className = 'px-2 py-0.5 rounded-full text-[7px] font-bold bg-blue-100 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400 border border-blue-300 dark:border-blue-800';
-                    doodhHeaderState.innerText = '[Schedule // Control]';
-                    
-                    // Initialize stepper values
-                    Object.keys(doodhQtys).forEach(d => {
-                        const el = document.getElementById(`doodh-qty-${d}`);
-                        if (el) el.innerText = doodhQtys[d] + 'L';
-                    });
-                } else if (screenId === 'pause') {
-                    doodhHeaderTitle.innerText = 'Pause Delivery';
-                    doodhHeaderBadge.innerText = 'Paused preview';
-                    doodhHeaderBadge.className = 'px-2 py-0.5 rounded-full text-[7px] font-bold bg-yellow-100 dark:bg-yellow-950/40 text-yellow-700 dark:text-yellow-400 border border-yellow-300 dark:border-yellow-800';
-                    doodhHeaderState.innerText = '[Vacation // Pause]';
-                } else if (screenId === 'paused-home') {
-                    doodhHeaderTitle.innerText = 'Home';
-                    doodhHeaderBadge.innerText = 'Paused';
-                    doodhHeaderBadge.className = 'px-2 py-0.5 rounded-full text-[7px] font-bold bg-yellow-100 dark:bg-yellow-950/40 text-yellow-700 dark:text-yellow-400 border border-yellow-300 dark:border-yellow-800';
-                    doodhHeaderState.innerText = '[Subscription // Paused]';
-                } else if (screenId === 'cancel') {
-                    doodhHeaderTitle.innerText = 'Cancel';
-                    doodhHeaderBadge.innerText = 'Exit Flow';
-                    doodhHeaderBadge.className = 'px-2 py-0.5 rounded-full text-[7px] font-bold bg-red-100 dark:bg-red-950/40 text-red-700 dark:text-red-400 border border-red-300 dark:border-red-800';
-                    doodhHeaderState.innerText = '[Subscription // Cancellation]';
-                } else if (screenId === 'cancelled-home') {
-                    doodhHeaderTitle.innerText = 'Home';
-                    doodhHeaderBadge.innerText = 'Cancelled';
-                    doodhHeaderBadge.className = 'px-2 py-0.5 rounded-full text-[7px] font-bold bg-red-100 dark:bg-red-950/40 text-red-700 dark:text-red-400 border border-red-300 dark:border-red-800';
-                    doodhHeaderState.innerText = '[Subscription // Terminated]';
-                } else if (screenId === 'billing-summary') {
-                    doodhHeaderTitle.innerText = 'Plan & Billing';
-                    doodhHeaderBadge.innerText = 'Paid';
-                    doodhHeaderBadge.className = 'px-2 py-0.5 rounded-full text-[7px] font-bold bg-green-100 dark:bg-green-950/40 text-green-700 dark:text-green-400 border border-green-300 dark:border-green-800';
-                    doodhHeaderState.innerText = '[Plan // Overview]';
-                }
-            };
-
-            window.doodhAdjustQty = function(day, diff) {
-                const current = doodhQtys[day];
-                const newVal = Math.max(0, current + diff);
-                doodhQtys[day] = newVal;
-                
-                const el = document.getElementById(`doodh-qty-${day}`);
-                if (el) el.innerText = newVal + 'L';
-                
-                // Real-time validation check
-                const total = Object.values(doodhQtys).reduce((a, b) => a + b, 0);
-                const errorEl = document.getElementById('doodh-schedule-validation-error');
-                if (errorEl) {
-                    if (total === 0) {
-                        errorEl.classList.remove('hidden');
-                    } else {
-                        errorEl.classList.add('hidden');
-                    }
-                }
-            };
-
-            window.doodhSaveSchedule = function() {
-                const total = Object.values(doodhQtys).reduce((a, b) => a + b, 0);
-                if (total === 0) {
-                    const errorEl = document.getElementById('doodh-schedule-validation-error');
-                    if (errorEl) errorEl.classList.remove('hidden');
-                    playSyntheticClick('error');
-                    return;
-                }
-
-                // Update active home screen schedule chips
-                const container = document.getElementById('doodh-schedule-chips');
-                if (container) {
-                    container.innerHTML = '';
-                    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-                    const dayKeys = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-                    
-                    dayKeys.forEach((k, idx) => {
-                        const qty = doodhQtys[k];
-                        const chip = document.createElement('span');
-                        chip.className = 'px-1 py-0.5 rounded bg-[#F3F8F0] dark:bg-neutral-800 border border-doodh-border dark:border-neutral-700 text-[6px] text-doodh-deep dark:text-gray-300 font-mono';
-                        chip.innerText = `${days[idx]} ${qty}L`;
-                        container.appendChild(chip);
-                    });
-                }
-
-                // Update weekly total label
-                const totalLabel = document.getElementById('doodh-weekly-total');
-                if (totalLabel) totalLabel.innerText = `Total: ${total}L/week`;
-                
-                const summaryTotalLabel = document.getElementById('doodh-summary-weekly-litres');
-                if (summaryTotalLabel) summaryTotalLabel.innerText = `${total}L`;
-
-                // Update today's quantity display on Home
-                const todayQtyLabel = document.getElementById('doodh-today-qty');
-                if (todayQtyLabel) todayQtyLabel.innerText = `${doodhQtys.mon}L Organic Milk`;
-
-                // Transition back to active
-                switchDoodhScreen('active');
-            };
-
-
-            // ==========================================
             // H. IMMERSIVE GLASSMORPHIC CASE STUDY MODALS
             // ==========================================
             window.openModal = function(modalId) {
@@ -3648,8 +2824,14 @@
                 const finalTex = kpiText || 'Reduced task time by 40%';
                 const finalModalId = caseStudyModalId || 'fintech-modal';
                 
-                // Update player source directly
-                player.src = finalSrc;
+                // Update player source
+                const currentSrc = player.querySelector('source') ? player.querySelector('source').getAttribute('src') : '';
+                if (currentSrc !== finalSrc) {
+                    player.src = finalSrc;
+                    // If there's an inner source element, update it too
+                    const sourceEl = player.querySelector('source');
+                    if (sourceEl) sourceEl.setAttribute('src', finalSrc);
+                }
                 
                 // Update text elements
                 const titleEl = modal.querySelector('.video-kpi-title');
@@ -4127,8 +3309,6 @@
                     reply = chatbotDatabase.gallery;
                 } else if (q.includes('book') || q.includes('briefing') || q.includes('walkthrough') || q.includes('schedule') || q.includes('call')) {
                     reply = chatbotDatabase.book;
-                } else if (q.includes('doodh') || q.includes('milk') || q.includes('delivery') || q.includes('subscription') || q.includes('pause') || q.includes('vacation')) {
-                    reply = chatbotDatabase.doodh;
                 }
 
                 setTimeout(() => {
