@@ -24,6 +24,11 @@
                         'neon-cyan': '#00F3FF',
                         'neon-magenta': '#FF00A0',
                         'acid-lime': '#D4FF00',
+                        'pista-green': '#A8CFA1',
+                        'deep-green': '#5F8F68',
+                        'dark-green': '#234236',
+                        'warning-yellow': '#F0B85F',
+                        'danger-red': '#D96C63',
                         
                         // Solar Light Theme equivalents (Low glare, highly readable contrast)
                         solar: '#F4F5F7',
@@ -41,6 +46,7 @@
                     boxShadow: {
                         'neon': '0 0 10px rgba(0, 243, 255, 0.4), 0 0 20px rgba(0, 243, 255, 0.2)',
                         'neon-pink': '0 0 10px rgba(255, 0, 160, 0.4), 0 0 20px rgba(255, 0, 160, 0.2)',
+                        'neon-green': '0 0 10px rgba(168, 207, 161, 0.4), 0 0 20px rgba(168, 207, 161, 0.2)',
                         'light-blue': '0 0 10px rgba(0, 93, 255, 0.15), 0 0 15px rgba(0, 93, 255, 0.1)',
                     }
                 }
@@ -358,6 +364,7 @@
         <a href="#project-fintech" class="hud-dot w-3 h-3 rounded-full bg-neutral-600 hover:bg-neon-cyan dark:hover:bg-neon-cyan light:hover:bg-electric-blue transition-all duration-300 border border-transparent" data-section="fintech" title="Fintech Overhaul"></a>
         <a href="#project-checkout" class="hud-dot w-3 h-3 rounded-full bg-neutral-600 hover:bg-neon-magenta dark:hover:bg-neon-magenta light:hover:bg-deep-rose transition-all duration-300 border border-transparent" data-section="checkout" title="Checkout frictionless"></a>
         <a href="#project-gallery" class="hud-dot w-3 h-3 rounded-full bg-neutral-600 hover:bg-acid-lime dark:hover:bg-acid-lime light:hover:bg-forest-lime transition-all duration-300 border border-transparent" data-section="gallery" title="Art Gallery"></a>
+        <a href="#project-MilkDel" class="hud-dot w-3 h-3 rounded-full bg-neutral-600 hover:bg-pista-green dark:hover:bg-pista-green light:hover:bg-deep-green transition-all duration-300 border border-transparent" data-section="MilkDel" title="Milk Subscription"></a>
         <a href="#recruiter-briefing" class="hud-dot w-3 h-3 rounded-full bg-neutral-600 hover:bg-neutral-400 transition-all duration-300 border border-transparent" data-section="briefing" title="Hiring Briefing"></a>
     </nav>
 
@@ -894,6 +901,224 @@
             </div>
         </section>
         
+        <!-- Project 4: Doodh Milk Subscription -->
+        <section id="project-MilkDel" class="h-screen w-full snap-center flex flex-col md:flex-row items-center justify-between px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-20 md:pt-0">
+            <div class="w-full md:w-1/2 pr-0 md:pr-12 flex flex-col justify-center">
+                <span class="text-xs font-mono text-pista-green dark:text-pista-green light:text-deep-green uppercase tracking-widest mb-2 block">[Case Study // Interaction]</span>
+                <h3 class="text-4xl md:text-5xl font-display font-bold mb-4 text-pista-green dark:text-pista-green light:text-deep-green">Doodh Subscription</h3>
+                <p class="text-neutral-500 dark:text-gray-400 font-body text-base md:text-lg mb-6 max-w-md leading-relaxed">
+                    Designed a flexible subscription management experience for daily milk delivery, optimizing weekly schedules, vacation pause states, and respectful exit flows.
+                </p>
+                
+                <!-- Neon Timeline -->
+                <div class="flex flex-col gap-3 pl-4 border-l-2 border-neutral-200 dark:border-surface relative">
+                    <div class="absolute left-[-2px] top-0 h-1/3 w-[2px] bg-gradient-to-b from-pista-green to-transparent dark:from-pista-green light:from-deep-green shadow-[0_0_10px_#A8CFA1]"></div>
+                    <p class="text-xs font-mono text-neutral-800 dark:text-white flex items-center"><span class="text-pista-green dark:text-pista-green light:text-deep-green font-bold mr-2">01</span> Subscription State Logic</p>
+                    <p class="text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">02</span> Dynamic Weekly Scheduling</p>
+                    <p class="text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">03</span> Respectful Exit Flows</p>
+                </div>
+
+                <div class="mt-8">
+                    <button onclick="openModal('MilkDel-modal')" class="group flex items-center gap-2 text-charcoal dark:text-white font-bold hover:text-pista-green dark:hover:text-pista-green light:hover:text-deep-green transition-colors cursor-pointer text-sm font-mono border-b border-transparent hover:border-pista-green pb-1 w-fit">
+                        Open subscription audit 
+                        <span class="transform group-hover:translate-x-1.5 transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="inline"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mockup Visual Widget (Doodh smartphone widget) -->
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 glass-panel rounded-xl border border-neutral-200 dark:border-white/5 relative overflow-hidden group flex items-center justify-center p-4 transform hover:scale-[1.01] transition-all duration-300 shadow-md hover:shadow-xl cursor-default" id="milkdel-mockup-card">
+                <!-- Smartphone mockup container -->
+                <div class="w-[260px] h-[440px] glass-panel border border-neutral-300/40 dark:border-white/10 rounded-2xl p-3 text-[11px] flex flex-col justify-between relative overflow-hidden bg-white dark:bg-[#0c0c0e] text-neutral-600 dark:text-neutral-300">
+                    
+                    <!-- Top Status Bar Mock -->
+                    <div class="flex justify-between items-center border-b border-neutral-200 dark:border-white/5 pb-1 text-[9px] font-mono text-neutral-400">
+                        <span>Doodh App</span>
+                        <span>05:30 AM</span>
+                    </div>
+
+                    <!-- 1. Home Active Screen -->
+                    <div id="milkdel-view-home" class="w-full h-[370px] flex flex-col justify-between transition-all duration-300 opacity-100 scale-100">
+                        <div class="flex justify-between items-center py-1">
+                            <span class="font-bold text-charcoal dark:text-white">Home Screen</span>
+                            <span class="bg-pista-green/20 dark:bg-pista-green/10 text-deep-green dark:text-pista-green px-2 py-0.5 rounded-full font-bold text-[8px] font-mono">Active</span>
+                        </div>
+                        
+                        <!-- Today's Delivery Card -->
+                        <div class="bg-neutral-50 dark:bg-surface/50 border border-neutral-200 dark:border-white/5 rounded-lg p-2.5 text-[10px] space-y-1">
+                            <div class="flex justify-between font-mono text-[8px] text-neutral-400">
+                                <span>TODAY'S DELIVERY</span>
+                                <span class="text-deep-green dark:text-pista-green font-bold">5:30–7:00 AM</span>
+                            </div>
+                            <p class="font-bold text-charcoal dark:text-white text-xs">1L Organic Fresh Milk</p>
+                            <p class="text-[8px] text-neutral-400">Leave at doorstep near gate crate</p>
+                        </div>
+
+                        <!-- Weekly Grid Summary -->
+                        <div class="bg-neutral-50 dark:bg-surface/50 border border-neutral-200 dark:border-white/5 rounded-lg p-2 font-mono text-[8px] space-y-1">
+                            <div class="flex justify-between text-neutral-400 font-bold">
+                                <span>WEEKLY SCHED</span>
+                                <span id="milkdel-home-weekly-total" class="text-deep-green dark:text-pista-green">10L/wk</span>
+                            </div>
+                            <div class="grid grid-cols-7 gap-0.5 text-center text-charcoal dark:text-white">
+                                <div class="bg-neutral-200 dark:bg-void/50 rounded py-0.5" title="Mon">M<br/><span class="font-bold" id="homesched-0">1</span></div>
+                                <div class="bg-neutral-200 dark:bg-void/50 rounded py-0.5" title="Tue">T<br/><span class="font-bold" id="homesched-1">1</span></div>
+                                <div class="bg-neutral-200 dark:bg-void/50 rounded py-0.5" title="Wed">W<br/><span class="font-bold" id="homesched-2">1</span></div>
+                                <div class="bg-neutral-200 dark:bg-void/50 rounded py-0.5" title="Thu">T<br/><span class="font-bold" id="homesched-3">1</span></div>
+                                <div class="bg-neutral-200 dark:bg-void/50 rounded py-0.5" title="Fri">N<br/><span class="font-bold" id="homesched-4">1</span></div>
+                                <div class="bg-neutral-200 dark:bg-void/50 rounded py-0.5" title="Sat">S<br/><span class="font-bold" id="homesched-5">2</span></div>
+                                <div class="bg-neutral-200 dark:bg-void/50 rounded py-0.5" title="Sun">S<br/><span class="font-bold" id="homesched-6">2</span></div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Row -->
+                        <div class="flex flex-col gap-1.5 pt-2 border-t border-neutral-200 dark:border-white/5">
+                            <button id="milkdel-btn-goto-pause" class="w-full bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-neutral-400 dark:hover:border-neutral-500 font-bold py-1.5 rounded transition-all cursor-pointer text-center text-[9px] font-mono uppercase text-charcoal dark:text-white">
+                                ⏸ Pause Deliveries
+                            </button>
+                            <button id="milkdel-btn-goto-schedule" class="w-full bg-pista-green dark:bg-pista-green light:bg-deep-green text-charcoal dark:text-void light:text-white font-bold py-1.5 rounded hover:shadow-neon-green transition-all cursor-pointer text-center text-[9px] font-mono uppercase">
+                                📅 Edit Weekly Schedule
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 2. Edit Schedule Screen -->
+                    <div id="milkdel-view-schedule" class="w-full h-[370px] flex flex-col justify-between transition-all duration-300 opacity-0 scale-95 pointer-events-none absolute inset-x-3 bottom-3 bg-white dark:bg-[#0c0c0e] z-10">
+                        <div class="flex justify-between items-center py-1">
+                            <button id="milkdel-btn-back-from-sched" class="text-neutral-400 hover:text-charcoal dark:hover:text-white flex items-center gap-0.5 cursor-pointer font-mono text-[8px]">
+                                &larr; HOME
+                            </button>
+                            <span class="font-bold text-charcoal dark:text-white">Edit Schedule</span>
+                            <span class="bg-pista-green/20 dark:bg-pista-green/10 text-deep-green dark:text-pista-green px-1.5 py-0.5 rounded font-bold text-[8px] font-mono">Editable</span>
+                        </div>
+
+                        <!-- Daily Quantities Stepper Stack -->
+                        <div class="grow overflow-y-auto pr-1 my-1.5 space-y-1" style="max-height: 230px;">
+                            <div class="flex justify-between items-center bg-neutral-50 dark:bg-surface/50 border border-neutral-200 dark:border-white/5 rounded px-2 py-1">
+                                <span class="font-bold font-mono">Mon</span>
+                                <div class="flex items-center gap-1.5">
+                                    <button class="w-5 h-5 rounded border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-void font-bold flex items-center justify-center cursor-pointer" onclick="updateMockQty(0, -1)">-</button>
+                                    <span class="w-5 text-center font-bold font-mono text-xs" id="mockqty-0">1L</span>
+                                    <button class="w-5 h-5 rounded border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-void font-bold flex items-center justify-center cursor-pointer" onclick="updateMockQty(0, 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center bg-neutral-50 dark:bg-surface/50 border border-neutral-200 dark:border-white/5 rounded px-2 py-1">
+                                <span class="font-bold font-mono">Tue</span>
+                                <div class="flex items-center gap-1.5">
+                                    <button class="w-5 h-5 rounded border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-void font-bold flex items-center justify-center cursor-pointer" onclick="updateMockQty(1, -1)">-</button>
+                                    <span class="w-5 text-center font-bold font-mono text-xs" id="mockqty-1">1L</span>
+                                    <button class="w-5 h-5 rounded border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-void font-bold flex items-center justify-center cursor-pointer" onclick="updateMockQty(1, 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center bg-neutral-50 dark:bg-surface/50 border border-neutral-200 dark:border-white/5 rounded px-2 py-1">
+                                <span class="font-bold font-mono">Wed</span>
+                                <div class="flex items-center gap-1.5">
+                                    <button class="w-5 h-5 rounded border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-void font-bold flex items-center justify-center cursor-pointer" onclick="updateMockQty(2, -1)">-</button>
+                                    <span class="w-5 text-center font-bold font-mono text-xs" id="mockqty-2">1L</span>
+                                    <button class="w-5 h-5 rounded border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-void font-bold flex items-center justify-center cursor-pointer" onclick="updateMockQty(2, 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center bg-neutral-50 dark:bg-surface/50 border border-neutral-200 dark:border-white/5 rounded px-2 py-1">
+                                <span class="font-bold font-mono">Thu</span>
+                                <div class="flex items-center gap-1.5">
+                                    <button class="w-5 h-5 rounded border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-void font-bold flex items-center justify-center cursor-pointer" onclick="updateMockQty(3, -1)">-</button>
+                                    <span class="w-5 text-center font-bold font-mono text-xs" id="mockqty-3">1L</span>
+                                    <button class="w-5 h-5 rounded border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-void font-bold flex items-center justify-center cursor-pointer" onclick="updateMockQty(3, 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center bg-neutral-50 dark:bg-surface/50 border border-neutral-200 dark:border-white/5 rounded px-2 py-1">
+                                <span class="font-bold font-mono">Fri</span>
+                                <div class="flex items-center gap-1.5">
+                                    <button class="w-5 h-5 rounded border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-void font-bold flex items-center justify-center cursor-pointer" onclick="updateMockQty(4, -1)">-</button>
+                                    <span class="w-5 text-center font-bold font-mono text-xs" id="mockqty-4">1L</span>
+                                    <button class="w-5 h-5 rounded border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-void font-bold flex items-center justify-center cursor-pointer" onclick="updateMockQty(4, 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center bg-neutral-50 dark:bg-surface/50 border border-neutral-200 dark:border-white/5 rounded px-2 py-1">
+                                <span class="font-bold font-mono">Sat</span>
+                                <div class="flex items-center gap-1.5">
+                                    <button class="w-5 h-5 rounded border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-void font-bold flex items-center justify-center cursor-pointer" onclick="updateMockQty(5, -1)">-</button>
+                                    <span class="w-5 text-center font-bold font-mono text-xs" id="mockqty-5">2L</span>
+                                    <button class="w-5 h-5 rounded border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-void font-bold flex items-center justify-center cursor-pointer" onclick="updateMockQty(5, 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center bg-neutral-50 dark:bg-surface/50 border border-neutral-200 dark:border-white/5 rounded px-2 py-1">
+                                <span class="font-bold font-mono">Sun</span>
+                                <div class="flex items-center gap-1.5">
+                                    <button class="w-5 h-5 rounded border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-void font-bold flex items-center justify-center cursor-pointer" onclick="updateMockQty(6, -1)">-</button>
+                                    <span class="w-5 text-center font-bold font-mono text-xs" id="mockqty-6">2L</span>
+                                    <button class="w-5 h-5 rounded border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-void font-bold flex items-center justify-center cursor-pointer" onclick="updateMockQty(6, 1)">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stepper Summary Bar & CTAs -->
+                        <div class="pt-2 border-t border-neutral-200 dark:border-white/5 flex flex-col gap-1.5">
+                            <div class="flex justify-between font-mono text-[9px] text-neutral-400">
+                                <span>TOTAL LITRES</span>
+                                <span id="milkdel-sched-total-label" class="font-bold text-deep-green dark:text-pista-green">10L/week</span>
+                            </div>
+                            <button id="milkdel-btn-save-schedule" class="w-full bg-pista-green dark:bg-pista-green light:bg-deep-green text-charcoal dark:text-void light:text-white font-bold py-1.5 rounded hover:shadow-neon-green transition-all cursor-pointer text-center text-[9px] font-mono uppercase">
+                                Save Weekly Sched
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 3. Paused Vacation Screen -->
+                    <div id="milkdel-view-paused" class="w-full h-[370px] flex flex-col justify-between transition-all duration-300 opacity-0 scale-95 pointer-events-none absolute inset-x-3 bottom-3 bg-white dark:bg-[#0c0c0e] z-10">
+                        <div class="flex justify-between items-center py-1">
+                            <span>Vacation Pause</span>
+                            <span class="bg-warning-yellow/20 text-warning-yellow px-1.5 py-0.5 rounded font-bold text-[8px] font-mono">Paused</span>
+                        </div>
+
+                        <!-- Pause visual notification -->
+                        <div class="grow flex flex-col items-center justify-center text-center p-3 gap-2">
+                            <div class="w-12 h-12 rounded-full bg-warning-yellow/10 border border-warning-yellow flex items-center justify-center text-warning-yellow text-xl select-none">
+                                ⏸
+                            </div>
+                            <h5 class="text-xs font-bold text-charcoal dark:text-white">Delivery Is Paused</h5>
+                            <p class="text-[9px] text-neutral-400 leading-normal max-w-[160px]">No milk will be delivered from 15 Jun to 25 Jun. Auto-resumes on 26 Jun.</p>
+                            <span class="font-mono text-[8px] text-deep-green dark:text-pista-green bg-neutral-100 dark:bg-void px-2 py-1 rounded">Estimated ₹330 refund credit</span>
+                        </div>
+
+                        <!-- Resume CTA -->
+                        <button id="milkdel-btn-resume" class="w-full bg-pista-green dark:bg-pista-green light:bg-deep-green text-charcoal dark:text-void light:text-white font-bold py-1.5 rounded hover:shadow-neon-green transition-all cursor-pointer text-center text-[9px] font-mono uppercase">
+                            ▶ Resume Deliveries Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Primary Metric glass-panel indicator overlay with Video -->
+                <div class="absolute bottom-6 right-6 glass-panel p-3 rounded-lg z-20 transition-all group-hover:-translate-y-2 border border-neutral-300/60 dark:border-white/10 shadow-lg w-[220px]">
+                    <!-- Clickable video thumbnail with play overlay -->
+                    <div class="w-full h-[100px] rounded overflow-hidden mb-2 border border-neutral-300/30 dark:border-white/5 bg-black relative cursor-pointer group/vid" onclick="openVideoModal('Doodh.mp4', 'Milk Subscription Model // KPI Preview', '+30% Retention Lift', 'MilkDel-modal')" title="Click to expand video">
+                        <video 
+                            id="MilkDel-kpi-video-thumb"
+                            autoplay 
+                            muted 
+                            loop 
+                            playsinline
+                            class="w-full h-full object-cover"
+                        >
+                            <source src="Doodh.mp4" type="video/mp4">
+                        </video>
+                        <!-- Play icon overlay -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-void/30 group-hover/vid:bg-void/50 transition-colors">
+                            <div class="w-8 h-8 rounded-full bg-pista-green/90 dark:bg-pista-green/90 light:bg-deep-green/90 flex items-center justify-center shadow-neon-green group-hover/vid:scale-110 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-acid-lime dark:text-acid-lime light:text-forest-lime font-mono text-[9px] uppercase tracking-wider font-bold">Retention Metrics</p>
+                    <p class="text-sm font-bold font-display text-charcoal dark:text-white mb-2">+30% Retention Lift</p>
+                    <a href="#" onclick="event.preventDefault(); openVideoModal('Doodh.mp4', 'Milk Subscription Model // KPI Preview', '+30% Retention Lift', 'MilkDel-modal');" class="flex items-center gap-1.5 text-neon-cyan dark:text-neon-cyan light:text-electric-blue font-mono text-[9px] font-bold hover:underline cursor-pointer group/link transition-colors">
+                        See projects
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transform group-hover/link:translate-x-0.5 transition-transform"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
         <!-- Recruiter / Contact Footer -->
         <section id="recruiter-briefing" class="h-[100vh] w-full snap-center flex flex-col items-center justify-center px-8 text-center relative z-10 bg-solar dark:bg-void transition-colors duration-500">
             <div class="max-w-2xl mx-auto flex flex-col items-center">
@@ -1317,6 +1542,170 @@
                     </h5>
                     <p>
                         By optimizing visual engagement rather than strictly speeding standard checkout logistics, inquiry rates for target paintings increased by <strong>28%</strong>. This case study reveals that in luxury aesthetic markets, visual immersion and scale contexts drive commercial acquisition models.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: Doodh Milk Subscription Case Study -->
+    <div id="MilkDel-modal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden opacity-0 pointer-events-none transition-all duration-300 bg-void/80 backdrop-blur-xl flex items-center justify-center p-4">
+        <!-- Close overlay trigger -->
+        <div class="absolute inset-0 cursor-zoom-out" onclick="closeModal('MilkDel-modal')"></div>
+        
+        <!-- Modal panel box -->
+        <div class="glass-panel border border-neutral-300 dark:border-white/5 w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl relative z-10 max-h-[90vh] flex flex-col bg-white dark:bg-void transition-transform duration-300 scale-95" id="MilkDel-modal-content">
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center p-5 border-b border-neutral-200 dark:border-surface">
+                <div>
+                    <span class="text-[9px] font-mono text-pista-green uppercase tracking-widest font-semibold">[Subscription Management]</span>
+                    <h4 class="text-2xl font-bold font-display text-charcoal dark:text-white">Doodh — Subscription Management Experience</h4>
+                </div>
+                <button onclick="closeModal('MilkDel-modal')" class="glass-panel p-2.5 rounded-full hover:bg-neutral-100 dark:hover:bg-surface transition-colors cursor-pointer text-neutral-400 hover:text-pista-green">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+
+            <!-- Scrollable Body content -->
+            <div class="p-6 md:p-8 overflow-y-auto space-y-8 select-text font-body text-xs md:text-sm leading-relaxed text-neutral-600 dark:text-neutral-300 max-w-full">
+                <!-- Grid summary stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-neutral-100 dark:bg-surface/50 p-3 rounded-lg border border-neutral-200 dark:border-white/5">
+                        <span class="text-[9px] font-mono text-neutral-400 uppercase tracking-widest">Retention Index</span>
+                        <h5 class="text-xl font-bold font-display text-charcoal dark:text-white mt-1">+30% Lift</h5>
+                    </div>
+                    <div class="bg-neutral-100 dark:bg-surface/50 p-3 rounded-lg border border-neutral-200 dark:border-white/5">
+                        <span class="text-[9px] font-mono text-neutral-400 uppercase tracking-widest">Scheduling flex</span>
+                        <h5 class="text-xl font-bold font-display text-charcoal dark:text-white mt-1">Per-day Qty</h5>
+                    </div>
+                    <div class="bg-neutral-100 dark:bg-surface/50 p-3 rounded-lg border border-neutral-200 dark:border-white/5">
+                        <span class="text-[9px] font-mono text-neutral-400 uppercase tracking-widest">Pause vs Cancel</span>
+                        <h5 class="text-xl font-bold font-display text-charcoal dark:text-white mt-1">-45% Churn</h5>
+                    </div>
+                    <div class="bg-neutral-100 dark:bg-surface/50 p-3 rounded-lg border border-neutral-200 dark:border-white/5">
+                        <span class="text-[9px] font-mono text-neutral-400 uppercase tracking-widest">Onboarding Speed</span>
+                        <h5 class="text-xl font-bold font-display text-charcoal dark:text-white mt-1">&lt; 2 Minutes</h5>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h5 class="text-base font-bold font-display text-charcoal dark:text-white flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-pista-green"></span>
+                        The Problem & Subscription Friction Analysis
+                    </h5>
+                    <p>
+                        Traditional subscription models treat daily deliveries like generic e-commerce checkout flows, neglecting the unique everyday nuances of milk consumption: varying household quantities throughout the week, temporary vacation pauses, billing transparency, and the need for a respectful, transparent cancellation flow that retains users through trust rather than dark patterns.
+                    </p>
+                </div>
+
+                <!-- Wireframe Draggable comparison slider widget -->
+                <div class="space-y-4">
+                    <h5 class="text-base font-bold font-display text-charcoal dark:text-white flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-pista-green"></span>
+                        Draggable Wireframe vs High-Fidelity App UI
+                    </h5>
+                    <div class="slider-container border border-neutral-300 dark:border-surface relative bg-neutral-900 shadow-inner">
+                        <!-- Before (Low Fidelity design wireframe) -->
+                        <div class="slider-before bg-neutral-900">
+                            <div class="w-full h-full p-6 flex flex-col justify-between text-neutral-400 font-mono text-[9px]">
+                                <div class="border border-dashed border-neutral-700 p-2 text-center rounded">
+                                    [ APP HEADER & STATUS PILL ]
+                                </div>
+                                <div class="border border-dashed border-neutral-700 p-3 my-4 grow flex flex-col justify-center gap-2 text-center">
+                                    <span>[ Today's Delivery Card: 1L Organic Milk ]</span>
+                                    <span>[ Time window: 5:30-7:00 AM ]</span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div class="border border-dashed border-neutral-700 p-2 text-center rounded">[ Pause action ]</div>
+                                    <div class="border border-dashed border-neutral-700 p-2 text-center rounded">[ Edit schedule ]</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- After (High Fidelity mock UI representation) -->
+                        <div class="slider-after bg-[#050507]">
+                            <div class="w-full h-full p-6 flex flex-col justify-between text-white font-mono text-[9px] relative bg-cover bg-center" style="background-image: radial-gradient(circle at top left, rgba(168,207,161,0.08), transparent 40%);">
+                                <div class="glass-panel border border-white/5 p-2 flex justify-between items-center rounded">
+                                    <span class="text-pista-green font-bold">DOODH SUBSCRIPTION HUB</span>
+                                    <span class="bg-pista-green/20 text-pista-green px-1.5 rounded text-[7px]">ACTIVE</span>
+                                </div>
+                                <div class="bg-surface/60 border border-white/5 p-4 rounded my-4 grow flex flex-col justify-center gap-2">
+                                    <div class="flex justify-between text-[7px] text-gray-400">
+                                        <span>TODAY'S ORDER</span>
+                                        <span class="text-pista-green">5:30–7:00 AM</span>
+                                    </div>
+                                    <span class="text-xs font-bold text-white">1L Fresh Organic Milk</span>
+                                    <div class="grid grid-cols-7 gap-1 mt-2 text-center text-[7px]">
+                                        <div class="bg-white/5 rounded p-1">M: 1</div>
+                                        <div class="bg-white/5 rounded p-1">T: 1</div>
+                                        <div class="bg-white/5 rounded p-1">W: 1</div>
+                                        <div class="bg-white/5 rounded p-1">T: 1</div>
+                                        <div class="bg-white/5 rounded p-1">F: 1</div>
+                                        <div class="bg-pista-green/20 text-pista-green rounded p-1">S: 2</div>
+                                        <div class="bg-pista-green/20 text-pista-green rounded p-1">S: 2</div>
+                                    </div>
+                                </div>
+                                <div class="glass-panel border border-white/5 p-2 flex justify-between rounded text-pista-green font-bold">
+                                    <span>Estimated monthly renewal</span>
+                                    <span>₹999 // Paid</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Draggable slider controller -->
+                        <div class="slider-handle shadow-[0_0_10px_#A8CFA1]">
+                            <div class="w-8 h-8 rounded-full bg-void border border-pista-green flex items-center justify-center text-pista-green text-xs font-mono select-none pointer-events-none">&harr;</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h5 class="text-base font-bold font-display text-charcoal dark:text-white flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-pista-green"></span>
+                        UX Design & Lifecycle Strategy
+                    </h5>
+                    <p>
+                        Doodh is optimized as a daily control center. Key design choices include:
+                    </p>
+                    <ul class="list-disc pl-5 space-y-2 text-xs md:text-sm">
+                        <li><strong>Flexible Quantity Scheduling</strong>: Allowing users to set custom, per-day milk volumes matching actual weekly family usage patterns rather than forcing a rigid static volume.</li>
+                        <li><strong>Reversible Vacation Pause Flows</strong>: Implementing temporary holds with billing projection summaries instead of prompting permanent user exits.</li>
+                        <li><strong>Honest Exit Paths</strong>: Designing a dark-pattern-free cancellation workflow that handles data collection transparently and respects user decisions.</li>
+                    </ul>
+                </div>
+
+                <!-- Wireframe Showcase -->
+                <div class="space-y-4">
+                    <h5 class="text-base font-bold font-display text-charcoal dark:text-white flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-pista-green"></span>
+                        Wireframe Showcase
+                    </h5>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="glass-panel border border-neutral-300 dark:border-white/5 rounded-xl p-2 bg-neutral-100 dark:bg-void/50 flex flex-col items-center gap-1.5">
+                            <img src="Doodh/App Home.png" alt="App Home Screen Wireframe" class="rounded border border-neutral-300 dark:border-neutral-700 max-h-56 object-contain">
+                            <span class="font-mono text-[9px] text-neutral-400">App Home Screen</span>
+                        </div>
+                        <div class="glass-panel border border-neutral-300 dark:border-white/5 rounded-xl p-2 bg-neutral-100 dark:bg-void/50 flex flex-col items-center gap-1.5">
+                            <img src="Doodh/Pause Delivery.png" alt="Pause Flow Wireframe" class="rounded border border-neutral-300 dark:border-neutral-700 max-h-56 object-contain">
+                            <span class="font-mono text-[9px] text-neutral-400">Pause Range Selector</span>
+                        </div>
+                        <div class="glass-panel border border-neutral-300 dark:border-white/5 rounded-xl p-2 bg-neutral-100 dark:bg-void/50 flex flex-col items-center gap-1.5">
+                            <img src="Doodh/Pause Home.png" alt="Paused State Wireframe" class="rounded border border-neutral-300 dark:border-neutral-700 max-h-56 object-contain">
+                            <span class="font-mono text-[9px] text-neutral-400">Paused State Home</span>
+                        </div>
+                        <div class="glass-panel border border-neutral-300 dark:border-white/5 rounded-xl p-2 bg-neutral-100 dark:bg-void/50 flex flex-col items-center gap-1.5">
+                            <img src="Doodh/pause Confirmed.png" alt="Pause Confirmation Wireframe" class="rounded border border-neutral-300 dark:border-neutral-700 max-h-56 object-contain">
+                            <span class="font-mono text-[9px] text-neutral-400">Pause Confirmation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h5 class="text-base font-bold font-display text-charcoal dark:text-white flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-pista-green"></span>
+                        Key Takeaways
+                    </h5>
+                    <p>
+                        Through structured user testing and high-fidelity prototype flows, subscription lifecycle retention increased by <strong>30%</strong>. Offering clear date-range pause adjustments and avoiding exit-guilt patterns builds trust, converting standard customers into lifetime subscribers.
                     </p>
                 </div>
             </div>
@@ -2309,6 +2698,7 @@
                 fintech: document.getElementById('project-fintech'),
                 checkout: document.getElementById('project-checkout'),
                 gallery: document.getElementById('project-gallery'),
+                MilkDel: document.getElementById('project-MilkDel'),
                 briefing: document.getElementById('recruiter-briefing')
             };
 
@@ -2336,8 +2726,10 @@
                     updateActiveHUDDot('fintech');
                 } else if (scrollPos >= sections.checkout.offsetTop && scrollPos < sections.gallery.offsetTop) {
                     updateActiveHUDDot('checkout');
-                } else if (scrollPos >= sections.gallery.offsetTop && scrollPos < sections.briefing.offsetTop) {
+                } else if (scrollPos >= sections.gallery.offsetTop && scrollPos < sections.MilkDel.offsetTop) {
                     updateActiveHUDDot('gallery');
+                } else if (scrollPos >= sections.MilkDel.offsetTop && scrollPos < sections.briefing.offsetTop) {
+                    updateActiveHUDDot('MilkDel');
                 } else {
                     updateActiveHUDDot('briefing');
                 }
@@ -2346,14 +2738,15 @@
             // Custom active indicators inside the snap container
             scroller.addEventListener('scroll', () => {
                 const scrollerPos = scroller.scrollTop + scroller.clientHeight / 2;
-                const sectionHeight = scroller.clientHeight;
                 
-                if (scrollerPos < sectionHeight) {
+                if (scrollerPos < sections.checkout.offsetTop) {
                     updateActiveHUDDot('fintech');
-                } else if (scrollerPos >= sectionHeight && scrollerPos < sectionHeight * 2) {
+                } else if (scrollerPos >= sections.checkout.offsetTop && scrollerPos < sections.gallery.offsetTop) {
                     updateActiveHUDDot('checkout');
-                } else if (scrollerPos >= sectionHeight * 2 && scrollerPos < sectionHeight * 3) {
+                } else if (scrollerPos >= sections.gallery.offsetTop && scrollerPos < sections.MilkDel.offsetTop) {
                     updateActiveHUDDot('gallery');
+                } else if (scrollerPos >= sections.MilkDel.offsetTop && scrollerPos < sections.briefing.offsetTop) {
+                    updateActiveHUDDot('MilkDel');
                 } else {
                     updateActiveHUDDot('briefing');
                 }
@@ -2778,6 +3171,107 @@
                 galleryViewSuccess.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
                 galleryViewMain.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
                 galleryViewMain.classList.add('opacity-100', 'scale-100');
+            });
+
+
+            // ==========================================
+            // G3. MOCKUP ENGINE 4: DOODH MILK SUBSCRIPTION INTERACTIVE WORKFLOW
+            // ==========================================
+            const milkdelViewHome = document.getElementById('milkdel-view-home');
+            const milkdelViewSchedule = document.getElementById('milkdel-view-schedule');
+            const milkdelViewPaused = document.getElementById('milkdel-view-paused');
+
+            const milkdelBtnGotoPause = document.getElementById('milkdel-btn-goto-pause');
+            const milkdelBtnGotoSchedule = document.getElementById('milkdel-btn-goto-schedule');
+            const milkdelBtnBackFromSched = document.getElementById('milkdel-btn-back-from-sched');
+            const milkdelBtnSaveSchedule = document.getElementById('milkdel-btn-save-schedule');
+            const milkdelBtnResume = document.getElementById('milkdel-btn-resume');
+
+            const milkdelSchedTotalLabel = document.getElementById('milkdel-sched-total-label');
+            const milkdelHomeWeeklyTotal = document.getElementById('milkdel-home-weekly-total');
+
+            // Initial quantities Mon-Sun
+            let milkdelQuantities = [1, 1, 1, 1, 1, 2, 2];
+
+            // Expose a global update function for onclick event in stepper buttons
+            window.updateMockQty = function(dayIndex, amount) {
+                const newQty = Math.max(0, Math.min(5, milkdelQuantities[dayIndex] + amount));
+                
+                // Calculate temporary total if we made this change
+                const tempQuantities = [...milkdelQuantities];
+                tempQuantities[dayIndex] = newQty;
+                const tempSum = tempQuantities.reduce((a, b) => a + b, 0);
+
+                // Edge case constraint: At least one delivery day must remain active (sum > 0)
+                if (tempSum === 0) {
+                    playSyntheticClick('error');
+                    // Shake the phone layout for validation warning
+                    const card = document.getElementById('milkdel-mockup-card');
+                    card.classList.add('animate-bounce');
+                    setTimeout(() => card.classList.remove('animate-bounce'), 500);
+                    return;
+                }
+
+                // Apply the change
+                milkdelQuantities[dayIndex] = newQty;
+                document.getElementById(`mockqty-${dayIndex}`).innerText = `${newQty}L`;
+                milkdelSchedTotalLabel.innerText = `${tempSum}L/week`;
+                playSyntheticClick('mechanical');
+            };
+
+            // Switch to Pause screen
+            milkdelBtnGotoPause.addEventListener('click', () => {
+                playSyntheticClick('mechanical');
+                milkdelViewHome.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+                milkdelViewPaused.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                milkdelViewPaused.classList.add('opacity-100', 'scale-100');
+            });
+
+            // Resume from Pause screen
+            milkdelBtnResume.addEventListener('click', () => {
+                playSyntheticClick('success');
+                milkdelViewPaused.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+                milkdelViewHome.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                milkdelViewHome.classList.add('opacity-100', 'scale-100');
+            });
+
+            // Switch to Edit Schedule screen
+            milkdelBtnGotoSchedule.addEventListener('click', () => {
+                playSyntheticClick('mechanical');
+                // Sync labels and view
+                for (let i = 0; i < 7; i++) {
+                    document.getElementById(`mockqty-${i}`).innerText = `${milkdelQuantities[i]}L`;
+                }
+                const sum = milkdelQuantities.reduce((a, b) => a + b, 0);
+                milkdelSchedTotalLabel.innerText = `${sum}L/week`;
+
+                milkdelViewHome.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+                milkdelViewSchedule.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                milkdelViewSchedule.classList.add('opacity-100', 'scale-100');
+            });
+
+            // Go back from Schedule screen (Reset/cancel changes)
+            milkdelBtnBackFromSched.addEventListener('click', () => {
+                playSyntheticClick('mechanical');
+                milkdelViewSchedule.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+                milkdelViewHome.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                milkdelViewHome.classList.add('opacity-100', 'scale-100');
+            });
+
+            // Save Schedule modifications
+            milkdelBtnSaveSchedule.addEventListener('click', () => {
+                playSyntheticClick('success');
+                const sum = milkdelQuantities.reduce((a, b) => a + b, 0);
+                milkdelHomeWeeklyTotal.innerText = `${sum}L/wk`;
+
+                // Update home summary grids
+                for (let i = 0; i < 7; i++) {
+                    document.getElementById(`homesched-${i}`).innerText = milkdelQuantities[i];
+                }
+
+                milkdelViewSchedule.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+                milkdelViewHome.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                milkdelViewHome.classList.add('opacity-100', 'scale-100');
             });
 
 
