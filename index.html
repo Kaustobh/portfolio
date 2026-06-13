@@ -918,11 +918,16 @@
                     <p class="text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">03</span> Respectful Exit Flows</p>
                 </div>
 
-                <div class="mt-8">
+                <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-6">
                     <button onclick="openModal('MilkDel-modal')" class="group flex items-center gap-2 text-charcoal dark:text-white font-bold hover:text-pista-green dark:hover:text-pista-green light:hover:text-deep-green transition-colors cursor-pointer text-sm font-mono border-b border-transparent hover:border-pista-green pb-1 w-fit">
                         Open subscription audit 
                         <span class="transform group-hover:translate-x-1.5 transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="inline"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
                     </button>
+                    
+                    <a href="https://www.figma.com/site/te85xqPJWeuotMzB8arH59/Untitled?node-id=0-1&p=f&t=A0JljnZUXd2iKUu3-0" target="_blank" class="group flex items-center gap-2 text-neutral-400 hover:text-neon-cyan dark:hover:text-neon-cyan light:hover:text-electric-blue transition-colors cursor-pointer text-sm font-mono border-b border-transparent hover:border-neon-cyan pb-1 w-fit">
+                        View Figma Designs
+                        <span class="transform group-hover:translate-y-[-1px] group-hover:translate-x-[1px] transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="inline"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+                    </a>
                 </div>
             </div>
 
@@ -1558,7 +1563,14 @@
             <!-- Modal Header -->
             <div class="flex justify-between items-center p-5 border-b border-neutral-200 dark:border-surface">
                 <div>
-                    <span class="text-[9px] font-mono text-pista-green uppercase tracking-widest font-semibold">[Subscription Management]</span>
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="text-[9px] font-mono text-pista-green uppercase tracking-widest font-semibold">[Subscription Management]</span>
+                        <span class="text-[9px] font-mono text-neutral-400">&bull;</span>
+                        <a href="https://www.figma.com/site/te85xqPJWeuotMzB8arH59/Untitled?node-id=0-1&p=f&t=A0JljnZUXd2iKUu3-0" target="_blank" class="text-[9px] font-mono text-neon-cyan dark:text-neon-cyan light:text-electric-blue hover:underline flex items-center gap-0.5 font-bold">
+                            View Figma Prototype 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="inline"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                    </div>
                     <h4 class="text-2xl font-bold font-display text-charcoal dark:text-white">Doodh — Subscription Management Experience</h4>
                 </div>
                 <button onclick="closeModal('MilkDel-modal')" class="glass-panel p-2.5 rounded-full hover:bg-neutral-100 dark:hover:bg-surface transition-colors cursor-pointer text-neutral-400 hover:text-pista-green">
