@@ -376,6 +376,15 @@
         <!-- Subtle noise overlay -->
         <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.12] dark:opacity-[0.12] light:opacity-[0.06] mix-blend-overlay z-0 pointer-events-none"></div>
 
+        <!-- Portrait background image in the center -->
+        <div class="absolute inset-0 flex items-center justify-center z-0 pointer-events-none overflow-hidden">
+            <img 
+                src="hero_portrait.jpg" 
+                alt="Kaustobh Portrait" 
+                class="h-[75%] md:h-[85%] object-contain opacity-25 dark:opacity-35 light:opacity-15 mix-blend-multiply dark:mix-blend-screen dark:invert transition-all duration-300" 
+            />
+        </div>
+
         <div class="relative z-10 max-w-4xl">
             <h2 class="text-neon-cyan dark:text-neon-cyan light:text-electric-blue font-mono text-sm md:text-base uppercase tracking-[0.3em] mb-4 animate-fade-in inline-block font-semibold">
                 Junior UX/UI Designer & Web Engineer
