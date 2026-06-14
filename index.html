@@ -370,13 +370,7 @@
 
     <!-- HERO SECTION -->
     <section id="hero-section" class="relative h-screen w-full flex flex-col justify-center px-8 md:px-24 overflow-hidden snap-start">
-        <!-- 3D Hero Canvas Container -->
-        <div id="hero-canvas" class="absolute inset-0 z-0 pointer-events-none opacity-85 dark:opacity-85 light:opacity-95 transition-opacity"></div>
-        
-        <!-- Subtle noise overlay -->
-        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.12] dark:opacity-[0.12] light:opacity-[0.06] mix-blend-overlay z-0 pointer-events-none"></div>
-
-        <!-- Portrait background image in the center -->
+        <!-- Portrait background image in the center (behind the animation) -->
         <div class="absolute inset-0 flex items-center justify-center z-0 pointer-events-none overflow-hidden">
             <img 
                 src="hero_portrait.jpg" 
@@ -384,6 +378,12 @@
                 class="h-[75%] md:h-[85%] object-contain opacity-25 dark:opacity-35 light:opacity-15 mix-blend-multiply dark:mix-blend-screen dark:invert transition-all duration-300" 
             />
         </div>
+
+        <!-- 3D Hero Canvas Container -->
+        <div id="hero-canvas" class="absolute inset-0 z-0 pointer-events-none opacity-85 dark:opacity-85 light:opacity-95 transition-opacity"></div>
+        
+        <!-- Subtle noise overlay -->
+        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.12] dark:opacity-[0.12] light:opacity-[0.06] mix-blend-overlay z-0 pointer-events-none"></div>
 
         <div class="relative z-10 max-w-4xl">
             <h2 class="text-neon-cyan dark:text-neon-cyan light:text-electric-blue font-mono text-sm md:text-base uppercase tracking-[0.3em] mb-4 animate-fade-in inline-block font-semibold">
