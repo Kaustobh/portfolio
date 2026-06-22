@@ -4388,6 +4388,8 @@
                     // Lock inputs and save to localStorage
                     const rName = document.getElementById('book-recruiter-name').value;
                     const rEmail = document.getElementById('book-recruiter-email').value;
+                    const rCompany = document.getElementById('book-recruiter-company').value;
+                    const rMsg = document.getElementById('book-recruiter-msg').value;
                     
                     bookedSlot = {
                         date: selectedDateNode,
@@ -4396,6 +4398,33 @@
                         email: rEmail
                     };
                     localStorage.setItem('kaustobh_portfolio_booking', JSON.stringify(bookedSlot));
+
+                    // Dispatch API POST request to the Express backend
+                    fetch('http://localhost:5000/api/book', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            name: rName,
+                            email: rEmail,
+                            company: rCompany,
+                            message: rMsg,
+                            date: selectedDateNode,
+                            time: selectedTimeNode
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            console.log('Success: Briefing confirmation email dispatched.');
+                        } else {
+                            console.error('Error: Failed to send booking notification:', data.error);
+                        }
+                    })
+                    .catch(err => {
+                        console.error('Network Error: Briefing dispatch failed:', err);
+                    });
 
                     slideDetails.classList.add('opacity-0');
                     setTimeout(() => {

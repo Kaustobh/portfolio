@@ -11,3 +11,10 @@ Desktop.ini
 # Temp files
 *.tmp
 *.log
+
+# Node.js
+node_modules/
+package-lock.json
+
+# Environment secrets — never commit
+.env
