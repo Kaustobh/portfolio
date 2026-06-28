@@ -34,6 +34,9 @@
                         'biogrid-amber': '#fbbf24',
                         'biogrid-red': '#ef4444',
                         'biogrid-violet': '#a78bfa',
+                        'apex-red':    '#e0000a',
+                        'apex-scarlet': '#ff1a24',
+                        'apex-ember':  '#ff6b35',
                         
                         // Solar Light Theme equivalents (Low glare, highly readable contrast)
                         solar: '#F4F5F7',
@@ -133,6 +136,37 @@
             --border-default: rgba(255, 255, 255, 0.22);
             --border-hover: rgba(255, 255, 255, 0.45);
         }
+
+        /* Apex Motorsport CSS Variables & Animations */
+        #project-Apex {
+            --apex-red:    #e0000a;
+            --apex-scarlet: #ff1a24;
+            --apex-ember:  #ff6b35;
+            --apex-carbon: #0a0a0a;
+            --apex-slate:  #1a0505;
+            --apex-glass:  rgba(224,0,10,0.08);
+        }
+        @keyframes rpm-sweep {
+            0%   { stroke-dashoffset: 300; opacity: 0.4; }
+            50%  { opacity: 1; }
+            100% { stroke-dashoffset: 0; opacity: 0.7; }
+        }
+        .rpm-path {
+            stroke-dasharray: 300;
+            animation: rpm-sweep 1.8s ease-in-out infinite alternate;
+        }
+        @keyframes apex-pulse {
+            0%, 100% { box-shadow: 0 0 8px rgba(224,0,10,0.6), 0 0 20px rgba(224,0,10,0.2); }
+            50%       { box-shadow: 0 0 18px rgba(255,26,36,0.9), 0 0 40px rgba(255,26,36,0.4); }
+        }
+        .apex-pulse { animation: apex-pulse 1.5s ease-in-out infinite; }
+        @keyframes throttle-fill {
+            0%   { width: 20%; }
+            60%  { width: 95%; }
+            80%  { width: 82%; }
+            100% { width: 88%; }
+        }
+        .throttle-bar { animation: throttle-fill 3s ease-out infinite alternate; }
 
         @keyframes ecg-sweep {
             0% { stroke-dashoffset: 200; }
@@ -411,6 +445,7 @@
         <a href="#project-gallery" class="hud-dot w-3 h-3 rounded-full bg-neutral-600 hover:bg-acid-lime dark:hover:bg-acid-lime light:hover:bg-forest-lime transition-all duration-300 border border-transparent" data-section="gallery" title="Art Gallery"></a>
         <a href="#project-MilkDel" class="hud-dot w-3 h-3 rounded-full bg-neutral-600 hover:bg-pista-green dark:hover:bg-pista-green light:hover:bg-deep-green transition-all duration-300 border border-transparent" data-section="MilkDel" title="Milk Subscription"></a>
         <a href="#project-BioGrid" class="hud-dot w-3 h-3 rounded-full bg-neutral-600 hover:bg-biogrid-mint dark:hover:bg-biogrid-mint light:hover:bg-forest-lime transition-all duration-300 border border-transparent" data-section="BioGrid" title="Bio Grid Telemetry"></a>
+        <a href="#project-Apex" class="hud-dot w-3 h-3 rounded-full bg-neutral-600 hover:bg-apex-red dark:hover:bg-apex-red light:hover:bg-apex-red transition-all duration-300 border border-transparent" data-section="Apex" title="Apex Motorsport"></a>
         <a href="#recruiter-briefing" class="hud-dot w-3 h-3 rounded-full bg-neutral-600 hover:bg-neutral-400 transition-all duration-300 border border-transparent" data-section="briefing" title="Hiring Briefing"></a>
     </nav>
 
@@ -1366,6 +1401,172 @@
             </div>
         </section>
 
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- PROJECT 6: APEX MOTORSPORT — Virtual Dealership & 3D Showroom  -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <section id="project-Apex" class="h-screen w-full snap-center flex flex-col md:flex-row items-center justify-between px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-20 md:pt-0">
+            <!-- Themed background: red silk image + gradient overlay -->
+            <div class="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none">
+                <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent dark:from-black dark:via-black/88 dark:to-transparent light:from-white light:via-white/95 light:to-transparent/10 z-10"></div>
+                <img
+                    src="bg_apex.jpg"
+                    alt="Apex Motorsport Background"
+                    class="w-full h-full object-cover opacity-85 filter saturate-125"
+                />
+            </div>
+
+            <!-- Left: Text Column -->
+            <div class="w-full md:w-1/2 pr-0 md:pr-12 flex flex-col justify-center relative z-10">
+                <span class="text-xs font-mono text-apex-red dark:text-apex-red light:text-red-700 uppercase tracking-widest mb-2 block">[Case Study // Motorsport & 3D Web]</span>
+                <h3 class="text-4xl md:text-5xl font-display font-bold mb-4 text-apex-scarlet dark:text-apex-scarlet light:text-red-700" style="text-shadow: 0 0 30px rgba(224,0,10,0.4);">Apex Motorsport</h3>
+                <p class="text-neutral-400 dark:text-gray-400 light:text-neutral-600 font-body text-base md:text-lg mb-6 max-w-md leading-relaxed">
+                    A museum-grade, scroll-linked 3D digital showroom for the Mercedes-AMG GT4 &amp; GT3 EVO. Merges WebGL, procedural GLSL exhaust shaders, and a real-time synthesized V8 Web Audio engine into a cinematic racing experience.
+                </p>
+
+                <!-- Highlight metrics -->
+                <div class="flex flex-col gap-3 pl-4 border-l-2 border-neutral-700 dark:border-neutral-800 relative">
+                    <div class="absolute left-[-2px] top-0 h-1/3 w-[2px] bg-gradient-to-b from-apex-red to-transparent shadow-[0_0_10px_#e0000a]"></div>
+                    <p class="text-xs font-mono text-neutral-800 dark:text-white light:text-neutral-800 flex items-center"><span class="text-apex-red font-bold mr-2">01</span> Three.js WebGL + GSAP Scroll Timeline</p>
+                    <p class="text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-400 dark:text-surface font-bold mr-2">02</span> Synthesized V8 Web Audio Engine</p>
+                    <p class="text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-400 dark:text-surface font-bold mr-2">03</span> Volumetric GLSL Exhaust Flame Shaders</p>
+                </div>
+
+                <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-6">
+                    <button onclick="openModal('Apex-modal')" class="group flex items-center gap-2 text-charcoal dark:text-white light:text-neutral-800 font-bold hover:text-apex-red dark:hover:text-apex-scarlet transition-colors cursor-pointer text-sm font-mono border-b border-transparent hover:border-apex-red pb-1 w-fit">
+                        Open racing cognitive audit
+                        <span class="transform group-hover:translate-x-1.5 transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="inline"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right: Interactive Racing Telemetry Mockup Card -->
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 glass-panel rounded-xl border border-neutral-700/40 dark:border-white/5 relative overflow-hidden group flex items-center justify-center p-4 transform hover:scale-[1.01] transition-all duration-300 shadow-md hover:shadow-xl cursor-default" id="apex-mockup-card">
+
+                <!-- Racing HUD Console -->
+                <div class="w-full h-full rounded-lg text-[11px] flex flex-col justify-between relative overflow-hidden bg-[#060606] border border-white/5 text-[#e2e2e2] p-3 font-mono">
+
+                    <!-- Console Header -->
+                    <div class="flex justify-between items-center border-b border-[#e0000a]/20 pb-1.5 text-[9px]">
+                        <span class="flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-[#e0000a] apex-pulse"></span>
+                            AMG GT TELEMETRY // LIVE SESSION
+                        </span>
+                        <span class="text-[#e0000a] font-bold tracking-widest" id="apex-lap-timer">01:23.847</span>
+                    </div>
+
+                    <!-- Main Telemetry Grid -->
+                    <div class="grow flex flex-col justify-between py-2 space-y-2">
+
+                        <!-- RPM Arc + Gear + Speed row -->
+                        <div class="grid grid-cols-3 gap-2">
+                            <!-- RPM Arc Gauge -->
+                            <div class="bg-[#0f0202] border border-[#e0000a]/20 rounded p-2 flex flex-col items-center justify-center h-[110px] relative overflow-hidden">
+                                <span class="text-[7px] text-[#666] uppercase tracking-wider block mb-1">RPM</span>
+                                <svg viewBox="0 0 80 55" class="w-full h-[55px]">
+                                    <!-- Background arc track -->
+                                    <path d="M10,50 A35,35 0 0,1 70,50" stroke="#1a0505" stroke-width="6" fill="none" stroke-linecap="round"/>
+                                    <!-- Animated red fill arc -->
+                                    <path d="M10,50 A35,35 0 0,1 70,50" stroke="#e0000a" stroke-width="6" fill="none" stroke-linecap="round" class="rpm-path" style="stroke-dasharray:110; stroke-dashoffset:22;"/>
+                                    <!-- Redline zone -->
+                                    <path d="M60,18 A35,35 0 0,1 70,50" stroke="#ff1a24" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.3"/>
+                                    <text x="40" y="50" text-anchor="middle" fill="#f8f8f8" font-size="11" font-weight="bold" id="apex-rpm-value">7,200</text>
+                                    <text x="40" y="57" text-anchor="middle" fill="#666" font-size="5">RPM</text>
+                                </svg>
+                            </div>
+
+                            <!-- Gear Display -->
+                            <div class="bg-[#0f0202] border border-[#e0000a]/20 rounded p-2 flex flex-col items-center justify-center h-[110px]">
+                                <span class="text-[7px] text-[#666] uppercase tracking-wider block mb-1">Gear</span>
+                                <span class="text-[48px] font-display font-black text-[#e0000a] leading-none" id="apex-gear-display" style="text-shadow: 0 0 20px rgba(224,0,10,0.8);">4</span>
+                                <div class="flex gap-1 mt-1">
+                                    <span class="w-3 h-1 rounded bg-[#e0000a]/40"></span>
+                                    <span class="w-3 h-1 rounded bg-[#e0000a]/40"></span>
+                                    <span class="w-3 h-1 rounded bg-[#e0000a]"></span>
+                                    <span class="w-3 h-1 rounded bg-[#e0000a]/20"></span>
+                                    <span class="w-3 h-1 rounded bg-[#e0000a]/20"></span>
+                                </div>
+                            </div>
+
+                            <!-- Speed Display -->
+                            <div class="bg-[#0f0202] border border-[#e0000a]/20 rounded p-2 flex flex-col items-center justify-center h-[110px]">
+                                <span class="text-[7px] text-[#666] uppercase tracking-wider block mb-1">Speed</span>
+                                <span class="text-[28px] font-display font-black text-[#f8f8f8] leading-none" id="apex-speed-value">187</span>
+                                <span class="text-[8px] text-[#666]">km/h</span>
+                                <div class="w-full h-1 bg-[#1a0505] rounded mt-2 overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-[#e0000a] to-[#ff6b35] rounded throttle-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Throttle + Brake + Turbo Boost row -->
+                        <div class="bg-[#0a0101] border border-[#e0000a]/10 rounded p-2 space-y-1.5">
+                            <div class="flex justify-between text-[8px] text-[#666] mb-1">
+                                <span>THROTTLE / BRAKE BALANCE</span>
+                                <span class="text-[#e0000a]" id="apex-throttle-label">88% THROTTLE</span>
+                            </div>
+                            <!-- Throttle bar -->
+                            <div class="flex items-center gap-2">
+                                <span class="text-[7px] text-[#e0000a] w-10">THRT</span>
+                                <div class="flex-1 h-2 bg-[#1a0505] rounded overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-[#e0000a] to-[#ff6b35] rounded throttle-bar" style="animation-delay: 0.1s;"></div>
+                                </div>
+                            </div>
+                            <!-- Brake bar -->
+                            <div class="flex items-center gap-2">
+                                <span class="text-[7px] text-[#888] w-10">BRAKE</span>
+                                <div class="flex-1 h-2 bg-[#1a0505] rounded overflow-hidden">
+                                    <div class="h-full bg-[#ff6b35]/60 rounded" style="width:8%"></div>
+                                </div>
+                            </div>
+                            <!-- Turbo boost -->
+                            <div class="flex items-center gap-2">
+                                <span class="text-[7px] text-[#ff6b35] w-10">BOOST</span>
+                                <div class="flex-1 h-2 bg-[#1a0505] rounded overflow-hidden">
+                                    <div class="h-full bg-[#ff6b35] rounded throttle-bar" style="width:62%; animation-delay: 0.5s;"></div>
+                                </div>
+                                <span class="text-[7px] text-[#ff6b35]">1.6 BAR</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom status bar -->
+                    <div id="apex-status-banner" class="bg-[#e0000a]/10 border border-[#e0000a]/30 rounded p-1.5 text-[8px] flex items-center justify-between text-[#e0000a] transition-all duration-300">
+                        <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-[#e0000a] animate-ping"></span> SESSION ACTIVE // GT3 EVO M159</span>
+                        <span>LAP 3 / 5</span>
+                    </div>
+                </div>
+
+                <!-- Floating KPI Video Card -->
+                <div class="absolute bottom-6 right-6 glass-panel p-3 rounded-lg z-20 transition-all group-hover:-translate-y-2 border border-neutral-700/60 dark:border-white/10 shadow-lg w-[220px]" onclick="openVideoModal('Apex Motorsport.mp4', 'Apex Motorsport // KPI Preview', '60+ FPS at Zero Dependencies', 'Apex-modal')">
+                    <!-- Video thumbnail -->
+                    <div class="w-full h-[100px] rounded overflow-hidden mb-2 border border-[#e0000a]/20 bg-black relative cursor-pointer group/vid" title="Click to expand video">
+                        <video
+                            id="Apex-kpi-video-thumb"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            class="w-full h-full object-cover"
+                        >
+                            <source src="Apex Motorsport.mp4" type="video/mp4">
+                        </video>
+                        <!-- Play icon overlay -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover/vid:bg-black/50 transition-colors">
+                            <div class="w-8 h-8 rounded-full bg-[#e0000a]/90 flex items-center justify-center apex-pulse group-hover/vid:scale-110 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-[#e0000a] font-mono text-[9px] uppercase tracking-wider font-bold">Cinematic Showroom</p>
+                    <p class="text-sm font-bold font-display text-white dark:text-white light:text-neutral-800 mb-2">60+ FPS // Zero Build Tools</p>
+                    <a href="#" onclick="event.preventDefault(); event.stopPropagation(); openVideoModal('Apex Motorsport.mp4', 'Apex Motorsport // KPI Preview', '60+ FPS at Zero Dependencies', 'Apex-modal');" class="flex items-center gap-1.5 text-apex-red font-mono text-[9px] font-bold hover:underline cursor-pointer group/link transition-colors">
+                        See projects
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transform group-hover/link:translate-x-0.5 transition-transform"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- Recruiter / Contact Footer -->
         <section id="recruiter-briefing" class="h-[100vh] w-full snap-center flex flex-col items-center justify-center px-8 text-center relative z-10 bg-solar dark:bg-void transition-colors duration-500">
             <div class="max-w-2xl mx-auto flex flex-col items-center">
@@ -1461,7 +1662,7 @@
                 </div>
             </div>
             <!-- Copyright notice in the bottom-left corner -->
-            <div class="absolute bottom-6 left-8 font-mono text-[9px] text-neutral-400/60 dark:text-gray-500/60 tracking-wider select-none">
+            <div class="absolute bottom-6 left-8 font-mono text-[11px] text-neutral-600 dark:text-neutral-300 tracking-wider select-none">
                 &copy; 2026 Kaustobh Bhattacharya. All rights reserved.
             </div>
         </section>
@@ -2435,6 +2636,221 @@
             </div>
         </div>
     </div>
+    <!-- Modal 6: Apex Motorsport Racing Cognitive Audit -->
+    <div id="Apex-modal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden opacity-0 pointer-events-none transition-all duration-300 bg-void/80 backdrop-blur-xl flex items-center justify-center p-4">
+        <div class="absolute inset-0 cursor-zoom-out" onclick="closeModal('Apex-modal')"></div>
+        <div class="glass-panel border border-neutral-300 dark:border-white/5 w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl relative z-10 max-h-[90vh] flex flex-col bg-white dark:bg-void transition-transform duration-300 scale-95" id="Apex-modal-content">
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center p-5 border-b border-neutral-200 dark:border-surface" style="background: linear-gradient(135deg, rgba(224,0,10,0.06) 0%, transparent 60%);">
+                <div>
+                    <span class="text-[9px] font-mono text-apex-red uppercase tracking-widest font-semibold">[Motorsport & 3D Web Engineering]</span>
+                    <h4 class="text-2xl font-bold font-display text-charcoal dark:text-white">Apex Motors // Racing Cognitive Audit</h4>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="closeModal('Apex-modal')" class="glass-panel p-2.5 rounded-full hover:bg-neutral-100 dark:hover:bg-surface transition-colors cursor-pointer text-neutral-400 hover:text-apex-red">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Scrollable Body -->
+            <div class="p-6 md:p-8 overflow-y-auto space-y-8 select-text font-body text-xs md:text-sm leading-relaxed text-neutral-600 dark:text-neutral-300 max-w-full">
+
+                <!-- 4-column metric cards -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-neutral-100 dark:bg-surface/50 p-3 rounded-lg border border-neutral-200 dark:border-white/5">
+                        <span class="text-[9px] font-mono text-neutral-400 uppercase tracking-widest">Render Target</span>
+                        <h5 class="text-xl font-bold font-display text-charcoal dark:text-white mt-1">60+ FPS</h5>
+                    </div>
+                    <div class="bg-neutral-100 dark:bg-surface/50 p-3 rounded-lg border border-neutral-200 dark:border-white/5">
+                        <span class="text-[9px] font-mono text-neutral-400 uppercase tracking-widest">Build Tools</span>
+                        <h5 class="text-xl font-bold font-display text-charcoal dark:text-white mt-1">Zero Deps</h5>
+                    </div>
+                    <div class="bg-neutral-100 dark:bg-surface/50 p-3 rounded-lg border border-neutral-200 dark:border-white/5">
+                        <span class="text-[9px] font-mono text-neutral-400 uppercase tracking-widest">Vehicles</span>
+                        <h5 class="text-xl font-bold font-display text-charcoal dark:text-white mt-1">GT4 + GT3</h5>
+                    </div>
+                    <div class="bg-neutral-100 dark:bg-surface/50 p-3 rounded-lg border border-neutral-200 dark:border-white/5">
+                        <span class="text-[9px] font-mono text-neutral-400 uppercase tracking-widest">Scroll Phases</span>
+                        <h5 class="text-xl font-bold font-display text-charcoal dark:text-white mt-1">7-Key Path</h5>
+                    </div>
+                </div>
+
+                <!-- 1. Executive Summary -->
+                <div class="space-y-4">
+                    <h5 class="text-base font-bold font-display text-charcoal dark:text-white flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-apex-red"></span>
+                        1. Executive Summary & Purpose
+                    </h5>
+                    <p>The APEX MOTORS interactive 3D exhibit is a museum-grade, single-page digital showroom designed to showcase two legendary racing machines — the <strong>Mercedes-AMG GT4</strong> (M178 V8 Twin-Turbocharged) and the <strong>Mercedes-AMG GT3 EVO</strong> (M159 V8 Naturally Aspirated).</p>
+                    <p>The purpose of this application is to transcend standard web galleries by delivering a highly persuasive, scroll-linked cinematic journey. Every viewport increment dynamically orchestrates 3D camera matrices, procedural shader uniforms, spatial audio synthesis thresholds, and chiselled typographic layouts to tell a cohesive narrative of luxury, engineering precision, and raw performance.</p>
+                    <p><strong>Outcome:</strong> The project is built entirely on modern, vanilla web standards, achieving extreme performance (60+ FPS) and zero external build tool dependencies.</p>
+                </div>
+
+                <!-- 2. Technical Stack -->
+                <div class="space-y-4">
+                    <h5 class="text-base font-bold font-display text-charcoal dark:text-white flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-apex-red"></span>
+                        2. Technical Stack Architecture
+                    </h5>
+                    <div class="bg-[#060606] border border-[#e0000a]/20 rounded-lg p-4 font-mono text-[10px] space-y-1.5 text-neutral-300">
+                        <div class="flex items-center gap-2 text-[#e0000a]"><span>[app.js]</span><span class="text-neutral-600">──►</span><span class="text-[#ff6b35]">Main Orchestrator & Render Loop</span></div>
+                        <div class="flex items-center gap-2"><span class="text-neutral-400">[scene.js]</span><span class="text-neutral-600">──►</span><span>Three.js Pipeline, Models, Lighting, Camera Keyframes</span></div>
+                        <div class="flex items-center gap-2"><span class="text-neutral-400">[audioEngine.js]</span><span class="text-neutral-600">──►</span><span>Native Web Audio API V8 Synthesizer & Oscillators</span></div>
+                        <div class="flex items-center gap-2"><span class="text-neutral-400">[uiController.js]</span><span class="text-neutral-600">──►</span><span>Damped Virtual Scroll, HUD, Narrative Logic</span></div>
+                        <div class="flex items-center gap-2"><span class="text-neutral-400">[shaders.js]</span><span class="text-neutral-600">──►</span><span class="text-[#ff6b35]">GLSL Volumetric Exhaust Combustion Flame Shaders</span></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs mt-3">
+                        <div class="space-y-2">
+                            <h6 class="font-bold text-charcoal dark:text-white uppercase tracking-wider font-mono text-[10px]">3D Render Pipeline</h6>
+                            <ul class="list-disc pl-4 space-y-1 text-neutral-500 dark:text-[#94a3b8]">
+                                <li><strong>Renderer:</strong> Transparent WebGLRenderer (alpha: true) overlaying CSS backdrops. ACESFilmicToneMapping with custom exposure.</li>
+                                <li><strong>Loader:</strong> GLTFLoader for complex vehicle assets with full geometry/material disposal.</li>
+                                <li><strong>Controls:</strong> OrbitControls for manual showroom inspection.</li>
+                                <li><strong>Animation:</strong> GSAP (v3.12.5) multi-tiered camera scroll timeline. 1.4s power2.inOut cinematic fly-backs.</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-2">
+                            <h6 class="font-bold text-charcoal dark:text-white uppercase tracking-wider font-mono text-[10px]">Synthetic V8 Audio Engine</h6>
+                            <ul class="list-disc pl-4 space-y-1 text-neutral-500 dark:text-[#94a3b8]">
+                                <li><strong>GT4 Profile:</strong> 33 Hz idle twin-turbo rumble, pneumatic starter, muffled exhaust notes.</li>
+                                <li><strong>GT3 EVO Profile:</strong> 42 Hz idle naturally aspirated roar screaming to 9,000 RPM redline.</li>
+                                <li><strong>DSP:</strong> WaveshaperNodes, BiquadFilterNodes, GainNodes mapping real-time throttle curves.</li>
+                                <li><strong>Gearbox:</strong> Straight-cut sequential clank and gear-whine pitch shifter.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Core Subsystems -->
+                <div class="space-y-4">
+                    <h5 class="text-base font-bold font-display text-charcoal dark:text-white flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-apex-red"></span>
+                        3. Core Subsystems & Engineering
+                    </h5>
+                    <div class="space-y-3">
+                        <p class="font-bold text-charcoal dark:text-white">A. 3D Scene Manager (js/scene.js)</p>
+                        <p>Manages a transparent WebGL canvas overlaid on fixed wavy silk CSS backgrounds (golden for GT4, red for GT3 EVO). Dynamic lighting rig featuring a directional sun, ambient fills, and a moving coloured underglow PointLight that updates based on active vehicle theme. Separate 7-keyframe camera paths per model, focusing on vehicle-specific components (centre-lock wheels, swan-neck wings on GT3 EVO; Biturbo turbochargers and ABS modules on GT4).</p>
+                        <p class="font-bold text-charcoal dark:text-white">B. Volumetric Exhaust Flame Shaders (js/shaders.js)</p>
+                        <p>Procedural WebGL vertex and fragment shaders generating volumetric exhaust flames behind tailpipes. Operates on a 3D Simplex noise algorithm warped by time and throttle value uniforms. Features dynamic backfire ignition cuts, generating intense, high-scale flame bursts and camera shakes when shifting gears at high RPMs.</p>
+                        <p class="font-bold text-charcoal dark:text-white">C. UI & Scroll Controller (js/uiController.js)</p>
+                        <p>Captures wheel and touch events, translating them into a damped virtual scroll progress variable (0.0 to 1.0). Swaps narrative text storyboards and CSS classes (<code>.theme-evo</code>) dynamically. Reorganises HUD layouts — Left Sidebar houses vehicle system details; Right Sidebar houses the Performance Profile, Vehicle Gallery switcher, and Thrust Interactive ignition/throttle controls.</p>
+                    </div>
+                    <pre class="bg-neutral-100 dark:bg-surface/50 border border-neutral-300 dark:border-white/5 p-3 rounded font-mono text-[10px] overflow-x-auto text-[#e0000a]">
+// GSAP Camera Scroll Timeline — Phase 3 Wheel Fly-Around
+gsap.to(camera.position, {
+  x: keyframe[3].x, y: keyframe[3].y, z: keyframe[3].z,
+  duration: 1.4, ease: 'power2.inOut',
+  onUpdate: () =&gt; camera.lookAt(vehicleCenter)
+});</pre>
+                </div>
+
+                <!-- 4. Wireframe vs HiFi slider -->
+                <div class="space-y-4">
+                    <h5 class="text-base font-bold font-display text-charcoal dark:text-white flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-apex-red"></span>
+                        Draggable Wireframe vs High-Fidelity Showroom Layout
+                    </h5>
+                    <div class="slider-container border border-neutral-300 dark:border-[#e0000a]/20 relative bg-[#060606] shadow-inner" id="Apex-slider-container">
+                        <!-- Before: Low Fidelity Wireframe -->
+                        <div class="slider-before bg-neutral-900" id="Apex-slider-before">
+                            <div class="w-full h-full p-6 flex flex-col justify-between text-neutral-400 font-mono text-[9px]">
+                                <div class="border border-dashed border-neutral-700 p-2 text-center rounded">[ AMG GT SHOWROOM HEADER — MODEL SWITCHER (GT4 / GT3 EVO) ]</div>
+                                <div class="grid grid-cols-3 gap-3 my-4 grow">
+                                    <div class="border border-dashed border-neutral-700 p-3 rounded flex flex-col justify-center text-center col-span-2">
+                                        <span>[ WebGL Canvas — Transparent 3D Vehicle Render ]</span>
+                                        <div class="grid grid-cols-5 gap-1 mt-3">
+                                            <div class="border border-dashed border-neutral-800 p-1 rounded text-[7px]">HP1</div>
+                                            <div class="border border-dashed border-neutral-800 p-1 rounded text-[7px]">HP2</div>
+                                            <div class="border border-dashed border-neutral-800 p-1 rounded text-[7px]">HP3</div>
+                                            <div class="border border-dashed border-neutral-800 p-1 rounded text-[7px]">HP4</div>
+                                            <div class="border border-dashed border-neutral-800 p-1 rounded text-[7px]">HP5</div>
+                                        </div>
+                                    </div>
+                                    <div class="border border-dashed border-neutral-700 p-3 rounded flex flex-col justify-between text-center space-y-2">
+                                        <div class="border border-dashed border-neutral-800 p-1 rounded text-[7px]">[ Performance Profile Sidebar ]</div>
+                                        <div class="border border-dashed border-neutral-800 p-1 rounded text-[7px]">[ Throttle / Audio Controls ]</div>
+                                        <div class="border border-dashed border-neutral-800 p-1 rounded text-[7px]">[ Track Experience Block ]</div>
+                                    </div>
+                                </div>
+                                <div class="border border-dashed border-neutral-700 p-2 text-center rounded">[ Scroll Progress — Virtual Scroll 0.0 → 1.0 mapped to Camera Path ]</div>
+                            </div>
+                        </div>
+
+                        <!-- After: High Fidelity -->
+                        <div class="slider-after bg-[#060606]" id="Apex-slider-after">
+                            <div class="w-full h-full p-6 flex flex-col justify-between font-mono text-[9px] text-[#e2e2e2]">
+                                <div class="flex justify-between items-center border-b border-[#e0000a]/20 pb-2">
+                                    <span class="font-bold text-[#f8f8f8] flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-[#e0000a] animate-ping"></span> MERCEDES-AMG // GT SHOWROOM</span>
+                                    <span class="text-[#e0000a]">PHASE 3 // WHEEL DETAIL</span>
+                                </div>
+                                <div class="grid grid-cols-3 gap-3 my-4 grow">
+                                    <div class="col-span-2 bg-[#0f0202] border border-[#e0000a]/20 rounded p-3 flex flex-col justify-between">
+                                        <div class="flex justify-between items-center border-b border-[#e0000a]/10 pb-1">
+                                            <span class="text-[8px] text-[#666]">WEBGL CANVAS // GSAP SCROLL-LINKED</span>
+                                            <span class="text-[#e0000a] text-[8px] font-bold">60 FPS</span>
+                                        </div>
+                                        <div class="flex justify-center items-center grow my-2">
+                                            <div class="w-24 h-16 border border-[#e0000a]/30 rounded flex items-center justify-center text-[#e0000a]/60 text-[8px]">3D VEHICLE MESH</div>
+                                        </div>
+                                        <div class="grid grid-cols-5 gap-1">
+                                            <div class="bg-[#1a0505] p-1 rounded text-center text-[7px] text-[#e0000a]">TURBO</div>
+                                            <div class="bg-[#1a0505] p-1 rounded text-center text-[7px] text-[#666]">WHEEL</div>
+                                            <div class="bg-[#1a0505] p-1 rounded text-center text-[7px] text-[#666]">WING</div>
+                                            <div class="bg-[#1a0505] p-1 rounded text-center text-[7px] text-[#666]">ABS</div>
+                                            <div class="bg-[#1a0505] p-1 rounded text-center text-[7px] text-[#666]">EXH</div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-[#0f0202] border border-[#e0000a]/20 rounded p-3 flex flex-col justify-between space-y-2">
+                                        <div class="text-[8px] text-[#666] border-b border-[#e0000a]/10 pb-1">PERFORMANCE PROFILE</div>
+                                        <div class="space-y-1">
+                                            <div class="flex justify-between text-[7px]"><span class="text-[#666]">Engine</span><span class="text-[#ff6b35]">V8 4.0L TT</span></div>
+                                            <div class="flex justify-between text-[7px]"><span class="text-[#666]">Peak HP</span><span class="text-[#f8f8f8]">510 BHP</span></div>
+                                            <div class="flex justify-between text-[7px]"><span class="text-[#666]">0–100</span><span class="text-[#e0000a]">3.2s</span></div>
+                                        </div>
+                                        <div class="bg-[#1a0505] p-1.5 rounded text-center text-[7px] text-[#e0000a] border border-[#e0000a]/20">IGNITION — ARMED</div>
+                                    </div>
+                                </div>
+                                <div class="bg-[#0f0202] border border-[#e0000a]/10 rounded p-2 text-center text-[8px] text-[#666]">
+                                    Virtual Scroll Progress: <span class="text-[#e0000a]">▓▓▓▓▓▓░░░░</span> 0.62 / 1.00 — Camera Phase 3 Active
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Draggable slider handle (red theme) -->
+                        <div class="slider-handle shadow-[0_0_10px_#e0000a]" id="Apex-slider-handle" style="background:#e0000a;"></div>
+                    </div>
+                </div>
+
+                <!-- 5. Color System -->
+                <div class="space-y-4">
+                    <h5 class="text-base font-bold font-display text-charcoal dark:text-white flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-apex-red"></span>
+                        Brand Visual Identity & Color System
+                    </h5>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <div class="glass-panel border border-neutral-300 dark:border-white/5 rounded-xl p-3 bg-neutral-100 dark:bg-void/50 flex flex-col gap-2">
+                            <div class="w-full h-8 rounded bg-[#060606] border border-neutral-700"></div>
+                            <div class="flex flex-col"><span class="font-bold text-[10px] text-charcoal dark:text-white">Carbon Base</span><span class="font-mono text-[8px] text-neutral-400">#060606</span></div>
+                        </div>
+                        <div class="glass-panel border border-neutral-300 dark:border-white/5 rounded-xl p-3 bg-neutral-100 dark:bg-void/50 flex flex-col gap-2">
+                            <div class="w-full h-8 rounded bg-[#0f0202] border border-neutral-700"></div>
+                            <div class="flex flex-col"><span class="font-bold text-[10px] text-charcoal dark:text-white">Slate Card</span><span class="font-mono text-[8px] text-neutral-400">#0F0202</span></div>
+                        </div>
+                        <div class="glass-panel border border-neutral-300 dark:border-white/5 rounded-xl p-3 bg-neutral-100 dark:bg-void/50 flex flex-col gap-2">
+                            <div class="w-full h-8 rounded bg-[#e0000a]"></div>
+                            <div class="flex flex-col"><span class="font-bold text-[10px] text-charcoal dark:text-white">Apex Red</span><span class="font-mono text-[8px] text-neutral-400">#E0000A</span></div>
+                        </div>
+                        <div class="glass-panel border border-neutral-300 dark:border-white/5 rounded-xl p-3 bg-neutral-100 dark:bg-void/50 flex flex-col gap-2">
+                            <div class="w-full h-8 rounded bg-[#ff6b35]"></div>
+                            <div class="flex flex-col"><span class="font-bold text-[10px] text-charcoal dark:text-white">Ember Accent</span><span class="font-mono text-[8px] text-neutral-400">#FF6B35</span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <!-- VIDEO POPUP MODAL -->
     <div id="video-modal" class="fixed inset-0 z-[60] opacity-0 pointer-events-none transition-all duration-300 bg-void/90 backdrop-blur-2xl flex items-center justify-center p-4">
@@ -3055,6 +3471,7 @@
                 gallery: "The Graphic Art Gallery case study focuses on spatial digital acquisition. It features fluid canvas interactions, a contextual wall-scaler, and low-friction inquiry flows, yielding +28% inquiry conversions and +35% immersion lift. <button onclick=\"openModal('gallery-modal')\" class='mt-2 block px-2.5 py-1 bg-[#79C000] text-void rounded font-mono font-bold text-[9px] cursor-pointer'>Open Case Study Modal</button>",
                 doodh: "The Doodh Subscription Management experience focuses on everyday utility and subscription state handling (active, paused, cancelled). It features a flexible weekly quantity scheduler and respectful exit paths, yielding a +30% retention lift. <button onclick=\"openModal('MilkDel-modal')\" class='mt-2 block px-2.5 py-1 bg-pista-green text-void rounded font-mono font-bold text-[9px] hover:shadow-neon-green cursor-pointer'>Open Case Study Modal</button>",
                 biogrid: "Bio Grid is a clinical-grade medical telemetry dashboard designed to reduce cognitive load and enforce layout stability. It features a horizontal KPI carousel, WCAG AA compliant contrast colors, and physiology simulation widgets, yielding +45% scan speed improvements. <button onclick=\"openModal('BioGrid-modal')\" class='mt-2 block px-2.5 py-1 bg-[#4ade80] text-void rounded font-mono font-bold text-[9px] hover:shadow-neon-green cursor-pointer'>Open Case Study Modal</button>",
+                apex: "Apex Motorsport is a museum-grade, scroll-linked 3D digital showroom for the Mercedes-AMG GT4 & GT3 EVO. It merges WebGL (Three.js), GSAP scroll timelines, procedural GLSL exhaust flame shaders, and a real-time synthesized V8 Web Audio engine into a cinematic 60+ FPS racing experience built on zero external build tools. <button onclick=\"openModal('Apex-modal')\" class='mt-2 block px-2.5 py-1 bg-[#e0000a] text-white rounded font-mono font-bold text-[9px] cursor-pointer'>Open Case Study Modal</button>",
                 book: "You can book a 20-minute slot directly on his automated calendar widget in the footer! Let me open it for you. <button onclick=\"document.getElementById('recruiter-briefing').scrollIntoView(); setTimeout(openBookingScheduler, 500);\" class='mt-2 block px-2.5 py-1 bg-acid-lime text-void rounded font-mono font-bold text-[9px] cursor-pointer'>Initialize Booking Calendar</button>",
                 fallback: "Query processed, but response yields low certainty. Try selecting a suggested capability matrix chip or typing 'Who is Kaustobh?' or 'Book a briefing'."
             };
@@ -3428,6 +3845,7 @@
                 gallery: document.getElementById('project-gallery'),
                 MilkDel: document.getElementById('project-MilkDel'),
                 BioGrid: document.getElementById('project-BioGrid'),
+                Apex: document.getElementById('project-Apex'),
                 briefing: document.getElementById('recruiter-briefing')
             };
 
@@ -3440,6 +3858,7 @@
                 gallery: { bg: 'bg-acid-lime', lightBg: 'light:bg-forest-lime', shadow: 'shadow-[0_0_8px_#D4FF00]' },
                 MilkDel: { bg: 'bg-pista-green', lightBg: 'light:bg-deep-green', shadow: 'shadow-[0_0_8px_#A8CFA1]' },
                 BioGrid: { bg: 'bg-biogrid-mint', lightBg: 'light:bg-forest-lime', shadow: 'shadow-[0_0_8px_#4ade80]' },
+                Apex: { bg: 'bg-apex-red', lightBg: 'light:bg-red-700', shadow: 'shadow-[0_0_8px_#e0000a]' },
                 briefing: { bg: 'bg-neutral-400', lightBg: 'light:bg-neutral-500', shadow: 'shadow-[0_0_8px_#A3A3A3]' }
             };
 
@@ -3475,8 +3894,10 @@
                     updateActiveHUDDot('gallery');
                 } else if (scrollPos >= sections.MilkDel.offsetTop && scrollPos < sections.BioGrid.offsetTop) {
                     updateActiveHUDDot('MilkDel');
-                } else if (scrollPos >= sections.BioGrid.offsetTop && scrollPos < sections.briefing.offsetTop) {
+                } else if (scrollPos >= sections.BioGrid.offsetTop && scrollPos < sections.Apex.offsetTop) {
                     updateActiveHUDDot('BioGrid');
+                } else if (scrollPos >= sections.Apex.offsetTop && scrollPos < sections.briefing.offsetTop) {
+                    updateActiveHUDDot('Apex');
                 } else {
                     updateActiveHUDDot('briefing');
                 }
@@ -3492,8 +3913,12 @@
                     updateActiveHUDDot('checkout');
                 } else if (scrollerPos >= sections.gallery.offsetTop && scrollerPos < sections.MilkDel.offsetTop) {
                     updateActiveHUDDot('gallery');
-                } else if (scrollerPos >= sections.MilkDel.offsetTop && scrollerPos < sections.briefing.offsetTop) {
+                } else if (scrollerPos >= sections.MilkDel.offsetTop && scrollerPos < sections.BioGrid.offsetTop) {
                     updateActiveHUDDot('MilkDel');
+                } else if (scrollerPos >= sections.BioGrid.offsetTop && scrollerPos < sections.Apex.offsetTop) {
+                    updateActiveHUDDot('BioGrid');
+                } else if (scrollerPos >= sections.Apex.offsetTop && scrollerPos < sections.briefing.offsetTop) {
+                    updateActiveHUDDot('Apex');
                 } else {
                     updateActiveHUDDot('briefing');
                 }
