@@ -1439,107 +1439,183 @@
                 </div>
             </div>
 
-            <!-- Right: Interactive Racing Telemetry Mockup Card -->
-            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 glass-panel rounded-xl border border-neutral-700/40 dark:border-white/5 relative overflow-hidden group flex items-center justify-center p-4 transform hover:scale-[1.01] transition-all duration-300 shadow-md hover:shadow-xl cursor-default" id="apex-mockup-card">
+            <!-- Right: Tactical Racing HUD Mockup Card -->
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 glass-panel rounded-xl border border-neutral-200 dark:border-white/5 relative overflow-hidden group flex items-center justify-center p-4 transform hover:scale-[1.01] transition-all duration-300 shadow-md hover:shadow-xl cursor-default" id="apex-mockup-card">
 
-                <!-- Racing HUD Console -->
-                <div class="w-full h-full rounded-lg text-[11px] flex flex-col justify-between relative overflow-hidden bg-[#060606] border border-white/5 text-[#e2e2e2] p-3 font-mono">
+                <!-- Tactical Racing HUD Console -->
+                <div class="w-full h-full rounded-lg text-[11px] flex flex-col justify-between relative overflow-hidden bg-[#060606] border border-[#e0000a]/10 text-[#e2e2e2] p-3 font-mono">
 
-                    <!-- Console Header -->
-                    <div class="flex justify-between items-center border-b border-[#e0000a]/20 pb-1.5 text-[9px]">
+                    <!-- Header bar -->
+                    <div class="flex justify-between items-center border-b border-[#e0000a]/15 pb-1.5 text-[9px]">
                         <span class="flex items-center gap-1.5">
-                            <span class="w-2 h-2 rounded-full bg-[#e0000a] apex-pulse"></span>
-                            AMG GT TELEMETRY // LIVE SESSION
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#e0000a] apex-pulse"></span>
+                            <span class="text-[#888] tracking-widest">AMG GT3 EVO // M159</span>
                         </span>
-                        <span class="text-[#e0000a] font-bold tracking-widest" id="apex-lap-timer">01:23.847</span>
+                        <div class="flex items-center gap-3">
+                            <span class="text-[#444] tracking-wider">LAP</span>
+                            <span class="text-[#f8f8f8] font-bold" id="apex-lap-counter">03 / 05</span>
+                            <span class="text-[#e0000a] font-bold tabular-nums tracking-widest" id="apex-lap-timer">1:23.847</span>
+                        </div>
                     </div>
 
-                    <!-- Main Telemetry Grid -->
-                    <div class="grow flex flex-col justify-between py-2 space-y-2">
+                    <!-- Main grid -->
+                    <div class="grow flex flex-col gap-2 py-1.5">
 
-                        <!-- RPM Arc + Gear + Speed row -->
-                        <div class="grid grid-cols-3 gap-2">
-                            <!-- RPM Arc Gauge -->
-                            <div class="bg-[#0f0202] border border-[#e0000a]/20 rounded p-2 flex flex-col items-center justify-center h-[110px] relative overflow-hidden">
-                                <span class="text-[7px] text-[#666] uppercase tracking-wider block mb-1">RPM</span>
-                                <svg viewBox="0 0 80 55" class="w-full h-[55px]">
-                                    <!-- Background arc track -->
-                                    <path d="M10,50 A35,35 0 0,1 70,50" stroke="#1a0505" stroke-width="6" fill="none" stroke-linecap="round"/>
-                                    <!-- Animated red fill arc -->
-                                    <path d="M10,50 A35,35 0 0,1 70,50" stroke="#e0000a" stroke-width="6" fill="none" stroke-linecap="round" class="rpm-path" style="stroke-dasharray:110; stroke-dashoffset:22;"/>
-                                    <!-- Redline zone -->
-                                    <path d="M60,18 A35,35 0 0,1 70,50" stroke="#ff1a24" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.3"/>
-                                    <text x="40" y="50" text-anchor="middle" fill="#f8f8f8" font-size="11" font-weight="bold" id="apex-rpm-value">7,200</text>
-                                    <text x="40" y="57" text-anchor="middle" fill="#666" font-size="5">RPM</text>
-                                </svg>
+                        <!-- Row 1: Gear + RPM segmented bar + Speed -->
+                        <div class="grid grid-cols-[56px_1fr_56px] gap-2 items-center">
+                            <!-- Gear -->
+                            <div class="bg-[#0c0101] border border-[#e0000a]/15 rounded flex flex-col items-center justify-center py-2">
+                                <span class="text-[6px] text-[#444] uppercase tracking-widest mb-0.5">GEAR</span>
+                                <span class="text-[36px] font-display font-black text-[#e0000a] leading-none" id="apex-gear-display" style="text-shadow:0 0 18px rgba(224,0,10,0.75);">4</span>
                             </div>
 
-                            <!-- Gear Display -->
-                            <div class="bg-[#0f0202] border border-[#e0000a]/20 rounded p-2 flex flex-col items-center justify-center h-[110px]">
-                                <span class="text-[7px] text-[#666] uppercase tracking-wider block mb-1">Gear</span>
-                                <span class="text-[48px] font-display font-black text-[#e0000a] leading-none" id="apex-gear-display" style="text-shadow: 0 0 20px rgba(224,0,10,0.8);">4</span>
-                                <div class="flex gap-1 mt-1">
-                                    <span class="w-3 h-1 rounded bg-[#e0000a]/40"></span>
-                                    <span class="w-3 h-1 rounded bg-[#e0000a]/40"></span>
-                                    <span class="w-3 h-1 rounded bg-[#e0000a]"></span>
-                                    <span class="w-3 h-1 rounded bg-[#e0000a]/20"></span>
-                                    <span class="w-3 h-1 rounded bg-[#e0000a]/20"></span>
+                            <!-- RPM segmented bar (20 segments) -->
+                            <div class="flex flex-col gap-1">
+                                <div class="flex items-end gap-[2px] h-[38px]" id="apex-rpm-bar">
+                                    <!-- JS will animate; static fallback: 14 lit, 3 yellow, 3 red -->
+                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:30%"></div>
+                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:38%"></div>
+                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:48%"></div>
+                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:55%"></div>
+                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:62%"></div>
+                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:68%"></div>
+                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:72%"></div>
+                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:76%"></div>
+                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:80%"></div>
+                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:83%"></div>
+                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:86%"></div>
+                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:89%"></div>
+                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:92%"></div>
+                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:94%"></div>
+                                    <!-- Yellow zone -->
+                                    <div class="flex-1 bg-[#fbbf24] rounded-sm" style="height:96%"></div>
+                                    <div class="flex-1 bg-[#fbbf24] rounded-sm" style="height:97%"></div>
+                                    <div class="flex-1 bg-[#fbbf24] rounded-sm" style="height:98%"></div>
+                                    <!-- Red-line zone -->
+                                    <div class="flex-1 bg-[#ff1a24] rounded-sm animate-pulse" style="height:99%"></div>
+                                    <div class="flex-1 bg-[#ff1a24] rounded-sm animate-pulse" style="height:100%"></div>
+                                    <div class="flex-1 bg-[#1a0505] rounded-sm" style="height:100%"></div>
+                                </div>
+                                <div class="flex justify-between text-[6px] text-[#333] px-0.5">
+                                    <span>1k</span><span>3k</span><span>5k</span><span>7k</span><span class="text-[#ff1a24]">9k</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-[7px] text-[#444]">RPM</span>
+                                    <span class="text-[9px] font-bold text-[#f8f8f8] tabular-nums" id="apex-rpm-value">7,840</span>
                                 </div>
                             </div>
 
-                            <!-- Speed Display -->
-                            <div class="bg-[#0f0202] border border-[#e0000a]/20 rounded p-2 flex flex-col items-center justify-center h-[110px]">
-                                <span class="text-[7px] text-[#666] uppercase tracking-wider block mb-1">Speed</span>
-                                <span class="text-[28px] font-display font-black text-[#f8f8f8] leading-none" id="apex-speed-value">187</span>
-                                <span class="text-[8px] text-[#666]">km/h</span>
-                                <div class="w-full h-1 bg-[#1a0505] rounded mt-2 overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-[#e0000a] to-[#ff6b35] rounded throttle-bar"></div>
+                            <!-- Speed -->
+                            <div class="bg-[#0c0101] border border-[#e0000a]/15 rounded flex flex-col items-center justify-center py-2">
+                                <span class="text-[6px] text-[#444] uppercase tracking-widest mb-0.5">KM/H</span>
+                                <span class="text-[22px] font-display font-black text-[#f8f8f8] leading-none tabular-nums" id="apex-speed-value">187</span>
+                            </div>
+                        </div>
+
+                        <!-- Row 2: Throttle / Brake / DRS / Tyre -->
+                        <div class="grid grid-cols-2 gap-2">
+                            <!-- Throttle + Brake -->
+                            <div class="bg-[#0a0101] border border-[#e0000a]/10 rounded p-2 space-y-1.5">
+                                <div class="flex justify-between text-[7px] text-[#444] mb-0.5">
+                                    <span>PEDAL TRACE</span>
+                                </div>
+                                <div class="flex items-center gap-1.5">
+                                    <span class="text-[6px] text-[#e0000a] w-7">THRT</span>
+                                    <div class="flex-1 h-1.5 bg-[#1a0505] rounded-full overflow-hidden">
+                                        <div class="h-full bg-gradient-to-r from-[#e0000a] to-[#ff6b35] rounded-full throttle-bar"></div>
+                                    </div>
+                                    <span class="text-[6px] text-[#e0000a] tabular-nums w-5 text-right">88%</span>
+                                </div>
+                                <div class="flex items-center gap-1.5">
+                                    <span class="text-[6px] text-[#888] w-7">BRK</span>
+                                    <div class="flex-1 h-1.5 bg-[#1a0505] rounded-full overflow-hidden">
+                                        <div class="h-full bg-[#60a5fa]/70 rounded-full" style="width:6%"></div>
+                                    </div>
+                                    <span class="text-[6px] text-[#888] tabular-nums w-5 text-right">6%</span>
+                                </div>
+                                <div class="flex items-center gap-1.5">
+                                    <span class="text-[6px] text-[#ff6b35] w-7">BST</span>
+                                    <div class="flex-1 h-1.5 bg-[#1a0505] rounded-full overflow-hidden">
+                                        <div class="h-full bg-[#ff6b35] rounded-full throttle-bar" style="animation-delay:0.4s"></div>
+                                    </div>
+                                    <span class="text-[6px] text-[#ff6b35] tabular-nums w-5 text-right">1.6b</span>
+                                </div>
+                            </div>
+
+                            <!-- DRS + Tyre + G-Force -->
+                            <div class="bg-[#0a0101] border border-[#e0000a]/10 rounded p-2 space-y-1.5">
+                                <!-- DRS -->
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[6px] text-[#444] uppercase tracking-widest">DRS</span>
+                                    <span class="text-[7px] font-bold text-[#4ade80] bg-[#4ade80]/10 border border-[#4ade80]/30 px-1.5 py-0.5 rounded">OPEN</span>
+                                </div>
+                                <!-- Tyre compound -->
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[6px] text-[#444] uppercase tracking-widest">TYRE</span>
+                                    <div class="flex items-center gap-1">
+                                        <span class="w-3 h-3 rounded-full bg-[#ef4444] border border-[#ef4444]/50 flex items-center justify-center text-[5px] font-bold text-white">S</span>
+                                        <span class="text-[6px] text-[#ef4444]">SOFT // 8 LAPS</span>
+                                    </div>
+                                </div>
+                                <!-- G-Force lateral bar -->
+                                <div>
+                                    <div class="flex justify-between text-[6px] text-[#444] mb-0.5">
+                                        <span>G-FORCE LAT</span>
+                                        <span class="text-[#fbbf24]">2.8G</span>
+                                    </div>
+                                    <div class="relative h-1.5 bg-[#1a0505] rounded-full overflow-hidden">
+                                        <div class="absolute inset-0 flex">
+                                            <div class="flex-1 flex justify-end pr-px">
+                                                <div class="h-full bg-[#60a5fa]/50 rounded-full" style="width:20%"></div>
+                                            </div>
+                                            <div class="w-px bg-[#333]"></div>
+                                            <div class="flex-1 pl-px">
+                                                <div class="h-full bg-[#fbbf24] rounded-full throttle-bar" style="animation-delay:0.2s; width:60%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Throttle + Brake + Turbo Boost row -->
-                        <div class="bg-[#0a0101] border border-[#e0000a]/10 rounded p-2 space-y-1.5">
-                            <div class="flex justify-between text-[8px] text-[#666] mb-1">
-                                <span>THROTTLE / BRAKE BALANCE</span>
-                                <span class="text-[#e0000a]" id="apex-throttle-label">88% THROTTLE</span>
+                        <!-- Row 3: Sector delta times -->
+                        <div class="bg-[#0a0101] border border-[#e0000a]/10 rounded p-2">
+                            <div class="flex justify-between text-[7px] text-[#444] mb-1.5">
+                                <span>SECTOR DELTA // VS BEST LAP</span>
+                                <span class="text-[#fbbf24]">PROVISIONAL P3</span>
                             </div>
-                            <!-- Throttle bar -->
-                            <div class="flex items-center gap-2">
-                                <span class="text-[7px] text-[#e0000a] w-10">THRT</span>
-                                <div class="flex-1 h-2 bg-[#1a0505] rounded overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-[#e0000a] to-[#ff6b35] rounded throttle-bar" style="animation-delay: 0.1s;"></div>
+                            <div class="grid grid-cols-3 gap-2 text-center">
+                                <div>
+                                    <div class="text-[6px] text-[#444] mb-0.5">S1</div>
+                                    <div class="text-[9px] font-bold text-[#4ade80]">-0.142</div>
+                                    <div class="h-0.5 bg-[#4ade80]/30 rounded mt-0.5 overflow-hidden"><div class="h-full bg-[#4ade80] rounded" style="width:85%"></div></div>
                                 </div>
-                            </div>
-                            <!-- Brake bar -->
-                            <div class="flex items-center gap-2">
-                                <span class="text-[7px] text-[#888] w-10">BRAKE</span>
-                                <div class="flex-1 h-2 bg-[#1a0505] rounded overflow-hidden">
-                                    <div class="h-full bg-[#ff6b35]/60 rounded" style="width:8%"></div>
+                                <div>
+                                    <div class="text-[6px] text-[#444] mb-0.5">S2</div>
+                                    <div class="text-[9px] font-bold text-[#4ade80]">-0.038</div>
+                                    <div class="h-0.5 bg-[#4ade80]/30 rounded mt-0.5 overflow-hidden"><div class="h-full bg-[#4ade80] rounded" style="width:60%"></div></div>
                                 </div>
-                            </div>
-                            <!-- Turbo boost -->
-                            <div class="flex items-center gap-2">
-                                <span class="text-[7px] text-[#ff6b35] w-10">BOOST</span>
-                                <div class="flex-1 h-2 bg-[#1a0505] rounded overflow-hidden">
-                                    <div class="h-full bg-[#ff6b35] rounded throttle-bar" style="width:62%; animation-delay: 0.5s;"></div>
+                                <div>
+                                    <div class="text-[6px] text-[#444] mb-0.5">S3</div>
+                                    <div class="text-[9px] font-bold text-[#ff6b35]">+0.091</div>
+                                    <div class="h-0.5 bg-[#ff6b35]/30 rounded mt-0.5 overflow-hidden"><div class="h-full bg-[#ff6b35] rounded throttle-bar" style="width:40%; animation-delay:0.6s;"></div></div>
                                 </div>
-                                <span class="text-[7px] text-[#ff6b35]">1.6 BAR</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Bottom status bar -->
-                    <div id="apex-status-banner" class="bg-[#e0000a]/10 border border-[#e0000a]/30 rounded p-1.5 text-[8px] flex items-center justify-between text-[#e0000a] transition-all duration-300">
-                        <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-[#e0000a] animate-ping"></span> SESSION ACTIVE // GT3 EVO M159</span>
-                        <span>LAP 3 / 5</span>
+                    <!-- Footer status -->
+                    <div class="bg-[#e0000a]/8 border border-[#e0000a]/20 rounded p-1.5 text-[7px] flex items-center justify-between text-[#666]">
+                        <span class="flex items-center gap-1"><span class="w-1 h-1 rounded-full bg-[#e0000a] animate-ping"></span><span class="text-[#e0000a]">SESSION ACTIVE</span></span>
+                        <span>ERS: <span class="text-[#fbbf24]">94%</span></span>
+                        <span>FUEL: <span class="text-[#4ade80]">38.2 KG</span></span>
+                        <span>OIL: <span class="text-[#f8f8f8]">122°C</span></span>
                     </div>
                 </div>
 
-                <!-- Floating KPI Video Card -->
-                <div class="absolute bottom-6 right-6 glass-panel p-3 rounded-lg z-20 transition-all group-hover:-translate-y-2 border border-neutral-700/60 dark:border-white/10 shadow-lg w-[220px]" onclick="openVideoModal('Apex Motorsport.mp4', 'Apex Motorsport // KPI Preview', '60+ FPS at Zero Dependencies', 'Apex-modal')">
-                    <!-- Video thumbnail -->
-                    <div class="w-full h-[100px] rounded overflow-hidden mb-2 border border-[#e0000a]/20 bg-black relative cursor-pointer group/vid" title="Click to expand video">
+                <!-- Floating KPI Video Card — matches BioGrid pattern exactly -->
+                <div class="absolute bottom-6 right-6 glass-panel p-3 rounded-lg z-20 transition-all group-hover:-translate-y-2 border border-neutral-300/60 dark:border-white/10 shadow-lg w-[220px]" onclick="openVideoModal('Apex Motorsport.mp4', 'Apex Motorsport // KPI Preview', '60+ FPS at Zero Dependencies', 'Apex-modal')">
+                    <div class="w-full h-[100px] rounded overflow-hidden mb-2 border border-neutral-300/30 dark:border-white/5 bg-black relative cursor-pointer group/vid" title="Click to expand video">
                         <video
                             id="Apex-kpi-video-thumb"
                             autoplay
@@ -1550,16 +1626,15 @@
                         >
                             <source src="Apex Motorsport.mp4" type="video/mp4">
                         </video>
-                        <!-- Play icon overlay -->
-                        <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover/vid:bg-black/50 transition-colors">
-                            <div class="w-8 h-8 rounded-full bg-[#e0000a]/90 flex items-center justify-center apex-pulse group-hover/vid:scale-110 transition-transform">
+                        <div class="absolute inset-0 flex items-center justify-center bg-void/30 group-hover/vid:bg-void/50 transition-colors">
+                            <div class="w-8 h-8 rounded-full bg-[#e0000a]/90 flex items-center justify-center shadow-[0_0_10px_#e0000a] group-hover/vid:scale-110 transition-transform">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                             </div>
                         </div>
                     </div>
                     <p class="text-[#e0000a] font-mono text-[9px] uppercase tracking-wider font-bold">Cinematic Showroom</p>
-                    <p class="text-sm font-bold font-display text-white dark:text-white light:text-neutral-800 mb-2">60+ FPS // Zero Build Tools</p>
-                    <a href="#" onclick="event.preventDefault(); event.stopPropagation(); openVideoModal('Apex Motorsport.mp4', 'Apex Motorsport // KPI Preview', '60+ FPS at Zero Dependencies', 'Apex-modal');" class="flex items-center gap-1.5 text-apex-red font-mono text-[9px] font-bold hover:underline cursor-pointer group/link transition-colors">
+                    <p class="text-sm font-bold font-display text-charcoal dark:text-white mb-2">60+ FPS // Zero Build Tools</p>
+                    <a href="#" onclick="event.preventDefault(); event.stopPropagation(); openVideoModal('Apex Motorsport.mp4', 'Apex Motorsport // KPI Preview', '60+ FPS at Zero Dependencies', 'Apex-modal');" class="flex items-center gap-1.5 text-neon-cyan dark:text-neon-cyan light:text-electric-blue font-mono text-[9px] font-bold hover:underline cursor-pointer group/link transition-colors">
                         See projects
                         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transform group-hover/link:translate-x-0.5 transition-transform"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                     </a>
