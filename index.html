@@ -3223,6 +3223,7 @@ gsap.to(camera.position, {
                 <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-neon-cyan dark:hover:border-neon-cyan light:hover:border-electric-blue rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" data-question="Explore Art Gallery Case Study">Art Gallery</button>
                 <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-pista-green dark:hover:border-pista-green light:hover:border-deep-green rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" data-question="Explore Doodh Subscription Case Study">Doodh Subscription</button>
                 <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-biogrid-mint dark:hover:border-biogrid-mint light:hover:border-forest-lime rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" data-question="Explore Bio Grid Case Study">Bio Grid Telemetry</button>
+                <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-apex-red dark:hover:border-apex-red light:hover:border-apex-red rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" data-question="Explore Apex Motorsport Case Study">Apex Motorsport</button>
                 <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-neon-cyan dark:hover:border-neon-cyan light:hover:border-electric-blue rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" data-question="Book walkthrough slot">Book brief call</button>
             </div>
 
@@ -5136,6 +5137,8 @@ gsap.to(camera.position, {
                     reply = chatbotDatabase.doodh;
                 } else if (q.includes('biogrid') || q.includes('bio') || q.includes('telemetry') || q.includes('medical') || q.includes('clinical')) {
                     reply = chatbotDatabase.biogrid;
+                } else if (q.includes('apex') || q.includes('motorsport') || q.includes('racing') || q.includes('car') || q.includes('3d')) {
+                    reply = chatbotDatabase.apex;
                 } else if (q.includes('book') || q.includes('briefing') || q.includes('walkthrough') || q.includes('schedule') || q.includes('call')) {
                     reply = chatbotDatabase.book;
                 }
