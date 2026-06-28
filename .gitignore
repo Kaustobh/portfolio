@@ -18,6 +18,3 @@ package-lock.json
 
 # Environment secrets — never commit
 .env
-
-# Large video files (exceed GitHub 100MB limit — host externally)
-*.mp4
