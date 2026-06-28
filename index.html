@@ -1469,41 +1469,56 @@
                                 <span class="text-[36px] font-display font-black text-[#e0000a] leading-none" id="apex-gear-display" style="text-shadow:0 0 18px rgba(224,0,10,0.75);">4</span>
                             </div>
 
-                            <!-- RPM segmented bar (20 segments) -->
-                            <div class="flex flex-col gap-1">
-                                <div class="flex items-end gap-[2px] h-[38px]" id="apex-rpm-bar">
-                                    <!-- JS will animate; static fallback: 14 lit, 3 yellow, 3 red -->
-                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:30%"></div>
-                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:38%"></div>
-                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:48%"></div>
-                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:55%"></div>
-                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:62%"></div>
-                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:68%"></div>
-                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:72%"></div>
-                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:76%"></div>
-                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:80%"></div>
-                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:83%"></div>
-                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:86%"></div>
-                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:89%"></div>
-                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:92%"></div>
-                                    <div class="flex-1 bg-[#e0000a] rounded-sm" style="height:94%"></div>
-                                    <!-- Yellow zone -->
-                                    <div class="flex-1 bg-[#fbbf24] rounded-sm" style="height:96%"></div>
-                                    <div class="flex-1 bg-[#fbbf24] rounded-sm" style="height:97%"></div>
-                                    <div class="flex-1 bg-[#fbbf24] rounded-sm" style="height:98%"></div>
-                                    <!-- Red-line zone -->
-                                    <div class="flex-1 bg-[#ff1a24] rounded-sm animate-pulse" style="height:99%"></div>
-                                    <div class="flex-1 bg-[#ff1a24] rounded-sm animate-pulse" style="height:100%"></div>
-                                    <div class="flex-1 bg-[#1a0505] rounded-sm" style="height:100%"></div>
+                            <!-- Professional Sequential LED Shift Lights & Linear RPM Sweep -->
+                            <div class="flex flex-col gap-2 bg-[#0a0101] border border-[#e0000a]/10 rounded p-2">
+                                <!-- LED Shift Light Array -->
+                                <div class="flex justify-between items-center gap-1 px-1">
+                                    <!-- Green LEDs (Low-Mid) -->
+                                    <span class="w-2.5 h-1.5 rounded-sm bg-[#22c55e] shadow-[0_0_6px_#22c55e]"></span>
+                                    <span class="w-2.5 h-1.5 rounded-sm bg-[#22c55e] shadow-[0_0_6px_#22c55e]"></span>
+                                    <span class="w-2.5 h-1.5 rounded-sm bg-[#22c55e] shadow-[0_0_6px_#22c55e]"></span>
+                                    <span class="w-2.5 h-1.5 rounded-sm bg-[#22c55e] shadow-[0_0_6px_#22c55e]"></span>
+                                    <span class="w-2.5 h-1.5 rounded-sm bg-[#22c55e] shadow-[0_0_6px_#22c55e]"></span>
+                                    <!-- Red LEDs (High) -->
+                                    <span class="w-2.5 h-1.5 rounded-sm bg-[#ef4444] shadow-[0_0_6px_#ef4444]"></span>
+                                    <span class="w-2.5 h-1.5 rounded-sm bg-[#ef4444] shadow-[0_0_6px_#ef4444]"></span>
+                                    <span class="w-2.5 h-1.5 rounded-sm bg-[#ef4444] shadow-[0_0_6px_#ef4444]"></span>
+                                    <span class="w-2.5 h-1.5 rounded-sm bg-[#ef4444] shadow-[0_0_6px_#ef4444]"></span>
+                                    <span class="w-2.5 h-1.5 rounded-sm bg-[#ef4444] shadow-[0_0_6px_#ef4444]"></span>
+                                    <!-- Blue LEDs (Shift Warning) -->
+                                    <span class="w-2.5 h-1.5 rounded-sm bg-[#3b82f6] shadow-[0_0_6px_#3b82f6] animate-pulse"></span>
+                                    <span class="w-2.5 h-1.5 rounded-sm bg-[#3b82f6] shadow-[0_0_6px_#3b82f6] animate-pulse"></span>
+                                    <span class="w-2.5 h-1.5 rounded-sm bg-[#3b82f6] shadow-[0_0_6px_#3b82f6] animate-pulse"></span>
+                                    <span class="w-2.5 h-1.5 rounded-sm bg-[#1e293b]"></span>
                                 </div>
-                                <div class="flex justify-between text-[6px] text-[#333] px-0.5">
-                                    <span>1k</span><span>3k</span><span>5k</span><span>7k</span><span class="text-[#ff1a24]">9k</span>
+
+                                <!-- Linear RPM Bar & Grid Ticks -->
+                                <div class="space-y-1">
+                                    <div class="h-2 w-full bg-[#140202] border border-[#e0000a]/20 rounded-sm overflow-hidden relative">
+                                        <!-- Active RPM fill bar -->
+                                        <div class="h-full bg-gradient-to-r from-[#22c55e] via-[#e0000a] to-[#3b82f6] rounded-sm transition-all duration-300" style="width: 84%"></div>
+                                        <!-- Redline marker overlay -->
+                                        <div class="absolute right-[10%] top-0 bottom-0 w-0.5 bg-[#ff1a24] opacity-75"></div>
+                                    </div>
+                                    <div class="flex justify-between text-[6px] text-[#555] font-mono px-0.5">
+                                        <span>1000</span>
+                                        <span>3000</span>
+                                        <span>5000</span>
+                                        <span>7000</span>
+                                        <span class="text-[#ef4444] font-bold">9000</span>
+                                    </div>
                                 </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-[7px] text-[#444]">RPM</span>
-                                    <span class="text-[9px] font-bold text-[#f8f8f8] tabular-nums" id="apex-rpm-value">7,840</span>
+
+                                <!-- Label and Value readout -->
+                                <div class="flex justify-between items-center border-t border-white/5 pt-1">
+                                    <span class="text-[7px] text-[#666] tracking-wider uppercase">ENGINE SPEED</span>
+                                    <div class="flex items-baseline gap-0.5">
+                                        <span class="text-xs font-bold text-[#f8f8f8] font-mono tabular-nums" id="apex-rpm-value">7,840</span>
+                                        <span class="text-[6px] text-[#444] font-mono">RPM</span>
+                                    </div>
                                 </div>
                             </div>
+
 
                             <!-- Speed -->
                             <div class="bg-[#0c0101] border border-[#e0000a]/15 rounded flex flex-col items-center justify-center py-2">
