@@ -523,6 +523,7 @@
                     src="bg_fintech.png" 
                     alt="Fintech Background" 
                     class="w-full h-full object-cover opacity-90 filter saturate-150 grayscale-[20%]"
+                    loading="lazy"
                 />
             </div>
             <div class="w-full md:w-1/2 pr-0 md:pr-12 flex flex-col justify-center relative z-10">
@@ -636,6 +637,7 @@
                             muted 
                             loop 
                             playsinline
+                            preload="none"
                             class="w-full h-full object-cover"
                         >
                             <source src="NexusFin_tech.mp4" type="video/mp4">
@@ -667,6 +669,7 @@
                     src="bg_checkout.png" 
                     alt="Checkout Background" 
                     class="w-full h-full object-cover opacity-90 filter saturate-150 grayscale-[20%]"
+                    loading="lazy"
                 />
             </div>
             <div class="w-full md:w-1/2 pr-0 md:pr-12 flex flex-col justify-center relative z-10">
@@ -866,6 +869,7 @@
                     src="bg_gallery.png" 
                     alt="Gallery Background" 
                     class="w-full h-full object-cover opacity-90 filter saturate-150 grayscale-[20%]"
+                    loading="lazy"
                 />
             </div>
             <div class="w-full md:w-1/2 pr-0 md:pr-12 flex flex-col justify-center relative z-10">
@@ -1000,6 +1004,7 @@
                             muted 
                             loop 
                             playsinline
+                            preload="none"
                             class="w-full h-full object-cover"
                         >
                             <source src="artt gallery.mp4" type="video/mp4">
@@ -1031,6 +1036,7 @@
                     src="bg_milkdel.png" 
                     alt="MilkDel Background" 
                     class="w-full h-full object-cover opacity-90 filter saturate-150 grayscale-[20%]"
+                    loading="lazy"
                 />
             </div>
             <div class="w-full md:w-1/2 pr-0 md:pr-12 flex flex-col justify-center relative z-10">
@@ -1233,6 +1239,7 @@
                             muted 
                             loop 
                             playsinline
+                            preload="none"
                             class="w-full h-full object-cover"
                         >
                             <source src="Doodh.mp4" type="video/mp4">
@@ -1264,6 +1271,7 @@
                     src="bg_biogrid.jpg" 
                     alt="Bio Grid Background" 
                     class="w-full h-full object-cover opacity-90 filter saturate-150 grayscale-[20%] scale-150 transform"
+                    loading="lazy"
                 />
             </div>
             <div class="w-full md:w-1/2 pr-0 md:pr-12 flex flex-col justify-center relative z-10">
@@ -1380,6 +1388,7 @@
                             muted 
                             loop 
                             playsinline
+                            preload="none"
                             class="w-full h-full object-cover"
                         >
                             <source src="Bio Grid.mp4" type="video/mp4">
@@ -1412,6 +1421,7 @@
                     src="bg_apex.jpg"
                     alt="Apex Motorsport Background"
                     class="w-full h-full object-cover opacity-85 filter saturate-125 scale-150 transform"
+                    loading="lazy"
                 />
             </div>
 
@@ -1637,6 +1647,7 @@
                             muted
                             loop
                             playsinline
+                            preload="none"
                             class="w-full h-full object-cover"
                         >
                             <source src="Apex Motorsport.mp4" type="video/mp4">
@@ -3446,6 +3457,28 @@ gsap.to(camera.position, {
                         // Dismiss loader split doors
                         bootOverlay.style.opacity = '0';
                         bootOverlay.style.pointerEvents = 'none';
+                        
+                        // Initialize high-performance video IntersectionObserver
+                        const videoObserver = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                const video = entry.target;
+                                if (entry.isIntersecting) {
+                                    if (video.getAttribute('preload') !== 'auto') {
+                                        video.setAttribute('preload', 'auto');
+                                    }
+                                    video.play().catch(e => console.log("Intersection play prevented:", e));
+                                } else {
+                                    video.pause();
+                                }
+                            });
+                        }, { threshold: 0.1 });
+                        
+                        document.querySelectorAll('video').forEach(video => {
+                            if (video.id !== 'video-modal-player') {
+                                videoObserver.observe(video);
+                            }
+                        });
+
                         setTimeout(() => {
                             bootOverlay.remove();
                             // Trigger metric countup animations
