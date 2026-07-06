@@ -3101,7 +3101,7 @@ gsap.to(camera.position, {
                 <div class="space-y-2">
                     <h6 class="font-mono text-[10px] text-charcoal dark:text-white font-bold uppercase tracking-widest">[01 // Professional Narrative]</h6>
                     <p>
-                        UX Designer and aspiring UX Engineer with experience in user-centered design, interface design, usability testing, wireframing, prototyping, Full Stack Web Development, responsive High-Fidelity Prototypes, and game UI/UX. Background in computer science, network administration, and AI-assisted workflow tools. Strong portfolio with case studies in dashboard redesign, checkout optimization, and immersive gallery experiences.
+                        UX Designer and aspiring UX Engineer with experience in user-centered design, interface design, usability testing, wireframing, prototyping, Full Stack Web Development, responsive High-Fidelity Prototypes, and game UI/UX. Background in computer science, network administration, and AI-assisted workflow tools. Strong portfolio with case studies in dashboard redesign, checkout optimization, subscription flows, clinical telemetry, and 3D WebGL experiences.
                     </p>
                 </div>
 
@@ -3128,32 +3128,71 @@ gsap.to(camera.position, {
                 <div class="space-y-3">
                     <h6 class="font-mono text-[10px] text-charcoal dark:text-white font-bold uppercase tracking-widest">[03 // Selected Projects]</h6>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-[11px]">
-                        <div class="bg-neutral-50 dark:bg-surface/30 p-2.5 rounded border border-neutral-200 dark:border-white/5">
-                            <p class="font-bold text-charcoal dark:text-white print:text-black">Fintech Dashboard</p>
-                            <p class="font-mono text-[8px] text-neon-cyan uppercase tracking-wider mb-1">Case Study // Deployable</p>
-                            <ul class="list-disc pl-3 text-neutral-400 space-y-1">
-                                <li>Re-engineered legacy wealth dashboard, reducing cognitive load and streamlining user flows.</li>
-                                <li>Conducted UX audits, draggable A/B wireframing, and high-fidelity dashboard design.</li>
-                                <li>Delivered a measured <strong class="text-acid-lime">40% reduction</strong> in task completion time.</li>
-                            </ul>
+                        <div class="bg-neutral-50 dark:bg-surface/30 p-2.5 rounded border border-neutral-200 dark:border-white/5 flex flex-col justify-between">
+                            <div>
+                                <p class="font-bold text-charcoal dark:text-white print:text-black">Fintech Dashboard</p>
+                                <p class="font-mono text-[8px] text-neon-cyan uppercase tracking-wider mb-1">Case Study // Deployable</p>
+                                <ul class="list-disc pl-3 text-neutral-400 space-y-1">
+                                    <li>Re-engineered legacy wealth dashboard, reducing cognitive load and streamlining user flows.</li>
+                                    <li>Conducted UX audits, draggable A/B wireframing, and high-fidelity dashboard design.</li>
+                                    <li>Delivered a measured <strong class="text-acid-lime">40% reduction</strong> in task completion time.</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="bg-neutral-50 dark:bg-surface/30 p-2.5 rounded border border-neutral-200 dark:border-white/5">
-                            <p class="font-bold text-charcoal dark:text-white print:text-black">E-Comm Checkout</p>
-                            <p class="font-mono text-[8px] text-neon-magenta uppercase tracking-wider mb-1">Case Study // Interaction</p>
-                            <ul class="list-disc pl-3 text-neutral-400 space-y-1">
-                                <li>Engineered frictionless device configuration & checkout with interactive micro-interactions.</li>
-                                <li>Designed validation loops and haptic confirmation steps.</li>
-                                <li>Achieved a measured <strong class="text-neon-magenta">+18% conversion lift</strong> in checkout rate.</li>
-                            </ul>
+                        <div class="bg-neutral-50 dark:bg-surface/30 p-2.5 rounded border border-neutral-200 dark:border-white/5 flex flex-col justify-between">
+                            <div>
+                                <p class="font-bold text-charcoal dark:text-white print:text-black">E-Comm Checkout</p>
+                                <p class="font-mono text-[8px] text-neon-magenta uppercase tracking-wider mb-1">Case Study // Interaction</p>
+                                <ul class="list-disc pl-3 text-neutral-400 space-y-1">
+                                    <li>Engineered frictionless device configuration & checkout with interactive micro-interactions.</li>
+                                    <li>Designed validation loops and haptic confirmation steps.</li>
+                                    <li>Achieved a measured <strong class="text-neon-magenta">+18% conversion lift</strong> in checkout rate.</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="bg-neutral-50 dark:bg-surface/30 p-2.5 rounded border border-neutral-200 dark:border-white/5">
-                            <p class="font-bold text-charcoal dark:text-white print:text-black">Graphic Art Gallery</p>
-                            <p class="font-mono text-[8px] text-acid-lime uppercase tracking-wider mb-1">Case Study // Deployable</p>
-                            <ul class="list-disc pl-3 text-neutral-400 space-y-1">
-                                <li>Designed immersive gallery portal and inquiry experience to maximize acquisition engagement.</li>
-                                <li>Created fluid canvas interactions and wall-scale dynamic visualizer models.</li>
-                                <li>Delivered a measured <strong class="text-acid-lime">+28% increase</strong> in collector inquiry rates.</li>
-                            </ul>
+                        <div class="bg-neutral-50 dark:bg-surface/30 p-2.5 rounded border border-neutral-200 dark:border-white/5 flex flex-col justify-between">
+                            <div>
+                                <p class="font-bold text-charcoal dark:text-white print:text-black">Graphic Art Gallery</p>
+                                <p class="font-mono text-[8px] text-acid-lime uppercase tracking-wider mb-1">Case Study // Deployable</p>
+                                <ul class="list-disc pl-3 text-neutral-400 space-y-1">
+                                    <li>Designed immersive gallery portal and inquiry experience to maximize acquisition engagement.</li>
+                                    <li>Created fluid canvas interactions and wall-scale dynamic visualizer models.</li>
+                                    <li>Delivered a measured <strong class="text-acid-lime">+28% increase</strong> in collector inquiry rates.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-neutral-50 dark:bg-surface/30 p-2.5 rounded border border-neutral-200 dark:border-white/5 flex flex-col justify-between">
+                            <div>
+                                <p class="font-bold text-charcoal dark:text-white print:text-black">Doodh Subscription</p>
+                                <p class="font-mono text-[8px] text-pista-green uppercase tracking-wider mb-1">Case Study // Interaction</p>
+                                <ul class="list-disc pl-3 text-neutral-400 space-y-1">
+                                    <li>Designed user experience for daily subscription scheduling and logistics configuration.</li>
+                                    <li>Implemented pause mechanisms and exit intent flows to maximize user retention.</li>
+                                    <li>Achieved a measured <strong class="text-pista-green">+30% retention lift</strong> in active subscriptions.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-neutral-50 dark:bg-surface/30 p-2.5 rounded border border-neutral-200 dark:border-white/5 flex flex-col justify-between">
+                            <div>
+                                <p class="font-bold text-charcoal dark:text-white print:text-black">Bio Grid Telemetry</p>
+                                <p class="font-mono text-[8px] text-biogrid-mint uppercase tracking-wider mb-1">Case Study // Med Tech</p>
+                                <ul class="list-disc pl-3 text-neutral-400 space-y-1">
+                                    <li>Designed clinical-grade real-time medical dashboard complying with WCAG AA standards.</li>
+                                    <li>Enforced layout stability, an 8px spatial grid, and interactive physiology adjustment inputs.</li>
+                                    <li>Delivered a measured <strong class="text-biogrid-mint">+45% cognitive scanning speed</strong> improvement.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-neutral-50 dark:bg-surface/30 p-2.5 rounded border border-neutral-200 dark:border-white/5 flex flex-col justify-between">
+                            <div>
+                                <p class="font-bold text-charcoal dark:text-white print:text-black">Apex Motorsport</p>
+                                <p class="font-mono text-[8px] text-apex-red uppercase tracking-wider mb-1">Case Study // 3D & WebGL</p>
+                                <ul class="list-disc pl-3 text-neutral-400 space-y-1">
+                                    <li>Engineered a scroll-linked 3D showroom using Three.js WebGL and GSAP animations.</li>
+                                    <li>Integrated procedural GLSL flame shaders and a V8 Web Audio synthesizer engine.</li>
+                                    <li>Maintained a performant <strong class="text-apex-red">60+ FPS experience</strong> under zero external build tools.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
