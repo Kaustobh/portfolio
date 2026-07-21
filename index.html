@@ -528,7 +528,7 @@
                 <a href="#work" class="px-8 py-4 bg-neon-cyan/10 dark:bg-neon-cyan/10 light:bg-electric-blue/10 border border-neon-cyan dark:border-neon-cyan light:border-electric-blue text-neon-cyan dark:text-neon-cyan light:text-electric-blue font-bold rounded hover:bg-neon-cyan dark:hover:bg-neon-cyan light:hover:bg-electric-blue hover:text-void dark:hover:text-void light:hover:text-white transition-all duration-300 shadow-neon dark:shadow-neon light:shadow-light-blue transform hover:-translate-y-0.5 cursor-pointer">
                     See the impact
                 </a>
-                <button id="download-cv-btn" class="px-8 py-4 text-white hover:text-neon-magenta dark:hover:text-neon-magenta light:hover:text-deep-rose transition-colors duration-300 font-mono text-sm flex items-center gap-2 border border-transparent hover:border-neutral-200 dark:hover:border-neutral-800 rounded cursor-pointer">
+                <button id="download-cv-btn" onclick="openModal('cv-modal')" class="px-8 py-4 text-white hover:text-neon-magenta dark:hover:text-neon-magenta light:hover:text-deep-rose transition-colors duration-300 font-mono text-sm flex items-center gap-2 border border-transparent hover:border-neutral-200 dark:hover:border-neutral-800 rounded cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down-to-line"><path d="M12 17V3"/><path d="m6 11 6 6 6-6"/><path d="M19 21H5"/></svg>
                     Download CV.pdf
                 </button>
@@ -607,7 +607,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-fintech" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu">
+                    <video id="kpi-video-fintech" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="NexusFin_tech.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -666,7 +666,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-checkout" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu">
+                    <video id="kpi-video-checkout" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="NeonHex.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -733,7 +733,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-gallery" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu">
+                    <video id="kpi-video-gallery" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="artt gallery.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -805,7 +805,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-milkdel" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu">
+                    <video id="kpi-video-milkdel" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="Doodh.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -872,7 +872,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-biogrid" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu">
+                    <video id="kpi-video-biogrid" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="Bio Grid.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -942,7 +942,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-apex" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu">
+                    <video id="kpi-video-apex" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="Apex Motorsport.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -1023,7 +1023,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-silvatide" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu">
+                    <video id="kpi-video-silvatide" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="Silvatide.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -3030,6 +3030,103 @@ gsap.to(camera.position, {
 
     <!-- UI/UX interactions, scheduler, validations, chatbot, wireframe slider, audio click synth -->
     <script>
+        // Global Modal & Video Player Controls — defined immediately for instant click execution
+        window.openModal = function(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            const content = document.getElementById(`${modalId}-content`);
+            
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+            if (content) {
+                content.classList.remove('scale-95');
+                content.classList.add('scale-100');
+            }
+            document.body.style.overflow = 'hidden';
+            if (typeof playSyntheticClick === 'function') playSyntheticClick('success');
+        };
+
+        window.closeModal = function(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            const content = document.getElementById(`${modalId}-content`);
+            
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.classList.remove('opacity-100');
+            if (content) {
+                content.classList.add('scale-95');
+                content.classList.remove('scale-100');
+            }
+            document.body.style.overflow = '';
+            if (typeof playSyntheticClick === 'function') playSyntheticClick('mechanical');
+        };
+
+        window.openVideoModal = function(videoSrc, kpiTitle, kpiText, caseStudyModalId) {
+            const modal = document.getElementById('video-modal');
+            if (!modal) return;
+            const content = document.getElementById('video-modal-content');
+            const player = document.getElementById('video-modal-player');
+            
+            const finalSrc = videoSrc || 'NexusFin_tech.mp4';
+            const finalTitle = kpiTitle || 'Fintech Dashboard // KPI Preview';
+            const finalTex = kpiText || 'Reduced task time by 40%';
+            const finalModalId = caseStudyModalId || 'fintech-modal';
+            
+            if (player) {
+                const sourceEl = player.querySelector('source');
+                if (sourceEl) sourceEl.setAttribute('src', finalSrc);
+                player.src = finalSrc;
+                player.currentTime = 0;
+                player.muted = false;
+                player.load();
+                player.play().catch(e => console.log("Autoplay info:", e));
+            }
+            
+            const titleEl = modal.querySelector('.video-kpi-title');
+            const textEl = modal.querySelector('.video-kpi-text');
+            const linkEl = modal.querySelector('.video-case-study-link');
+            
+            if (titleEl) titleEl.textContent = finalTitle;
+            if (textEl) textEl.textContent = finalTex;
+            if (linkEl && finalModalId) {
+                linkEl.style.display = 'flex';
+                linkEl.setAttribute('onclick', `event.preventDefault(); closeVideoModal(); setTimeout(()=>openModal('${finalModalId}'), 300);`);
+            }
+            
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+            if (content) {
+                content.classList.remove('scale-95');
+                content.classList.add('scale-100');
+            }
+            document.body.style.overflow = 'hidden';
+            if (typeof playSyntheticClick === 'function') playSyntheticClick('success');
+        };
+
+        window.closeVideoModal = function() {
+            const modal = document.getElementById('video-modal');
+            if (!modal) return;
+            const content = document.getElementById('video-modal-content');
+            const player = document.getElementById('video-modal-player');
+            
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.classList.remove('opacity-100');
+            if (content) {
+                content.classList.add('scale-95');
+                content.classList.remove('scale-100');
+            }
+            if (player) player.pause();
+            document.body.style.overflow = '';
+            if (typeof playSyntheticClick === 'function') playSyntheticClick('mechanical');
+        };
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeVideoModal();
+                ['fintech-modal', 'checkout-modal', 'gallery-modal', 'MilkDel-modal', 'BioGrid-modal', 'Apex-modal', 'Silvatide-modal', 'cv-modal'].forEach(m => closeModal(m));
+            }
+        });
+
         document.addEventListener("DOMContentLoaded", () => {
             
             // ==========================================
