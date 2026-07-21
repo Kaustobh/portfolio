@@ -531,20 +531,54 @@
     <div id="custom-cursor" class="hidden md:block border-neon-cyan dark:border-neon-cyan light:border-electric-blue"></div>
     <div id="custom-cursor-dot" class="hidden md:block bg-neon-magenta dark:bg-neon-magenta light:bg-deep-rose"></div>
 
-    <!-- Floating Audio HUD & Mode Matrix Toggle -->
-    <header class="fixed top-6 right-8 z-50 flex items-center gap-4">
-        <!-- Audio Synth Toggle Widget -->
-        <button id="audio-click-toggle" class="glass-panel p-3 rounded-full hover:scale-110 active:scale-95 transition-all text-neutral-400 hover:text-neon-cyan dark:hover:text-neon-cyan light:hover:text-electric-blue flex items-center justify-center cursor-pointer" title="Toggle audio feedback">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-volume-2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
-        </button>
+    <!-- Floating Audio HUD & Mode Matrix Toggle with Logo Brand Slot -->
+    <header class="fixed top-6 left-8 right-8 z-50 flex items-center justify-between pointer-events-none">
+        
+        <!-- Fixed HUD Top Bar Brand Slot -->
+        <a href="#hero-section" class="group relative flex items-center gap-3.5 no-underline focus:outline-none pointer-events-auto select-none" aria-label="Go to Hero Section">
+          
+          <!-- Dynamic Accent Backlight Aura -->
+          <div id="logo-hud-aura" 
+               class="absolute -inset-1 rounded-xl bg-[#00F3FF]/30 blur-md transition-all duration-500 group-hover:bg-[#00F3FF]/60 group-hover:blur-lg">
+          </div>
 
-        <!-- Theme Mode Switcher Matrix -->
-        <button id="theme-matrix-toggle" class="glass-panel p-3 rounded-full hover:scale-110 active:scale-95 transition-all text-neutral-400 hover:text-neon-cyan dark:hover:text-neon-cyan light:hover:text-electric-blue flex items-center justify-center cursor-pointer" title="Switch Theme Matrix">
-            <!-- Dark Sun/Moon icon -->
-            <svg id="theme-moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-            <!-- Light Sun icon -->
-            <svg id="theme-sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block dark:hidden"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-        </button>
+          <!-- Glassmorphic Icon Container -->
+          <div class="relative flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-slate-900/80 p-1.5 backdrop-blur-md shadow-inner transition-transform duration-300 group-hover:scale-105 group-hover:border-cyan-400/50">
+            <img 
+              id="hud-logo-img"
+              src="assets/logo-mark.svg" 
+              alt="Kaustobh Bhattacharya - UX Engineer Logo" 
+              class="h-full w-full object-contain filter drop-shadow-[0_0_6px_rgba(0,243,255,0.6)] transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(0,243,255,0.9)]"
+            />
+          </div>
+
+          <!-- Title & Identity Label -->
+          <div class="flex flex-col font-mono text-xs tracking-wider">
+            <span class="font-bold text-gray-100 transition-colors duration-300 group-hover:text-cyan-400">
+              KAUSTOBH BHATTACHARYA
+            </span>
+            <span class="text-[10px] text-gray-400 flex items-center gap-1.5">
+              <span class="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              UX ENGINEER // PORTFOLIO
+            </span>
+          </div>
+        </a>
+
+        <!-- Floating Controls Group -->
+        <div class="flex items-center gap-4 pointer-events-auto">
+            <!-- Audio Synth Toggle Widget -->
+            <button id="audio-click-toggle" class="glass-panel p-3 rounded-full hover:scale-110 active:scale-95 transition-all text-neutral-400 hover:text-neon-cyan dark:hover:text-neon-cyan light:hover:text-electric-blue flex items-center justify-center cursor-pointer" title="Toggle audio feedback">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-volume-2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+            </button>
+
+            <!-- Theme Mode Switcher Matrix -->
+            <button id="theme-matrix-toggle" class="glass-panel p-3 rounded-full hover:scale-110 active:scale-95 transition-all text-neutral-400 hover:text-neon-cyan dark:hover:text-neon-cyan light:hover:text-electric-blue flex items-center justify-center cursor-pointer" title="Switch Theme Matrix">
+                <!-- Dark Sun/Moon icon -->
+                <svg id="theme-moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                <!-- Light Sun icon -->
+                <svg id="theme-sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block dark:hidden"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            </button>
+        </div>
     </header>
 
     <!-- Side Floating HUD Navigation Indicators -->
@@ -4159,6 +4193,23 @@ gsap.to(camera.position, {
             let currentSection = 'hero';
             const sectionVisibility = {};
 
+            /**
+             * Updates the HUD header logo backlight aura and drop-shadow to match the active section theme
+             * @param {string} hexColor - Active section neon color (e.g., '#00F3FF')
+             */
+            function updateHUDLogoTheme(hexColor) {
+              const logoAura = document.getElementById('logo-hud-aura');
+              const logoImg = document.getElementById('hud-logo-img');
+
+              if (logoAura) {
+                logoAura.style.backgroundColor = hexColor;
+              }
+              
+              if (logoImg) {
+                logoImg.style.filter = `drop-shadow(0 0 8px ${hexColor})`;
+              }
+            }
+
             function updateActiveHUDDot(activeKey) {
                 if (activeKey === currentSection) return; // no-op if unchanged
                 currentSection = activeKey;
@@ -4170,6 +4221,9 @@ gsap.to(camera.position, {
                 // Update root CSS variables for dynamic neon color metamorphosis
                 document.documentElement.style.setProperty('--accent-color', activeColor);
                 document.documentElement.style.setProperty('--glow-color', activeShadow);
+
+                // Update HUD Logo Backlight Aura & Drop-Shadow Theme Sync
+                updateHUDLogoTheme(activeColor);
 
                 document.querySelectorAll('.hud-dot').forEach(dot => {
                     const sec = dot.getAttribute('data-section');
