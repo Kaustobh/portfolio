@@ -594,7 +594,36 @@
                 </div>
             </div>
 
-            </section>
+            
+            <!-- Right: Themed Video Frame (Fintech Dashboard) -->
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border border-cyan-500/40 hover:border-cyan-400/80 shadow-[0_0_30px_rgba(0,243,255,0.2)] hover:shadow-[0_0_40px_rgba(0,243,255,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('NexusFin_tech.mp4', 'Fintech Dashboard // KPI Preview', 'Reduced task time by 40%', 'fintech-modal')">
+                <!-- Top Themed Header Bar -->
+                <div class="w-full px-4 py-2 bg-void/90 border-b border-cyan-500/20 flex items-center justify-between z-20 pointer-events-none">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-neon-cyan animate-pulse"></span>
+                        <span class="font-mono text-[9px] uppercase tracking-widest text-neon-cyan font-bold">[FINTECH // REAL-TIME ANALYTICS]</span>
+                    </div>
+                    <span class="font-mono text-[8px] text-white/50">▶ HD PREVIEW</span>
+                </div>
+                <!-- Video Container -->
+                <div class="relative w-full grow overflow-hidden">
+                    <video id="kpi-video-fintech" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu">
+                        <source src="NexusFin_tech.mp4" type="video/mp4">
+                    </video>
+                    <!-- Play Overlay -->
+                    <div class="absolute inset-0 flex items-center justify-center bg-void/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
+                        <div class="w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300" style="background:#00F3FF; box-shadow:0 0 25px rgba(0,243,255,0.8);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#000" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bottom CTA Strip -->
+                <div class="px-4 py-2.5 bg-gradient-to-t from-void/95 to-void/70 border-t border-cyan-500/20 flex items-center justify-between pointer-events-none z-20">
+                    <span class="font-mono text-[9px] font-bold text-neon-cyan uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-neon-cyan animate-ping"></span>▶ Click to Expand Fullscreen</span>
+                    <span class="font-mono text-[9px] text-white/70 group-hover:text-white transition-colors">Full Case Study →</span>
+                </div>
+            </div>
+        </section>
 
         <!-- Project 2: E-Comm Checkout -->
         <section id="project-checkout" class="h-screen w-full snap-center flex flex-col md:flex-row items-center justify-between px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-20 md:pt-0">
@@ -624,7 +653,36 @@
                 </div>
             </div>
 
-            </section>
+            
+            <!-- Right: Themed Video Frame (E-Comm Checkout) -->
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border border-pink-500/40 hover:border-pink-400/80 shadow-[0_0_30px_rgba(255,0,160,0.2)] hover:shadow-[0_0_40px_rgba(255,0,160,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('NeonHex.mp4', 'E-Comm Checkout // KPI Preview', '+18% Checkout Rate', 'checkout-modal')">
+                <!-- Top Themed Header Bar -->
+                <div class="w-full px-4 py-2 bg-void/90 border-b border-pink-500/20 flex items-center justify-between z-20 pointer-events-none">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-neon-magenta animate-pulse"></span>
+                        <span class="font-mono text-[9px] uppercase tracking-widest text-neon-magenta font-bold">[E-COMM // CHECKOUT FLOW]</span>
+                    </div>
+                    <span class="font-mono text-[8px] text-white/50">▶ HD PREVIEW</span>
+                </div>
+                <!-- Video Container -->
+                <div class="relative w-full grow overflow-hidden">
+                    <video id="kpi-video-checkout" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu">
+                        <source src="NeonHex.mp4" type="video/mp4">
+                    </video>
+                    <!-- Play Overlay -->
+                    <div class="absolute inset-0 flex items-center justify-center bg-void/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
+                        <div class="w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300" style="background:#FF00A0; box-shadow:0 0 25px rgba(255,0,160,0.8);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bottom CTA Strip -->
+                <div class="px-4 py-2.5 bg-gradient-to-t from-void/95 to-void/70 border-t border-pink-500/20 flex items-center justify-between pointer-events-none z-20">
+                    <span class="font-mono text-[9px] font-bold text-neon-magenta uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-neon-magenta animate-ping"></span>▶ Click to Expand Fullscreen</span>
+                    <span class="font-mono text-[9px] text-white/70 group-hover:text-white transition-colors">Full Case Study →</span>
+                </div>
+            </div>
+        </section>
 
         <!-- Project 3: Graphic Art Gallery -->
         <section id="project-gallery" class="h-screen w-full snap-center flex flex-col md:flex-row items-center justify-between px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-20 md:pt-0">
@@ -662,7 +720,36 @@
                 </div>
             </div>
 
-            </section>
+            
+            <!-- Right: Themed Video Frame (Graphic Art Gallery) -->
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border border-lime-500/40 hover:border-lime-400/80 shadow-[0_0_30px_rgba(212,255,0,0.2)] hover:shadow-[0_0_40px_rgba(212,255,0,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('artt gallery.mp4', 'Graphic Art Gallery // KPI Preview', '+28% Inquiry Rate', 'gallery-modal')">
+                <!-- Top Themed Header Bar -->
+                <div class="w-full px-4 py-2 bg-void/90 border-b border-lime-500/20 flex items-center justify-between z-20 pointer-events-none">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-acid-lime animate-pulse"></span>
+                        <span class="font-mono text-[9px] uppercase tracking-widest text-acid-lime font-bold">[ART GALLERY // SPATIAL CANVAS]</span>
+                    </div>
+                    <span class="font-mono text-[8px] text-white/50">▶ HD PREVIEW</span>
+                </div>
+                <!-- Video Container -->
+                <div class="relative w-full grow overflow-hidden">
+                    <video id="kpi-video-gallery" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu">
+                        <source src="artt gallery.mp4" type="video/mp4">
+                    </video>
+                    <!-- Play Overlay -->
+                    <div class="absolute inset-0 flex items-center justify-center bg-void/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
+                        <div class="w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300" style="background:#D4FF00; box-shadow:0 0 25px rgba(212,255,0,0.8);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#000" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bottom CTA Strip -->
+                <div class="px-4 py-2.5 bg-gradient-to-t from-void/95 to-void/70 border-t border-lime-500/20 flex items-center justify-between pointer-events-none z-20">
+                    <span class="font-mono text-[9px] font-bold text-acid-lime uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-acid-lime animate-ping"></span>▶ Click to Expand Fullscreen</span>
+                    <span class="font-mono text-[9px] text-white/70 group-hover:text-white transition-colors">Full Case Study →</span>
+                </div>
+            </div>
+        </section>
         
         <!-- Project 4: Doodh Milk Subscription -->
         <section id="project-MilkDel" class="h-screen w-full snap-center flex flex-col md:flex-row items-center justify-between px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-20 md:pt-0">
@@ -705,7 +792,36 @@
                 </div>
             </div>
 
-            </section>
+            
+            <!-- Right: Themed Video Frame (Doodh Subscription) -->
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border border-emerald-500/40 hover:border-emerald-400/80 shadow-[0_0_30px_rgba(168,207,161,0.2)] hover:shadow-[0_0_40px_rgba(168,207,161,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('Doodh.mp4', 'Milk Subscription Model // KPI Preview', '+30% Retention Lift', 'MilkDel-modal')">
+                <!-- Top Themed Header Bar -->
+                <div class="w-full px-4 py-2 bg-void/90 border-b border-emerald-500/20 flex items-center justify-between z-20 pointer-events-none">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-pista-green animate-pulse"></span>
+                        <span class="font-mono text-[9px] uppercase tracking-widest text-pista-green font-bold">[DOODH // SUBSCRIPTION MATRIX]</span>
+                    </div>
+                    <span class="font-mono text-[8px] text-white/50">▶ HD PREVIEW</span>
+                </div>
+                <!-- Video Container -->
+                <div class="relative w-full grow overflow-hidden">
+                    <video id="kpi-video-milkdel" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu">
+                        <source src="Doodh.mp4" type="video/mp4">
+                    </video>
+                    <!-- Play Overlay -->
+                    <div class="absolute inset-0 flex items-center justify-center bg-void/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
+                        <div class="w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300" style="background:#A8CFA1; box-shadow:0 0 25px rgba(168,207,161,0.8);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#000" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bottom CTA Strip -->
+                <div class="px-4 py-2.5 bg-gradient-to-t from-void/95 to-void/70 border-t border-emerald-500/20 flex items-center justify-between pointer-events-none z-20">
+                    <span class="font-mono text-[9px] font-bold text-pista-green uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-pista-green animate-ping"></span>▶ Click to Expand Fullscreen</span>
+                    <span class="font-mono text-[9px] text-white/70 group-hover:text-white transition-colors">Full Case Study →</span>
+                </div>
+            </div>
+        </section>
         
         <!-- Project 5: Bio Grid Med Tech -->
         <section id="project-BioGrid" class="h-screen w-full snap-center flex flex-col md:flex-row items-center justify-between px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-20 md:pt-0">
@@ -743,7 +859,36 @@
                 </div>
             </div>
 
-            </section>
+            
+            <!-- Right: Themed Video Frame (Bio Grid Med Tech) -->
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border border-green-500/40 hover:border-green-400/80 shadow-[0_0_30px_rgba(74,222,128,0.2)] hover:shadow-[0_0_40px_rgba(74,222,128,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('Bio Grid.mp4', 'Bio Grid // KPI Preview', '+45% Scan Speed', 'BioGrid-modal')">
+                <!-- Top Themed Header Bar -->
+                <div class="w-full px-4 py-2 bg-void/90 border-b border-green-500/20 flex items-center justify-between z-20 pointer-events-none">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-biogrid-mint animate-pulse"></span>
+                        <span class="font-mono text-[9px] uppercase tracking-widest text-biogrid-mint font-bold">[MED TECH // TELEMETRY GRID]</span>
+                    </div>
+                    <span class="font-mono text-[8px] text-white/50">▶ HD PREVIEW</span>
+                </div>
+                <!-- Video Container -->
+                <div class="relative w-full grow overflow-hidden">
+                    <video id="kpi-video-biogrid" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu">
+                        <source src="Bio Grid.mp4" type="video/mp4">
+                    </video>
+                    <!-- Play Overlay -->
+                    <div class="absolute inset-0 flex items-center justify-center bg-void/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
+                        <div class="w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300" style="background:#4ade80; box-shadow:0 0 25px rgba(74,222,128,0.8);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#000" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bottom CTA Strip -->
+                <div class="px-4 py-2.5 bg-gradient-to-t from-void/95 to-void/70 border-t border-green-500/20 flex items-center justify-between pointer-events-none z-20">
+                    <span class="font-mono text-[9px] font-bold text-biogrid-mint uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-biogrid-mint animate-ping"></span>▶ Click to Expand Fullscreen</span>
+                    <span class="font-mono text-[9px] text-white/70 group-hover:text-white transition-colors">Full Case Study →</span>
+                </div>
+            </div>
+        </section>
 
         <!-- ═══════════════════════════════════════════════════════════════ -->
         <!-- PROJECT 6: APEX MOTORSPORT — Virtual Dealership & 3D Showroom  -->
@@ -784,7 +929,36 @@
                 </div>
             </div>
 
-            </section>
+            
+            <!-- Right: Themed Video Frame (Apex Motorsport) -->
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border border-red-600/40 hover:border-red-500/80 shadow-[0_0_30px_rgba(224,0,10,0.2)] hover:shadow-[0_0_40px_rgba(224,0,10,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('Apex Motorsport.mp4', 'Apex Motorsport // KPI Preview', '60+ FPS at Zero Dependencies', 'Apex-modal')">
+                <!-- Top Themed Header Bar -->
+                <div class="w-full px-4 py-2 bg-void/90 border-b border-red-600/20 flex items-center justify-between z-20 pointer-events-none">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-apex-scarlet animate-pulse"></span>
+                        <span class="font-mono text-[9px] uppercase tracking-widest text-apex-scarlet font-bold">[MOTORSPORT // 3D SHOWROOM]</span>
+                    </div>
+                    <span class="font-mono text-[8px] text-white/50">▶ HD PREVIEW</span>
+                </div>
+                <!-- Video Container -->
+                <div class="relative w-full grow overflow-hidden">
+                    <video id="kpi-video-apex" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu">
+                        <source src="Apex Motorsport.mp4" type="video/mp4">
+                    </video>
+                    <!-- Play Overlay -->
+                    <div class="absolute inset-0 flex items-center justify-center bg-void/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
+                        <div class="w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300" style="background:#e0000a; box-shadow:0 0 25px rgba(224,0,10,0.8);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bottom CTA Strip -->
+                <div class="px-4 py-2.5 bg-gradient-to-t from-void/95 to-void/70 border-t border-red-600/20 flex items-center justify-between pointer-events-none z-20">
+                    <span class="font-mono text-[9px] font-bold text-apex-scarlet uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-apex-scarlet animate-ping"></span>▶ Click to Expand Fullscreen</span>
+                    <span class="font-mono text-[9px] text-white/70 group-hover:text-white transition-colors">Full Case Study →</span>
+                </div>
+            </div>
+        </section>
 
         <!-- ═══════════════════════════════════════════════════════════════ -->
         <!-- PROJECT 7: SILVATIDE COTTAGE — Hospitality & Retreat Frontend  -->
@@ -836,7 +1010,36 @@
                 </div>
             </div>
 
-            </section>
+            
+            <!-- Right: Themed Video Frame (Silvatide Cottage) -->
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border border-emerald-500/40 hover:border-emerald-400/80 shadow-[0_0_30px_rgba(16,185,129,0.2)] hover:shadow-[0_0_40px_rgba(16,185,129,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('Silvatide.mp4', 'Silvatide Cottage // KPI Preview', '+22% Booking Conversion', 'Silvatide-modal')">
+                <!-- Top Themed Header Bar -->
+                <div class="w-full px-4 py-2 bg-void/90 border-b border-emerald-500/20 flex items-center justify-between z-20 pointer-events-none">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
+                        <span class="font-mono text-[9px] uppercase tracking-widest text-[#10B981] font-bold">[RETREAT // HOSPITALITY UI]</span>
+                    </div>
+                    <span class="font-mono text-[8px] text-white/50">▶ HD PREVIEW</span>
+                </div>
+                <!-- Video Container -->
+                <div class="relative w-full grow overflow-hidden">
+                    <video id="kpi-video-silvatide" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu">
+                        <source src="Silvatide.mp4" type="video/mp4">
+                    </video>
+                    <!-- Play Overlay -->
+                    <div class="absolute inset-0 flex items-center justify-center bg-void/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
+                        <div class="w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300" style="background:#10B981; box-shadow:0 0 25px rgba(16,185,129,0.8);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bottom CTA Strip -->
+                <div class="px-4 py-2.5 bg-gradient-to-t from-void/95 to-void/70 border-t border-emerald-500/20 flex items-center justify-between pointer-events-none z-20">
+                    <span class="font-mono text-[9px] font-bold text-[#10B981] uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-ping"></span>▶ Click to Expand Fullscreen</span>
+                    <span class="font-mono text-[9px] text-white/70 group-hover:text-white transition-colors">Full Case Study →</span>
+                </div>
+            </div>
+        </section>
 
         <!-- Recruiter / Contact Footer -->
         <section id="recruiter-briefing" class="h-[100vh] w-full snap-center flex flex-col items-center justify-center px-8 text-center relative z-10 bg-solar dark:bg-void transition-colors duration-500">
