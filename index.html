@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaustobh Bhattacharya | Junior UX/UI & Web Engineer</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
+    <link rel="alternate icon" type="image/x-icon" href="assets/logo-mark.svg">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -596,20 +600,23 @@
 
     <!-- HERO SECTION -->
     <section id="hero-section" class="relative h-screen w-full flex flex-col justify-center px-8 md:px-24 overflow-hidden snap-start">
+        <!-- 50% Dimming Overlay to reduce hero background brightness by 50% -->
+        <div class="absolute inset-0 bg-void/50 dark:bg-void/50 light:bg-slate-950/40 z-0 pointer-events-none backdrop-brightness-50"></div>
+
         <!-- Portrait background image in the center (behind the animation) -->
-        <div class="absolute inset-0 flex items-center justify-center z-0 pointer-events-none overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center z-0 pointer-events-none overflow-hidden filter brightness-50">
             <img 
                 src="hero_portrait.jpg" 
                 alt="Kaustobh Portrait" 
-                class="h-[75%] md:h-[85%] object-contain opacity-25 dark:opacity-35 light:opacity-15 mix-blend-multiply dark:mix-blend-screen dark:invert transition-all duration-300" 
+                class="h-[75%] md:h-[85%] object-contain opacity-15 dark:opacity-20 light:opacity-10 mix-blend-multiply dark:mix-blend-screen dark:invert transition-all duration-300" 
             />
         </div>
 
-        <!-- 3D Hero Canvas Container -->
-        <div id="hero-canvas" class="absolute inset-0 z-0 pointer-events-none opacity-85 dark:opacity-85 light:opacity-95 transition-opacity"></div>
+        <!-- 3D Hero Canvas Container (50% dimmed brightness) -->
+        <div id="hero-canvas" class="absolute inset-0 z-0 pointer-events-none opacity-45 dark:opacity-45 light:opacity-50 filter brightness-50 transition-opacity"></div>
         
         <!-- Subtle noise overlay -->
-        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.12] dark:opacity-[0.12] light:opacity-[0.06] mix-blend-overlay z-0 pointer-events-none"></div>
+        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.10] dark:opacity-[0.10] light:opacity-[0.05] mix-blend-overlay z-0 pointer-events-none"></div>
 
         <div class="relative z-10 max-w-4xl">
             <h2 class="text-neon-cyan dark:text-neon-cyan light:text-electric-blue font-mono text-sm md:text-base uppercase tracking-[0.3em] mb-4 animate-fade-in inline-block font-semibold">
