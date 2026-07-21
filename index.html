@@ -3178,18 +3178,38 @@ gsap.to(camera.position, {
             
             modal.classList.add('opacity-0', 'pointer-events-none');
             modal.classList.remove('opacity-100');
-            if (content) {
-                content.classList.add('scale-95');
-                content.classList.remove('scale-100');
-            }
             if (player) player.pause();
             document.body.style.overflow = '';
+            if (typeof playSyntheticClick === 'function') playSyntheticClick('mechanical');
+        };
+
+        let isChatOpen = false;
+        window.toggleAIChat = function(forceOpen = null) {
+            const chatWindow = document.getElementById('ai-chat-window');
+            const chatInput = document.getElementById('ai-chat-input');
+            if (!chatWindow) return;
+            
+            if (forceOpen !== null) {
+                isChatOpen = forceOpen;
+            } else {
+                isChatOpen = !isChatOpen;
+            }
+            
+            if (isChatOpen) {
+                chatWindow.classList.remove('opacity-0', 'pointer-events-none', 'scale-95', 'translate-y-4');
+                chatWindow.classList.add('opacity-100', 'scale-100', 'translate-y-0', 'pointer-events-auto');
+                if (chatInput) setTimeout(() => chatInput.focus(), 150);
+            } else {
+                chatWindow.classList.add('opacity-0', 'pointer-events-none', 'scale-95', 'translate-y-4');
+                chatWindow.classList.remove('opacity-100', 'scale-100', 'translate-y-0', 'pointer-events-auto');
+            }
             if (typeof playSyntheticClick === 'function') playSyntheticClick('mechanical');
         };
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeVideoModal();
+                toggleAIChat(false);
                 ['fintech-modal', 'checkout-modal', 'gallery-modal', 'MilkDel-modal', 'BioGrid-modal', 'Apex-modal', 'Silvatide-modal', 'cv-modal'].forEach(m => closeModal(m));
             }
         });
@@ -4893,26 +4913,6 @@ gsap.to(camera.position, {
             const chatLog = document.getElementById('ai-chat-log');
             const chatInput = document.getElementById('ai-chat-input');
             const chatSendBtn = document.getElementById('ai-chat-send-btn');
-
-            let isChatOpen = false;
-
-            window.toggleAIChat = function(forceOpen = null) {
-                if (!chatWindow) return;
-                if (forceOpen !== null) {
-                    isChatOpen = forceOpen;
-                } else {
-                    isChatOpen = !isChatOpen;
-                }
-                
-                if (isChatOpen) {
-                    chatWindow.classList.remove('opacity-0', 'pointer-events-none', 'scale-95', 'translate-y-4');
-                    chatWindow.classList.add('opacity-100', 'scale-100', 'translate-y-0', 'pointer-events-auto');
-                    if (chatInput) setTimeout(() => chatInput.focus(), 150);
-                } else {
-                    chatWindow.classList.add('opacity-0', 'pointer-events-none', 'scale-95', 'translate-y-4');
-                    chatWindow.classList.remove('opacity-100', 'scale-100', 'translate-y-0', 'pointer-events-auto');
-                }
-            };
 
             if (chatCloseBtn) {
                 chatCloseBtn.addEventListener('click', () => window.toggleAIChat(false));
