@@ -422,6 +422,73 @@
             color: #10B981 !important;
             border-color: #10B981 !important;
             text-shadow: 0 0 8px rgba(16, 185, 129, 0.65) !important;
+        /* Dynamic Accent Theme Metamorphosis */
+        :root {
+            --accent-color: #00F3FF;
+            --glow-color: rgba(0, 243, 255, 0.25);
+        }
+
+        /* Hardware-Accelerated Section Stagger Reveal */
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal-frame {
+            opacity: 0;
+            transform: scale(0.95);
+            filter: blur(8px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform, filter;
+        }
+
+        /* Active Reveal Trigger States */
+        section.is-revealed .reveal-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section.is-revealed .reveal-frame {
+            opacity: 1;
+            transform: scale(1);
+            filter: blur(0px);
+        }
+
+        /* Stagger Delays */
+        section.is-revealed .reveal-stagger-1 { transition-delay: 50ms; }
+        section.is-revealed .reveal-stagger-2 { transition-delay: 150ms; }
+        section.is-revealed .reveal-stagger-3 { transition-delay: 250ms; }
+        section.is-revealed .reveal-stagger-4 { transition-delay: 350ms; }
+        section.is-revealed .reveal-frame { transition-delay: 200ms; }
+
+        /* HUD Side-Dot Active Pill Expansion */
+        .hud-dot {
+            transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1), width 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: height, width, background-color, box-shadow;
+        }
+
+        /* Spring Modal Cinematics */
+        #video-modal, #cv-modal, [id$="-modal"] {
+            backdrop-filter: blur(0px);
+            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), backdrop-filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #video-modal.opacity-100, #cv-modal.opacity-100, [id$="-modal"].opacity-100 {
+            backdrop-filter: blur(20px);
+        }
+
+        /* Accessibility: Reduced Motion Respect */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-item, .reveal-frame {
+                opacity: 1 !important;
+                transform: none !important;
+                filter: none !important;
+                transition: opacity 0.3s ease !important;
+            }
+            .hud-dot {
+                transition: background-color 0.2s ease, box-shadow 0.2s ease !important;
+            }
         }
     </style>
 </head>
@@ -587,7 +654,7 @@
                 </div>
 
                 <div class="mt-8">
-                    <button onclick="openModal('fintech-modal')" class="group flex items-center gap-2 text-white font-bold transition-all cursor-pointer text-sm font-mono border-b border-transparent pb-1 w-fit neon-link-cyan">
+                    <button onclick="openModal('fintech-modal')" class="reveal-item reveal-stagger-4 group flex items-center gap-2 text-white font-bold transition-all cursor-pointer text-sm font-mono border-b border-transparent pb-1 w-fit neon-link-cyan">
                         Open design audit 
                         <span class="transform group-hover:translate-x-1.5 transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="inline"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
                     </button>
@@ -596,7 +663,7 @@
 
             
             <!-- Right: Themed Video Frame (Fintech Dashboard) -->
-            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border border-cyan-500/40 hover:border-cyan-400/80 shadow-[0_0_30px_rgba(0,243,255,0.2)] hover:shadow-[0_0_40px_rgba(0,243,255,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('NexusFin_tech.mp4', 'Fintech Dashboard // KPI Preview', 'Reduced task time by 40%', 'fintech-modal')">
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-cyan-500/40 hover:border-cyan-400/80 shadow-[0_0_30px_rgba(0,243,255,0.2)] hover:shadow-[0_0_40px_rgba(0,243,255,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('NexusFin_tech.mp4', 'Fintech Dashboard // KPI Preview', 'Reduced task time by 40%', 'fintech-modal')">
                 <!-- Top Themed Header Bar -->
                 <div class="w-full px-4 py-2 bg-void/90 border-b border-cyan-500/20 flex items-center justify-between z-20 pointer-events-none">
                     <div class="flex items-center gap-2">
@@ -646,7 +713,7 @@
                 </p>
                 
                 <div class="flex gap-4 items-center">
-                    <button onclick="openModal('checkout-modal')" class="group flex items-center gap-2 text-white font-bold transition-all cursor-pointer text-sm font-mono border-b border-transparent pb-1 w-fit neon-link-magenta">
+                    <button onclick="openModal('checkout-modal')" class="reveal-item reveal-stagger-4 group flex items-center gap-2 text-white font-bold transition-all cursor-pointer text-sm font-mono border-b border-transparent pb-1 w-fit neon-link-magenta">
                         Open behavioral metrics 
                         <span class="transform group-hover:translate-x-1.5 transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="inline"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
                     </button>
@@ -655,7 +722,7 @@
 
             
             <!-- Right: Themed Video Frame (E-Comm Checkout) -->
-            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border border-pink-500/40 hover:border-pink-400/80 shadow-[0_0_30px_rgba(255,0,160,0.2)] hover:shadow-[0_0_40px_rgba(255,0,160,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('NeonHex.mp4', 'E-Comm Checkout // KPI Preview', '+18% Checkout Rate', 'checkout-modal')">
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-pink-500/40 hover:border-pink-400/80 shadow-[0_0_30px_rgba(255,0,160,0.2)] hover:shadow-[0_0_40px_rgba(255,0,160,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('NeonHex.mp4', 'E-Comm Checkout // KPI Preview', '+18% Checkout Rate', 'checkout-modal')">
                 <!-- Top Themed Header Bar -->
                 <div class="w-full px-4 py-2 bg-void/90 border-b border-pink-500/20 flex items-center justify-between z-20 pointer-events-none">
                     <div class="flex items-center gap-2">
@@ -713,7 +780,7 @@
                 </div>
 
                 <div class="mt-8">
-                    <button onclick="openModal('gallery-modal')" class="group flex items-center gap-2 text-white font-bold transition-all cursor-pointer text-sm font-mono border-b border-transparent pb-1 w-fit neon-link-lime">
+                    <button onclick="openModal('gallery-modal')" class="reveal-item reveal-stagger-4 group flex items-center gap-2 text-white font-bold transition-all cursor-pointer text-sm font-mono border-b border-transparent pb-1 w-fit neon-link-lime">
                         Open behavioral metrics 
                         <span class="transform group-hover:translate-x-1.5 transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="inline"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
                     </button>
@@ -722,7 +789,7 @@
 
             
             <!-- Right: Themed Video Frame (Graphic Art Gallery) -->
-            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border border-lime-500/40 hover:border-lime-400/80 shadow-[0_0_30px_rgba(212,255,0,0.2)] hover:shadow-[0_0_40px_rgba(212,255,0,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('artt gallery.mp4', 'Graphic Art Gallery // KPI Preview', '+28% Inquiry Rate', 'gallery-modal')">
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-lime-500/40 hover:border-lime-400/80 shadow-[0_0_30px_rgba(212,255,0,0.2)] hover:shadow-[0_0_40px_rgba(212,255,0,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('artt gallery.mp4', 'Graphic Art Gallery // KPI Preview', '+28% Inquiry Rate', 'gallery-modal')">
                 <!-- Top Themed Header Bar -->
                 <div class="w-full px-4 py-2 bg-void/90 border-b border-lime-500/20 flex items-center justify-between z-20 pointer-events-none">
                     <div class="flex items-center gap-2">
@@ -780,12 +847,12 @@
                 </div>
 
                 <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-6">
-                    <button onclick="openModal('MilkDel-modal')" class="group flex items-center gap-2 text-white font-bold transition-all cursor-pointer text-sm font-mono border-b border-transparent pb-1 w-fit neon-link-pista">
+                    <button onclick="openModal('MilkDel-modal')" class="reveal-item reveal-stagger-4 group flex items-center gap-2 text-white font-bold transition-all cursor-pointer text-sm font-mono border-b border-transparent pb-1 w-fit neon-link-pista">
                         Open subscription audit 
                         <span class="transform group-hover:translate-x-1.5 transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="inline"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
                     </button>
                     
-                    <a href="https://www.figma.com/site/te85xqPJWeuotMzB8arH59/Untitled?node-id=0-1&p=f&t=A0JljnZUXd2iKUu3-0" target="_blank" class="group flex items-center gap-2 text-neutral-400 hover:text-neon-cyan dark:hover:text-neon-cyan light:hover:text-electric-blue transition-colors cursor-pointer text-sm font-mono border-b border-transparent hover:border-neon-cyan pb-1 w-fit">
+                    <a href="https://www.figma.com/site/te85xqPJWeuotMzB8arH59/Untitled?node-id=0-1&p=f&t=A0JljnZUXd2iKUu3-0" target="_blank" class="reveal-item reveal-stagger-4 group flex items-center gap-2 text-neutral-400 hover:text-neon-cyan dark:hover:text-neon-cyan light:hover:text-electric-blue transition-colors cursor-pointer text-sm font-mono border-b border-transparent hover:border-neon-cyan pb-1 w-fit">
                         View Figma Designs
                         <span class="transform group-hover:translate-y-[-1px] group-hover:translate-x-[1px] transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="inline"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
                     </a>
@@ -794,7 +861,7 @@
 
             
             <!-- Right: Themed Video Frame (Doodh Subscription) -->
-            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border border-emerald-500/40 hover:border-emerald-400/80 shadow-[0_0_30px_rgba(168,207,161,0.2)] hover:shadow-[0_0_40px_rgba(168,207,161,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('Doodh.mp4', 'Milk Subscription Model // KPI Preview', '+30% Retention Lift', 'MilkDel-modal')">
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-emerald-500/40 hover:border-emerald-400/80 shadow-[0_0_30px_rgba(168,207,161,0.2)] hover:shadow-[0_0_40px_rgba(168,207,161,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('Doodh.mp4', 'Milk Subscription Model // KPI Preview', '+30% Retention Lift', 'MilkDel-modal')">
                 <!-- Top Themed Header Bar -->
                 <div class="w-full px-4 py-2 bg-void/90 border-b border-emerald-500/20 flex items-center justify-between z-20 pointer-events-none">
                     <div class="flex items-center gap-2">
@@ -852,7 +919,7 @@
                 </div>
 
                 <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-6">
-                    <button onclick="openModal('BioGrid-modal')" class="group flex items-center gap-2 text-white font-bold transition-all cursor-pointer text-sm font-mono border-b border-transparent pb-1 w-fit neon-link-mint">
+                    <button onclick="openModal('BioGrid-modal')" class="reveal-item reveal-stagger-4 group flex items-center gap-2 text-white font-bold transition-all cursor-pointer text-sm font-mono border-b border-transparent pb-1 w-fit neon-link-mint">
                         Open telemetry audit 
                         <span class="transform group-hover:translate-x-1.5 transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="inline"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
                     </button>
@@ -861,7 +928,7 @@
 
             
             <!-- Right: Themed Video Frame (Bio Grid Med Tech) -->
-            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border border-green-500/40 hover:border-green-400/80 shadow-[0_0_30px_rgba(74,222,128,0.2)] hover:shadow-[0_0_40px_rgba(74,222,128,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('Bio Grid.mp4', 'Bio Grid // KPI Preview', '+45% Scan Speed', 'BioGrid-modal')">
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-green-500/40 hover:border-green-400/80 shadow-[0_0_30px_rgba(74,222,128,0.2)] hover:shadow-[0_0_40px_rgba(74,222,128,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('Bio Grid.mp4', 'Bio Grid // KPI Preview', '+45% Scan Speed', 'BioGrid-modal')">
                 <!-- Top Themed Header Bar -->
                 <div class="w-full px-4 py-2 bg-void/90 border-b border-green-500/20 flex items-center justify-between z-20 pointer-events-none">
                     <div class="flex items-center gap-2">
@@ -922,7 +989,7 @@
                 </div>
 
                 <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-6">
-                    <button onclick="openModal('Apex-modal')" class="group flex items-center gap-2 text-white font-bold transition-all cursor-pointer text-sm font-mono border-b border-transparent pb-1 w-fit neon-link-red">
+                    <button onclick="openModal('Apex-modal')" class="reveal-item reveal-stagger-4 group flex items-center gap-2 text-white font-bold transition-all cursor-pointer text-sm font-mono border-b border-transparent pb-1 w-fit neon-link-red">
                         Open racing cognitive audit
                         <span class="transform group-hover:translate-x-1.5 transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="inline"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
                     </button>
@@ -931,7 +998,7 @@
 
             
             <!-- Right: Themed Video Frame (Apex Motorsport) -->
-            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border border-red-600/40 hover:border-red-500/80 shadow-[0_0_30px_rgba(224,0,10,0.2)] hover:shadow-[0_0_40px_rgba(224,0,10,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('Apex Motorsport.mp4', 'Apex Motorsport // KPI Preview', '60+ FPS at Zero Dependencies', 'Apex-modal')">
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-red-600/40 hover:border-red-500/80 shadow-[0_0_30px_rgba(224,0,10,0.2)] hover:shadow-[0_0_40px_rgba(224,0,10,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('Apex Motorsport.mp4', 'Apex Motorsport // KPI Preview', '60+ FPS at Zero Dependencies', 'Apex-modal')">
                 <!-- Top Themed Header Bar -->
                 <div class="w-full px-4 py-2 bg-void/90 border-b border-red-600/20 flex items-center justify-between z-20 pointer-events-none">
                     <div class="flex items-center gap-2">
@@ -992,11 +1059,11 @@
                 </div>
 
                 <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-6">
-                    <button onclick="openModal('Silvatide-modal')" class="group flex items-center gap-2 text-white font-bold transition-all cursor-pointer text-sm font-mono border-b border-transparent pb-1 w-fit neon-link-emerald">
+                    <button onclick="openModal('Silvatide-modal')" class="reveal-item reveal-stagger-4 group flex items-center gap-2 text-white font-bold transition-all cursor-pointer text-sm font-mono border-b border-transparent pb-1 w-fit neon-link-emerald">
                         Open travel UX audit
                         <span class="transform group-hover:translate-x-1.5 transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="inline"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
                     </button>
-                    <a href="https://www.figma.com/design/PxIedSHPnnpbTMiD4YYVkX/Silvatide-Cottage--Community-?node-id=0-1&t=pDpf3MJuxdrMjAS2-1" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-2 text-white font-bold transition-all cursor-pointer text-sm font-mono border-b border-transparent pb-1 w-fit hover:text-[#A259FF] hover:border-[#A259FF]" style="transition: color 0.2s, border-color 0.2s; hover:text-shadow: 0 0 8px rgba(162,89,255,0.6);">
+                    <a href="https://www.figma.com/design/PxIedSHPnnpbTMiD4YYVkX/Silvatide-Cottage--Community-?node-id=0-1&t=pDpf3MJuxdrMjAS2-1" target="_blank" rel="noopener noreferrer" class="reveal-item reveal-stagger-4 group flex items-center gap-2 text-white font-bold transition-all cursor-pointer text-sm font-mono border-b border-transparent pb-1 w-fit hover:text-[#A259FF] hover:border-[#A259FF]" style="transition: color 0.2s, border-color 0.2s; hover:text-shadow: 0 0 8px rgba(162,89,255,0.6);">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 38 57" fill="currentColor" class="opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">
                             <path d="M19 28.5A9.5 9.5 0 1 1 28.5 19 9.51 9.51 0 0 1 19 28.5Z" fill="#1ABCFE"/>
                             <path d="M9.5 47.5A9.5 9.5 0 0 1 19 38v9.5a9.5 9.5 0 0 1-9.5 9.5Z" fill="#0ACF83"/>
@@ -1012,7 +1079,7 @@
 
             
             <!-- Right: Themed Video Frame (Silvatide Cottage) -->
-            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border border-emerald-500/40 hover:border-emerald-400/80 shadow-[0_0_30px_rgba(16,185,129,0.2)] hover:shadow-[0_0_40px_rgba(16,185,129,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('Silvatide.mp4', 'Silvatide Cottage // KPI Preview', '+22% Booking Conversion', 'Silvatide-modal')">
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-emerald-500/40 hover:border-emerald-400/80 shadow-[0_0_30px_rgba(16,185,129,0.2)] hover:shadow-[0_0_40px_rgba(16,185,129,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('Silvatide.mp4', 'Silvatide Cottage // KPI Preview', '+22% Booking Conversion', 'Silvatide-modal')">
                 <!-- Top Themed Header Bar -->
                 <div class="w-full px-4 py-2 bg-void/90 border-b border-emerald-500/20 flex items-center justify-between z-20 pointer-events-none">
                     <div class="flex items-center gap-2">
@@ -3160,6 +3227,7 @@ gsap.to(camera.position, {
                     clearInterval(bootInterval);
                     setTimeout(() => {
                         // Dismiss loader split doors
+                        bootOverlay.style.transform = 'scale(1.05)';
                         bootOverlay.style.opacity = '0';
                         bootOverlay.style.pointerEvents = 'none';
                         
@@ -3694,29 +3762,40 @@ gsap.to(camera.position, {
                 const activeColor  = registry ? registry.color  : '#00F3FF';
                 const activeShadow = registry ? registry.shadow : 'rgba(0,243,255,0.7)';
 
+                // Update root CSS variables for dynamic neon color metamorphosis
+                document.documentElement.style.setProperty('--accent-color', activeColor);
+                document.documentElement.style.setProperty('--glow-color', activeShadow);
+
                 document.querySelectorAll('.hud-dot').forEach(dot => {
                     const sec = dot.getAttribute('data-section');
                     if (sec === activeKey) {
-                        // Active state: accent color + glow + scale
+                        // Active state: Expand into vertical pill indicator with accent glow
+                        dot.style.height = '24px';
+                        dot.style.width = '8px';
+                        dot.style.borderRadius = '9999px';
                         dot.style.backgroundColor = activeColor;
-                        dot.style.boxShadow = `0 0 10px ${activeShadow}`;
-                        dot.style.transform  = 'scale(1.35)';
+                        dot.style.boxShadow = `0 0 14px ${activeShadow}`;
                         dot.style.borderColor = activeColor;
+                        dot.style.transform  = 'none';
                     } else {
-                        // Inactive state: reset to neutral
+                        // Inactive state: reset to neutral circle
+                        dot.style.height = '';
+                        dot.style.width = '';
+                        dot.style.borderRadius = '';
                         dot.style.backgroundColor = '';
                         dot.style.boxShadow = '';
-                        dot.style.transform  = '';
                         dot.style.borderColor = '';
+                        dot.style.transform  = '';
                     }
                 });
             }
 
-            // Use IntersectionObserver — fires once per section crossing 50% viewport
-            // This is glitch-free during CSS scroll-snap because it reacts to visibility,
-            // not scroll position math which can produce erratic values mid-snap.
+            // Use IntersectionObserver — triggers section reveals and HUD dot updates
             const hudObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
+                    if (entry.isIntersecting || entry.intersectionRatio > 0.2) {
+                        entry.target.classList.add('is-revealed');
+                    }
                     const key = entry.target.getAttribute('id')
                         ?.replace('hero-section', 'hero')
                         .replace('project-', '')
