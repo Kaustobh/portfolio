@@ -1119,7 +1119,7 @@
                 
                 <div class="flex flex-col gap-4 w-full max-w-md" id="booking-container-card">
                     <!-- Default Book walkthrough button -->
-                    <button id="book-walkthrough-trigger" class="px-8 py-4 bg-charcoal dark:bg-white text-white dark:text-void font-bold rounded hover:bg-neon-cyan dark:hover:bg-neon-cyan light:hover:bg-electric-blue hover:text-void hover:shadow-neon dark:hover:shadow-neon light:hover:shadow-light-blue transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer font-display text-sm uppercase tracking-wide">
+                    <button id="book-walkthrough-trigger" onclick="openBookingScheduler()" class="px-8 py-4 bg-charcoal dark:bg-white text-white dark:text-void font-bold rounded hover:bg-neon-cyan dark:hover:bg-neon-cyan light:hover:bg-electric-blue hover:text-void hover:shadow-neon dark:hover:shadow-neon light:hover:shadow-light-blue transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer font-display text-sm uppercase tracking-wide">
                         Book a 20-minute walkthrough
                     </button>
                     
@@ -3181,6 +3181,17 @@ gsap.to(camera.position, {
             if (player) player.pause();
             document.body.style.overflow = '';
             if (typeof playSyntheticClick === 'function') playSyntheticClick('mechanical');
+        };
+
+        window.openBookingScheduler = function() {
+            const bookTrigger = document.getElementById('book-walkthrough-trigger');
+            const schedulerPanel = document.getElementById('booking-scheduler-panel');
+            if (!bookTrigger || !schedulerPanel) return;
+            bookTrigger.classList.add('hidden');
+            schedulerPanel.classList.remove('max-h-0', 'opacity-0', 'scale-95');
+            schedulerPanel.classList.add('max-h-[500px]', 'opacity-100', 'scale-100', 'animate-spring');
+            if (typeof populateDateRow === 'function') populateDateRow();
+            if (typeof playSyntheticClick === 'function') playSyntheticClick('success');
         };
 
         let isChatOpen = false;
