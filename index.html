@@ -541,9 +541,9 @@
         <!-- Fixed HUD Top Bar Brand Slot -->
         <a href="#hero-section" class="group relative flex items-center gap-3.5 no-underline focus:outline-none pointer-events-auto select-none" aria-label="Go to Hero Section">
           
-          <!-- Dynamic Accent Backlight Aura (50% Dimmed Brightness) -->
+          <!-- Dynamic Accent Backlight Aura (+20% Increased Brightness) -->
           <div id="logo-hud-aura" 
-               class="absolute -inset-1 rounded-xl bg-[#00F3FF] opacity-15 blur-sm transition-all duration-500 group-hover:opacity-30 group-hover:blur-md">
+               class="absolute -inset-1 rounded-xl bg-[#00F3FF] opacity-35 blur-md transition-all duration-500 group-hover:opacity-55 group-hover:blur-lg">
           </div>
 
           <!-- Glassmorphic Icon Container -->
@@ -552,7 +552,7 @@
               id="hud-logo-img"
               src="assets/logo-mark.svg" 
               alt="Kaustobh Bhattacharya - UX Engineer Logo" 
-              class="h-full w-full object-contain filter drop-shadow-[0_0_3px_rgba(0,243,255,0.4)] transition-all duration-300 group-hover:drop-shadow-[0_0_6px_rgba(0,243,255,0.6)]"
+              class="h-full w-full object-contain filter drop-shadow-[0_0_5px_rgba(0,243,255,0.6)] transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(0,243,255,0.8)]"
             />
           </div>
 
@@ -4207,11 +4207,11 @@ gsap.to(camera.position, {
 
               if (logoAura) {
                 logoAura.style.backgroundColor = hexColor;
-                logoAura.style.opacity = '0.15';
+                logoAura.style.opacity = '0.35';
               }
               
               if (logoImg) {
-                logoImg.style.filter = `drop-shadow(0 0 4px ${hexColor})`;
+                logoImg.style.filter = `drop-shadow(0 0 6px ${hexColor})`;
               }
             }
 
