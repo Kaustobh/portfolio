@@ -233,18 +233,20 @@
             background: #005DFF;
         }
 
-        /* Custom mouse trail pointer layer */
+        /* Hardware-Accelerated High-Performance Custom Cursor */
         #custom-cursor {
             width: 24px;
             height: 24px;
             border: 2px solid #00F3FF;
             border-radius: 50%;
             position: fixed;
+            top: 0;
+            left: 0;
             pointer-events: none;
             z-index: 9999;
-            transform: translate(-50%, -50%);
+            will-change: transform;
             transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
-            mix-blend-mode: difference;
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.4);
         }
         #custom-cursor-dot {
             width: 6px;
@@ -252,10 +254,12 @@
             background-color: #FF00A0;
             border-radius: 50%;
             position: fixed;
+            top: 0;
+            left: 0;
             pointer-events: none;
             z-index: 9999;
-            transform: translate(-50%, -50%);
-            mix-blend-mode: difference;
+            will-change: transform;
+            box-shadow: 0 0 8px rgba(255, 0, 160, 0.8);
         }
         @media (pointer: coarse) {
             #custom-cursor, #custom-cursor-dot { display: none !important; }
@@ -712,7 +716,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-fintech" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover transform-gpu pointer-events-none">
+                    <video id="kpi-video-fintech" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="NexusFin_tech.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -771,7 +775,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-checkout" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover transform-gpu pointer-events-none">
+                    <video id="kpi-video-checkout" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="NeonHex.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -838,7 +842,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-gallery" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover transform-gpu pointer-events-none">
+                    <video id="kpi-video-gallery" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="artt gallery.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -910,7 +914,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-milkdel" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover transform-gpu pointer-events-none">
+                    <video id="kpi-video-milkdel" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="Doodh.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -977,7 +981,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-biogrid" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover transform-gpu pointer-events-none">
+                    <video id="kpi-video-biogrid" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="Bio Grid.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -1047,7 +1051,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-apex" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover transform-gpu pointer-events-none">
+                    <video id="kpi-video-apex" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="Apex Motorsport.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -1128,7 +1132,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-silvatide" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover transform-gpu pointer-events-none">
+                    <video id="kpi-video-silvatide" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="Silvatide.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -4131,50 +4135,42 @@ gsap.to(camera.position, {
             });
 
 
-            // ==========================================
-            // D. INTERACTIVE CUSTOM CURSOR MOUSE TRAIL
-            // ==========================================
+            // High-Performance Hardware-Accelerated Custom Cursor Engine (Zero Lag)
             const cursorOuter = document.getElementById('custom-cursor');
             const cursorInner = document.getElementById('custom-cursor-dot');
             
-            let outerX = 0, outerY = 0;
-            let targetX = 0, targetY = 0;
+            if (cursorOuter && cursorInner) {
+                let outerX = 0, outerY = 0;
+                let targetX = 0, targetY = 0;
 
-            window.addEventListener('mousemove', (e) => {
-                targetX = e.clientX;
-                targetY = e.clientY;
-                
-                // Move inner dot instantly
-                cursorInner.style.left = `${targetX}px`;
-                cursorInner.style.top = `${targetY}px`;
-            });
+                window.addEventListener('mousemove', (e) => {
+                    targetX = e.clientX;
+                    targetY = e.clientY;
+                    cursorInner.style.transform = `translate3d(${targetX - 3}px, ${targetY - 3}px, 0)`;
+                }, { passive: true });
 
-            // Smooth interpolation for trailing outer ring
-            function updateCursor() {
-                outerX = outerX + (targetX - outerX) * 0.16;
-                outerY = outerY + (targetY - outerY) * 0.16;
-                
-                cursorOuter.style.left = `${outerX}px`;
-                cursorOuter.style.top = `${outerY}px`;
-                
-                requestAnimationFrame(updateCursor);
+                function updateCursor() {
+                    outerX += (targetX - outerX) * 0.25;
+                    outerY += (targetY - outerY) * 0.25;
+                    cursorOuter.style.transform = `translate3d(${outerX - 12}px, ${outerY - 12}px, 0)`;
+                    requestAnimationFrame(updateCursor);
+                }
+                updateCursor();
+
+                // Passive event delegation for cursor hovers
+                document.addEventListener('mouseover', (e) => {
+                    const target = e.target.closest('button, a, input, select, textarea, [onclick]');
+                    if (target) {
+                        cursorOuter.style.width = '38px';
+                        cursorOuter.style.height = '38px';
+                        cursorOuter.style.borderColor = '#FF00A0';
+                    } else {
+                        cursorOuter.style.width = '24px';
+                        cursorOuter.style.height = '24px';
+                        cursorOuter.style.borderColor = '#00F3FF';
+                    }
+                }, { passive: true });
             }
-            updateCursor();
-
-            // Cursor expansions on interactive hovers
-            const hoverTargets = document.querySelectorAll('button, a, input, select, textarea, [onclick]');
-            hoverTargets.forEach(t => {
-                t.addEventListener('mouseenter', () => {
-                    cursorOuter.style.width = '38px';
-                    cursorOuter.style.height = '38px';
-                    cursorOuter.style.borderColor = '#FF00A0';
-                });
-                t.addEventListener('mouseleave', () => {
-                    cursorOuter.style.width = '24px';
-                    cursorOuter.style.height = '24px';
-                    cursorOuter.style.borderColor = '#00F3FF';
-                });
-            });
 
 
             // ==========================================
