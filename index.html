@@ -2801,7 +2801,7 @@ gsap.to(camera.position, {
     <div id="ai-chat-root" class="fixed bottom-6 right-6 z-40 select-none">
         
         <!-- Toggle button bubble -->
-        <button id="ai-chat-toggle-btn" class="glass-panel w-14 h-14 rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:scale-105 active:scale-95 transition-all text-neutral-400 hover:text-neon-cyan dark:hover:text-neon-cyan light:hover:text-electric-blue border-neon-cyan/25 dark:border-neon-cyan/25 light:border-electric-blue/20" title="Consult AI Representative">
+        <button id="ai-chat-toggle-btn" onclick="toggleAIChat()" class="glass-panel w-14 h-14 rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:scale-105 active:scale-95 transition-all text-neutral-400 hover:text-neon-cyan dark:hover:text-neon-cyan light:hover:text-electric-blue border-neon-cyan/25 dark:border-neon-cyan/25 light:border-electric-blue/20" title="Consult AI Representative">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot animate-bounce"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
             <span class="absolute top-0 right-0 w-3 h-3 rounded-full bg-forest-lime dark:bg-acid-lime border-2 border-white dark:border-void"></span>
         </button>
@@ -4817,23 +4817,27 @@ gsap.to(camera.position, {
 
             let isChatOpen = false;
 
-            chatToggleBtn.addEventListener('click', () => {
-                isChatOpen = !isChatOpen;
+            window.toggleAIChat = function(forceOpen = null) {
+                if (!chatWindow) return;
+                if (forceOpen !== null) {
+                    isChatOpen = forceOpen;
+                } else {
+                    isChatOpen = !isChatOpen;
+                }
+                
                 if (isChatOpen) {
                     chatWindow.classList.remove('opacity-0', 'pointer-events-none', 'scale-95', 'translate-y-4');
-                    chatWindow.classList.add('opacity-100', 'pointer-events-none', 'scale-100', 'translate-y-0', 'pointer-events-auto');
-                    chatInput.focus();
+                    chatWindow.classList.add('opacity-100', 'scale-100', 'translate-y-0', 'pointer-events-auto');
+                    if (chatInput) setTimeout(() => chatInput.focus(), 150);
                 } else {
                     chatWindow.classList.add('opacity-0', 'pointer-events-none', 'scale-95', 'translate-y-4');
-                    chatWindow.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100', 'translate-y-0');
+                    chatWindow.classList.remove('opacity-100', 'scale-100', 'translate-y-0', 'pointer-events-auto');
                 }
-            });
+            };
 
-            chatCloseBtn.addEventListener('click', () => {
-                isChatOpen = false;
-                chatWindow.classList.add('opacity-0', 'pointer-events-none', 'scale-95', 'translate-y-4');
-                chatWindow.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100', 'translate-y-0');
-            });
+            if (chatCloseBtn) {
+                chatCloseBtn.addEventListener('click', () => window.toggleAIChat(false));
+            }
 
             function appendChatMessage(sender, text) {
                 const bubbleWrapper = document.createElement('div');
@@ -4844,10 +4848,8 @@ gsap.to(camera.position, {
                 label.innerText = sender === 'user' ? 'RECRUITER // GUEST' : 'K-Bot // AI Representative';
                 
                 const bubble = document.createElement('div');
-                
                 const isLight = document.body.classList.contains('light');
                 
-                // Theme-aware chat bubbles to maximize readability
                 if (sender === 'user') {
                     bubble.className = isLight
                         ? 'bg-electric-blue/15 border-electric-blue/30 text-ink rounded-lg rounded-tr-none p-2.5 max-w-[85%] border shadow-sm'
@@ -4864,12 +4866,10 @@ gsap.to(camera.position, {
                 bubbleWrapper.appendChild(bubble);
                 chatLog.appendChild(bubbleWrapper);
                 
-                // Scroll to bottom
                 chatLog.scrollTop = chatLog.scrollHeight;
             }
 
             function triggerAgentTyping(userMessage) {
-                // Spawn typing dots
                 const typingWrapper = document.createElement('div');
                 typingWrapper.id = "chat-typing-dots";
                 typingWrapper.className = "flex flex-col items-start gap-1";
@@ -4895,7 +4895,7 @@ gsap.to(camera.position, {
                 const q = userMessage.toLowerCase();
                 let reply = chatbotDatabase.fallback;
 
-                if (q.includes('who') || q.includes('skills') || q.includes('about')) {
+                if (q.includes('who') || q.includes('skills') || q.includes('about') || q.includes('kaustobh')) {
                     reply = chatbotDatabase.who;
                 } else if (q.includes('fintech') || q.includes('dashboard') || q.includes('audit')) {
                     reply = chatbotDatabase.fintech;
@@ -4909,6 +4909,8 @@ gsap.to(camera.position, {
                     reply = chatbotDatabase.biogrid;
                 } else if (q.includes('apex') || q.includes('motorsport') || q.includes('racing') || q.includes('car') || q.includes('3d')) {
                     reply = chatbotDatabase.apex;
+                } else if (q.includes('silvatide') || q.includes('cottage') || q.includes('retreat') || q.includes('astro')) {
+                    reply = chatbotDatabase.silvatide;
                 } else if (q.includes('book') || q.includes('briefing') || q.includes('walkthrough') || q.includes('schedule') || q.includes('call')) {
                     reply = chatbotDatabase.book;
                 }
@@ -4918,7 +4920,7 @@ gsap.to(camera.position, {
                     if (dots) dots.remove();
                     
                     appendChatMessage('agent', reply);
-                    playSyntheticClick('mechanical');
+                    if (typeof playSyntheticClick === 'function') playSyntheticClick('mechanical');
                 }, 850);
             }
 
