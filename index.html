@@ -9,9 +9,11 @@
     <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
     <link rel="alternate icon" type="image/x-icon" href="assets/logo-mark.svg">
     
-    <!-- Google Fonts -->
+    <!-- Resource Hints & Font Preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="dns-prefetch" href="https://unpkg.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=Space+Mono&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS (CDN for standalone file) -->
@@ -663,8 +665,6 @@
 
     <!-- CASE STUDIES SCROLLER (Scroll Snap) -->
     <div id="work" class="h-[100vh] overflow-y-scroll snap-y snap-mandatory bg-solar dark:bg-void relative transition-colors duration-500 scroll-smooth">
-        <!-- 2D Particles Background for Projects -->
-        <canvas id="particles-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-0 opacity-25 dark:opacity-25 light:opacity-[0.15]"></canvas>
 
         <!-- Project 1: Fintech Dashboard -->
         <section id="project-fintech" class="h-screen w-full snap-center flex flex-col md:flex-row items-center justify-between px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-20 md:pt-0">
