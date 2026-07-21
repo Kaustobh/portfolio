@@ -1158,13 +1158,13 @@
                                 </div>
                                 <div class="flex flex-col gap-2 mt-1">
                                     <div class="flex flex-col">
-                                        <input type="text" id="book-recruiter-name" placeholder="Your Name" required class="bg-neutral-100 dark:bg-surface border border-neutral-300 dark:border-neutral-700 focus:border-neon-cyan rounded px-2.5 py-1.5 text-[11px] outline-none">
+                                        <input type="text" id="book-recruiter-name" oninput="validateSchedulerStep()" placeholder="Your Name" required class="bg-neutral-100 dark:bg-surface border border-neutral-300 dark:border-neutral-700 focus:border-neon-cyan rounded px-2.5 py-1.5 text-[11px] outline-none">
                                     </div>
                                     <div class="flex flex-col">
-                                        <input type="email" id="book-recruiter-email" placeholder="Email Address" required class="bg-neutral-100 dark:bg-surface border border-neutral-300 dark:border-neutral-700 focus:border-neon-cyan rounded px-2.5 py-1.5 text-[11px] outline-none">
+                                        <input type="email" id="book-recruiter-email" oninput="validateSchedulerStep()" placeholder="Email Address" required class="bg-neutral-100 dark:bg-surface border border-neutral-300 dark:border-neutral-700 focus:border-neon-cyan rounded px-2.5 py-1.5 text-[11px] outline-none">
                                     </div>
                                     <div class="flex flex-col">
-                                        <input type="text" id="book-recruiter-company" placeholder="Company / Agency" required class="bg-neutral-100 dark:bg-surface border border-neutral-300 dark:border-neutral-700 focus:border-neon-cyan rounded px-2.5 py-1.5 text-[11px] outline-none">
+                                        <input type="text" id="book-recruiter-company" oninput="validateSchedulerStep()" placeholder="Company / Agency" required class="bg-neutral-100 dark:bg-surface border border-neutral-300 dark:border-neutral-700 focus:border-neon-cyan rounded px-2.5 py-1.5 text-[11px] outline-none">
                                     </div>
                                     <div class="flex flex-col">
                                         <textarea id="book-recruiter-msg" placeholder="Project details or role highlights..." class="bg-neutral-100 dark:bg-surface border border-neutral-300 dark:border-neutral-700 focus:border-neon-cyan rounded px-2.5 py-1.5 text-[11px] h-12 resize-none outline-none"></textarea>
@@ -1179,7 +1179,7 @@
                                 </div>
                                 <h5 class="text-sm font-bold font-display text-charcoal dark:text-white" id="confirm-booking-title">Holographic Briefing Confirmed!</h5>
                                 <p class="text-[9px] font-mono text-neutral-400 mt-2 max-w-xs" id="confirm-booking-details">Confirmed on May 28 at 2:00 PM. Invitation dispatched. Persistent node connection active.</p>
-                                <button id="booking-reset-btn" class="mt-4 px-3 py-1 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 rounded text-[9px] font-mono hover:border-neutral-400 dark:hover:border-neutral-500 cursor-pointer">
+                                <button id="booking-reset-btn" onclick="resetBookingScheduler()" class="mt-4 px-3 py-1 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 rounded text-[9px] font-mono hover:border-neutral-400 dark:hover:border-neutral-500 cursor-pointer">
                                     Reschedule briefing
                                 </button>
                             </div>
@@ -1192,10 +1192,10 @@
 
                         <!-- Scheduler Navigation CTA elements -->
                         <div class="flex justify-between items-center" id="scheduler-navigation-ctas">
-                            <button id="scheduler-back-btn" class="text-neutral-400 hover:text-charcoal dark:hover:text-white font-mono text-[9px] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer" disabled>
+                            <button id="scheduler-back-btn" onclick="handleSchedulerBack()" class="text-neutral-400 hover:text-charcoal dark:hover:text-white font-mono text-[9px] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer" disabled>
                                 &larr; PREV STEP
                             </button>
-                            <button id="scheduler-next-btn" class="bg-neon-cyan dark:bg-neon-cyan light:bg-electric-blue text-void dark:text-void light:text-white font-bold px-4 py-1.5 rounded text-[9px] font-mono hover:shadow-neon cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed" disabled>
+                            <button id="scheduler-next-btn" onclick="handleSchedulerNext()" class="bg-neon-cyan dark:bg-neon-cyan light:bg-electric-blue text-void dark:text-void light:text-white font-bold px-4 py-1.5 rounded text-[9px] font-mono hover:shadow-neon cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed" disabled>
                                 NEXT STEP &rarr;
                             </button>
                         </div>
@@ -3183,6 +3183,11 @@ gsap.to(camera.position, {
             if (typeof playSyntheticClick === 'function') playSyntheticClick('mechanical');
         };
 
+        // Global Walker Automated Scheduler Engine
+        let currentSchedulerStep = 1;
+        let selectedDateNode = '';
+        let selectedTimeNode = '';
+
         window.openBookingScheduler = function() {
             const bookTrigger = document.getElementById('book-walkthrough-trigger');
             const schedulerPanel = document.getElementById('booking-scheduler-panel');
@@ -3190,8 +3195,256 @@ gsap.to(camera.position, {
             bookTrigger.classList.add('hidden');
             schedulerPanel.classList.remove('max-h-0', 'opacity-0', 'scale-95');
             schedulerPanel.classList.add('max-h-[500px]', 'opacity-100', 'scale-100', 'animate-spring');
-            if (typeof populateDateRow === 'function') populateDateRow();
+            populateDateRow();
             if (typeof playSyntheticClick === 'function') playSyntheticClick('success');
+        };
+
+        window.populateDateRow = function() {
+            const dateRow = document.getElementById('scheduler-date-row');
+            if (!dateRow) return;
+            dateRow.innerHTML = '';
+            
+            const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            
+            let count = 0;
+            let dateIter = new Date();
+            const isLight = document.body.classList.contains('light');
+
+            while (count < 5) {
+                if (dateIter.getDay() === 0) {
+                    dateIter.setDate(dateIter.getDate() + 1);
+                    continue;
+                }
+                
+                const dayName = days[dateIter.getDay()];
+                const dateNum = dateIter.getDate();
+                const monthName = months[dateIter.getMonth()];
+                const fullDateStr = `${dayName}, ${dateNum} ${monthName}`;
+                
+                const chip = document.createElement('button');
+                chip.type = 'button';
+                chip.className = isLight
+                    ? "grow p-2 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 text-ink rounded text-center transition-all cursor-pointer shadow-sm"
+                    : "grow p-2 glass-panel border border-neutral-300 dark:border-surface/40 hover:border-neon-cyan rounded text-center transition-all cursor-pointer";
+                    
+                chip.innerHTML = `<p class="text-[8px] uppercase text-neutral-400 dark:text-neutral-500 font-semibold">${dayName}</p><p class="text-xs font-bold">${dateNum}</p>`;
+                chip.setAttribute('data-date', fullDateStr);
+                
+                chip.addEventListener('click', () => {
+                    const siblings = dateRow.querySelectorAll('button');
+                    siblings.forEach(s => {
+                        s.className = isLight
+                            ? "grow p-2 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 text-ink rounded text-center transition-all cursor-pointer shadow-sm"
+                            : "grow p-2 glass-panel border border-neutral-300 dark:border-surface/40 hover:border-neon-cyan rounded text-center transition-all cursor-pointer";
+                    });
+                    
+                    chip.className = isLight
+                        ? "grow p-2 bg-electric-blue/15 border-2 border-electric-blue text-electric-blue rounded text-center font-bold transition-all cursor-pointer shadow-light-blue"
+                        : "grow p-2 bg-neon-cyan/20 border-2 border-neon-cyan text-neon-cyan rounded text-center font-bold transition-all cursor-pointer shadow-neon";
+                        
+                    selectedDateNode = fullDateStr;
+                    populateTimeRow();
+                    validateSchedulerStep();
+                    if (typeof playSyntheticClick === 'function') playSyntheticClick('mechanical');
+                });
+                
+                dateRow.appendChild(chip);
+                dateIter.setDate(dateIter.getDate() + 1);
+                count++;
+            }
+        };
+
+        window.populateTimeRow = function() {
+            const timeRow = document.getElementById('scheduler-time-row');
+            if (!timeRow) return;
+            timeRow.innerHTML = '';
+            
+            const slots = ["10:00 AM", "11:30 AM", "2:00 PM", "3:30 PM", "5:00 PM"];
+            const isLight = document.body.classList.contains('light');
+
+            slots.forEach(slot => {
+                const chip = document.createElement('button');
+                chip.type = 'button';
+                chip.className = isLight
+                    ? "p-2 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 text-ink rounded text-center transition-all cursor-pointer font-mono text-[9px] shadow-sm"
+                    : "p-2 glass-panel border border-neutral-300 dark:border-surface/40 hover:border-neon-cyan rounded text-center transition-all cursor-pointer font-mono text-[9px]";
+                chip.innerText = slot;
+                chip.setAttribute('data-time', slot);
+                
+                chip.addEventListener('click', () => {
+                    const siblings = timeRow.querySelectorAll('button');
+                    siblings.forEach(s => {
+                        s.className = isLight
+                            ? "p-2 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 text-ink rounded text-center transition-all cursor-pointer font-mono text-[9px] shadow-sm"
+                            : "p-2 glass-panel border border-neutral-300 dark:border-surface/40 hover:border-neon-cyan rounded text-center transition-all cursor-pointer font-mono text-[9px]";
+                    });
+                    
+                    chip.className = isLight
+                        ? "p-2 bg-electric-blue/15 border-2 border-electric-blue text-electric-blue rounded text-center font-bold font-mono text-[9px] transition-all cursor-pointer shadow-light-blue"
+                        : "p-2 bg-neon-cyan/25 border-2 border-neon-cyan text-neon-cyan rounded text-center font-bold font-mono text-[9px] transition-all cursor-pointer shadow-neon";
+                        
+                    selectedTimeNode = slot;
+                    validateSchedulerStep();
+                    if (typeof playSyntheticClick === 'function') playSyntheticClick('mechanical');
+                });
+                
+                timeRow.appendChild(chip);
+            });
+        };
+
+        window.validateSchedulerStep = function() {
+            const nextStepBtn = document.getElementById('scheduler-next-btn');
+            if (!nextStepBtn) return;
+            
+            if (currentSchedulerStep === 1) {
+                if (selectedDateNode && selectedTimeNode) {
+                    nextStepBtn.removeAttribute('disabled');
+                } else {
+                    nextStepBtn.setAttribute('disabled', 'true');
+                }
+            } else if (currentSchedulerStep === 2) {
+                const name = document.getElementById('book-recruiter-name')?.value || '';
+                const email = document.getElementById('book-recruiter-email')?.value || '';
+                const company = document.getElementById('book-recruiter-company')?.value || '';
+                
+                if (name.trim().length >= 2 && email.includes('@') && company.trim().length >= 1) {
+                    nextStepBtn.removeAttribute('disabled');
+                } else {
+                    nextStepBtn.setAttribute('disabled', 'true');
+                }
+            }
+        };
+
+        window.handleSchedulerNext = function() {
+            const nextStepBtn = document.getElementById('scheduler-next-btn');
+            const backStepBtn = document.getElementById('scheduler-back-btn');
+            const slideDateTime = document.getElementById('scheduler-slide-datetime');
+            const slideDetails = document.getElementById('scheduler-slide-details');
+            const slideConfirm = document.getElementById('scheduler-slide-confirm');
+            const stepLabel = document.getElementById('scheduler-step-indicator');
+            const stepNum = document.getElementById('scheduler-step-number');
+            const progressBar = document.getElementById('scheduler-progress-bar');
+
+            if (currentSchedulerStep === 1) {
+                currentSchedulerStep = 2;
+                slideDateTime.classList.add('opacity-0');
+                setTimeout(() => {
+                    slideDateTime.classList.add('hidden');
+                    slideDetails.classList.remove('hidden');
+                    slideDetails.classList.remove('opacity-0');
+                    slideDetails.classList.add('opacity-100');
+                }, 200);
+
+                stepLabel.innerText = "Step 2 // Recruiter Information";
+                stepNum.innerText = "2 / 3";
+                progressBar.style.width = "66%";
+                backStepBtn.removeAttribute('disabled');
+                validateSchedulerStep();
+            } else if (currentSchedulerStep === 2) {
+                currentSchedulerStep = 3;
+                const rName = document.getElementById('book-recruiter-name').value;
+                const rEmail = document.getElementById('book-recruiter-email').value;
+                const rCompany = document.getElementById('book-recruiter-company').value;
+                const rMsg = document.getElementById('book-recruiter-msg').value;
+
+                const bookingPayload = {
+                    date: selectedDateNode,
+                    time: selectedTimeNode,
+                    name: rName,
+                    email: rEmail,
+                    company: rCompany,
+                    message: rMsg,
+                    timestamp: new Date().toISOString()
+                };
+
+                localStorage.setItem('kaustobh_portfolio_booking', JSON.stringify(bookingPayload));
+
+                slideDetails.classList.add('opacity-0');
+                setTimeout(() => {
+                    slideDetails.classList.add('hidden');
+                    slideConfirm.classList.remove('hidden');
+                    slideConfirm.classList.remove('opacity-0');
+                    slideConfirm.classList.add('opacity-100', 'flex');
+                }, 200);
+
+                stepLabel.innerText = "Briefing Node Confirmed";
+                stepNum.innerText = "3 / 3";
+                progressBar.style.width = "100%";
+                
+                document.getElementById('scheduler-progress-bar-wrap').classList.add('hidden');
+                document.getElementById('scheduler-navigation-ctas').classList.add('hidden');
+                document.getElementById('confirm-booking-details').innerText = `Briefing locked on ${selectedDateNode} at ${selectedTimeNode}. Virtual call matrix sync dispatched to ${rEmail}.`;
+            }
+            if (typeof playSyntheticClick === 'function') playSyntheticClick('success');
+        };
+
+        window.handleSchedulerBack = function() {
+            const nextStepBtn = document.getElementById('scheduler-next-btn');
+            const backStepBtn = document.getElementById('scheduler-back-btn');
+            const slideDateTime = document.getElementById('scheduler-slide-datetime');
+            const slideDetails = document.getElementById('scheduler-slide-details');
+            const stepLabel = document.getElementById('scheduler-step-indicator');
+            const stepNum = document.getElementById('scheduler-step-number');
+            const progressBar = document.getElementById('scheduler-progress-bar');
+
+            if (currentSchedulerStep === 2) {
+                currentSchedulerStep = 1;
+                slideDetails.classList.add('opacity-0');
+                setTimeout(() => {
+                    slideDetails.classList.add('hidden');
+                    slideDateTime.classList.remove('hidden');
+                    slideDateTime.classList.remove('opacity-0');
+                    slideDateTime.classList.add('opacity-100');
+                }, 200);
+
+                stepLabel.innerText = "Step 1 // Choose Date & Time";
+                stepNum.innerText = "1 / 3";
+                progressBar.style.width = "33%";
+                backStepBtn.setAttribute('disabled', 'true');
+                validateSchedulerStep();
+            }
+            if (typeof playSyntheticClick === 'function') playSyntheticClick('mechanical');
+        };
+
+        window.resetBookingScheduler = function() {
+            const slideDateTime = document.getElementById('scheduler-slide-datetime');
+            const slideConfirm = document.getElementById('scheduler-slide-confirm');
+            const stepLabel = document.getElementById('scheduler-step-indicator');
+            const stepNum = document.getElementById('scheduler-step-number');
+            const progressBar = document.getElementById('scheduler-progress-bar');
+            const backStepBtn = document.getElementById('scheduler-back-btn');
+            const nextStepBtn = document.getElementById('scheduler-next-btn');
+
+            localStorage.removeItem('kaustobh_portfolio_booking');
+            currentSchedulerStep = 1;
+            selectedDateNode = '';
+            selectedTimeNode = '';
+            
+            document.getElementById('book-recruiter-name').value = '';
+            document.getElementById('book-recruiter-email').value = '';
+            document.getElementById('book-recruiter-company').value = '';
+            document.getElementById('book-recruiter-msg').value = '';
+            
+            slideConfirm.classList.add('opacity-0');
+            slideConfirm.classList.remove('flex');
+            
+            setTimeout(() => {
+                slideConfirm.classList.add('hidden');
+                slideDateTime.classList.remove('hidden');
+                slideDateTime.classList.add('opacity-100');
+            }, 200);
+
+            stepLabel.innerText = "Step 1 // Choose Date & Time";
+            stepNum.innerText = "1 / 3";
+            progressBar.style.width = "33%";
+            
+            document.getElementById('scheduler-progress-bar-wrap').classList.remove('hidden');
+            document.getElementById('scheduler-navigation-ctas').classList.remove('hidden');
+            
+            backStepBtn.setAttribute('disabled', 'true');
+            nextStepBtn.setAttribute('disabled', 'true');
+            populateDateRow();
         };
 
         const chatbotDatabase = {
@@ -4731,308 +4984,29 @@ gsap.to(camera.position, {
             });
 
 
-            // ==========================================
-            // I. WALKER AUTOMATED SCHEDULER WIDGET
-            // ==========================================
-            const bookTrigger = document.getElementById('book-walkthrough-trigger');
-            const schedulerPanel = document.getElementById('booking-scheduler-panel');
-            
-            let currentSchedulerStep = 1;
-            let selectedDateNode = '';
-            let selectedTimeNode = '';
-
-            window.openBookingScheduler = function() {
-                bookTrigger.classList.add('hidden');
-                schedulerPanel.classList.remove('max-h-0', 'opacity-0', 'scale-95');
-                schedulerPanel.classList.add('max-h-[500px]', 'opacity-100', 'scale-100', 'animate-spring');
-                populateDateRow();
-            };
-
-            bookTrigger.addEventListener('click', openBookingScheduler);
-
-            function populateDateRow() {
-                const dateRow = document.getElementById('scheduler-date-row');
-                dateRow.innerHTML = '';
-                
-                const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-                const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-                
-                let count = 0;
-                let dateIter = new Date();
-                
-                const isLight = document.body.classList.contains('light');
-
-                while (count < 5) {
-                    // Skip Sundays for briefing schedules
-                    if (dateIter.getDay() === 0) {
-                        dateIter.setDate(dateIter.getDate() + 1);
-                        continue;
-                    }
-                    
-                    const dayName = days[dateIter.getDay()];
-                    const dateNum = dateIter.getDate();
-                    const monthName = months[dateIter.getMonth()];
-                    const fullDateStr = `${dayName}, ${dateNum} ${monthName}`;
-                    
-                    const chip = document.createElement('button');
-                    
-                    // Theme-aware default classes: soft gray for light; glass for dark
-                    chip.className = isLight
-                        ? "grow p-2 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 text-ink rounded text-center transition-all cursor-pointer shadow-sm"
-                        : "grow p-2 glass-panel border border-neutral-300 dark:border-surface/40 hover:border-neon-cyan rounded text-center transition-all cursor-pointer";
-                        
-                    chip.innerHTML = `<p class="text-[8px] uppercase text-neutral-400 dark:text-neutral-500 font-semibold">${dayName}</p><p class="text-xs font-bold">${dateNum}</p>`;
-                    chip.setAttribute('data-date', fullDateStr);
-                    
-                    chip.addEventListener('click', (e) => {
-                        // Reset all sibling classes
-                        const siblings = dateRow.querySelectorAll('button');
-                        siblings.forEach(s => {
-                            s.className = isLight
-                                ? "grow p-2 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 text-ink rounded text-center transition-all cursor-pointer shadow-sm"
-                                : "grow p-2 glass-panel border border-neutral-300 dark:border-surface/40 hover:border-neon-cyan rounded text-center transition-all cursor-pointer";
-                        });
-                        
-                        // Active color selection: Deep electric-blue for light; glowing neon-cyan for dark
-                        chip.className = isLight
-                            ? "grow p-2 bg-electric-blue/15 border-2 border-electric-blue text-electric-blue rounded text-center font-bold transition-all cursor-pointer shadow-light-blue"
-                            : "grow p-2 bg-neon-cyan/20 border-2 border-neon-cyan text-neon-cyan rounded text-center font-bold transition-all cursor-pointer shadow-neon";
-                            
-                        selectedDateNode = fullDateStr;
-                        populateTimeRow();
-                        validateSchedulerStep();
-                    });
-                    
-                    dateRow.appendChild(chip);
-                    dateIter.setDate(dateIter.getDate() + 1);
-                    count++;
-                }
-            }
-
-            function populateTimeRow() {
-                const timeRow = document.getElementById('scheduler-time-row');
-                timeRow.innerHTML = '';
-                
-                const slots = ["10:00 AM", "11:30 AM", "2:00 PM", "3:30 PM", "5:00 PM"];
-                const isLight = document.body.classList.contains('light');
-
-                slots.forEach(slot => {
-                    const chip = document.createElement('button');
-                    chip.className = isLight
-                        ? "p-2 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 text-ink rounded text-center transition-all cursor-pointer font-mono text-[9px] shadow-sm"
-                        : "p-2 glass-panel border border-neutral-300 dark:border-surface/40 hover:border-neon-cyan rounded text-center transition-all cursor-pointer font-mono text-[9px]";
-                    chip.innerText = slot;
-                    chip.setAttribute('data-time', slot);
-                    
-                    chip.addEventListener('click', () => {
-                        const siblings = timeRow.querySelectorAll('button');
-                        siblings.forEach(s => {
-                            s.className = isLight
-                                ? "p-2 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 text-ink rounded text-center transition-all cursor-pointer font-mono text-[9px] shadow-sm"
-                                : "p-2 glass-panel border border-neutral-300 dark:border-surface/40 hover:border-neon-cyan rounded text-center transition-all cursor-pointer font-mono text-[9px]";
-                        });
-                        
-                        // Active slot classes
-                        chip.className = isLight
-                            ? "p-2 bg-electric-blue/15 border-2 border-electric-blue text-electric-blue rounded text-center font-bold font-mono text-[9px] transition-all cursor-pointer shadow-light-blue"
-                            : "p-2 bg-neon-cyan/25 border-2 border-neon-cyan text-neon-cyan rounded text-center font-bold font-mono text-[9px] transition-all cursor-pointer shadow-neon";
-                            
-                        selectedTimeNode = slot;
-                        validateSchedulerStep();
-                    });
-                    
-                    timeRow.appendChild(chip);
-                });
-            }
-
-            const nextStepBtn = document.getElementById('scheduler-next-btn');
-            const backStepBtn = document.getElementById('scheduler-back-btn');
-            
-            const slideDateTime = document.getElementById('scheduler-slide-datetime');
-            const slideDetails = document.getElementById('scheduler-slide-details');
-            const slideConfirm = document.getElementById('scheduler-slide-confirm');
-            
-            const stepLabel = document.getElementById('scheduler-step-indicator');
-            const stepNum = document.getElementById('scheduler-step-number');
-            const progressBar = document.getElementById('scheduler-progress-bar');
-
-            function validateSchedulerStep() {
-                if (currentSchedulerStep === 1) {
-                    if (selectedDateNode && selectedTimeNode) {
-                        nextStepBtn.removeAttribute('disabled');
-                    } else {
-                        nextStepBtn.setAttribute('disabled', 'true');
-                    }
-                } else if (currentSchedulerStep === 2) {
-                    const name = document.getElementById('book-recruiter-name').value;
-                    const email = document.getElementById('book-recruiter-email').value;
-                    const company = document.getElementById('book-recruiter-company').value;
-                    
-                    if (name.length > 2 && email.includes('@') && company.length > 1) {
-                        nextStepBtn.removeAttribute('disabled');
-                    } else {
-                        nextStepBtn.setAttribute('disabled', 'true');
-                    }
-                }
-            }
-
-            // Real-time checks on details inputs
-            document.querySelectorAll('#scheduler-slide-details input').forEach(input => {
-                input.addEventListener('input', validateSchedulerStep);
-            });
-
-            nextStepBtn.addEventListener('click', () => {
-                if (currentSchedulerStep === 1) {
-                    currentSchedulerStep = 2;
-                    
-                    slideDateTime.classList.add('opacity-0');
-                    setTimeout(() => {
-                        slideDateTime.classList.add('hidden');
-                        slideDetails.classList.remove('hidden');
-                        slideDetails.classList.remove('opacity-0');
-                        slideDetails.classList.add('opacity-100');
-                    }, 200);
-
-                    stepLabel.innerText = "Step 2 // Recruiter Credentials";
-                    stepNum.innerText = "2 / 3";
-                    progressBar.style.width = "66%";
-                    backStepBtn.removeAttribute('disabled');
-                    validateSchedulerStep();
-                } else if (currentSchedulerStep === 2) {
-                    currentSchedulerStep = 3;
-                    playSyntheticClick('success');
-                    
-                    // Lock inputs and save to localStorage
-                    const rName = document.getElementById('book-recruiter-name').value;
-                    const rEmail = document.getElementById('book-recruiter-email').value;
-                    const rCompany = document.getElementById('book-recruiter-company').value;
-                    const rMsg = document.getElementById('book-recruiter-msg').value;
-                    
-                    bookedSlot = {
-                        date: selectedDateNode,
-                        time: selectedTimeNode,
-                        name: rName,
-                        email: rEmail
-                    };
-                    localStorage.setItem('kaustobh_portfolio_booking', JSON.stringify(bookedSlot));
-
-                    // Dispatch API POST request to the Express backend
-                    fetch('http://localhost:5000/api/book', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            name: rName,
-                            email: rEmail,
-                            company: rCompany,
-                            message: rMsg,
-                            date: selectedDateNode,
-                            time: selectedTimeNode
-                        })
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            console.log('Success: Briefing confirmation email dispatched.');
-                        } else {
-                            console.error('Error: Failed to send booking notification:', data.error);
-                        }
-                    })
-                    .catch(err => {
-                        console.error('Network Error: Briefing dispatch failed:', err);
-                    });
-
-                    slideDetails.classList.add('opacity-0');
-                    setTimeout(() => {
-                        slideDetails.classList.add('hidden');
-                        slideConfirm.classList.remove('hidden');
-                        slideConfirm.classList.remove('opacity-0');
-                        slideConfirm.classList.add('opacity-100', 'flex');
-                    }, 200);
-
-                    stepLabel.innerText = "Briefing Node Confirmed";
-                    stepNum.innerText = "3 / 3";
-                    progressBar.style.width = "100%";
-                    
-                    document.getElementById('scheduler-progress-bar-wrap').classList.add('hidden');
-                    document.getElementById('scheduler-navigation-ctas').classList.add('hidden');
-                    
-                    document.getElementById('confirm-booking-details').innerText = `Briefing locked on ${selectedDateNode} at ${selectedTimeNode}. Virtual call matrix sync dispatched to ${rEmail}.`;
-                }
-            });
-
-            backStepBtn.addEventListener('click', () => {
-                if (currentSchedulerStep === 2) {
-                    currentSchedulerStep = 1;
-                    
-                    slideDetails.classList.add('opacity-0');
-                    setTimeout(() => {
-                        slideDetails.classList.add('hidden');
-                        slideDateTime.classList.remove('hidden');
-                        slideDateTime.classList.remove('opacity-0');
-                        slideDateTime.classList.add('opacity-100');
-                    }, 200);
-
-                    stepLabel.innerText = "Step 1 // Choose Date & Time";
-                    stepNum.innerText = "1 / 3";
-                    progressBar.style.width = "33%";
-                    backStepBtn.setAttribute('disabled', 'true');
-                    validateSchedulerStep();
-                }
-            });
-
-            // Reschedule trigger resetting slots
-            document.getElementById('booking-reset-btn').addEventListener('click', () => {
-                localStorage.removeItem('kaustobh_portfolio_booking');
-                bookedSlot = null;
-                currentSchedulerStep = 1;
-                selectedDateNode = '';
-                selectedTimeNode = '';
-                
-                // Clear input form fields
-                document.getElementById('book-recruiter-name').value = '';
-                document.getElementById('book-recruiter-email').value = '';
-                document.getElementById('book-recruiter-company').value = '';
-                document.getElementById('book-recruiter-msg').value = '';
-                
-                slideConfirm.classList.add('opacity-0');
-                slideConfirm.classList.remove('flex');
-                
-                setTimeout(() => {
-                    slideConfirm.classList.add('hidden');
-                    slideDateTime.classList.remove('hidden');
-                    slideDateTime.classList.add('opacity-100');
-                }, 200);
-
-                stepLabel.innerText = "Step 1 // Choose Date & Time";
-                stepNum.innerText = "1 / 3";
-                progressBar.style.width = "33%";
-                
-                document.getElementById('scheduler-progress-bar-wrap').classList.remove('hidden');
-                document.getElementById('scheduler-navigation-ctas').classList.remove('hidden');
-                
-                backStepBtn.setAttribute('disabled', 'true');
-                nextStepBtn.setAttribute('disabled', 'true');
-                populateDateRow();
-            });
-
             // Auto-load booked status on refresh
-            if (bookedSlot) {
-                openBookingScheduler();
-                currentSchedulerStep = 3;
-                
-                slideDateTime.classList.add('hidden');
-                slideConfirm.classList.remove('hidden');
-                slideConfirm.classList.add('opacity-100', 'flex');
-                
-                stepLabel.innerText = "Briefing Node Confirmed";
-                stepNum.innerText = "3 / 3";
-                progressBar.style.width = "100%";
-                
-                document.getElementById('scheduler-progress-bar-wrap').classList.add('hidden');
-                document.getElementById('scheduler-navigation-ctas').classList.add('hidden');
-                document.getElementById('confirm-booking-details').innerText = `Briefing locked on ${bookedSlot.date} at ${bookedSlot.time}. Virtual call matrix sync dispatched to ${bookedSlot.email}.`;
+            const savedBooking = localStorage.getItem('kaustobh_portfolio_booking');
+            if (savedBooking) {
+                try {
+                    const parsed = JSON.parse(savedBooking);
+                    if (parsed && parsed.date && parsed.time) {
+                        openBookingScheduler();
+                        currentSchedulerStep = 3;
+                        
+                        document.getElementById('scheduler-slide-datetime').classList.add('hidden');
+                        const confirmSlide = document.getElementById('scheduler-slide-confirm');
+                        confirmSlide.classList.remove('hidden');
+                        confirmSlide.classList.add('opacity-100', 'flex');
+                        
+                        document.getElementById('scheduler-step-indicator').innerText = "Briefing Node Confirmed";
+                        document.getElementById('scheduler-step-number').innerText = "3 / 3";
+                        document.getElementById('scheduler-progress-bar').style.width = "100%";
+                        
+                        document.getElementById('scheduler-progress-bar-wrap').classList.add('hidden');
+                        document.getElementById('scheduler-navigation-ctas').classList.add('hidden');
+                        document.getElementById('confirm-booking-details').innerText = `Briefing locked on ${parsed.date} at ${parsed.time}. Virtual call matrix sync dispatched to ${parsed.email || 'your email'}.`;
+                    }
+                } catch(e) {}
             }
 
 
