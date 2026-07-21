@@ -2902,21 +2902,21 @@ gsap.to(camera.position, {
 
             <!-- Suggested Quick-Reply Question chips -->
             <div class="px-4 py-2 border-t border-neutral-300/20 dark:border-white/5 flex gap-1.5 overflow-x-auto whitespace-nowrap scrollbar-none" id="chat-suggestion-chips">
-                <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-neon-cyan dark:hover:border-neon-cyan light:hover:border-electric-blue rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" data-question="Who is Kaustobh?">Who is Kaustobh?</button>
-                <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-neon-cyan dark:hover:border-neon-cyan light:hover:border-electric-blue rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" data-question="Explore Fintech Case Study">Fintech Redesign</button>
-                <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-neon-cyan dark:hover:border-neon-cyan light:hover:border-electric-blue rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" data-question="Explore E-Comm Case Study">Checkout Friction</button>
-                <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-neon-cyan dark:hover:border-neon-cyan light:hover:border-electric-blue rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" data-question="Explore Art Gallery Case Study">Art Gallery</button>
-                <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-pista-green dark:hover:border-pista-green light:hover:border-deep-green rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" data-question="Explore Doodh Subscription Case Study">Doodh Subscription</button>
-                <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-biogrid-mint dark:hover:border-biogrid-mint light:hover:border-forest-lime rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" data-question="Explore Bio Grid Case Study">Bio Grid Telemetry</button>
-                <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-apex-red dark:hover:border-apex-red light:hover:border-apex-red rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" data-question="Explore Apex Motorsport Case Study">Apex Motorsport</button>
-                <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-[#10B981] dark:hover:border-[#10B981] rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" data-question="Explore Silvatide Cottage Case Study">Silvatide Cottage</button>
-                <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-neon-cyan dark:hover:border-neon-cyan light:hover:border-electric-blue rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" data-question="Book walkthrough slot">Book brief call</button>
+                <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-neon-cyan dark:hover:border-neon-cyan light:hover:border-electric-blue rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" onclick="sendChipQuestion(this.getAttribute('data-question'))" data-question="Who is Kaustobh?">Who is Kaustobh?</button>
+                <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-neon-cyan dark:hover:border-neon-cyan light:hover:border-electric-blue rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" onclick="sendChipQuestion(this.getAttribute('data-question'))" data-question="Explore Fintech Case Study">Fintech Redesign</button>
+                <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-neon-cyan dark:hover:border-neon-cyan light:hover:border-electric-blue rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" onclick="sendChipQuestion(this.getAttribute('data-question'))" data-question="Explore E-Comm Case Study">Checkout Friction</button>
+                <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-neon-cyan dark:hover:border-neon-cyan light:hover:border-electric-blue rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" onclick="sendChipQuestion(this.getAttribute('data-question'))" data-question="Explore Art Gallery Case Study">Art Gallery</button>
+                <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-pista-green dark:hover:border-pista-green light:hover:border-deep-green rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" onclick="sendChipQuestion(this.getAttribute('data-question'))" data-question="Explore Doodh Subscription Case Study">Doodh Subscription</button>
+                <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-biogrid-mint dark:hover:border-biogrid-mint light:hover:border-forest-lime rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" onclick="sendChipQuestion(this.getAttribute('data-question'))" data-question="Explore Bio Grid Case Study">Bio Grid Telemetry</button>
+                <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-apex-red dark:hover:border-apex-red light:hover:border-apex-red rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" onclick="sendChipQuestion(this.getAttribute('data-question'))" data-question="Explore Apex Motorsport Case Study">Apex Motorsport</button>
+                <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-[#10B981] dark:hover:border-[#10B981] rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" onclick="sendChipQuestion(this.getAttribute('data-question'))" data-question="Explore Silvatide Cottage Case Study">Silvatide Cottage</button>
+                <button class="chat-chip px-2.5 py-1.5 bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 hover:border-neon-cyan dark:hover:border-neon-cyan light:hover:border-electric-blue rounded-full text-[9px] font-mono text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer" onclick="sendChipQuestion(this.getAttribute('data-question'))" data-question="Book walkthrough slot">Book brief call</button>
             </div>
 
             <!-- Dynamic Input Box -->
             <div class="p-3 border-t border-neutral-300/40 dark:border-white/5 flex gap-2 items-center bg-neutral-100/50 dark:bg-surface/30 rounded-b-xl">
-                <input type="text" id="ai-chat-input" placeholder="Query Kaustobh's agent..." class="grow bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 rounded-lg px-3 py-1.5 text-[11px] text-charcoal dark:text-white outline-none focus:border-neon-cyan transition-colors">
-                <button id="ai-chat-send-btn" class="bg-neon-cyan text-void font-bold p-2.5 rounded-lg hover:shadow-neon flex items-center justify-center cursor-pointer transition-shadow">
+                <input type="text" id="ai-chat-input" onkeydown="if(event.key==='Enter') handleChatSend()" placeholder="Query Kaustobh's agent..." class="grow bg-neutral-200 dark:bg-surface border border-neutral-300 dark:border-neutral-700 rounded-lg px-3 py-1.5 text-[11px] text-charcoal dark:text-white outline-none focus:border-neon-cyan transition-colors">
+                <button id="ai-chat-send-btn" onclick="handleChatSend()" class="bg-neon-cyan text-void font-bold p-2.5 rounded-lg hover:shadow-neon flex items-center justify-center cursor-pointer transition-shadow">
                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                 </button>
             </div>
@@ -3192,6 +3192,127 @@ gsap.to(camera.position, {
             schedulerPanel.classList.add('max-h-[500px]', 'opacity-100', 'scale-100', 'animate-spring');
             if (typeof populateDateRow === 'function') populateDateRow();
             if (typeof playSyntheticClick === 'function') playSyntheticClick('success');
+        };
+
+        const chatbotDatabase = {
+            greetings: [
+                "Greeting node established. I am Kaustobh's customized AI representative. How can I orient your search?",
+                "System online // Kaustobh's virtual briefing core loaded. Direct your question or choose a suggested shortcut."
+            ],
+            who: "Kaustobh is a junior UX/UI designer and web engineer who specializes in bridging core design logic with front-end high-performance engineering. He works with Next.js, Tailwind, Three.js, React, and databases to ship premium experiences.",
+            fintech: "The Fintech Dashboard is a UX overhaul focused on cognitive load reduction. It resulted in a 40% task time reduction and +32% average metric lift. Would you like me to open the case study for you? <button onclick=\"openModal('fintech-modal')\" class='mt-2 block px-2.5 py-1 bg-neon-cyan text-void rounded font-mono font-bold text-[9px] hover:shadow-neon cursor-pointer'>Open Case Study Modal</button>",
+            checkout: "The E-Commerce Checkout project optimized cart friction, leading to an 18% lift in conversions through progressive disclosure and validation animations. <button onclick=\"openModal('checkout-modal')\" class='mt-2 block px-2.5 py-1 bg-neon-magenta text-white rounded font-mono font-bold text-[9px] hover:shadow-neon-pink cursor-pointer'>Open Case Study Modal</button>",
+            gallery: "The Graphic Art Gallery case study focuses on spatial digital acquisition. It features fluid canvas interactions, a contextual wall-scaler, and low-friction inquiry flows, yielding +28% inquiry conversions and +35% immersion lift. <button onclick=\"openModal('gallery-modal')\" class='mt-2 block px-2.5 py-1 bg-[#79C000] text-void rounded font-mono font-bold text-[9px] cursor-pointer'>Open Case Study Modal</button>",
+            doodh: "The Doodh Subscription Management experience focuses on everyday utility and subscription state handling (active, paused, cancelled). It features a flexible weekly quantity scheduler and respectful exit paths, yielding a +30% retention lift. <button onclick=\"openModal('MilkDel-modal')\" class='mt-2 block px-2.5 py-1 bg-pista-green text-void rounded font-mono font-bold text-[9px] hover:shadow-neon-green cursor-pointer'>Open Case Study Modal</button>",
+            biogrid: "Bio Grid is a clinical-grade medical telemetry dashboard designed to reduce cognitive load and enforce layout stability. It features a horizontal KPI carousel, WCAG AA compliant contrast colors, and physiology simulation widgets, yielding +45% scan speed improvements. <button onclick=\"openModal('BioGrid-modal')\" class='mt-2 block px-2.5 py-1 bg-[#4ade80] text-void rounded font-mono font-bold text-[9px] hover:shadow-neon-green cursor-pointer'>Open Case Study Modal</button>",
+            apex: "Apex Motorsport is a museum-grade, scroll-linked 3D digital showroom for the Mercedes-AMG GT4 & GT3 EVO. It merges WebGL (Three.js), GSAP scroll timelines, procedural GLSL exhaust flame shaders, and a real-time synthesized V8 Web Audio engine into a cinematic 60+ FPS racing experience built on zero external build tools. <button onclick=\"openModal('Apex-modal')\" class='mt-2 block px-2.5 py-1 bg-[#e0000a] text-white rounded font-mono font-bold text-[9px] cursor-pointer'>Open Case Study Modal</button>",
+            silvatide: "Silvatide Cottage is a pixel-perfect Astro-powered frontend for a premium lakeside retreat. Built from Figma designs, it features advanced CSS clip-path typography masking sandwiched between foreground cabin and background trees, an infinitely rotating masonry gallery, and IntersectionObserver-driven fade-up scroll animations — all under a strict 8px spatial grid. Result: 100% design fidelity and a +22% booking conversion lift. <button onclick=\"openModal('Silvatide-modal')\" class='mt-2 block px-2.5 py-1 bg-[#10B981] text-white rounded font-mono font-bold text-[9px] cursor-pointer'>Open Case Study Modal</button>",
+            book: "You can book a 20-minute slot directly on his automated calendar widget in the footer! Let me open it for you. <button onclick=\"document.getElementById('recruiter-briefing').scrollIntoView(); setTimeout(openBookingScheduler, 500);\" class='mt-2 block px-2.5 py-1 bg-acid-lime text-void rounded font-mono font-bold text-[9px] cursor-pointer'>Initialize Booking Calendar</button>",
+            fallback: "Query processed, but response yields low certainty. Try selecting a suggested capability matrix chip or typing 'Who is Kaustobh?' or 'Book a briefing'."
+        };
+
+        window.appendChatMessage = function(sender, text) {
+            const chatLog = document.getElementById('ai-chat-log');
+            if (!chatLog) return;
+            const bubbleWrapper = document.createElement('div');
+            bubbleWrapper.className = `flex flex-col ${sender === 'user' ? 'items-end' : 'items-start'} gap-1`;
+            
+            const label = document.createElement('span');
+            label.className = "text-[8px] font-mono text-neutral-400 tracking-wider";
+            label.innerText = sender === 'user' ? 'RECRUITER // GUEST' : 'K-Bot // AI Representative';
+            
+            const bubble = document.createElement('div');
+            const isLight = document.body.classList.contains('light');
+            
+            if (sender === 'user') {
+                bubble.className = isLight
+                    ? 'bg-electric-blue/15 border-electric-blue/30 text-ink rounded-lg rounded-tr-none p-2.5 max-w-[85%] border shadow-sm'
+                    : 'bg-neon-cyan/20 border-neon-cyan/40 text-white rounded-lg rounded-tr-none p-2.5 max-w-[85%] border border-white/5';
+            } else {
+                bubble.className = isLight
+                    ? 'bg-neutral-100 border-neutral-300/60 text-ink rounded-lg rounded-tl-none p-2.5 max-w-[85%] border shadow-sm'
+                    : 'bg-neutral-200 dark:bg-surface/75 text-white rounded-lg rounded-tl-none p-2.5 max-w-[85%] border border-white/5';
+            }
+            
+            bubble.innerHTML = text;
+            bubbleWrapper.appendChild(label);
+            bubbleWrapper.appendChild(bubble);
+            chatLog.appendChild(bubbleWrapper);
+            chatLog.scrollTop = chatLog.scrollHeight;
+        };
+
+        window.triggerAgentTyping = function(userMessage) {
+            const chatLog = document.getElementById('ai-chat-log');
+            if (!chatLog) return;
+            const typingWrapper = document.createElement('div');
+            typingWrapper.id = "chat-typing-dots";
+            typingWrapper.className = "flex flex-col items-start gap-1";
+            
+            const label = document.createElement('span');
+            label.className = "text-[8px] font-mono text-neutral-400 tracking-wider";
+            label.innerText = 'K-Bot // Representative';
+            
+            const bubble = document.createElement('div');
+            const isLight = document.body.classList.contains('light');
+            
+            bubble.className = isLight
+                ? "bg-neutral-100 border border-neutral-300 text-ink rounded-lg rounded-tl-none p-2.5 max-w-[85%] flex gap-1 items-center font-mono shadow-sm"
+                : "bg-neutral-200 dark:bg-surface/75 text-white rounded-lg rounded-tl-none p-2.5 max-w-[85%] border border-white/5 flex gap-1 items-center font-mono";
+                
+            bubble.innerHTML = `<span class="animate-ping h-1.5 w-1.5 rounded-full bg-neon-cyan"></span><span class="animate-ping h-1.5 w-1.5 rounded-full bg-neon-cyan delay-100"></span><span class="animate-ping h-1.5 w-1.5 rounded-full bg-neon-cyan delay-200"></span>`;
+            
+            typingWrapper.appendChild(label);
+            typingWrapper.appendChild(bubble);
+            chatLog.appendChild(typingWrapper);
+            chatLog.scrollTop = chatLog.scrollHeight;
+
+            const q = userMessage.toLowerCase();
+            let reply = chatbotDatabase.fallback;
+
+            if (q.includes('who') || q.includes('skills') || q.includes('about') || q.includes('kaustobh')) {
+                reply = chatbotDatabase.who;
+            } else if (q.includes('fintech') || q.includes('dashboard') || q.includes('audit')) {
+                reply = chatbotDatabase.fintech;
+            } else if (q.includes('e-comm') || q.includes('checkout') || q.includes('friction') || q.includes('watch')) {
+                reply = chatbotDatabase.checkout;
+            } else if (q.includes('gallery') || q.includes('art') || q.includes('immersion') || q.includes('acquisition') || q.includes('painting')) {
+                reply = chatbotDatabase.gallery;
+            } else if (q.includes('doodh') || q.includes('milk') || q.includes('subscription')) {
+                reply = chatbotDatabase.doodh;
+            } else if (q.includes('biogrid') || q.includes('bio') || q.includes('telemetry') || q.includes('medical') || q.includes('clinical')) {
+                reply = chatbotDatabase.biogrid;
+            } else if (q.includes('apex') || q.includes('motorsport') || q.includes('racing') || q.includes('car') || q.includes('3d')) {
+                reply = chatbotDatabase.apex;
+            } else if (q.includes('silvatide') || q.includes('cottage') || q.includes('retreat') || q.includes('astro')) {
+                reply = chatbotDatabase.silvatide;
+            } else if (q.includes('book') || q.includes('briefing') || q.includes('walkthrough') || q.includes('schedule') || q.includes('call')) {
+                reply = chatbotDatabase.book;
+            }
+
+            setTimeout(() => {
+                const dots = document.getElementById('chat-typing-dots');
+                if (dots) dots.remove();
+                
+                appendChatMessage('agent', reply);
+                if (typeof playSyntheticClick === 'function') playSyntheticClick('mechanical');
+            }, 600);
+        };
+
+        window.handleChatSend = function() {
+            const chatInput = document.getElementById('ai-chat-input');
+            if (!chatInput) return;
+            const text = chatInput.value.trim();
+            if (!text) return;
+            
+            chatInput.value = '';
+            appendChatMessage('user', text);
+            triggerAgentTyping(text);
+        };
+
+        window.sendChipQuestion = function(question) {
+            if (!question) return;
+            appendChatMessage('user', question);
+            triggerAgentTyping(question);
         };
 
         let isChatOpen = false;
@@ -4928,115 +5049,6 @@ gsap.to(camera.position, {
             if (chatCloseBtn) {
                 chatCloseBtn.addEventListener('click', () => window.toggleAIChat(false));
             }
-
-            function appendChatMessage(sender, text) {
-                const bubbleWrapper = document.createElement('div');
-                bubbleWrapper.className = `flex flex-col ${sender === 'user' ? 'items-end' : 'items-start'} gap-1`;
-                
-                const label = document.createElement('span');
-                label.className = "text-[8px] font-mono text-neutral-400 tracking-wider";
-                label.innerText = sender === 'user' ? 'RECRUITER // GUEST' : 'K-Bot // AI Representative';
-                
-                const bubble = document.createElement('div');
-                const isLight = document.body.classList.contains('light');
-                
-                if (sender === 'user') {
-                    bubble.className = isLight
-                        ? 'bg-electric-blue/15 border-electric-blue/30 text-ink rounded-lg rounded-tr-none p-2.5 max-w-[85%] border shadow-sm'
-                        : 'bg-neon-cyan/20 border-neon-cyan/40 text-white rounded-lg rounded-tr-none p-2.5 max-w-[85%] border border-white/5';
-                } else {
-                    bubble.className = isLight
-                        ? 'bg-neutral-100 border-neutral-300/60 text-ink rounded-lg rounded-tl-none p-2.5 max-w-[85%] border shadow-sm'
-                        : 'bg-neutral-200 dark:bg-surface/75 text-white rounded-lg rounded-tl-none p-2.5 max-w-[85%] border border-white/5';
-                }
-                
-                bubble.innerHTML = text;
-                
-                bubbleWrapper.appendChild(label);
-                bubbleWrapper.appendChild(bubble);
-                chatLog.appendChild(bubbleWrapper);
-                
-                chatLog.scrollTop = chatLog.scrollHeight;
-            }
-
-            function triggerAgentTyping(userMessage) {
-                const typingWrapper = document.createElement('div');
-                typingWrapper.id = "chat-typing-dots";
-                typingWrapper.className = "flex flex-col items-start gap-1";
-                
-                const label = document.createElement('span');
-                label.className = "text-[8px] font-mono text-neutral-400 tracking-wider";
-                label.innerText = 'K-Bot // Representative';
-                
-                const bubble = document.createElement('div');
-                const isLight = document.body.classList.contains('light');
-                
-                bubble.className = isLight
-                    ? "bg-neutral-100 border border-neutral-300 text-ink rounded-lg rounded-tl-none p-2.5 max-w-[85%] flex gap-1 items-center font-mono shadow-sm"
-                    : "bg-neutral-200 dark:bg-surface/75 text-white rounded-lg rounded-tl-none p-2.5 max-w-[85%] border border-white/5 flex gap-1 items-center font-mono";
-                    
-                bubble.innerHTML = `<span class="animate-ping h-1.5 w-1.5 rounded-full bg-neon-cyan"></span><span class="animate-ping h-1.5 w-1.5 rounded-full bg-neon-cyan delay-100"></span><span class="animate-ping h-1.5 w-1.5 rounded-full bg-neon-cyan delay-200"></span>`;
-                
-                typingWrapper.appendChild(label);
-                typingWrapper.appendChild(bubble);
-                chatLog.appendChild(typingWrapper);
-                chatLog.scrollTop = chatLog.scrollHeight;
-
-                const q = userMessage.toLowerCase();
-                let reply = chatbotDatabase.fallback;
-
-                if (q.includes('who') || q.includes('skills') || q.includes('about') || q.includes('kaustobh')) {
-                    reply = chatbotDatabase.who;
-                } else if (q.includes('fintech') || q.includes('dashboard') || q.includes('audit')) {
-                    reply = chatbotDatabase.fintech;
-                } else if (q.includes('e-comm') || q.includes('checkout') || q.includes('friction') || q.includes('watch')) {
-                    reply = chatbotDatabase.checkout;
-                } else if (q.includes('gallery') || q.includes('art') || q.includes('immersion') || q.includes('acquisition') || q.includes('painting')) {
-                    reply = chatbotDatabase.gallery;
-                } else if (q.includes('doodh') || q.includes('milk') || q.includes('subscription')) {
-                    reply = chatbotDatabase.doodh;
-                } else if (q.includes('biogrid') || q.includes('bio') || q.includes('telemetry') || q.includes('medical') || q.includes('clinical')) {
-                    reply = chatbotDatabase.biogrid;
-                } else if (q.includes('apex') || q.includes('motorsport') || q.includes('racing') || q.includes('car') || q.includes('3d')) {
-                    reply = chatbotDatabase.apex;
-                } else if (q.includes('silvatide') || q.includes('cottage') || q.includes('retreat') || q.includes('astro')) {
-                    reply = chatbotDatabase.silvatide;
-                } else if (q.includes('book') || q.includes('briefing') || q.includes('walkthrough') || q.includes('schedule') || q.includes('call')) {
-                    reply = chatbotDatabase.book;
-                }
-
-                setTimeout(() => {
-                    const dots = document.getElementById('chat-typing-dots');
-                    if (dots) dots.remove();
-                    
-                    appendChatMessage('agent', reply);
-                    if (typeof playSyntheticClick === 'function') playSyntheticClick('mechanical');
-                }, 850);
-            }
-
-            function handleChatSend() {
-                const text = chatInput.value.trim();
-                if (!text) return;
-                
-                chatInput.value = '';
-                appendChatMessage('user', text);
-                triggerAgentTyping(text);
-            }
-
-            chatSendBtn.addEventListener('click', handleChatSend);
-            chatInput.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter') handleChatSend();
-            });
-
-            // Bind suggested chips
-            const chips = document.querySelectorAll('.chat-chip');
-            chips.forEach(chip => {
-                chip.addEventListener('click', (e) => {
-                    const question = e.target.getAttribute('data-question');
-                    appendChatMessage('user', question);
-                    triggerAgentTyping(question);
-                });
-            });
 
 
             // ==========================================
