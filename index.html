@@ -712,7 +712,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-fintech" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
+                    <video id="kpi-video-fintech" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="NexusFin_tech.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -771,7 +771,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-checkout" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
+                    <video id="kpi-video-checkout" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="NeonHex.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -838,7 +838,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-gallery" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
+                    <video id="kpi-video-gallery" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="artt gallery.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -910,7 +910,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-milkdel" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
+                    <video id="kpi-video-milkdel" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="Doodh.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -977,7 +977,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-biogrid" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
+                    <video id="kpi-video-biogrid" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="Bio Grid.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -1047,7 +1047,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-apex" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
+                    <video id="kpi-video-apex" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="Apex Motorsport.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -1128,7 +1128,7 @@
                 </div>
                 <!-- Video Container -->
                 <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-silvatide" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transform-gpu pointer-events-none">
+                    <video id="kpi-video-silvatide" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover transform-gpu pointer-events-none">
                         <source src="Silvatide.mp4" type="video/mp4">
                     </video>
                     <!-- Play Overlay -->
@@ -3674,23 +3674,24 @@ gsap.to(camera.position, {
                         bootOverlay.style.opacity = '0';
                         bootOverlay.style.pointerEvents = 'none';
                         
-                        // Initialize high-performance video IntersectionObserver
+                        // Initialize High-Performance Instant Video Autoplay Engine
                         const videoObserver = new IntersectionObserver((entries) => {
                             entries.forEach(entry => {
                                 const video = entry.target;
-                                if (entry.isIntersecting) {
-                                    if (video.getAttribute('preload') !== 'auto') {
-                                        video.setAttribute('preload', 'auto');
-                                    }
-                                    video.play().catch(e => console.log("Intersection play prevented:", e));
+                                if (entry.isIntersecting || entry.intersectionRatio > 0.05) {
+                                    video.muted = true;
+                                    video.play().catch(() => {});
                                 } else {
                                     video.pause();
                                 }
                             });
-                        }, { threshold: 0.1 });
+                        }, { rootMargin: '250px 0px 250px 0px', threshold: [0, 0.05, 0.2] });
                         
                         document.querySelectorAll('video').forEach(video => {
                             if (video.id !== 'video-modal-player') {
+                                video.muted = true;
+                                video.setAttribute('preload', 'auto');
+                                video.play().catch(() => {});
                                 videoObserver.observe(video);
                             }
                         });
