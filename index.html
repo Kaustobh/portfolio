@@ -438,39 +438,84 @@
             --glow-color: rgba(0, 243, 255, 0.25);
         }
 
-        /* Hardware-Accelerated Section Stagger Reveal */
+        /* Hardware-Accelerated Section Stagger Reveal & Cyberpunk Motion */
         .reveal-item {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translate3d(0, 30px, 0);
             transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
 
         .reveal-frame {
             opacity: 0;
-            transform: scale(0.95);
-            filter: blur(8px);
+            transform: translate3d(0, 20px, 0) scale(0.96);
+            filter: blur(6px);
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform, filter;
+            position: relative;
+        }
+
+        /* Cyberpunk Holographic Scanline Sweep */
+        @keyframes scanline-sheen {
+            0% { transform: translateY(-100%); opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translateY(350%); opacity: 0; }
+        }
+
+        .reveal-frame::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            height: 40%;
+            background: linear-gradient(180deg, transparent 0%, var(--glow-color, rgba(0, 243, 255, 0.25)) 50%, transparent 100%);
+            pointer-events: none;
+            opacity: 0;
+            z-index: 15;
+        }
+
+        /* Neon Laser Boundary Horizon Line */
+        .project-boundary-line {
+            position: absolute;
+            top: 0;
+            left: 8%;
+            right: 8%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-color, #00F3FF), transparent);
+            opacity: 0;
+            transform: scaleX(0.2);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 25;
+            pointer-events: none;
         }
 
         /* Active Reveal Trigger States */
         section.is-revealed .reveal-item {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate3d(0, 0, 0);
         }
 
         section.is-revealed .reveal-frame {
             opacity: 1;
-            transform: scale(1);
+            transform: translate3d(0, 0, 0) scale(1);
             filter: blur(0px);
         }
 
+        section.is-revealed .reveal-frame::after {
+            animation: scanline-sheen 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            animation-delay: 0.8s;
+        }
+
+        section.is-revealed .project-boundary-line {
+            opacity: 0.85;
+            transform: scaleX(1);
+        }
+
         /* Stagger Delays */
-        section.is-revealed .reveal-stagger-1 { transition-delay: 50ms; }
-        section.is-revealed .reveal-stagger-2 { transition-delay: 150ms; }
-        section.is-revealed .reveal-stagger-3 { transition-delay: 250ms; }
-        section.is-revealed .reveal-stagger-4 { transition-delay: 350ms; }
+        section.is-revealed .reveal-stagger-1 { transition-delay: 60ms; }
+        section.is-revealed .reveal-stagger-2 { transition-delay: 160ms; }
+        section.is-revealed .reveal-stagger-3 { transition-delay: 260ms; }
+        section.is-revealed .reveal-stagger-4 { transition-delay: 360ms; }
         section.is-revealed .reveal-frame { transition-delay: 200ms; }
 
         /* HUD Side-Dot Active Pill Expansion */
@@ -668,6 +713,7 @@
 
         <!-- Project 1: PulseHQ AI-Powered Team Intelligence -->
         <section id="project-fintech" class="h-screen w-full snap-center flex flex-col md:flex-row items-center justify-between px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-20 md:pt-0">
+            <div class="project-boundary-line"></div>
             <!-- Themed background container -->
             <div class="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none">
                 <!-- Readability gradient overlay -->
@@ -680,14 +726,14 @@
                 />
             </div>
             <div class="w-full md:w-1/2 pr-0 md:pr-12 flex flex-col justify-center relative z-10">
-                <span class="text-xs font-mono text-neon-cyan dark:text-neon-cyan light:text-electric-blue uppercase tracking-widest mb-2 block">[Case Study // AI SaaS & Team Management]</span>
-                <h3 class="text-4xl md:text-5xl font-display font-bold mb-4 text-neon-cyan dark:text-neon-cyan light:text-electric-blue">PulseHQ — AI-Powered Team Intelligence</h3>
-                <p class="text-neutral-500 dark:text-gray-400 font-body text-base md:text-lg mb-6 max-w-md leading-relaxed">
+                <span class="text-xs font-mono text-neon-cyan dark:text-neon-cyan light:text-electric-blue uppercase tracking-widest mb-2 block reveal-item reveal-stagger-1" >[Case Study // AI SaaS & Team Management]</span>
+                <h3 class="text-4xl md:text-5xl font-display font-bold mb-4 text-neon-cyan dark:text-neon-cyan light:text-electric-blue reveal-item reveal-stagger-2">PulseHQ — AI-Powered Team Intelligence</h3>
+                <p class="text-neutral-500 dark:text-gray-400 font-body text-base md:text-lg mb-6 max-w-md leading-relaxed reveal-item reveal-stagger-3">
                     An AI-powered team management platform that transforms raw project data into proactive manager decisions, eliminating reactive burnout and sprint delays with one-tap AI actions.
                 </p>
                 
                 <!-- Neon Timeline -->
-                <div class="flex flex-col gap-3 pl-4 border-l-2 border-neutral-200 dark:border-surface relative">
+                <div class="flex flex-col gap-3 pl-4 border-l-2 border-neutral-200 dark:border-surface relative reveal-item reveal-stagger-3">
                     <!-- Glowing cursor path tracking active state -->
                     <div class="absolute left-[-2px] top-0 h-1/3 w-[2px] bg-gradient-to-b from-neon-cyan to-transparent dark:from-neon-cyan light:from-electric-blue shadow-[0_0_10px_#00F3FF]"></div>
                     <p class="text-xs font-mono text-neutral-800 dark:text-white flex items-center"><span class="text-acid-lime dark:text-acid-lime light:text-forest-lime font-bold mr-2">01</span> Product Strategy & Manager Persona Audits</p>
@@ -747,6 +793,7 @@
 
         <!-- Project 2: E-Comm Checkout -->
         <section id="project-checkout" class="h-screen w-full snap-center flex flex-col md:flex-row items-center justify-between px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-20 md:pt-0">
+            <div class="project-boundary-line"></div>
             <!-- Themed background container -->
             <div class="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none">
                 <!-- Readability gradient overlay -->
@@ -759,9 +806,9 @@
                 />
             </div>
             <div class="w-full md:w-1/2 pr-0 md:pr-12 flex flex-col justify-center relative z-10">
-                <span class="text-xs font-mono text-neon-magenta dark:text-neon-magenta light:text-deep-rose uppercase tracking-widest mb-2 block">[Case Study // Interaction]</span>
-                <h3 class="text-4xl md:text-5xl font-display font-bold mb-4 text-neon-magenta dark:text-neon-magenta light:text-deep-rose">E-Comm Checkout</h3>
-                <p class="text-neutral-500 dark:text-gray-400 font-body text-base md:text-lg mb-6 max-w-md leading-relaxed">
+                <span class="text-xs font-mono text-neon-magenta dark:text-neon-magenta light:text-deep-rose uppercase tracking-widest mb-2 block reveal-item reveal-stagger-1" >[Case Study // Interaction]</span>
+                <h3 class="text-4xl md:text-5xl font-display font-bold mb-4 text-neon-magenta dark:text-neon-magenta light:text-deep-rose reveal-item reveal-stagger-2">E-Comm Checkout</h3>
+                <p class="text-neutral-500 dark:text-gray-400 font-body text-base md:text-lg mb-6 max-w-md leading-relaxed reveal-item reveal-stagger-3">
                     Engineered a frictionless device configuration and checkout experience, minimizing cart drop-offs through elegant <strong class="text-neutral-700 dark:text-white">micro-interactions</strong> and <strong class="text-neutral-700 dark:text-white">real-time feedback validations</strong>.
                 </p>
                 
@@ -806,6 +853,7 @@
 
         <!-- Project 3: Graphic Art Gallery -->
         <section id="project-gallery" class="h-screen w-full snap-center flex flex-col md:flex-row items-center justify-between px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-20 md:pt-0">
+            <div class="project-boundary-line"></div>
             <!-- Themed background container -->
             <div class="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none">
                 <!-- Readability gradient overlay -->
@@ -818,14 +866,14 @@
                 />
             </div>
             <div class="w-full md:w-1/2 pr-0 md:pr-12 flex flex-col justify-center relative z-10">
-                <span class="text-xs font-mono text-acid-lime dark:text-acid-lime light:text-forest-lime uppercase tracking-widest mb-2 block">[Case Study // Interaction]</span>
-                <h3 class="text-4xl md:text-5xl font-display font-bold mb-4 text-acid-lime dark:text-acid-lime light:text-forest-lime">Graphic Art Gallery</h3>
-                <p class="text-neutral-500 dark:text-gray-400 font-body text-base md:text-lg mb-6 max-w-md leading-relaxed">
+                <span class="text-xs font-mono text-acid-lime dark:text-acid-lime light:text-forest-lime uppercase tracking-widest mb-2 block reveal-item reveal-stagger-1" >[Case Study // Interaction]</span>
+                <h3 class="text-4xl md:text-5xl font-display font-bold mb-4 text-acid-lime dark:text-acid-lime light:text-forest-lime reveal-item reveal-stagger-2">Graphic Art Gallery</h3>
+                <p class="text-neutral-500 dark:text-gray-400 font-body text-base md:text-lg mb-6 max-w-md leading-relaxed reveal-item reveal-stagger-3">
                     Engineered an immersive digital gallery and acquisition experience, minimizing bounce rates and maximizing artwork engagement through <strong class="text-neutral-700 dark:text-white">fluid canvas interactions</strong>, <strong class="text-neutral-700 dark:text-white">contextual scaling visualizers</strong>, and an <strong class="text-neutral-700 dark:text-white">elegant, low-friction inquiry flow</strong>.
                 </p>
                 
                 <!-- Neon Timeline -->
-                <div class="flex flex-col gap-3 pl-4 border-l-2 border-neutral-200 dark:border-surface relative">
+                <div class="flex flex-col gap-3 pl-4 border-l-2 border-neutral-200 dark:border-surface relative reveal-item reveal-stagger-3">
                     <div class="absolute left-[-2px] top-0 h-1/3 w-[2px] bg-gradient-to-b from-acid-lime to-transparent dark:from-acid-lime light:from-forest-lime shadow-[0_0_10px_#D4FF00]"></div>
                     <p class="text-xs font-mono text-neutral-800 dark:text-white flex items-center"><span class="text-neon-cyan dark:text-neon-cyan light:text-electric-blue font-bold mr-2">01</span> Immersive Spatial Canvas</p>
                     <p class="text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">02</span> Draggable A/B Wireframes</p>
@@ -873,6 +921,7 @@
         
         <!-- Project 4: Doodh Milk Subscription -->
         <section id="project-MilkDel" class="h-screen w-full snap-center flex flex-col md:flex-row items-center justify-between px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-20 md:pt-0">
+            <div class="project-boundary-line"></div>
             <!-- Themed background container -->
             <div class="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none">
                 <!-- Readability gradient overlay -->
@@ -885,14 +934,14 @@
                 />
             </div>
             <div class="w-full md:w-1/2 pr-0 md:pr-12 flex flex-col justify-center relative z-10">
-                <span class="text-xs font-mono text-pista-green dark:text-pista-green light:text-deep-green uppercase tracking-widest mb-2 block">[Case Study // Interaction]</span>
-                <h3 class="text-4xl md:text-5xl font-display font-bold mb-4 text-pista-green dark:text-pista-green light:text-deep-green">Doodh Subscription</h3>
-                <p class="text-neutral-500 dark:text-gray-400 font-body text-base md:text-lg mb-6 max-w-md leading-relaxed">
+                <span class="text-xs font-mono text-pista-green dark:text-pista-green light:text-deep-green uppercase tracking-widest mb-2 block reveal-item reveal-stagger-1" >[Case Study // Interaction]</span>
+                <h3 class="text-4xl md:text-5xl font-display font-bold mb-4 text-pista-green dark:text-pista-green light:text-deep-green reveal-item reveal-stagger-2">Doodh Subscription</h3>
+                <p class="text-neutral-500 dark:text-gray-400 font-body text-base md:text-lg mb-6 max-w-md leading-relaxed reveal-item reveal-stagger-3">
                     Designed a flexible subscription management experience for daily milk delivery, optimizing weekly schedules, vacation pause states, and respectful exit flows.
                 </p>
                 
                 <!-- Neon Timeline -->
-                <div class="flex flex-col gap-3 pl-4 border-l-2 border-neutral-200 dark:border-surface relative">
+                <div class="flex flex-col gap-3 pl-4 border-l-2 border-neutral-200 dark:border-surface relative reveal-item reveal-stagger-3">
                     <div class="absolute left-[-2px] top-0 h-1/3 w-[2px] bg-gradient-to-b from-pista-green to-transparent dark:from-pista-green light:from-deep-green shadow-[0_0_10px_#A8CFA1]"></div>
                     <p class="text-xs font-mono text-neutral-800 dark:text-white flex items-center"><span class="text-pista-green dark:text-pista-green light:text-deep-green font-bold mr-2">01</span> Subscription State Logic</p>
                     <p class="text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">02</span> Dynamic Weekly Scheduling</p>
@@ -945,6 +994,7 @@
         
         <!-- Project 5: Bio Grid Med Tech -->
         <section id="project-BioGrid" class="h-screen w-full snap-center flex flex-col md:flex-row items-center justify-between px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-20 md:pt-0">
+            <div class="project-boundary-line"></div>
             <!-- Themed background container -->
             <div class="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none">
                 <!-- Readability gradient overlay -->
@@ -957,9 +1007,9 @@
                 />
             </div>
             <div class="w-full md:w-1/2 pr-0 md:pr-12 flex flex-col justify-center relative z-10">
-                <span class="text-xs font-mono text-biogrid-mint dark:text-biogrid-mint light:text-forest-lime uppercase tracking-widest mb-2 block">[Case Study // Med Tech]</span>
-                <h3 class="text-4xl md:text-5xl font-display font-bold mb-4 text-biogrid-mint dark:text-biogrid-mint light:text-forest-lime">Bio Grid</h3>
-                <p class="text-neutral-500 dark:text-gray-400 font-body text-base md:text-lg mb-6 max-w-md leading-relaxed">
+                <span class="text-xs font-mono text-biogrid-mint dark:text-biogrid-mint light:text-forest-lime uppercase tracking-widest mb-2 block reveal-item reveal-stagger-1" >[Case Study // Med Tech]</span>
+                <h3 class="text-4xl md:text-5xl font-display font-bold mb-4 text-biogrid-mint dark:text-biogrid-mint light:text-forest-lime reveal-item reveal-stagger-2">Bio Grid</h3>
+                <p class="text-neutral-500 dark:text-gray-400 font-body text-base md:text-lg mb-6 max-w-md leading-relaxed reveal-item reveal-stagger-3">
                     Designed a clinical-grade, real-time medical monitoring dashboard designed to aggregate biometric telemetry, simulate physiology adjustments, and visualize 3D anatomical scans.
                 </p>
                 
@@ -1014,6 +1064,7 @@
         <!-- PROJECT 6: APEX MOTORSPORT — Virtual Dealership & 3D Showroom  -->
         <!-- ═══════════════════════════════════════════════════════════════ -->
         <section id="project-Apex" class="h-screen w-full snap-center flex flex-col md:flex-row items-center justify-between px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-20 md:pt-0">
+            <div class="project-boundary-line"></div>
             <!-- Themed background: red silk image + gradient overlay -->
             <div class="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none">
                 <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent dark:from-black dark:via-black/88 dark:to-transparent light:from-white light:via-white/95 light:to-transparent/10 z-10"></div>
@@ -1027,8 +1078,8 @@
 
             <!-- Left: Text Column -->
             <div class="w-full md:w-1/2 pr-0 md:pr-12 flex flex-col justify-center relative z-10">
-                <span class="text-xs font-mono text-apex-red dark:text-apex-red light:text-red-700 uppercase tracking-widest mb-2 block">[Case Study // Motorsport & 3D Web]</span>
-                <h3 class="text-4xl md:text-5xl font-display font-bold mb-4 text-apex-scarlet dark:text-apex-scarlet light:text-red-700" style="text-shadow: 0 0 30px rgba(224,0,10,0.4);">Apex Motorsport</h3>
+                <span class="text-xs font-mono text-apex-red dark:text-apex-red light:text-red-700 uppercase tracking-widest mb-2 block reveal-item reveal-stagger-1" >[Case Study // Motorsport & 3D Web]</span>
+                <h3 class="text-4xl md:text-5xl font-display font-bold mb-4 text-apex-scarlet dark:text-apex-scarlet light:text-red-700 reveal-item reveal-stagger-2" style="text-shadow: 0 0 30px rgba(224,0,10,0.4);">Apex Motorsport</h3>
                 <p class="text-neutral-400 dark:text-gray-400 light:text-neutral-600 font-body text-base md:text-lg mb-6 max-w-md leading-relaxed">
                     A museum-grade, scroll-linked 3D digital showroom for the Mercedes-AMG GT4 &amp; GT3 EVO. Merges WebGL, procedural GLSL exhaust shaders, and a real-time synthesized V8 Web Audio engine into a cinematic racing experience.
                 </p>
@@ -1084,6 +1135,7 @@
         <!-- PROJECT 7: SILVATIDE COTTAGE — Hospitality & Retreat Frontend  -->
         <!-- ═══════════════════════════════════════════════════════════════ -->
         <section id="project-Silvatide" class="h-screen w-full snap-center flex flex-col md:flex-row items-center justify-between px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-20 md:pt-0">
+            <div class="project-boundary-line"></div>
             <!-- Themed background: forest retreat image + gradient overlay -->
             <div class="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none">
                 <div class="absolute inset-0 bg-gradient-to-r from-void via-void/90 to-transparent dark:from-void dark:via-void/90 dark:to-transparent light:from-solar light:via-solar/95 light:to-transparent/10 z-10"></div>
@@ -1097,14 +1149,14 @@
 
             <!-- Left: Text Column -->
             <div class="w-full md:w-1/2 pr-0 md:pr-12 flex flex-col justify-center relative z-10">
-                <span class="text-xs font-mono text-[#10B981] dark:text-[#10B981] light:text-emerald-700 uppercase tracking-widest mb-2 block">[Case Study // Hospitality & Retreat]</span>
-                <h3 class="text-4xl md:text-5xl font-display font-bold mb-4 text-[#10B981] dark:text-[#10B981] light:text-emerald-700" style="text-shadow: 0 0 30px rgba(16,185,129,0.35);">Silvatide Cottage</h3>
+                <span class="text-xs font-mono text-[#10B981] dark:text-[#10B981] light:text-emerald-700 uppercase tracking-widest mb-2 block reveal-item reveal-stagger-1" >[Case Study // Hospitality & Retreat]</span>
+                <h3 class="text-4xl md:text-5xl font-display font-bold mb-4 text-[#10B981] dark:text-[#10B981] light:text-emerald-700 reveal-item reveal-stagger-2" style="text-shadow: 0 0 30px rgba(16,185,129,0.35);">Silvatide Cottage</h3>
                 <p class="text-neutral-400 dark:text-gray-400 light:text-neutral-600 font-body text-base md:text-lg mb-6 max-w-md leading-relaxed">
                     A contemporary wooden retreat set between forest and water. Built a pixel-perfect, <strong class="text-neutral-700 dark:text-white">Astro-powered landing page</strong> from Figma designs, featuring clip-path typography masking, infinite masonry galleries, and <strong class="text-neutral-700 dark:text-white">IntersectionObserver scroll animations</strong>.
                 </p>
 
                 <!-- Neon Timeline -->
-                <div class="flex flex-col gap-3 pl-4 border-l-2 border-neutral-200 dark:border-surface relative">
+                <div class="flex flex-col gap-3 pl-4 border-l-2 border-neutral-200 dark:border-surface relative reveal-item reveal-stagger-3">
                     <div class="absolute left-[-2px] top-0 h-1/3 w-[2px] bg-gradient-to-b from-[#10B981] to-transparent shadow-[0_0_10px_#10B981]"></div>
                     <p class="text-xs font-mono text-neutral-800 dark:text-white flex items-center"><span class="text-[#10B981] font-bold mr-2">01</span> Research &amp; Journey Mapping</p>
                     <p class="text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">02</span> Interactive Booking Prototypes</p>
@@ -1165,7 +1217,7 @@
         <section id="recruiter-briefing" class="h-[100vh] w-full snap-center flex flex-col items-center justify-center px-8 text-center relative z-10 bg-solar dark:bg-void transition-colors duration-500">
             <div class="max-w-2xl mx-auto flex flex-col items-center">
                 <span class="text-xs font-mono text-acid-lime dark:text-acid-lime light:text-forest-lime uppercase tracking-widest mb-4 font-bold">[Scheduling // Availability]</span>
-                <h3 class="text-4xl md:text-5xl font-display font-bold text-charcoal dark:text-white mb-4">Ready to ship results?</h3>
+                <h3 class="text-4xl md:text-5xl font-display font-bold text-charcoal dark:text-white mb-4 reveal-item reveal-stagger-2">Ready to ship results?</h3>
                 <p class="text-neutral-500 dark:text-gray-400 font-body max-w-lg mb-8 text-sm md:text-base leading-relaxed">
                     Currently open for full-time or contract roles bridging UX/UI design and high-performance frontend web engineering. Hire-ready with a 2-week notice period.
                 </p>
