@@ -549,7 +549,7 @@
           
           <!-- Dynamic Accent Backlight Aura (+20% Increased Brightness) -->
           <div id="logo-hud-aura" 
-               class="absolute -inset-1 rounded-xl bg-[#00F3FF] opacity-35 blur-md transition-all duration-500 group-hover:opacity-55 group-hover:blur-lg">
+               class="absolute -inset-1 rounded-xl bg-[#00F3FF] opacity-45 blur-md transition-all duration-500 group-hover:opacity-70 group-hover:blur-lg">
           </div>
 
           <!-- Glassmorphic Icon Container -->
@@ -558,7 +558,7 @@
               id="hud-logo-img"
               src="assets/logo-mark.svg" 
               alt="Kaustobh Bhattacharya - UX Engineer Logo" 
-              class="h-full w-full object-contain filter drop-shadow-[0_0_5px_rgba(0,243,255,0.6)] transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(0,243,255,0.8)]"
+              class="h-full w-full object-contain filter drop-shadow-[0_0_7px_rgba(0,243,255,0.7)] transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(0,243,255,0.9)]"
             />
           </div>
 
@@ -4259,11 +4259,11 @@ gsap.to(camera.position, {
 
               if (logoAura) {
                 logoAura.style.backgroundColor = hexColor;
-                logoAura.style.opacity = '0.35';
+                logoAura.style.opacity = '0.45';
               }
               
               if (logoImg) {
-                logoImg.style.filter = `drop-shadow(0 0 6px ${hexColor})`;
+                logoImg.style.filter = `drop-shadow(0 0 8px ${hexColor})`;
               }
             }
 
