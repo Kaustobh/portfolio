@@ -463,52 +463,52 @@
             border-color: rgba(0, 243, 255, 0.8) !important;
         }
 
-        /* Hardware-Accelerated Section Stagger Reveal & Spatial 3D Motion */
+        /* Hardware-Accelerated Staggered Cyber-Boot Text Reveals (Option 1) */
         .reveal-item {
             opacity: 0;
             transform: translate3d(0, 30px, 0);
-            transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform;
+            filter: blur(4px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform, filter;
         }
 
         /* 0.5x Parallax Background Image Shift */
         .project-bg-img {
             transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s ease;
-            transform: scale(1.08) translate3d(0, 18px, 0);
+            transform: scale(1.06) translate3d(0, 15px, 0);
             will-change: transform;
         }
         section.is-revealed .project-bg-img {
             transform: scale(1) translate3d(0, 0, 0);
         }
 
-        /* Spatial 3D Tilt Video Frame (Apple / Studio Perspective) */
+        /* Interactive Video Card Cyber Reveal */
         .reveal-frame {
             opacity: 0;
-            transform: perspective(1200px) rotateY(-6deg) rotateX(4deg) scale(0.94) translate3d(20px, 30px, 0);
-            filter: blur(8px);
+            transform: translate3d(0, 35px, 0) scale(0.96);
+            filter: blur(6px);
             transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform, filter;
             position: relative;
-            transform-style: preserve-3d;
         }
 
-        /* Active State: Flatten 3D Frame into 2D Focus */
+        /* Active State: Video Card Glides into Focus */
         section.is-revealed .reveal-frame {
             opacity: 1;
-            transform: perspective(1200px) rotateY(0deg) rotateX(0deg) scale(1) translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0) scale(1);
             filter: blur(0px);
         }
 
-        /* Interactive Dynamic Hover Tilt Response */
         .reveal-frame:hover {
-            transform: perspective(1200px) rotateY(-2deg) rotateX(2deg) scale(1.02) translate3d(0, -4px, 0) !important;
+            transform: translateY(-4px) scale(1.02) !important;
+            box-shadow: 0 0 35px var(--glow-color, rgba(0, 243, 255, 0.35)) !important;
         }
 
         /* Documentary Chapter Timeline Progression (01, 02, 03) */
         .timeline-chapter {
             opacity: 0;
             transform: translate3d(-15px, 0, 0);
-            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
         section.is-revealed .timeline-chapter-1 { transition-delay: 240ms; opacity: 1; transform: translate3d(0, 0, 0); }
@@ -553,6 +553,7 @@
         section.is-revealed .reveal-item {
             opacity: 1;
             transform: translate3d(0, 0, 0);
+            filter: blur(0px);
         }
 
         section.is-revealed .reveal-frame::after {
@@ -565,12 +566,12 @@
             transform: scaleX(1);
         }
 
-        /* Stagger Delays */
-        section.is-revealed .reveal-stagger-1 { transition-delay: 60ms; }
-        section.is-revealed .reveal-stagger-2 { transition-delay: 160ms; }
-        section.is-revealed .reveal-stagger-3 { transition-delay: 260ms; }
-        section.is-revealed .reveal-stagger-4 { transition-delay: 360ms; }
-        section.is-revealed .reveal-frame { transition-delay: 200ms; }
+        /* Cyber-Boot Stagger Delays */
+        section.is-revealed .reveal-stagger-1 { transition-delay: 100ms; } /* Category Badges */
+        section.is-revealed .reveal-stagger-2 { transition-delay: 250ms; } /* Project Titles */
+        section.is-revealed .reveal-stagger-3 { transition-delay: 400ms; } /* Lead Descriptions & Milestones */
+        section.is-revealed .reveal-stagger-4 { transition-delay: 550ms; } /* Action Buttons & Links */
+        section.is-revealed .reveal-frame { transition-delay: 300ms; }
 
         /* HUD Side-Dot Active Pill Expansion */
         .hud-dot {
