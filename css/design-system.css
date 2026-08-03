@@ -1,3 +1,16 @@
+/* Snappy 220ms - 350ms Studio Spring Physics & Instant Interaction Speed */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.glass-panel, .cyber-node-wrapper, .hud-nav-label, .hud-dot, button, a {
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+img, video {
+    content-visibility: auto;
+}
+
 /* Extreme 60 FPS Hardware Acceleration & GPU Compositing Layering */
 #hud-side-nav, #hud-header, #custom-cursor, .hud-nav-item, .hud-nav-label, .hud-dot, .reveal-item, .reveal-frame, .project-bg-img {
     transform: translateZ(0);
