@@ -283,3 +283,70 @@ section.is-revealed .reveal-frame { transition-delay: 300ms; }
         transform: none !important;
     }
 }
+
+/* ==========================================================================
+   2077 FUTURISTIC CONSOLE MICRO-ANIMATIONS & INTERACTIVE STATES
+   ========================================================================== */
+
+/* 1. Terminal Console Glitch Boot Text Reveal */
+@keyframes console-glitch-text {
+    0% { transform: translate3d(-3px, 0, 0); filter: hue-rotate(90deg) contrast(150%); }
+    20% { transform: translate3d(2px, 0, 0); filter: hue-rotate(-90deg); }
+    40% { transform: translate3d(-1px, 0, 0); filter: none; }
+    100% { transform: translate3d(0, 0, 0); filter: none; }
+}
+
+.hud-nav-label {
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+}
+
+.hud-nav-item:hover .hud-nav-label {
+    animation: console-glitch-text 0.25s ease-out;
+}
+
+/* 2. Interactive Console Buttons Spring Compression & Holographic Shimmer */
+button, a.glass-panel, [role="button"], .cyber-node-wrapper {
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+    will-change: transform, box-shadow;
+}
+
+button:hover, a.glass-panel:hover {
+    transform: translateY(-2px) scale(1.02) translateZ(0);
+}
+
+button:active, a.glass-panel:active {
+    transform: translateY(1px) scale(0.97) translateZ(0) !important;
+}
+
+/* 3. Futuristic Console Border Pulse & Perimeter Glow */
+@keyframes console-border-pulse {
+    0% { border-color: rgba(255, 255, 255, 0.12); box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+    50% { border-color: var(--accent-color, rgba(0, 243, 255, 0.5)); box-shadow: 0 0 20px var(--glow-color, rgba(0, 243, 255, 0.2)); }
+    100% { border-color: rgba(255, 255, 255, 0.12); box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+}
+
+.glass-panel {
+    animation: console-border-pulse 8s ease-in-out infinite;
+}
+
+/* 4. Skill Network Cyber-Node Breathing Glow */
+@keyframes cyber-node-breath {
+    0% { transform: scale(1); filter: drop-shadow(0 0 4px var(--accent-color, #00F3FF)); }
+    50% { transform: scale(1.04); filter: drop-shadow(0 0 14px var(--accent-color, #00F3FF)); }
+    100% { transform: scale(1); filter: drop-shadow(0 0 4px var(--accent-color, #00F3FF)); }
+}
+
+.cyber-node-wrapper:hover {
+    animation: cyber-node-breath 2s ease-in-out infinite;
+}
+
+/* 5. Telemetry Metric Glow Pulse */
+@keyframes telemetry-dot-ping {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.6; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.telemetry-ping-dot {
+    animation: telemetry-dot-ping 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
