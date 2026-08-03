@@ -5124,15 +5124,12 @@ gsap.to(camera.position, {
             // Use IntersectionObserver — triggers section reveals and HUD dot updates
             const hudObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting || entry.intersectionRatio > 0.2) {
+                    if (entry.isIntersecting || entry.intersectionRatio > 0.15) {
                         entry.target.classList.add('is-revealed');
                     }
-                    const key = entry.target.getAttribute('id')
-                        ?.replace('hero-section', 'hero')
-                        .replace('project-', '')
-                        .replace('recruiter-briefing', 'briefing');
-                    if (key) {
-                        sectionVisibility[key] = entry.intersectionRatio;
+                    const reg = sectionRegistry.find(s => s.el === entry.target);
+                    if (reg) {
+                        sectionVisibility[reg.key] = entry.intersectionRatio;
                     }
                 });
 
@@ -5147,16 +5144,46 @@ gsap.to(camera.position, {
                 });
 
                 if (bestRatio > 0) {
-                    updateActiveHUDDot(bestKey);
+                    updateActiveHUDDot(bestKey, true);
                 }
             }, {
-                threshold: [0, 0.25, 0.5, 0.75, 1.0]
+                threshold: [0, 0.15, 0.3, 0.5, 0.75, 1.0]
             });
 
             // Observe every registered section
             sectionRegistry.forEach(({ el }) => {
                 if (el) hudObserver.observe(el);
             });
+
+            // Container #work scroll listener for 100% real-time scroll sync
+            const workContainer = document.getElementById('work');
+            if (workContainer) {
+                workContainer.addEventListener('scroll', () => {
+                    const viewportHeight = workContainer.clientHeight || window.innerHeight;
+                    sectionRegistry.forEach(({ key, el }) => {
+                        if (!el) return;
+                        const rect = el.getBoundingClientRect();
+                        const visibleHeight = Math.max(0, Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0));
+                        sectionVisibility[key] = visibleHeight / viewportHeight;
+                    });
+
+                    let bestKey = currentSection;
+                    let bestRatio = 0;
+                    Object.entries(sectionVisibility).forEach(([k, ratio]) => {
+                        if (ratio > bestRatio) {
+                            bestRatio = ratio;
+                            bestKey = k;
+                        }
+                    });
+
+                    if (bestRatio > 0) {
+                        updateActiveHUDDot(bestKey, true);
+                    }
+                }, { passive: true });
+            }
+
+            // Initial theme sync on page load
+            setTimeout(() => updateActiveHUDDot('hero', true), 100);
 
             // Set initial active dot on load
             updateActiveHUDDot('hero');
