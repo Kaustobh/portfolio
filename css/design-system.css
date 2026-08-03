@@ -1,0 +1,283 @@
+/* ==========================================================================
+   PORTFOLIO DESIGN SYSTEM & HARDWARE-ACCELERATED ANIMATION STYLESHEET
+   ========================================================================== */
+
+:root {
+    --accent-color: #00F3FF;
+    --glow-color: rgba(0, 243, 255, 0.25);
+}
+
+/* Custom Hardware-Accelerated Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #050507;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 243, 255, 0.3);
+    border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 243, 255, 0.7);
+}
+
+/* Neon Link Hover Utility Classes */
+.neon-link-cyan:hover {
+    color: #00F3FF !important;
+    border-color: #00F3FF !important;
+    text-shadow: 0 0 8px rgba(0, 243, 255, 0.6) !important;
+}
+
+.neon-link-magenta:hover {
+    color: #FF00A0 !important;
+    border-color: #FF00A0 !important;
+    text-shadow: 0 0 8px rgba(255, 0, 160, 0.6) !important;
+}
+
+.neon-link-lime:hover {
+    color: #D4FF00 !important;
+    border-color: #D4FF00 !important;
+    text-shadow: 0 0 8px rgba(212, 255, 0, 0.6) !important;
+}
+
+.neon-link-pista:hover {
+    color: #A8CFA1 !important;
+    border-color: #A8CFA1 !important;
+    text-shadow: 0 0 8px rgba(168, 207, 161, 0.6) !important;
+}
+
+.neon-link-mint:hover {
+    color: #4ade80 !important;
+    border-color: #4ade80 !important;
+    text-shadow: 0 0 8px rgba(74, 222, 128, 0.6) !important;
+}
+
+.neon-link-red:hover {
+    color: #ff1a24 !important;
+    border-color: #ff1a24 !important;
+    text-shadow: 0 0 8px rgba(255, 26, 36, 0.6) !important;
+}
+
+.neon-link-emerald:hover {
+    color: #10B981 !important;
+    border-color: #10B981 !important;
+    text-shadow: 0 0 8px rgba(16, 185, 129, 0.65) !important;
+}
+
+/* 2077 Cyber-Skill Network Rotating Grid & Light-Line Animation */
+@keyframes holo-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.rotating-schematic-grid {
+    transform-origin: center;
+    animation: holo-rotate 120s linear infinite;
+}
+
+@keyframes electric-pulse {
+    0% { stroke-dashoffset: 120; filter: drop-shadow(0 0 3px #00F3FF); }
+    50% { filter: drop-shadow(0 0 12px #00F3FF); }
+    100% { stroke-dashoffset: 0; filter: drop-shadow(0 0 3px #00F3FF); }
+}
+
+.electric-circuit-line {
+    stroke-dasharray: 10 6;
+    animation: electric-pulse 2.5s linear infinite;
+    transition: stroke 0.3s ease, stroke-width 0.3s ease, filter 0.3s ease;
+}
+
+.cyber-light-line {
+    transition: stroke 0.35s ease, stroke-width 0.35s ease, stroke-opacity 0.35s ease, filter 0.35s ease;
+}
+
+.cyber-node-wrapper {
+    backdrop-filter: blur(16px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.cyber-node-wrapper:hover {
+    transform: translateY(-4px) scale(1.03);
+}
+
+/* Hardware-Accelerated Staggered Cyber-Boot Text Reveals */
+.reveal-item {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+    filter: blur(4px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, filter;
+}
+
+/* 0.5x Parallax Background Image Shift */
+.project-bg-img {
+    transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s ease;
+    transform: scale(1.06) translate3d(0, 15px, 0);
+    will-change: transform;
+}
+
+section.is-revealed .project-bg-img {
+    transform: scale(1) translate3d(0, 0, 0);
+}
+
+/* Interactive Video Card Cyber Reveal */
+.reveal-frame {
+    opacity: 0;
+    transform: translate3d(0, 35px, 0) scale(0.96);
+    filter: blur(6px);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, filter;
+    position: relative;
+}
+
+/* Active State: Video Card Glides into Focus */
+section.is-revealed .reveal-frame {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0px);
+}
+
+.reveal-frame:hover {
+    transform: translateY(-4px) scale(1.02) !important;
+    box-shadow: 0 0 35px var(--glow-color, rgba(0, 243, 255, 0.35)) !important;
+}
+
+/* Documentary Chapter Timeline Progression (01, 02, 03) */
+.timeline-chapter {
+    opacity: 0;
+    transform: translate3d(-15px, 0, 0);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+section.is-revealed .timeline-chapter-1 { transition-delay: 240ms; opacity: 1; transform: translate3d(0, 0, 0); }
+section.is-revealed .timeline-chapter-2 { transition-delay: 380ms; opacity: 1; transform: translate3d(0, 0, 0); }
+section.is-revealed .timeline-chapter-3 { transition-delay: 520ms; opacity: 1; transform: translate3d(0, 0, 0); }
+
+/* Cyberpunk Holographic Scanline Sweep */
+@keyframes scanline-sheen {
+    0% { transform: translateY(-100%); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateY(350%); opacity: 0; }
+}
+
+.reveal-frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    height: 40%;
+    background: linear-gradient(180deg, transparent 0%, var(--glow-color, rgba(0, 243, 255, 0.25)) 50%, transparent 100%);
+    pointer-events: none;
+    opacity: 0;
+    z-index: 15;
+}
+
+/* Neon Laser Boundary Horizon Line */
+.project-boundary-line {
+    position: absolute;
+    top: 0;
+    left: 8%;
+    right: 8%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-color, #00F3FF), transparent);
+    opacity: 0;
+    transform: scaleX(0.2);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 25;
+    pointer-events: none;
+}
+
+/* Active Reveal Trigger States */
+section.is-revealed .reveal-item {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0px);
+}
+
+section.is-revealed .reveal-frame::after {
+    animation: scanline-sheen 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    animation-delay: 0.8s;
+}
+
+section.is-revealed .project-boundary-line {
+    opacity: 0.85;
+    transform: scaleX(1);
+}
+
+/* Cyber-Boot Stagger Delays */
+section.is-revealed .reveal-stagger-1 { transition-delay: 100ms; }
+section.is-revealed .reveal-stagger-2 { transition-delay: 250ms; }
+section.is-revealed .reveal-stagger-3 { transition-delay: 400ms; }
+section.is-revealed .reveal-stagger-4 { transition-delay: 550ms; }
+section.is-revealed .reveal-frame { transition-delay: 300ms; }
+
+/* HUD Side-Dot Active Pill Expansion */
+.hud-dot {
+    transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1), width 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: height, width, background-color, box-shadow;
+}
+
+/* Spring Modal Cinematics */
+#video-modal, #cv-modal, [id$="-modal"] {
+    backdrop-filter: blur(0px);
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), backdrop-filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#video-modal.opacity-100, #cv-modal.opacity-100, [id$="-modal"].opacity-100 {
+    backdrop-filter: blur(20px);
+}
+
+/* Reduced Motion Respect */
+@media (prefers-reduced-motion: reduce) {
+    .reveal-item, .reveal-frame {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: opacity 0.3s ease !important;
+    }
+    .hud-dot {
+        transition: background-color 0.2s ease, box-shadow 0.2s ease !important;
+    }
+}
+
+/* Print Clean CV Layout */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #cv-modal, #cv-modal * {
+        visibility: visible;
+    }
+    #cv-modal {
+        display: block !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        background-color: #050507 !important;
+        color: #ffffff !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    #cv-modal > div.absolute {
+        display: none !important;
+    }
+    #cv-modal-content {
+        display: block !important;
+        background-color: #050507 !important;
+        color: #ffffff !important;
+        border: none !important;
+        box-shadow: none !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto !important;
+        transform: none !important;
+    }
+}
