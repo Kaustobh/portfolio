@@ -773,89 +773,95 @@
         <!-- ═══════════════════════════════════════════════════════════════ -->
         <!-- SECTION 2: WHAT I BRING TO THE TABLE                           -->
         <!-- ═══════════════════════════════════════════════════════════════ -->
-        <section id="section-what-i-bring" class="h-screen w-full snap-center flex flex-col justify-center px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-16 md:pt-0">
+        <section id="section-what-i-bring" class="h-screen w-full snap-center flex flex-col justify-center px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-16 md:pt-0 overflow-hidden">
             <div class="project-boundary-line"></div>
-            <div class="max-w-6xl mx-auto w-full">
+
+            <!-- Deep Indigo Void & Floating Pillars Background -->
+            <div class="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none">
+                <div class="absolute inset-0 bg-gradient-to-r from-void via-void/85 to-transparent dark:from-void dark:via-void/85 dark:to-transparent light:from-solar light:via-solar/95 light:to-transparent/10 z-10"></div>
+                <img 
+                    src="bg_what_i_bring.jpg" 
+                    alt="Deep Indigo Geometric Pillars Backdrop" 
+                    class="project-bg-img w-full h-full object-cover opacity-85 filter saturate-150"
+                    loading="lazy"
+                />
+            </div>
+
+            <div class="max-w-6xl mx-auto w-full relative z-20">
                 <!-- Header -->
-                <div class="mb-8 md:mb-12">
-                    <span class="text-xs font-mono text-neon-cyan dark:text-neon-cyan light:text-electric-blue uppercase tracking-widest mb-2 block reveal-item reveal-stagger-1">[Capabilities // Mindset Bridge]</span>
-                    <h3 class="text-3xl md:text-5xl font-display font-bold text-charcoal dark:text-white mb-3 reveal-item reveal-stagger-2">What I Bring to the Table</h3>
-                    <p class="text-neutral-500 dark:text-gray-400 font-body text-sm md:text-base max-w-2xl leading-relaxed reveal-item reveal-stagger-3">
-                        My cross-functional superpower: bridging the gap between design vision and production-grade engineering without back-and-forth friction.
+                <div class="mb-6 md:mb-10">
+                    <span class="text-xs font-mono text-neon-cyan dark:text-neon-cyan light:text-electric-blue uppercase tracking-widest mb-2 block reveal-item reveal-stagger-1">[Capabilities // Geometric Value Foundations]</span>
+                    <h3 class="text-3xl md:text-5xl font-display font-bold text-charcoal dark:text-white mb-2 reveal-item reveal-stagger-2">What I Bring to the Table</h3>
+                    <p class="text-neutral-300 dark:text-gray-300 font-body text-xs md:text-sm max-w-2xl leading-relaxed reveal-item reveal-stagger-3">
+                        Structured pillars of blue data supporting product growth—bridging the gap between design vision and production-grade engineering without back-and-forth friction.
                     </p>
                 </div>
 
-                <!-- 4 Capability Cards Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    <!-- Card 1 -->
-                    <div class="glass-panel p-6 rounded-2xl border border-white/10 dark:border-white/5 hover:border-cyan-500/40 hover:shadow-[0_0_25px_rgba(0,243,255,0.15)] transition-all duration-300 group reveal-item reveal-stagger-1">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center text-neon-cyan group-hover:scale-110 transition-transform">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
+                <!-- 3 Floating Geometric Value Pillars (Horizontal Grid) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+                    <!-- Pillar 1: Design Tokens & Systems -->
+                    <div class="glass-panel p-6 rounded-2xl border border-cyan-500/30 bg-black/60 hover:border-cyan-400 hover:shadow-[0_0_35px_rgba(0,243,255,0.3)] transition-all duration-300 group reveal-item reveal-stagger-1 relative overflow-hidden">
+                        <div class="absolute -top-12 -right-12 w-28 h-28 rounded-full bg-cyan-500/10 blur-xl group-hover:bg-cyan-500/20 transition-all"></div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-neon-cyan/15 border border-neon-cyan/40 flex items-center justify-center text-neon-cyan group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(0,243,255,0.3)]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
                             </div>
-                            <h4 class="text-lg font-bold font-display text-charcoal dark:text-white group-hover:text-neon-cyan transition-colors">UX Systems & Design Tokens</h4>
+                            <div>
+                                <span class="text-[9px] font-mono text-neon-cyan font-bold uppercase tracking-widest">PILLAR 01 // FOUNDATION</span>
+                                <h4 class="text-lg font-bold font-display text-white group-hover:text-neon-cyan transition-colors">Design Tokens & Systems</h4>
+                            </div>
                         </div>
-                        <p class="text-xs md:text-sm text-neutral-500 dark:text-gray-400 leading-relaxed mb-4">
+                        <p class="text-xs md:text-sm text-neutral-400 leading-relaxed mb-4">
                             Creating scalable, code-ready UI component libraries with standardized tokens for colors, spacing, and typography across Figma and CSS variables.
                         </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-cyan-500/10 text-neon-cyan border border-cyan-500/20">Figma Tokens</span>
-                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-cyan-500/10 text-neon-cyan border border-cyan-500/20">CSS Variables</span>
-                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-cyan-500/10 text-neon-cyan border border-cyan-500/20">Design Systems</span>
+                        <div class="flex flex-wrap gap-2 pt-2 border-t border-white/10">
+                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-cyan-500/10 text-neon-cyan border border-cyan-500/30">Figma Tokens</span>
+                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-cyan-500/10 text-neon-cyan border border-cyan-500/30">CSS Variables</span>
+                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-cyan-500/10 text-neon-cyan border border-cyan-500/30">Scalable Systems</span>
                         </div>
                     </div>
 
-                    <!-- Card 2 -->
-                    <div class="glass-panel p-6 rounded-2xl border border-white/10 dark:border-white/5 hover:border-pink-500/40 hover:shadow-[0_0_25px_rgba(255,0,160,0.15)] transition-all duration-300 group reveal-item reveal-stagger-2">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-neon-magenta/10 border border-neon-magenta/30 flex items-center justify-center text-neon-magenta group-hover:scale-110 transition-transform">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    <!-- Pillar 2: Rapid Interactive Prototyping -->
+                    <div class="glass-panel p-6 rounded-2xl border border-pink-500/30 bg-black/60 hover:border-pink-400 hover:shadow-[0_0_35px_rgba(255,0,160,0.3)] transition-all duration-300 group reveal-item reveal-stagger-2 relative overflow-hidden">
+                        <div class="absolute -top-12 -right-12 w-28 h-28 rounded-full bg-pink-500/10 blur-xl group-hover:bg-pink-500/20 transition-all"></div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-neon-magenta/15 border border-neon-magenta/40 flex items-center justify-center text-neon-magenta group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(255,0,160,0.3)]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                             </div>
-                            <h4 class="text-lg font-bold font-display text-charcoal dark:text-white group-hover:text-neon-magenta transition-colors">Rapid Interactive Prototyping</h4>
+                            <div>
+                                <span class="text-[9px] font-mono text-neon-magenta font-bold uppercase tracking-widest">PILLAR 02 // MOTION</span>
+                                <h4 class="text-lg font-bold font-display text-white group-hover:text-neon-magenta transition-colors">Rapid Prototyping</h4>
+                            </div>
                         </div>
-                        <p class="text-xs md:text-sm text-neutral-500 dark:text-gray-400 leading-relaxed mb-4">
+                        <p class="text-xs md:text-sm text-neutral-400 leading-relaxed mb-4">
                             Moving beyond static Figma screens into production-grade micro-interactions, spring physics animations, and realistic user testing flows.
                         </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-pink-500/10 text-neon-magenta border border-pink-500/20">Figma Variants</span>
-                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-pink-500/10 text-neon-magenta border border-pink-500/20">Framer Motion</span>
-                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-pink-500/10 text-neon-magenta border border-pink-500/20">Micro-Interactions</span>
+                        <div class="flex flex-wrap gap-2 pt-2 border-t border-white/10">
+                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-pink-500/10 text-neon-magenta border border-pink-500/30">Figma Variants</span>
+                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-pink-500/10 text-neon-magenta border border-pink-500/30">Framer Motion</span>
+                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-pink-500/10 text-neon-magenta border border-pink-500/30">Micro-Interactions</span>
                         </div>
                     </div>
 
-                    <!-- Card 3 -->
-                    <div class="glass-panel p-6 rounded-2xl border border-white/10 dark:border-white/5 hover:border-lime-500/40 hover:shadow-[0_0_25px_rgba(212,255,0,0.15)] transition-all duration-300 group reveal-item reveal-stagger-3">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-acid-lime/10 border border-acid-lime/30 flex items-center justify-center text-acid-lime group-hover:scale-110 transition-transform">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    <!-- Pillar 3: Cross-Team Handoff & Code Sanity -->
+                    <div class="glass-panel p-6 rounded-2xl border border-lime-500/30 bg-black/60 hover:border-lime-400 hover:shadow-[0_0_35px_rgba(212,255,0,0.3)] transition-all duration-300 group reveal-item reveal-stagger-3 relative overflow-hidden">
+                        <div class="absolute -top-12 -right-12 w-28 h-28 rounded-full bg-lime-500/10 blur-xl group-hover:bg-lime-500/20 transition-all"></div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-acid-lime/15 border border-acid-lime/40 flex items-center justify-center text-acid-lime group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(212,255,0,0.3)]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                             </div>
-                            <h4 class="text-lg font-bold font-display text-charcoal dark:text-white group-hover:text-acid-lime transition-colors">Dev-Centric Handoff</h4>
+                            <div>
+                                <span class="text-[9px] font-mono text-acid-lime font-bold uppercase tracking-widest">PILLAR 03 // COLLABORATION</span>
+                                <h4 class="text-lg font-bold font-display text-white group-hover:text-acid-lime transition-colors">Cross-Team Handoff</h4>
+                            </div>
                         </div>
-                        <p class="text-xs md:text-sm text-neutral-500 dark:text-gray-400 leading-relaxed mb-4">
+                        <p class="text-xs md:text-sm text-neutral-400 leading-relaxed mb-4">
                             Writing clean, documented UI code, flexbox layout specs, and production components that frontend engineers can copy and deploy without guesswork.
                         </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-lime-500/10 text-acid-lime border border-lime-500/20">Flexbox Specs</span>
-                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-lime-500/10 text-acid-lime border border-lime-500/20">TailwindCSS</span>
-                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-lime-500/10 text-acid-lime border border-lime-500/20">DOM Geometry</span>
-                        </div>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="glass-panel p-6 rounded-2xl border border-white/10 dark:border-white/5 hover:border-emerald-500/40 hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] transition-all duration-300 group reveal-item reveal-stagger-4">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 12 14 22 4"/></svg>
-                            </div>
-                            <h4 class="text-lg font-bold font-display text-charcoal dark:text-white group-hover:text-emerald-400 transition-colors">User-Centered Engineering</h4>
-                        </div>
-                        <p class="text-xs md:text-sm text-neutral-500 dark:text-gray-400 leading-relaxed mb-4">
-                            Ensuring performance, accessibility (WCAG AA compliant contrast & keyboard focus), and responsive layout stability are baked directly into the code.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">A11y (WCAG AA)</span>
-                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Lighthouse 100</span>
-                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Responsive Grids</span>
+                        <div class="flex flex-wrap gap-2 pt-2 border-t border-white/10">
+                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-lime-500/10 text-acid-lime border border-lime-500/30">Flexbox Specs</span>
+                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-lime-500/10 text-acid-lime border border-lime-500/30">TailwindCSS</span>
+                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-lime-500/10 text-acid-lime border border-lime-500/30">DOM Geometry</span>
                         </div>
                     </div>
                 </div>
@@ -1536,66 +1542,78 @@
         <!-- ═══════════════════════════════════════════════════════════════ -->
         <!-- SECTION 5: WHY DEVELOPERS LIKE WORKING WITH ME                 -->
         <!-- ═══════════════════════════════════════════════════════════════ -->
-        <section id="section-why-devs-love-me" class="h-screen w-full snap-center flex flex-col justify-center px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-16 md:pt-0">
+        <section id="section-why-devs-love-me" class="h-screen w-full snap-center flex flex-col justify-center px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-16 md:pt-0 overflow-hidden">
             <div class="project-boundary-line"></div>
-            <div class="max-w-6xl mx-auto w-full">
+
+            <!-- Logical Schematic Background Image & Overlay -->
+            <div class="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none">
+                <div class="absolute inset-0 bg-gradient-to-r from-void via-void/85 to-transparent dark:from-void dark:via-void/85 dark:to-transparent light:from-solar light:via-solar/95 light:to-transparent/10 z-10"></div>
+                <img 
+                    src="bg_why_devs_love.jpg" 
+                    alt="Logical Schematic Grid Backdrop" 
+                    class="project-bg-img w-full h-full object-cover opacity-85 filter saturate-150"
+                    loading="lazy"
+                />
+            </div>
+
+            <div class="max-w-6xl mx-auto w-full relative z-20">
                 <!-- Header -->
-                <div class="mb-8 md:mb-10">
-                    <span class="text-xs font-mono text-acid-lime dark:text-acid-lime light:text-forest-lime uppercase tracking-widest mb-2 block reveal-item reveal-stagger-1">[Dev Synergy // Code Sanity]</span>
-                    <h3 class="text-3xl md:text-5xl font-display font-bold text-charcoal dark:text-white mb-3 reveal-item reveal-stagger-2">Why Developers Like Working with Me</h3>
-                    <p class="text-neutral-500 dark:text-gray-400 font-body text-sm md:text-base max-w-2xl leading-relaxed reveal-item reveal-stagger-3">
-                        I design with real DOM constraints, zero "Figma-magic" delusions, and production-ready code that frontend engineers love to deploy.
+                <div class="mb-6 md:mb-8">
+                    <span class="text-xs font-mono text-acid-lime dark:text-acid-lime light:text-forest-lime uppercase tracking-widest mb-1 block reveal-item reveal-stagger-1">[Dev Synergy // Logical Schematic]</span>
+                    <h3 class="text-3xl md:text-5xl font-display font-bold text-charcoal dark:text-white mb-1 reveal-item reveal-stagger-2">Why Developers Like Working with Me</h3>
+                    <p class="text-neutral-300 dark:text-gray-300 font-body text-xs md:text-sm max-w-2xl leading-relaxed reveal-item reveal-stagger-3">
+                        Organized code and empathy as an engineering collaborator—eliminating messy handoffs with real DOM constraints & 1-to-1 token parity.
                     </p>
                 </div>
 
-                <!-- 4 Terminal-Inspired Feature Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    <!-- Point 1 -->
-                    <div class="glass-panel p-5 rounded-xl border border-white/10 bg-black/40 hover:border-acid-lime/50 transition-all duration-300 group reveal-item reveal-stagger-1">
-                        <div class="flex items-center justify-between mb-3 border-b border-white/10 pb-2">
-                            <span class="font-mono text-[10px] text-acid-lime uppercase font-bold flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-acid-lime animate-ping"></span>01 // LAYOUT SANITY</span>
-                            <span class="font-mono text-[9px] text-white/50">Figma Spec === DOM Reality</span>
+                <!-- Side-by-Side Comparison Layout: Common Messy Handoff vs. My Organized Spec -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+                    <!-- Left: Messy Handoff (Common Friction) -->
+                    <div class="glass-panel p-5 rounded-xl border border-red-500/30 bg-black/70 reveal-item reveal-stagger-1">
+                        <div class="flex items-center justify-between mb-3 border-b border-red-500/20 pb-2">
+                            <span class="font-mono text-[10px] text-red-400 uppercase font-bold flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>❌ COMMON MESSY HANDOFF</span>
+                            <span class="font-mono text-[9px] text-red-400/70">High Friction</span>
                         </div>
-                        <h4 class="text-base font-bold font-display text-white group-hover:text-acid-lime transition-colors mb-2">No "Figma-Magic" Delusions</h4>
-                        <p class="text-xs text-neutral-400 leading-relaxed">
-                            I design using flexbox rules, CSS Grid logic, overflow limits, and edge-case text wrapping so layouts never shatter when connected to dynamic API data.
-                        </p>
+                        <div class="space-y-2 font-mono text-[11px] text-neutral-400">
+                            <div class="p-2 bg-red-950/30 border border-red-500/20 rounded">
+                                <span class="text-red-400 font-bold">Layer Names:</span> Frame 4912 > Group 88 > Rectangle 14
+                            </div>
+                            <div class="p-2 bg-red-950/30 border border-red-500/20 rounded">
+                                <span class="text-red-400 font-bold">Colors:</span> 47 ad-hoc hex values (`#3F19A2`, `#3B18A0`, `#3E189F`)
+                            </div>
+                            <div class="p-2 bg-red-950/30 border border-red-500/20 rounded">
+                                <span class="text-red-400 font-bold">States:</span> Hover/disabled missing ("Devs will figure it out")
+                            </div>
+                            <div class="p-2 bg-red-950/30 border border-red-500/20 rounded">
+                                <span class="text-red-400 font-bold">DOM Geometry:</span> Absolute pixel offsets (`top: 317px; left: 42px;`)
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Point 2 -->
-                    <div class="glass-panel p-5 rounded-xl border border-white/10 bg-black/40 hover:border-cyan-400/50 transition-all duration-300 group reveal-item reveal-stagger-2">
-                        <div class="flex items-center justify-between mb-3 border-b border-white/10 pb-2">
-                            <span class="font-mono text-[10px] text-neon-cyan uppercase font-bold flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-neon-cyan animate-ping"></span>02 // TOKEN MAPPING</span>
-                            <span class="font-mono text-[9px] text-white/50">0 Ad-Hoc Hex Codes</span>
+                    <!-- Right: My Organized Spec (UX Engineering Standard) -->
+                    <div class="glass-panel p-5 rounded-xl border border-acid-lime/50 bg-black/70 hover:shadow-[0_0_30px_rgba(212,255,0,0.25)] transition-all reveal-item reveal-stagger-2">
+                        <div class="flex items-center justify-between mb-3 border-b border-acid-lime/30 pb-2">
+                            <span class="font-mono text-[10px] text-acid-lime uppercase font-bold flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-acid-lime animate-ping"></span>✅ MY ORGANIZED SPEC & TOKEN HANDOFF</span>
+                            <span class="font-mono text-[9px] text-acid-lime font-bold">Zero Friction</span>
                         </div>
-                        <h4 class="text-base font-bold font-display text-white group-hover:text-neon-cyan transition-colors mb-2">Single Source of Truth</h4>
-                        <p class="text-xs text-neutral-400 leading-relaxed">
-                            Standardized CSS tokens (`var(--space-md)`, `var(--color-cyan)`) mapped 1-to-1 between Figma styles and frontend stylesheets instead of 47 random hex codes.
-                        </p>
-                    </div>
-
-                    <!-- Point 3 -->
-                    <div class="glass-panel p-5 rounded-xl border border-white/10 bg-black/40 hover:border-pink-400/50 transition-all duration-300 group reveal-item reveal-stagger-3">
-                        <div class="flex items-center justify-between mb-3 border-b border-white/10 pb-2">
-                            <span class="font-mono text-[10px] text-neon-magenta uppercase font-bold flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-neon-magenta animate-ping"></span>03 // INTERACTION SPECS</span>
-                            <span class="font-mono text-[9px] text-white/50">5/5 States Defined</span>
+                        <div class="space-y-2 font-mono text-[11px] text-neutral-300">
+                            <div class="p-2 bg-lime-950/30 border border-acid-lime/30 rounded flex justify-between items-center">
+                                <span><span class="text-acid-lime font-bold">Token Parity:</span> `var(--space-md)`, `var(--color-primary)`</span>
+                                <span class="text-[9px] px-1.5 py-0.5 rounded bg-acid-lime/20 text-acid-lime">1-to-1 Match</span>
+                            </div>
+                            <div class="p-2 bg-lime-950/30 border border-acid-lime/30 rounded flex justify-between items-center">
+                                <span><span class="text-acid-lime font-bold">State Specs:</span> 5/5 Defined (`:hover`, `:focus`, `:disabled`, `loading`)</span>
+                                <span class="text-[9px] px-1.5 py-0.5 rounded bg-acid-lime/20 text-acid-lime">Complete</span>
+                            </div>
+                            <div class="p-2 bg-lime-950/30 border border-acid-lime/30 rounded flex justify-between items-center">
+                                <span><span class="text-acid-lime font-bold">Layout Logic:</span> Flexbox Auto-Layout & CSS Grid rules</span>
+                                <span class="text-[9px] px-1.5 py-0.5 rounded bg-acid-lime/20 text-acid-lime">DOM Ready</span>
+                            </div>
+                            <div class="p-2 bg-lime-950/30 border border-acid-lime/30 rounded flex justify-between items-center">
+                                <span><span class="text-acid-lime font-bold">Component Code:</span> Ready-to-use React & Tailwind CSS</span>
+                                <span class="text-[9px] px-1.5 py-0.5 rounded bg-acid-lime/20 text-acid-lime">Copy-Paste</span>
+                            </div>
                         </div>
-                        <h4 class="text-base font-bold font-display text-white group-hover:text-neon-magenta transition-colors mb-2">Micro-Interactions Explained</h4>
-                        <p class="text-xs text-neutral-400 leading-relaxed">
-                            Clear specifications for `:hover`, `:focus-visible`, `:disabled`, `loading`, and `error` states provided upfront so developers never have to guess behavior.
-                        </p>
-                    </div>
-
-                    <!-- Point 4 -->
-                    <div class="glass-panel p-5 rounded-xl border border-white/10 bg-black/40 hover:border-emerald-400/50 transition-all duration-300 group reveal-item reveal-stagger-4">
-                        <div class="flex items-center justify-between mb-3 border-b border-white/10 pb-2">
-                            <span class="font-mono text-[10px] text-emerald-400 uppercase font-bold flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>04 // PRODUCTION READY</span>
-                            <span class="font-mono text-[9px] text-white/50">JSX & Tailwind Code</span>
-                        </div>
-                        <h4 class="text-base font-bold font-display text-white group-hover:text-emerald-400 transition-colors mb-2">Copy-Paste Component Code</h4>
-                        <p class="text-xs text-neutral-400 leading-relaxed">
-                            Willing and ready to write production CSS, Tailwind utilities, or React components directly when sprint timelines demand rapid frontend execution.
-                        </p>
                     </div>
                 </div>
             </div>
