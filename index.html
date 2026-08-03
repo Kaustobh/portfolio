@@ -438,22 +438,57 @@
             --glow-color: rgba(0, 243, 255, 0.25);
         }
 
-        /* Hardware-Accelerated Section Stagger Reveal & Cyberpunk Motion */
+        /* Hardware-Accelerated Section Stagger Reveal & Spatial 3D Motion */
         .reveal-item {
             opacity: 0;
             transform: translate3d(0, 30px, 0);
-            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
 
+        /* 0.5x Parallax Background Image Shift */
+        .project-bg-img {
+            transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s ease;
+            transform: scale(1.08) translate3d(0, 18px, 0);
+            will-change: transform;
+        }
+        section.is-revealed .project-bg-img {
+            transform: scale(1) translate3d(0, 0, 0);
+        }
+
+        /* Spatial 3D Tilt Video Frame (Apple / Studio Perspective) */
         .reveal-frame {
             opacity: 0;
-            transform: translate3d(0, 20px, 0) scale(0.96);
-            filter: blur(6px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: perspective(1200px) rotateY(-6deg) rotateX(4deg) scale(0.94) translate3d(20px, 30px, 0);
+            filter: blur(8px);
+            transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform, filter;
             position: relative;
+            transform-style: preserve-3d;
         }
+
+        /* Active State: Flatten 3D Frame into 2D Focus */
+        section.is-revealed .reveal-frame {
+            opacity: 1;
+            transform: perspective(1200px) rotateY(0deg) rotateX(0deg) scale(1) translate3d(0, 0, 0);
+            filter: blur(0px);
+        }
+
+        /* Interactive Dynamic Hover Tilt Response */
+        .reveal-frame:hover {
+            transform: perspective(1200px) rotateY(-2deg) rotateX(2deg) scale(1.02) translate3d(0, -4px, 0) !important;
+        }
+
+        /* Documentary Chapter Timeline Progression (01, 02, 03) */
+        .timeline-chapter {
+            opacity: 0;
+            transform: translate3d(-15px, 0, 0);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        section.is-revealed .timeline-chapter-1 { transition-delay: 240ms; opacity: 1; transform: translate3d(0, 0, 0); }
+        section.is-revealed .timeline-chapter-2 { transition-delay: 380ms; opacity: 1; transform: translate3d(0, 0, 0); }
+        section.is-revealed .timeline-chapter-3 { transition-delay: 520ms; opacity: 1; transform: translate3d(0, 0, 0); }
 
         /* Cyberpunk Holographic Scanline Sweep */
         @keyframes scanline-sheen {
@@ -493,12 +528,6 @@
         section.is-revealed .reveal-item {
             opacity: 1;
             transform: translate3d(0, 0, 0);
-        }
-
-        section.is-revealed .reveal-frame {
-            opacity: 1;
-            transform: translate3d(0, 0, 0) scale(1);
-            filter: blur(0px);
         }
 
         section.is-revealed .reveal-frame::after {
@@ -721,7 +750,7 @@
                 <img 
                     src="bg_fintech.png" 
                     alt="PulseHQ AI Dashboard Background" 
-                    class="w-full h-full object-cover opacity-90 filter saturate-150 grayscale-[20%]"
+                    class="project-bg-img w-full h-full object-cover opacity-90 filter saturate-150 grayscale-[20%]"
                     loading="lazy"
                 />
             </div>
@@ -736,9 +765,9 @@
                 <div class="flex flex-col gap-3 pl-4 border-l-2 border-neutral-200 dark:border-surface relative reveal-item reveal-stagger-3">
                     <!-- Glowing cursor path tracking active state -->
                     <div class="absolute left-[-2px] top-0 h-1/3 w-[2px] bg-gradient-to-b from-neon-cyan to-transparent dark:from-neon-cyan light:from-electric-blue shadow-[0_0_10px_#00F3FF]"></div>
-                    <p class="text-xs font-mono text-neutral-800 dark:text-white flex items-center"><span class="text-acid-lime dark:text-acid-lime light:text-forest-lime font-bold mr-2">01</span> Product Strategy & Manager Persona Audits</p>
-                    <p class="text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">02</span> Proactive AI UI Systems & 8pt Dark Grid</p>
-                    <p class="text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">03</span> 300ms Motion Design & Interactive Figma Prototyping</p>
+                    <p class="timeline-chapter timeline-chapter-1 text-xs font-mono text-neutral-800 dark:text-white flex items-center"><span class="text-acid-lime dark:text-acid-lime light:text-forest-lime font-bold mr-2">01</span> Product Strategy & Manager Persona Audits</p>
+                    <p class="timeline-chapter timeline-chapter-2 text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">02</span> Proactive AI UI Systems & 8pt Dark Grid</p>
+                    <p class="timeline-chapter timeline-chapter-3 text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">03</span> 300ms Motion Design & Interactive Figma Prototyping</p>
                 </div>
 
                 <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-6">
@@ -801,7 +830,7 @@
                 <img 
                     src="bg_checkout.png" 
                     alt="Checkout Background" 
-                    class="w-full h-full object-cover opacity-90 filter saturate-150 grayscale-[20%]"
+                    class="project-bg-img w-full h-full object-cover opacity-90 filter saturate-150 grayscale-[20%]"
                     loading="lazy"
                 />
             </div>
@@ -861,7 +890,7 @@
                 <img 
                     src="bg_gallery.png" 
                     alt="Gallery Background" 
-                    class="w-full h-full object-cover opacity-90 filter saturate-150 grayscale-[20%]"
+                    class="project-bg-img w-full h-full object-cover opacity-90 filter saturate-150 grayscale-[20%]"
                     loading="lazy"
                 />
             </div>
@@ -875,9 +904,9 @@
                 <!-- Neon Timeline -->
                 <div class="flex flex-col gap-3 pl-4 border-l-2 border-neutral-200 dark:border-surface relative reveal-item reveal-stagger-3">
                     <div class="absolute left-[-2px] top-0 h-1/3 w-[2px] bg-gradient-to-b from-acid-lime to-transparent dark:from-acid-lime light:from-forest-lime shadow-[0_0_10px_#D4FF00]"></div>
-                    <p class="text-xs font-mono text-neutral-800 dark:text-white flex items-center"><span class="text-neon-cyan dark:text-neon-cyan light:text-electric-blue font-bold mr-2">01</span> Immersive Spatial Canvas</p>
-                    <p class="text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">02</span> Draggable A/B Wireframes</p>
-                    <p class="text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">03</span> Contextual Scaling Visualizer</p>
+                    <p class="timeline-chapter timeline-chapter-1 text-xs font-mono text-neutral-800 dark:text-white flex items-center"><span class="text-neon-cyan dark:text-neon-cyan light:text-electric-blue font-bold mr-2">01</span> Immersive Spatial Canvas</p>
+                    <p class="timeline-chapter timeline-chapter-2 text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">02</span> Draggable A/B Wireframes</p>
+                    <p class="timeline-chapter timeline-chapter-3 text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">03</span> Contextual Scaling Visualizer</p>
                 </div>
 
                 <div class="mt-8">
@@ -929,7 +958,7 @@
                 <img 
                     src="bg_milkdel.png" 
                     alt="MilkDel Background" 
-                    class="w-full h-full object-cover opacity-90 filter saturate-150 grayscale-[20%]"
+                    class="project-bg-img w-full h-full object-cover opacity-90 filter saturate-150 grayscale-[20%]"
                     loading="lazy"
                 />
             </div>
@@ -943,9 +972,9 @@
                 <!-- Neon Timeline -->
                 <div class="flex flex-col gap-3 pl-4 border-l-2 border-neutral-200 dark:border-surface relative reveal-item reveal-stagger-3">
                     <div class="absolute left-[-2px] top-0 h-1/3 w-[2px] bg-gradient-to-b from-pista-green to-transparent dark:from-pista-green light:from-deep-green shadow-[0_0_10px_#A8CFA1]"></div>
-                    <p class="text-xs font-mono text-neutral-800 dark:text-white flex items-center"><span class="text-pista-green dark:text-pista-green light:text-deep-green font-bold mr-2">01</span> Subscription State Logic</p>
-                    <p class="text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">02</span> Dynamic Weekly Scheduling</p>
-                    <p class="text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">03</span> Respectful Exit Flows</p>
+                    <p class="timeline-chapter timeline-chapter-1 text-xs font-mono text-neutral-800 dark:text-white flex items-center"><span class="text-pista-green dark:text-pista-green light:text-deep-green font-bold mr-2">01</span> Subscription State Logic</p>
+                    <p class="timeline-chapter timeline-chapter-2 text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">02</span> Dynamic Weekly Scheduling</p>
+                    <p class="timeline-chapter timeline-chapter-3 text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">03</span> Respectful Exit Flows</p>
                 </div>
 
                 <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-6">
@@ -1002,7 +1031,7 @@
                 <img 
                     src="bg_biogrid.jpg" 
                     alt="Bio Grid Background" 
-                    class="w-full h-full object-cover opacity-90 filter saturate-150 grayscale-[20%] scale-150 transform"
+                    class="project-bg-img w-full h-full object-cover opacity-90 filter saturate-150 grayscale-[20%] scale-150 transform"
                     loading="lazy"
                 />
             </div>
@@ -1071,7 +1100,7 @@
                 <img
                     src="bg_apex.jpg"
                     alt="Apex Motorsport Background"
-                    class="w-full h-full object-cover opacity-85 filter saturate-125 scale-150 transform"
+                    class="project-bg-img w-full h-full object-cover opacity-85 filter saturate-125 scale-150 transform"
                     loading="lazy"
                 />
             </div>
@@ -1142,7 +1171,7 @@
                 <img
                     src="0df9fb3c-cf88-46f2-acdc-738eac0ff4a0.png"
                     alt="Silvatide Cottage Background"
-                    class="w-full h-full object-cover opacity-90 filter saturate-125 scale-105 transform"
+                    class="project-bg-img w-full h-full object-cover opacity-90 filter saturate-125 scale-105 transform"
                     loading="lazy"
                 />
             </div>
@@ -1158,9 +1187,9 @@
                 <!-- Neon Timeline -->
                 <div class="flex flex-col gap-3 pl-4 border-l-2 border-neutral-200 dark:border-surface relative reveal-item reveal-stagger-3">
                     <div class="absolute left-[-2px] top-0 h-1/3 w-[2px] bg-gradient-to-b from-[#10B981] to-transparent shadow-[0_0_10px_#10B981]"></div>
-                    <p class="text-xs font-mono text-neutral-800 dark:text-white flex items-center"><span class="text-[#10B981] font-bold mr-2">01</span> Research &amp; Journey Mapping</p>
-                    <p class="text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">02</span> Interactive Booking Prototypes</p>
-                    <p class="text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">03</span> Conversion-Optimised High-Fidelity UI</p>
+                    <p class="timeline-chapter timeline-chapter-1 text-xs font-mono text-neutral-800 dark:text-white flex items-center"><span class="text-[#10B981] font-bold mr-2">01</span> Research &amp; Journey Mapping</p>
+                    <p class="timeline-chapter timeline-chapter-2 text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">02</span> Interactive Booking Prototypes</p>
+                    <p class="timeline-chapter timeline-chapter-3 text-xs font-mono text-neutral-400 dark:text-gray-500 flex items-center"><span class="text-neutral-200 dark:text-surface font-bold mr-2">03</span> Conversion-Optimised High-Fidelity UI</p>
                 </div>
 
                 <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-6">
