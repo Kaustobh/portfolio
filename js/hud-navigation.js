@@ -66,14 +66,47 @@ function updateActiveHUDDot(activeKey, force = false) {
 
     updateHUDLogoTheme(activeColor);
 
+    const isProjectSection = ['fintech', 'checkout', 'gallery', 'MilkDel', 'BioGrid', 'Apex', 'Silvatide'].includes(activeKey);
+    
+    // Update parent projects group indicator glow
+    const projectsIndicator = document.getElementById('hud-projects-indicator');
+    if (projectsIndicator) {
+        if (isProjectSection) {
+            projectsIndicator.style.backgroundColor = activeColor;
+            projectsIndicator.style.boxShadow = `0 0 14px ${activeShadow}`;
+            projectsIndicator.style.borderColor = activeColor;
+        } else {
+            projectsIndicator.style.backgroundColor = '';
+            projectsIndicator.style.boxShadow = '';
+            projectsIndicator.style.borderColor = '';
+        }
+    }
+
+    // Highlight category label badges & section dots
+    document.querySelectorAll('.hud-nav-item').forEach(item => {
+        const cat = item.getAttribute('data-category');
+        const label = item.querySelector('.hud-nav-label');
+        const isCatActive = cat === activeKey || (cat === 'projects' && isProjectSection);
+        
+        if (label) {
+            if (isCatActive) {
+                label.style.opacity = '1';
+                label.style.transform = 'translateX(0)';
+            } else {
+                label.style.opacity = '';
+                label.style.transform = '';
+            }
+        }
+    });
+
     document.querySelectorAll('.hud-dot').forEach(dot => {
         const sec = dot.getAttribute('data-section');
         if (sec === activeKey) {
-            dot.style.height = '26px';
-            dot.style.width = '10px';
+            dot.style.height = '20px';
+            dot.style.width = '8px';
             dot.style.borderRadius = '9999px';
             dot.style.backgroundColor = activeColor;
-            dot.style.boxShadow = `0 0 16px ${activeShadow}, 0 0 30px ${activeColor}`;
+            dot.style.boxShadow = `0 0 16px ${activeShadow}, 0 0 25px ${activeColor}`;
             dot.style.borderColor = activeColor;
             dot.style.transform  = 'scale(1.1)';
         } else {
