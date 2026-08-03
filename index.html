@@ -439,24 +439,28 @@
         }
 
         
-        /* Cyberpunk Skill Tree Circuit Energy Flow & Branch Animation */
-        @keyframes circuit-flow {
-            0% { stroke-dashoffset: 100; }
-            100% { stroke-dashoffset: 0; }
+        /* Fluid Vertical Electric Circuit Tree Lines & Hover Pulsing */
+        @keyframes electric-pulse {
+            0% { stroke-dashoffset: 120; filter: drop-shadow(0 0 3px #00F3FF); }
+            50% { filter: drop-shadow(0 0 12px #00F3FF); }
+            100% { stroke-dashoffset: 0; filter: drop-shadow(0 0 3px #00F3FF); }
         }
 
-        .skill-circuit-line {
-            stroke-dasharray: 8 6;
-            animation: circuit-flow 3s linear infinite;
+        .electric-circuit-line {
+            stroke-dasharray: 10 6;
+            animation: electric-pulse 2.5s linear infinite;
+            transition: stroke 0.3s ease, stroke-width 0.3s ease, filter 0.3s ease;
         }
 
-        .skill-node-card {
+        .skill-leaf-node {
             backdrop-filter: blur(16px);
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .skill-node-card:hover {
-            transform: translateY(-4px) scale(1.03);
+        .skill-leaf-node:hover {
+            transform: translateY(-5px) scale(1.04);
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.45);
+            border-color: rgba(0, 243, 255, 0.8) !important;
         }
 
         /* Hardware-Accelerated Section Stagger Reveal & Spatial 3D Motion */
@@ -859,142 +863,169 @@
         </section>
 
         <!-- ═══════════════════════════════════════════════════════════════ -->
-        <!-- SECTION 3: INTERACTIVE SKILL TREE                               -->
-        <!-- ═══════════════════════════════════════════════════════════════ -->
-        <!-- ═══════════════════════════════════════════════════════════════ -->
-        <!-- SECTION 3: INTERACTIVE CYBERPUNK SKILL TREE MATRIX            -->
+        <!-- SECTION 3: FLUID VERTICAL SKILL TREE MATRIX                   -->
         <!-- ═══════════════════════════════════════════════════════════════ -->
         <section id="section-skill-tree" class="h-screen w-full snap-center flex flex-col justify-center px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-16 md:pt-0 overflow-hidden">
             <div class="project-boundary-line"></div>
             
-            <!-- Cyberpunk Skill Tree Background Image & Overlay -->
+            <!-- Clean Ambient Neon Background Image & Overlay -->
             <div class="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none">
                 <div class="absolute inset-0 bg-gradient-to-r from-void via-void/90 to-transparent dark:from-void dark:via-void/90 dark:to-transparent light:from-solar light:via-solar/95 light:to-transparent/10 z-10"></div>
                 <img 
                     src="bg_skill_tree.jpg" 
-                    alt="Cyberpunk Skill Tree Background" 
-                    class="project-bg-img w-full h-full object-cover opacity-80 filter saturate-150 grayscale-[10%]"
+                    alt="Clean Ambient Skill Tree Backdrop" 
+                    class="project-bg-img w-full h-full object-cover opacity-80 filter saturate-150"
                     loading="lazy"
                 />
             </div>
 
             <div class="max-w-6xl mx-auto w-full relative z-20">
                 <!-- Header & Filters -->
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 md:mb-8 gap-4">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-4 md:mb-6 gap-3">
                     <div>
-                        <span class="text-xs font-mono text-neon-magenta dark:text-neon-magenta light:text-deep-rose uppercase tracking-widest mb-2 block reveal-item reveal-stagger-1">[Skills Matrix // Cyberpunk Neural Tree]</span>
-                        <h3 class="text-3xl md:text-5xl font-display font-bold text-charcoal dark:text-white mb-2 reveal-item reveal-stagger-2">Interactive Skill Tree</h3>
+                        <span class="text-xs font-mono text-neon-cyan dark:text-neon-cyan light:text-electric-blue uppercase tracking-widest mb-1 block reveal-item reveal-stagger-1">[Skills Matrix // Neural Circuit]</span>
+                        <h3 class="text-3xl md:text-5xl font-display font-bold text-charcoal dark:text-white mb-1 reveal-item reveal-stagger-2">Skill Tree</h3>
                         <p class="text-neutral-400 dark:text-gray-300 font-body text-xs md:text-sm max-w-xl reveal-item reveal-stagger-3">
-                            Click any neural node to open verified credentials and inspect real-world project applications.
+                            A fluid vertical node map connecting core disciplines directly to real-world project applications & verified certificates.
                         </p>
                     </div>
 
                     <!-- Category Filter Tabs -->
                     <div class="flex flex-wrap gap-2 glass-panel p-1.5 rounded-xl border border-white/10 w-fit reveal-item reveal-stagger-3" id="skill-filter-tabs">
-                        <button onclick="filterSkillNodes('all')" class="skill-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-neon-cyan text-void shadow-neon cursor-pointer" data-category="all">All</button>
-                        <button onclick="filterSkillNodes('ux-ui')" class="skill-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-neutral-400 hover:text-white cursor-pointer" data-category="ux-ui">UX & UI Design</button>
-                        <button onclick="filterSkillNodes('frontend')" class="skill-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-neutral-400 hover:text-white cursor-pointer" data-category="frontend">Frontend & Engineering</button>
-                        <button onclick="filterSkillNodes('systems')" class="skill-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-neutral-400 hover:text-white cursor-pointer" data-category="systems">Systems & Strategy</button>
+                        <button onclick="filterSkillNodes('all')" class="skill-tab-btn px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all bg-neon-cyan text-void shadow-neon cursor-pointer" data-category="all">All</button>
+                        <button onclick="filterSkillNodes('design-eng')" class="skill-tab-btn px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all text-neutral-400 hover:text-white cursor-pointer" data-category="design-eng">Design Engineering</button>
+                        <button onclick="filterSkillNodes('ux-ui')" class="skill-tab-btn px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all text-neutral-400 hover:text-white cursor-pointer" data-category="ux-ui">Interaction UX</button>
+                        <button onclick="filterSkillNodes('frontend')" class="skill-tab-btn px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all text-neutral-400 hover:text-white cursor-pointer" data-category="frontend">Frontend Architecture</button>
                     </div>
                 </div>
 
-                <!-- Central Core Nexus Badge -->
-                <div class="hidden md:flex items-center justify-center mb-6">
-                    <div class="glass-panel px-6 py-2 rounded-full border border-neon-cyan/40 bg-black/60 shadow-[0_0_20px_rgba(0,243,255,0.3)] flex items-center gap-3">
+                <!-- Central Root Node (You) -->
+                <div class="flex justify-center mb-4">
+                    <div class="glass-panel px-6 py-2 rounded-full border border-neon-cyan/60 bg-black/70 shadow-[0_0_25px_rgba(0,243,255,0.4)] flex items-center gap-3 group hover:border-neon-cyan transition-all cursor-pointer">
                         <span class="w-3 h-3 rounded-full bg-neon-cyan animate-ping"></span>
-                        <span class="font-mono text-xs font-bold text-neon-cyan uppercase tracking-widest">⬡ CORE NEXUS // UX ENGINEER NEURAL MATRIX</span>
+                        <span class="font-mono text-xs font-bold text-neon-cyan uppercase tracking-widest">⚡ ROOT // KAUSTOBH (DESIGN ENGINEER)</span>
                         <span class="w-3 h-3 rounded-full bg-neon-magenta animate-ping"></span>
                     </div>
                 </div>
 
-                <!-- Skill Tree Interactive Node Matrix -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3.5 md:gap-4 relative" id="skill-nodes-container">
-                    <!-- SVG Connecting Branch Circuit Paths (Desktop background lines) -->
-                    <svg class="hidden md:block absolute inset-0 w-full h-full pointer-events-none z-0 opacity-40" viewBox="0 0 1000 400" preserveAspectRatio="none">
-                        <path d="M 500 0 L 125 100 L 125 200" stroke="#00F3FF" stroke-width="2" fill="none" class="skill-circuit-line" />
-                        <path d="M 500 0 L 375 100 L 375 200" stroke="#FF00A0" stroke-width="2" fill="none" class="skill-circuit-line" />
-                        <path d="M 500 0 L 625 100 L 625 200" stroke="#D4FF00" stroke-width="2" fill="none" class="skill-circuit-line" />
-                        <path d="M 500 0 L 875 100 L 875 200" stroke="#10B981" stroke-width="2" fill="none" class="skill-circuit-line" />
+                <!-- 3 Core Discipline Trunks Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 relative" id="skill-nodes-container">
+                    <!-- SVG Connecting Circuit Lines for Desktop -->
+                    <svg class="hidden md:block absolute -top-8 inset-x-0 w-full h-8 pointer-events-none z-0 opacity-50" viewBox="0 0 900 40" preserveAspectRatio="none">
+                        <path d="M 450 0 L 150 40" stroke="#00F3FF" stroke-width="2" fill="none" class="electric-circuit-line" />
+                        <path d="M 450 0 L 450 40" stroke="#FF00A0" stroke-width="2" fill="none" class="electric-circuit-line" />
+                        <path d="M 450 0 L 750 40" stroke="#D4FF00" stroke-width="2" fill="none" class="electric-circuit-line" />
                     </svg>
 
-                    <!-- Node 1: React & Next.js -->
-                    <div onclick="openSkillModal('react')" class="skill-node-card glass-panel p-4 rounded-xl border border-cyan-500/30 hover:border-cyan-400 bg-black/50 cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_25px_rgba(0,243,255,0.4)] group relative z-10" data-category="frontend">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="w-2.5 h-2.5 rounded-full bg-neon-cyan animate-pulse ring-2 ring-neon-cyan/50 shadow-[0_0_10px_#00F3FF]"></span>
-                            <span class="text-[9px] font-mono text-neon-cyan font-bold uppercase">Applied in 2 projects</span>
+                    <!-- DISCIPLINE 1: DESIGN ENGINEERING -->
+                    <div class="space-y-3" data-category="design-eng">
+                        <!-- Discipline Header Badge -->
+                        <div class="glass-panel px-4 py-2 rounded-xl border border-cyan-500/40 bg-cyan-500/10 flex items-center justify-between">
+                            <span class="font-mono text-xs font-bold text-neon-cyan uppercase tracking-wider">01 // Design Engineering</span>
+                            <span class="w-2 h-2 rounded-full bg-neon-cyan"></span>
                         </div>
-                        <h5 class="text-sm font-bold font-display text-white group-hover:text-neon-cyan transition-colors">React & Next.js</h5>
-                        <p class="text-[10px] font-mono text-neutral-400 mt-1">Frontend Branch</p>
+                        
+                        <!-- Floating Leaf Nodes -->
+                        <div onclick="openSkillModal('figma')" class="skill-leaf-node skill-node-card glass-panel p-3.5 rounded-xl border border-cyan-500/30 bg-black/60 cursor-pointer group" data-category="design-eng">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="w-2 h-2 rounded-full bg-neon-cyan group-hover:animate-ping"></span>
+                                <span class="text-[9px] font-mono text-neon-cyan font-bold">4 Case Studies</span>
+                            </div>
+                            <h5 class="text-sm font-bold font-display text-white group-hover:text-neon-cyan transition-colors">Figma Tokens & Auto-Layout</h5>
+                            <p class="text-[10px] font-mono text-neutral-400 mt-0.5">Component libraries & token variables</p>
+                        </div>
+
+                        <div onclick="openSkillModal('tokens')" class="skill-leaf-node skill-node-card glass-panel p-3.5 rounded-xl border border-cyan-500/30 bg-black/60 cursor-pointer group" data-category="design-eng">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="w-2 h-2 rounded-full bg-neon-cyan group-hover:animate-ping"></span>
+                                <span class="text-[9px] font-mono text-neon-cyan font-bold">3 Case Studies</span>
+                            </div>
+                            <h5 class="text-sm font-bold font-display text-white group-hover:text-neon-cyan transition-colors">Design Systems & Tokens</h5>
+                            <p class="text-[10px] font-mono text-neutral-400 mt-0.5">Figma-to-CSS 1-to-1 token parity</p>
+                        </div>
+
+                        <div onclick="openSkillModal('grid_ui')" class="skill-leaf-node skill-node-card glass-panel p-3.5 rounded-xl border border-cyan-500/30 bg-black/60 cursor-pointer group" data-category="design-eng">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="w-2 h-2 rounded-full bg-neon-cyan group-hover:animate-ping"></span>
+                                <span class="text-[9px] font-mono text-neon-cyan font-bold">3 Case Studies</span>
+                            </div>
+                            <h5 class="text-sm font-bold font-display text-white group-hover:text-neon-cyan transition-colors">8pt Grid & UI Systems</h5>
+                            <p class="text-[10px] font-mono text-neutral-400 mt-0.5">Spatial layout & baseline typography</p>
+                        </div>
                     </div>
 
-                    <!-- Node 2: Figma & Auto-Layout -->
-                    <div onclick="openSkillModal('figma')" class="skill-node-card glass-panel p-4 rounded-xl border border-pink-500/30 hover:border-pink-400 bg-black/50 cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_25px_rgba(255,0,160,0.4)] group relative z-10" data-category="ux-ui">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="w-2.5 h-2.5 rounded-full bg-neon-magenta animate-pulse ring-2 ring-neon-magenta/50 shadow-[0_0_10px_#FF00A0]"></span>
-                            <span class="text-[9px] font-mono text-neon-magenta font-bold uppercase">Applied in 4 projects</span>
+                    <!-- DISCIPLINE 2: INTERACTION UX -->
+                    <div class="space-y-3" data-category="ux-ui">
+                        <!-- Discipline Header Badge -->
+                        <div class="glass-panel px-4 py-2 rounded-xl border border-pink-500/40 bg-pink-500/10 flex items-center justify-between">
+                            <span class="font-mono text-xs font-bold text-neon-magenta uppercase tracking-wider">02 // Interaction UX</span>
+                            <span class="w-2 h-2 rounded-full bg-neon-magenta"></span>
                         </div>
-                        <h5 class="text-sm font-bold font-display text-white group-hover:text-neon-magenta transition-colors">Figma & Auto-Layout</h5>
-                        <p class="text-[10px] font-mono text-neutral-400 mt-1">UX & UI Branch</p>
+
+                        <!-- Floating Leaf Nodes -->
+                        <div onclick="openSkillModal('research')" class="skill-leaf-node skill-node-card glass-panel p-3.5 rounded-xl border border-pink-500/30 bg-black/60 cursor-pointer group" data-category="ux-ui">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="w-2 h-2 rounded-full bg-neon-magenta group-hover:animate-ping"></span>
+                                <span class="text-[9px] font-mono text-neon-magenta font-bold">3 Case Studies</span>
+                            </div>
+                            <h5 class="text-sm font-bold font-display text-white group-hover:text-neon-magenta transition-colors">User Research & Personas</h5>
+                            <p class="text-[10px] font-mono text-neutral-400 mt-0.5">Persona audits & retention flows</p>
+                        </div>
+
+                        <div onclick="openSkillModal('motion')" class="skill-leaf-node skill-node-card glass-panel p-3.5 rounded-xl border border-pink-500/30 bg-black/60 cursor-pointer group" data-category="ux-ui">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="w-2 h-2 rounded-full bg-neon-magenta group-hover:animate-ping"></span>
+                                <span class="text-[9px] font-mono text-neon-magenta font-bold">4 Case Studies</span>
+                            </div>
+                            <h5 class="text-sm font-bold font-display text-white group-hover:text-neon-magenta transition-colors">300ms Micro-Interactions & GSAP</h5>
+                            <p class="text-[10px] font-mono text-neutral-400 mt-0.5">Spring physics & cursor engines</p>
+                        </div>
+
+                        <div onclick="openSkillModal('a11y')" class="skill-leaf-node skill-node-card glass-panel p-3.5 rounded-xl border border-pink-500/30 bg-black/60 cursor-pointer group" data-category="ux-ui">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="w-2 h-2 rounded-full bg-neon-magenta group-hover:animate-ping"></span>
+                                <span class="text-[9px] font-mono text-neon-magenta font-bold">2 Case Studies</span>
+                            </div>
+                            <h5 class="text-sm font-bold font-display text-white group-hover:text-neon-magenta transition-colors">Accessibility (WCAG AA)</h5>
+                            <p class="text-[10px] font-mono text-neutral-400 mt-0.5">Contrast AA & keyboard focus rings</p>
+                        </div>
                     </div>
 
-                    <!-- Node 3: Design Systems & Tokens -->
-                    <div onclick="openSkillModal('tokens')" class="skill-node-card glass-panel p-4 rounded-xl border border-lime-500/30 hover:border-lime-400 bg-black/50 cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_25px_rgba(212,255,0,0.4)] group relative z-10" data-category="systems">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="w-2.5 h-2.5 rounded-full bg-acid-lime animate-pulse ring-2 ring-acid-lime/50 shadow-[0_0_10px_#D4FF00]"></span>
-                            <span class="text-[9px] font-mono text-acid-lime font-bold uppercase">Applied in 3 projects</span>
+                    <!-- DISCIPLINE 3: FRONTEND ARCHITECTURE -->
+                    <div class="space-y-3" data-category="frontend">
+                        <!-- Discipline Header Badge -->
+                        <div class="glass-panel px-4 py-2 rounded-xl border border-lime-500/40 bg-lime-500/10 flex items-center justify-between">
+                            <span class="font-mono text-xs font-bold text-acid-lime uppercase tracking-wider">03 // Frontend Architecture</span>
+                            <span class="w-2 h-2 rounded-full bg-acid-lime"></span>
                         </div>
-                        <h5 class="text-sm font-bold font-display text-white group-hover:text-acid-lime transition-colors">Design Systems & Tokens</h5>
-                        <p class="text-[10px] font-mono text-neutral-400 mt-1">Systems Branch</p>
-                    </div>
 
-                    <!-- Node 4: Accessibility (WCAG AA) -->
-                    <div onclick="openSkillModal('a11y')" class="skill-node-card glass-panel p-4 rounded-xl border border-emerald-500/30 hover:border-emerald-400 bg-black/50 cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_25px_rgba(16,185,129,0.4)] group relative z-10" data-category="systems">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse ring-2 ring-emerald-400/50 shadow-[0_0_10px_#10B981]"></span>
-                            <span class="text-[9px] font-mono text-emerald-400 font-bold uppercase">Applied in 2 projects</span>
+                        <!-- Floating Leaf Nodes -->
+                        <div onclick="openSkillModal('react')" class="skill-leaf-node skill-node-card glass-panel p-3.5 rounded-xl border border-lime-500/30 bg-black/60 cursor-pointer group" data-category="frontend">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="w-2 h-2 rounded-full bg-acid-lime group-hover:animate-ping"></span>
+                                <span class="text-[9px] font-mono text-acid-lime font-bold">2 Case Studies</span>
+                            </div>
+                            <h5 class="text-sm font-bold font-display text-white group-hover:text-acid-lime transition-colors">React & Next.js</h5>
+                            <p class="text-[10px] font-mono text-neutral-400 mt-0.5">Component modularity & SSR</p>
                         </div>
-                        <h5 class="text-sm font-bold font-display text-white group-hover:text-emerald-400 transition-colors">Accessibility (WCAG AA)</h5>
-                        <p class="text-[10px] font-mono text-neutral-400 mt-1">Systems Branch</p>
-                    </div>
 
-                    <!-- Node 5: TailwindCSS & Modern CSS -->
-                    <div onclick="openSkillModal('tailwind')" class="skill-node-card glass-panel p-4 rounded-xl border border-cyan-500/30 hover:border-cyan-400 bg-black/50 cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_25px_rgba(0,243,255,0.4)] group relative z-10" data-category="frontend">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="w-2.5 h-2.5 rounded-full bg-neon-cyan animate-pulse ring-2 ring-neon-cyan/50 shadow-[0_0_10px_#00F3FF]"></span>
-                            <span class="text-[9px] font-mono text-neon-cyan font-bold uppercase">Applied in 5 projects</span>
+                        <div onclick="openSkillModal('tailwind')" class="skill-leaf-node skill-node-card glass-panel p-3.5 rounded-xl border border-lime-500/30 bg-black/60 cursor-pointer group" data-category="frontend">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="w-2.5 h-2.5 rounded-full bg-acid-lime group-hover:animate-ping"></span>
+                                <span class="text-[9px] font-mono text-acid-lime font-bold">5 Case Studies</span>
+                            </div>
+                            <h5 class="text-sm font-bold font-display text-white group-hover:text-acid-lime transition-colors">TailwindCSS & CSS3</h5>
+                            <p class="text-[10px] font-mono text-neutral-400 mt-0.5">Utility classes & GPU animations</p>
                         </div>
-                        <h5 class="text-sm font-bold font-display text-white group-hover:text-neon-cyan transition-colors">TailwindCSS & CSS3</h5>
-                        <p class="text-[10px] font-mono text-neutral-400 mt-1">Frontend Branch</p>
-                    </div>
 
-                    <!-- Node 6: WebGL & Three.js -->
-                    <div onclick="openSkillModal('threejs')" class="skill-node-card glass-panel p-4 rounded-xl border border-pink-500/30 hover:border-pink-400 bg-black/50 cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_25px_rgba(255,0,160,0.4)] group relative z-10" data-category="frontend">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="w-2.5 h-2.5 rounded-full bg-neon-magenta animate-pulse ring-2 ring-neon-magenta/50 shadow-[0_0_10px_#FF00A0]"></span>
-                            <span class="text-[9px] font-mono text-neon-magenta font-bold uppercase">Applied in 2 projects</span>
+                        <div onclick="openSkillModal('threejs')" class="skill-leaf-node skill-node-card glass-panel p-3.5 rounded-xl border border-lime-500/30 bg-black/60 cursor-pointer group" data-category="frontend">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="w-2.5 h-2.5 rounded-full bg-acid-lime group-hover:animate-ping"></span>
+                                <span class="text-[9px] font-mono text-acid-lime font-bold">2 Case Studies</span>
+                            </div>
+                            <h5 class="text-sm font-bold font-display text-white group-hover:text-acid-lime transition-colors">WebGL & Three.js</h5>
+                            <p class="text-[10px] font-mono text-neutral-400 mt-0.5">3D canvas & procedural shaders</p>
                         </div>
-                        <h5 class="text-sm font-bold font-display text-white group-hover:text-neon-magenta transition-colors">WebGL & Three.js</h5>
-                        <p class="text-[10px] font-mono text-neutral-400 mt-1">Frontend Branch</p>
-                    </div>
-
-                    <!-- Node 7: User Research & Personas -->
-                    <div onclick="openSkillModal('research')" class="skill-node-card glass-panel p-4 rounded-xl border border-lime-500/30 hover:border-lime-400 bg-black/50 cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_25px_rgba(212,255,0,0.4)] group relative z-10" data-category="ux-ui">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="w-2.5 h-2.5 rounded-full bg-acid-lime animate-pulse ring-2 ring-acid-lime/50 shadow-[0_0_10px_#D4FF00]"></span>
-                            <span class="text-[9px] font-mono text-acid-lime font-bold uppercase">Applied in 3 projects</span>
-                        </div>
-                        <h5 class="text-sm font-bold font-display text-white group-hover:text-acid-lime transition-colors">User Research & Personas</h5>
-                        <p class="text-[10px] font-mono text-neutral-400 mt-1">UX & UI Branch</p>
-                    </div>
-
-                    <!-- Node 8: Micro-Interactions & GSAP -->
-                    <div onclick="openSkillModal('motion')" class="skill-node-card glass-panel p-4 rounded-xl border border-emerald-500/30 hover:border-emerald-400 bg-black/50 cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_25px_rgba(16,185,129,0.4)] group relative z-10" data-category="ux-ui">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse ring-2 ring-emerald-400/50 shadow-[0_0_10px_#10B981]"></span>
-                            <span class="text-[9px] font-mono text-emerald-400 font-bold uppercase">Applied in 4 projects</span>
-                        </div>
-                        <h5 class="text-sm font-bold font-display text-white group-hover:text-emerald-400 transition-colors">Micro-Interactions & GSAP</h5>
-                        <p class="text-[10px] font-mono text-neutral-400 mt-1">UX & UI Branch</p>
                     </div>
                 </div>
             </div>
@@ -4817,6 +4848,20 @@ gsap.to(camera.position, {
                     badge: {
                         title: "Google UX Design Professional Certificate",
                         issuer: "Google • Coursera Verified"
+                    }
+                },
+                grid_ui: {
+                    title: "8pt Grid & Typography Systems",
+                    category: "[Design Engineering]",
+                    context: "Structured rigid 8pt spatial layout grids, typography scaling ramps, and modular baseline alignments across web and desktop interfaces.",
+                    projects: [
+                        { name: "PulseHQ AI", modalId: "fintech-modal" },
+                        { name: "E-Comm Checkout", modalId: "checkout-modal" },
+                        { name: "Bio Grid Telemetry", modalId: "BioGrid-modal" }
+                    ],
+                    badge: {
+                        title: "Enterprise Typography & Layout Architecture",
+                        issuer: "UI/UX Academy • Verified Credential"
                     }
                 },
                 motion: {
