@@ -869,168 +869,237 @@
         </section>
 
         <!-- ═══════════════════════════════════════════════════════════════ -->
-        <!-- SECTION 3: FLUID VERTICAL SKILL TREE MATRIX                   -->
+        <!-- SECTION 3: CYBER-SKILL NETWORK (2077 RPG INTERACTIVE UI)       -->
         <!-- ═══════════════════════════════════════════════════════════════ -->
         <section id="section-skill-tree" class="h-screen w-full snap-center flex flex-col justify-center px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-16 md:pt-0 overflow-hidden">
             <div class="project-boundary-line"></div>
             
-            <!-- Clean Ambient Neon Background Image & Overlay -->
+            <!-- Metallic Void Backdrop with Rotating Schematic Grid -->
             <div class="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none">
                 <div class="absolute inset-0 bg-gradient-to-r from-void via-void/90 to-transparent dark:from-void dark:via-void/90 dark:to-transparent light:from-solar light:via-solar/95 light:to-transparent/10 z-10"></div>
                 <img 
-                    src="bg_skill_tree.jpg" 
-                    alt="Clean Ambient Skill Tree Backdrop" 
+                    src="bg_cyber_network.jpg" 
+                    alt="Cyber Network Metallic Backdrop" 
                     class="project-bg-img w-full h-full object-cover opacity-80 filter saturate-150"
                     loading="lazy"
                 />
+                
+                <!-- Rotating SVG Schematic Grid Canopy -->
+                <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] opacity-25 pointer-events-none rotating-schematic-grid z-5" viewBox="0 0 900 900">
+                    <circle cx="450" cy="450" r="420" stroke="#00F3FF" stroke-width="1" stroke-dasharray="12 6" fill="none" />
+                    <circle cx="450" cy="450" r="300" stroke="#FF00A0" stroke-width="1" stroke-dasharray="6 6" fill="none" />
+                    <circle cx="450" cy="450" r="180" stroke="#00FFC8" stroke-width="1" stroke-dasharray="4 4" fill="none" />
+                    <line x1="0" y1="450" x2="900" y2="450" stroke="#ffffff" stroke-opacity="0.15" stroke-dasharray="8 8" />
+                    <line x1="450" y1="0" x2="450" y2="900" stroke="#ffffff" stroke-opacity="0.15" stroke-dasharray="8 8" />
+                </svg>
             </div>
 
             <div class="max-w-6xl mx-auto w-full relative z-20">
-                <!-- Header & Filters -->
+                <!-- Top Header & Category Legend -->
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-4 md:mb-6 gap-3">
                     <div>
-                        <span class="text-xs font-mono text-neon-cyan dark:text-neon-cyan light:text-electric-blue uppercase tracking-widest mb-1 block reveal-item reveal-stagger-1">[Skills Matrix // Neural Circuit]</span>
-                        <h3 class="text-3xl md:text-5xl font-display font-bold text-charcoal dark:text-white mb-1 reveal-item reveal-stagger-2">Skill Tree</h3>
-                        <p class="text-neutral-400 dark:text-gray-300 font-body text-xs md:text-sm max-w-xl reveal-item reveal-stagger-3">
-                            A fluid vertical node map connecting core disciplines directly to real-world project applications & verified certificates.
+                        <span class="text-xs font-mono text-neon-cyan uppercase tracking-[0.3em] mb-1 block reveal-item reveal-stagger-1">[CYBER 2077 // NEURAL PROGRESSION NETWORK]</span>
+                        <h3 class="text-3xl md:text-5xl font-display font-bold text-white mb-1 reveal-item reveal-stagger-2">Cyber-Skill Network</h3>
+                        <p class="text-neutral-400 font-body text-xs md:text-sm max-w-xl reveal-item reveal-stagger-3">
+                            Holographic neural progression system. Hover over nodes to trace prerequisites; click to open tactical data-panel & launch case studies.
                         </p>
                     </div>
 
-                    <!-- Category Filter Tabs -->
-                    <div class="flex flex-wrap gap-2 glass-panel p-1.5 rounded-xl border border-white/10 w-fit reveal-item reveal-stagger-3" id="skill-filter-tabs">
-                        <button onclick="filterSkillNodes('all')" class="skill-tab-btn px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all bg-neon-cyan text-void shadow-neon cursor-pointer" data-category="all">All</button>
-                        <button onclick="filterSkillNodes('design-eng')" class="skill-tab-btn px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all text-neutral-400 hover:text-white cursor-pointer" data-category="design-eng">Design Engineering</button>
-                        <button onclick="filterSkillNodes('ux-ui')" class="skill-tab-btn px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all text-neutral-400 hover:text-white cursor-pointer" data-category="ux-ui">Interaction UX</button>
-                        <button onclick="filterSkillNodes('frontend')" class="skill-tab-btn px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all text-neutral-400 hover:text-white cursor-pointer" data-category="frontend">Frontend Architecture</button>
+                    <!-- RPG Category Filters -->
+                    <div class="flex flex-wrap gap-2 glass-panel p-1.5 rounded-xl border border-white/15 w-fit bg-black/60 reveal-item reveal-stagger-3" id="skill-filter-tabs">
+                        <button onclick="filterSkillNodes('all')" class="skill-tab-btn px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all bg-neon-cyan text-void shadow-neon cursor-pointer" data-category="all">SYSTEM: ALL</button>
+                        <button onclick="filterSkillNodes('code')" class="skill-tab-btn px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all text-cyan-400 hover:text-white cursor-pointer" data-category="code">CODE [CYAN]</button>
+                        <button onclick="filterSkillNodes('design')" class="skill-tab-btn px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all text-pink-400 hover:text-white cursor-pointer" data-category="design">DESIGN [MAGENTA]</button>
+                        <button onclick="filterSkillNodes('strategy')" class="skill-tab-btn px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all text-teal-300 hover:text-white cursor-pointer" data-category="strategy">STRATEGY [TEAL]</button>
                     </div>
                 </div>
 
-                <!-- Central Root Node (You) -->
-                <div class="flex justify-center mb-4">
-                    <div class="glass-panel px-6 py-2 rounded-full border border-neon-cyan/60 bg-black/70 shadow-[0_0_25px_rgba(0,243,255,0.4)] flex items-center gap-3 group hover:border-neon-cyan transition-all cursor-pointer">
+                <!-- Central Core Neural Hub -->
+                <div class="flex justify-center mb-6">
+                    <div class="glass-panel px-6 py-2 rounded-full border border-neon-cyan/70 bg-black/80 shadow-[0_0_30px_rgba(0,243,255,0.5)] flex items-center gap-3 group hover:scale-105 transition-transform cursor-pointer" id="cyber-core-hub">
                         <span class="w-3 h-3 rounded-full bg-neon-cyan animate-ping"></span>
-                        <span class="font-mono text-xs font-bold text-neon-cyan uppercase tracking-widest">⚡ ROOT // KAUSTOBH (DESIGN ENGINEER)</span>
+                        <span class="font-mono text-xs font-bold text-neon-cyan uppercase tracking-widest">⬡ NEURAL CORE // KAUSTOBH (UX ENGINEER 2077)</span>
                         <span class="w-3 h-3 rounded-full bg-neon-magenta animate-ping"></span>
                     </div>
                 </div>
 
-                <!-- 3 Core Discipline Trunks Grid -->
+                <!-- 3 Category Domains Grid with SVG Prerequisite Light-Lines -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 relative" id="skill-nodes-container">
-                    <!-- SVG Connecting Circuit Lines for Desktop -->
-                    <svg class="hidden md:block absolute -top-8 inset-x-0 w-full h-8 pointer-events-none z-0 opacity-50" viewBox="0 0 900 40" preserveAspectRatio="none">
-                        <path d="M 450 0 L 150 40" stroke="#00F3FF" stroke-width="2" fill="none" class="electric-circuit-line" />
-                        <path d="M 450 0 L 450 40" stroke="#FF00A0" stroke-width="2" fill="none" class="electric-circuit-line" />
-                        <path d="M 450 0 L 750 40" stroke="#D4FF00" stroke-width="2" fill="none" class="electric-circuit-line" />
+                    <!-- SVG Prerequisite Light-Lines Layer -->
+                    <svg class="hidden md:block absolute -top-8 inset-x-0 w-full h-8 pointer-events-none z-0" viewBox="0 0 900 40" preserveAspectRatio="none">
+                        <path id="path-code" d="M 450 0 L 150 40" stroke="#94A3B8" stroke-width="1.5" stroke-opacity="0.4" fill="none" class="cyber-light-line" />
+                        <path id="path-design" d="M 450 0 L 450 40" stroke="#94A3B8" stroke-width="1.5" stroke-opacity="0.4" fill="none" class="cyber-light-line" />
+                        <path id="path-strategy" d="M 450 0 L 750 40" stroke="#94A3B8" stroke-width="1.5" stroke-opacity="0.4" fill="none" class="cyber-light-line" />
                     </svg>
 
-                    <!-- DISCIPLINE 1: DESIGN ENGINEERING -->
-                    <div class="space-y-3" data-category="design-eng">
-                        <!-- Discipline Header Badge -->
+                    <!-- CATEGORY 1: CODE (CYAN) -->
+                    <div class="space-y-3" data-category="code">
                         <div class="glass-panel px-4 py-2 rounded-xl border border-cyan-500/40 bg-cyan-500/10 flex items-center justify-between">
-                            <span class="font-mono text-xs font-bold text-neon-cyan uppercase tracking-wider">01 // Design Engineering</span>
-                            <span class="w-2 h-2 rounded-full bg-neon-cyan"></span>
+                            <span class="font-mono text-xs font-bold text-neon-cyan uppercase tracking-wider">DOMAIN 01 // CODE [CYAN]</span>
+                            <span class="w-2 h-2 rounded-full bg-neon-cyan animate-pulse"></span>
                         </div>
                         
-                        <!-- Floating Leaf Nodes -->
-                        <div onclick="openSkillModal('figma')" class="skill-leaf-node skill-node-card glass-panel p-3.5 rounded-xl border border-cyan-500/30 bg-black/60 cursor-pointer group" data-category="design-eng">
-                            <div class="flex justify-between items-start mb-1">
-                                <span class="w-2 h-2 rounded-full bg-neon-cyan group-hover:animate-ping"></span>
-                                <span class="text-[9px] font-mono text-neon-cyan font-bold">4 Case Studies</span>
+                        <!-- Hex Nodes -->
+                        <div onclick="openSkillModal('react')" onmouseenter="highlightPath('path-code', '#00F3FF')" onmouseleave="resetPath('path-code')" class="cyber-node-wrapper glass-panel p-3.5 rounded-xl border border-cyan-500/30 bg-black/60 cursor-pointer group hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(0,243,255,0.4)] transition-all" data-category="code">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-lg bg-neon-cyan/20 border border-neon-cyan/50 flex items-center justify-center text-neon-cyan group-hover:scale-110 transition-transform">
+                                    <!-- React SVG -->
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="9" ry="3.5"/><ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(120 12 12)"/></svg>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-center">
+                                        <h5 class="text-xs font-bold font-display text-white group-hover:text-neon-cyan transition-colors">React & Next.js</h5>
+                                        <span class="text-[8px] font-mono text-neon-cyan bg-cyan-500/10 px-1.5 py-0.5 rounded border border-cyan-500/30">NODE 01</span>
+                                    </div>
+                                    <p class="text-[9px] font-mono text-neutral-400 mt-0.5">Component Modular SSR Architecture</p>
+                                </div>
                             </div>
-                            <h5 class="text-sm font-bold font-display text-white group-hover:text-neon-cyan transition-colors">Figma Tokens & Auto-Layout</h5>
-                            <p class="text-[10px] font-mono text-neutral-400 mt-0.5">Component libraries & token variables</p>
                         </div>
 
-                        <div onclick="openSkillModal('tokens')" class="skill-leaf-node skill-node-card glass-panel p-3.5 rounded-xl border border-cyan-500/30 bg-black/60 cursor-pointer group" data-category="design-eng">
-                            <div class="flex justify-between items-start mb-1">
-                                <span class="w-2 h-2 rounded-full bg-neon-cyan group-hover:animate-ping"></span>
-                                <span class="text-[9px] font-mono text-neon-cyan font-bold">3 Case Studies</span>
+                        <div onclick="openSkillModal('tailwind')" onmouseenter="highlightPath('path-code', '#00F3FF')" onmouseleave="resetPath('path-code')" class="cyber-node-wrapper glass-panel p-3.5 rounded-xl border border-cyan-500/30 bg-black/60 cursor-pointer group hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(0,243,255,0.4)] transition-all" data-category="code">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-lg bg-neon-cyan/20 border border-neon-cyan/50 flex items-center justify-center text-neon-cyan group-hover:scale-110 transition-transform">
+                                    <!-- Tailwind SVG -->
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.9.2 1.6 1 2.4 1.8 2.5 2.6 5.4 3 8.4 0.6M6 14c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.9.2 1.6 1 2.4 1.8 2.5 2.6 5.4 3 8.4 0.6"/></svg>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-center">
+                                        <h5 class="text-xs font-bold font-display text-white group-hover:text-neon-cyan transition-colors">TailwindCSS & CSS3</h5>
+                                        <span class="text-[8px] font-mono text-neon-cyan bg-cyan-500/10 px-1.5 py-0.5 rounded border border-cyan-500/30">NODE 02</span>
+                                    </div>
+                                    <p class="text-[9px] font-mono text-neutral-400 mt-0.5">Utility Grids & GPU Animations</p>
+                                </div>
                             </div>
-                            <h5 class="text-sm font-bold font-display text-white group-hover:text-neon-cyan transition-colors">Design Systems & Tokens</h5>
-                            <p class="text-[10px] font-mono text-neutral-400 mt-0.5">Figma-to-CSS 1-to-1 token parity</p>
                         </div>
 
-                        <div onclick="openSkillModal('grid_ui')" class="skill-leaf-node skill-node-card glass-panel p-3.5 rounded-xl border border-cyan-500/30 bg-black/60 cursor-pointer group" data-category="design-eng">
-                            <div class="flex justify-between items-start mb-1">
-                                <span class="w-2 h-2 rounded-full bg-neon-cyan group-hover:animate-ping"></span>
-                                <span class="text-[9px] font-mono text-neon-cyan font-bold">3 Case Studies</span>
+                        <div onclick="openSkillModal('threejs')" onmouseenter="highlightPath('path-code', '#00F3FF')" onmouseleave="resetPath('path-code')" class="cyber-node-wrapper glass-panel p-3.5 rounded-xl border border-cyan-500/30 bg-black/60 cursor-pointer group hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(0,243,255,0.4)] transition-all" data-category="code">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-lg bg-neon-cyan/20 border border-neon-cyan/50 flex items-center justify-center text-neon-cyan group-hover:scale-110 transition-transform">
+                                    <!-- 3D Cube SVG -->
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-center">
+                                        <h5 class="text-xs font-bold font-display text-white group-hover:text-neon-cyan transition-colors">WebGL & Three.js 3D</h5>
+                                        <span class="text-[8px] font-mono text-neon-cyan bg-cyan-500/10 px-1.5 py-0.5 rounded border border-cyan-500/30">NODE 03</span>
+                                    </div>
+                                    <p class="text-[9px] font-mono text-neutral-400 mt-0.5">Procedural Shaders & Particle Canopy</p>
+                                </div>
                             </div>
-                            <h5 class="text-sm font-bold font-display text-white group-hover:text-neon-cyan transition-colors">8pt Grid & UI Systems</h5>
-                            <p class="text-[10px] font-mono text-neutral-400 mt-0.5">Spatial layout & baseline typography</p>
                         </div>
                     </div>
 
-                    <!-- DISCIPLINE 2: INTERACTION UX -->
-                    <div class="space-y-3" data-category="ux-ui">
-                        <!-- Discipline Header Badge -->
+                    <!-- CATEGORY 2: DESIGN (MAGENTA) -->
+                    <div class="space-y-3" data-category="design">
                         <div class="glass-panel px-4 py-2 rounded-xl border border-pink-500/40 bg-pink-500/10 flex items-center justify-between">
-                            <span class="font-mono text-xs font-bold text-neon-magenta uppercase tracking-wider">02 // Interaction UX</span>
-                            <span class="w-2 h-2 rounded-full bg-neon-magenta"></span>
+                            <span class="font-mono text-xs font-bold text-neon-magenta uppercase tracking-wider">DOMAIN 02 // DESIGN [MAGENTA]</span>
+                            <span class="w-2 h-2 rounded-full bg-neon-magenta animate-pulse"></span>
                         </div>
 
-                        <!-- Floating Leaf Nodes -->
-                        <div onclick="openSkillModal('research')" class="skill-leaf-node skill-node-card glass-panel p-3.5 rounded-xl border border-pink-500/30 bg-black/60 cursor-pointer group" data-category="ux-ui">
-                            <div class="flex justify-between items-start mb-1">
-                                <span class="w-2 h-2 rounded-full bg-neon-magenta group-hover:animate-ping"></span>
-                                <span class="text-[9px] font-mono text-neon-magenta font-bold">3 Case Studies</span>
+                        <!-- Hex Nodes -->
+                        <div onclick="openSkillModal('figma')" onmouseenter="highlightPath('path-design', '#FF00A0')" onmouseleave="resetPath('path-design')" class="cyber-node-wrapper glass-panel p-3.5 rounded-xl border border-pink-500/30 bg-black/60 cursor-pointer group hover:border-pink-400 hover:shadow-[0_0_25px_rgba(255,0,160,0.4)] transition-all" data-category="design">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-lg bg-neon-magenta/20 border border-neon-magenta/50 flex items-center justify-center text-neon-magenta group-hover:scale-110 transition-transform">
+                                    <!-- Figma Pen SVG -->
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.5 7.5"/></svg>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-center">
+                                        <h5 class="text-xs font-bold font-display text-white group-hover:text-neon-magenta transition-colors">Figma Tokens & Auto-Layout</h5>
+                                        <span class="text-[8px] font-mono text-neon-magenta bg-pink-500/10 px-1.5 py-0.5 rounded border border-pink-500/30">NODE 04</span>
+                                    </div>
+                                    <p class="text-[9px] font-mono text-neutral-400 mt-0.5">Component Libraries & Variables</p>
+                                </div>
                             </div>
-                            <h5 class="text-sm font-bold font-display text-white group-hover:text-neon-magenta transition-colors">User Research & Personas</h5>
-                            <p class="text-[10px] font-mono text-neutral-400 mt-0.5">Persona audits & retention flows</p>
                         </div>
 
-                        <div onclick="openSkillModal('motion')" class="skill-leaf-node skill-node-card glass-panel p-3.5 rounded-xl border border-pink-500/30 bg-black/60 cursor-pointer group" data-category="ux-ui">
-                            <div class="flex justify-between items-start mb-1">
-                                <span class="w-2 h-2 rounded-full bg-neon-magenta group-hover:animate-ping"></span>
-                                <span class="text-[9px] font-mono text-neon-magenta font-bold">4 Case Studies</span>
+                        <div onclick="openSkillModal('motion')" onmouseenter="highlightPath('path-design', '#FF00A0')" onmouseleave="resetPath('path-design')" class="cyber-node-wrapper glass-panel p-3.5 rounded-xl border border-pink-500/30 bg-black/60 cursor-pointer group hover:border-pink-400 hover:shadow-[0_0_25px_rgba(255,0,160,0.4)] transition-all" data-category="design">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-lg bg-neon-magenta/20 border border-neon-magenta/50 flex items-center justify-center text-neon-magenta group-hover:scale-110 transition-transform">
+                                    <!-- Lightning Motion SVG -->
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-center">
+                                        <h5 class="text-xs font-bold font-display text-white group-hover:text-neon-magenta transition-colors">300ms Micro-Interactions</h5>
+                                        <span class="text-[8px] font-mono text-neon-magenta bg-pink-500/10 px-1.5 py-0.5 rounded border border-pink-500/30">NODE 05</span>
+                                    </div>
+                                    <p class="text-[9px] font-mono text-neutral-400 mt-0.5">Spring Physics & Cursor Engines</p>
+                                </div>
                             </div>
-                            <h5 class="text-sm font-bold font-display text-white group-hover:text-neon-magenta transition-colors">300ms Micro-Interactions & GSAP</h5>
-                            <p class="text-[10px] font-mono text-neutral-400 mt-0.5">Spring physics & cursor engines</p>
                         </div>
 
-                        <div onclick="openSkillModal('a11y')" class="skill-leaf-node skill-node-card glass-panel p-3.5 rounded-xl border border-pink-500/30 bg-black/60 cursor-pointer group" data-category="ux-ui">
-                            <div class="flex justify-between items-start mb-1">
-                                <span class="w-2 h-2 rounded-full bg-neon-magenta group-hover:animate-ping"></span>
-                                <span class="text-[9px] font-mono text-neon-magenta font-bold">2 Case Studies</span>
+                        <div onclick="openSkillModal('research')" onmouseenter="highlightPath('path-design', '#FF00A0')" onmouseleave="resetPath('path-design')" class="cyber-node-wrapper glass-panel p-3.5 rounded-xl border border-pink-500/30 bg-black/60 cursor-pointer group hover:border-pink-400 hover:shadow-[0_0_25px_rgba(255,0,160,0.4)] transition-all" data-category="design">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-lg bg-neon-magenta/20 border border-neon-magenta/50 flex items-center justify-center text-neon-magenta group-hover:scale-110 transition-transform">
+                                    <!-- User Target SVG -->
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><circle cx="19" cy="11" r="2"/></svg>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-center">
+                                        <h5 class="text-xs font-bold font-display text-white group-hover:text-neon-magenta transition-colors">User Research & Personas</h5>
+                                        <span class="text-[8px] font-mono text-neon-magenta bg-pink-500/10 px-1.5 py-0.5 rounded border border-pink-500/30">NODE 06</span>
+                                    </div>
+                                    <p class="text-[9px] font-mono text-neutral-400 mt-0.5">Persona Audits & Friction Flows</p>
+                                </div>
                             </div>
-                            <h5 class="text-sm font-bold font-display text-white group-hover:text-neon-magenta transition-colors">Accessibility (WCAG AA)</h5>
-                            <p class="text-[10px] font-mono text-neutral-400 mt-0.5">Contrast AA & keyboard focus rings</p>
                         </div>
                     </div>
 
-                    <!-- DISCIPLINE 3: FRONTEND ARCHITECTURE -->
-                    <div class="space-y-3" data-category="frontend">
-                        <!-- Discipline Header Badge -->
-                        <div class="glass-panel px-4 py-2 rounded-xl border border-lime-500/40 bg-lime-500/10 flex items-center justify-between">
-                            <span class="font-mono text-xs font-bold text-acid-lime uppercase tracking-wider">03 // Frontend Architecture</span>
-                            <span class="w-2 h-2 rounded-full bg-acid-lime"></span>
+                    <!-- CATEGORY 3: STRATEGY (TEAL) -->
+                    <div class="space-y-3" data-category="strategy">
+                        <div class="glass-panel px-4 py-2 rounded-xl border border-teal-500/40 bg-teal-500/10 flex items-center justify-between">
+                            <span class="font-mono text-xs font-bold text-[#00FFC8] uppercase tracking-wider">DOMAIN 03 // STRATEGY [TEAL]</span>
+                            <span class="w-2 h-2 rounded-full bg-[#00FFC8] animate-pulse"></span>
                         </div>
 
-                        <!-- Floating Leaf Nodes -->
-                        <div onclick="openSkillModal('react')" class="skill-leaf-node skill-node-card glass-panel p-3.5 rounded-xl border border-lime-500/30 bg-black/60 cursor-pointer group" data-category="frontend">
-                            <div class="flex justify-between items-start mb-1">
-                                <span class="w-2 h-2 rounded-full bg-acid-lime group-hover:animate-ping"></span>
-                                <span class="text-[9px] font-mono text-acid-lime font-bold">2 Case Studies</span>
+                        <!-- Hex Nodes -->
+                        <div onclick="openSkillModal('tokens')" onmouseenter="highlightPath('path-strategy', '#00FFC8')" onmouseleave="resetPath('path-strategy')" class="cyber-node-wrapper glass-panel p-3.5 rounded-xl border border-teal-500/30 bg-black/60 cursor-pointer group hover:border-teal-400 hover:shadow-[0_0_25px_rgba(0,255,200,0.4)] transition-all" data-category="strategy">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-lg bg-[#00FFC8]/20 border border-[#00FFC8]/50 flex items-center justify-center text-[#00FFC8] group-hover:scale-110 transition-transform">
+                                    <!-- Layers SVG -->
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-center">
+                                        <h5 class="text-xs font-bold font-display text-white group-hover:text-[#00FFC8] transition-colors">Design Systems & Tokens</h5>
+                                        <span class="text-[8px] font-mono text-[#00FFC8] bg-teal-500/10 px-1.5 py-0.5 rounded border border-teal-500/30">NODE 07</span>
+                                    </div>
+                                    <p class="text-[9px] font-mono text-neutral-400 mt-0.5">Token Standardization & Governance</p>
+                                </div>
                             </div>
-                            <h5 class="text-sm font-bold font-display text-white group-hover:text-acid-lime transition-colors">React & Next.js</h5>
-                            <p class="text-[10px] font-mono text-neutral-400 mt-0.5">Component modularity & SSR</p>
                         </div>
 
-                        <div onclick="openSkillModal('tailwind')" class="skill-leaf-node skill-node-card glass-panel p-3.5 rounded-xl border border-lime-500/30 bg-black/60 cursor-pointer group" data-category="frontend">
-                            <div class="flex justify-between items-start mb-1">
-                                <span class="w-2.5 h-2.5 rounded-full bg-acid-lime group-hover:animate-ping"></span>
-                                <span class="text-[9px] font-mono text-acid-lime font-bold">5 Case Studies</span>
+                        <div onclick="openSkillModal('a11y')" onmouseenter="highlightPath('path-strategy', '#00FFC8')" onmouseleave="resetPath('path-strategy')" class="cyber-node-wrapper glass-panel p-3.5 rounded-xl border border-teal-500/30 bg-black/60 cursor-pointer group hover:border-teal-400 hover:shadow-[0_0_25px_rgba(0,255,200,0.4)] transition-all" data-category="strategy">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-lg bg-[#00FFC8]/20 border border-[#00FFC8]/50 flex items-center justify-center text-[#00FFC8] group-hover:scale-110 transition-transform">
+                                    <!-- Shield SVG -->
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 12 14 22 4"/></svg>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-center">
+                                        <h5 class="text-xs font-bold font-display text-white group-hover:text-[#00FFC8] transition-colors">Accessibility (WCAG AA)</h5>
+                                        <span class="text-[8px] font-mono text-[#00FFC8] bg-teal-500/10 px-1.5 py-0.5 rounded border border-teal-500/30">NODE 08</span>
+                                    </div>
+                                    <p class="text-[9px] font-mono text-neutral-400 mt-0.5">Contrast AA & Keyboard Focus Rings</p>
+                                </div>
                             </div>
-                            <h5 class="text-sm font-bold font-display text-white group-hover:text-acid-lime transition-colors">TailwindCSS & CSS3</h5>
-                            <p class="text-[10px] font-mono text-neutral-400 mt-0.5">Utility classes & GPU animations</p>
                         </div>
 
-                        <div onclick="openSkillModal('threejs')" class="skill-leaf-node skill-node-card glass-panel p-3.5 rounded-xl border border-lime-500/30 bg-black/60 cursor-pointer group" data-category="frontend">
-                            <div class="flex justify-between items-start mb-1">
-                                <span class="w-2.5 h-2.5 rounded-full bg-acid-lime group-hover:animate-ping"></span>
-                                <span class="text-[9px] font-mono text-acid-lime font-bold">2 Case Studies</span>
+                        <div onclick="openSkillModal('grid_ui')" onmouseenter="highlightPath('path-strategy', '#00FFC8')" onmouseleave="resetPath('path-strategy')" class="cyber-node-wrapper glass-panel p-3.5 rounded-xl border border-teal-500/30 bg-black/60 cursor-pointer group hover:border-teal-400 hover:shadow-[0_0_25px_rgba(0,255,200,0.4)] transition-all" data-category="strategy">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-lg bg-[#00FFC8]/20 border border-[#00FFC8]/50 flex items-center justify-center text-[#00FFC8] group-hover:scale-110 transition-transform">
+                                    <!-- Grid SVG -->
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-center">
+                                        <h5 class="text-xs font-bold font-display text-white group-hover:text-[#00FFC8] transition-colors">8pt Grid & Architecture</h5>
+                                        <span class="text-[8px] font-mono text-[#00FFC8] bg-teal-500/10 px-1.5 py-0.5 rounded border border-teal-500/30">NODE 09</span>
+                                    </div>
+                                    <p class="text-[9px] font-mono text-neutral-400 mt-0.5">Spatial Layout Ramps & Baseline</p>
+                                </div>
                             </div>
-                            <h5 class="text-sm font-bold font-display text-white group-hover:text-acid-lime transition-colors">WebGL & Three.js</h5>
-                            <p class="text-[10px] font-mono text-neutral-400 mt-0.5">3D canvas & procedural shaders</p>
                         </div>
                     </div>
                 </div>
@@ -4768,6 +4837,28 @@ gsap.to(camera.position, {
             }
 
             
+            
+            // 2077 Cyber-Skill Network Prerequisite Light-Line Path Highlighting
+            function highlightPath(pathId, glowColor) {
+                const line = document.getElementById(pathId);
+                if (line) {
+                    line.setAttribute('stroke', glowColor);
+                    line.setAttribute('stroke-width', '3.5');
+                    line.setAttribute('stroke-opacity', '1');
+                    line.style.filter = `drop-shadow(0 0 10px ${glowColor})`;
+                }
+            }
+
+            function resetPath(pathId) {
+                const line = document.getElementById(pathId);
+                if (line) {
+                    line.setAttribute('stroke', '#94A3B8');
+                    line.setAttribute('stroke-width', '1.5');
+                    line.setAttribute('stroke-opacity', '0.4');
+                    line.style.filter = 'none';
+                }
+            }
+
             // Interactive Skill Tree Database & Modal Control
             const skillDatabase = {
                 react: {
