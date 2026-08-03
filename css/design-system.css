@@ -166,14 +166,7 @@ section.is-revealed .timeline-chapter-3 { transition-delay: 520ms; opacity: 1; t
 }
 
 .reveal-frame::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    height: 40%;
-    background: linear-gradient(180deg, transparent 0%, var(--glow-color, rgba(0, 243, 255, 0.25)) 50%, transparent 100%);
-    pointer-events: none;
-    opacity: 0;
-    z-index: 15;
+    display: none !important;
 }
 
 /* Neon Laser Boundary Horizon Line */
@@ -198,10 +191,7 @@ section.is-revealed .reveal-item {
     filter: blur(0px);
 }
 
-section.is-revealed .reveal-frame::after {
-    animation: scanline-sheen 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    animation-delay: 0.8s;
-}
+
 
 section.is-revealed .project-boundary-line {
     opacity: 0.85;
