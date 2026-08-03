@@ -5068,27 +5068,50 @@ gsap.to(camera.position, {
 
             function filterSkillNodes(category) {
                 playSyntheticClick('click');
+
+                // 1. Update active tab styling with glowing category accents
                 const tabBtns = document.querySelectorAll('.skill-tab-btn');
                 tabBtns.forEach(btn => {
-                    if (btn.getAttribute('data-category') === category) {
-                        btn.className = 'skill-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-neon-cyan text-void shadow-neon cursor-pointer';
+                    const cat = btn.getAttribute('data-category');
+                    if (cat === category) {
+                        if (cat === 'all') {
+                            btn.className = 'skill-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-neon-cyan text-void shadow-neon cursor-pointer';
+                        } else if (cat === 'ux-ui') {
+                            btn.className = 'skill-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-neon-magenta text-void shadow-[0_0_15px_rgba(255,0,160,0.6)] cursor-pointer';
+                        } else if (cat === 'frontend') {
+                            btn.className = 'skill-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-neon-cyan text-void shadow-neon cursor-pointer';
+                        } else if (cat === 'systems') {
+                            btn.className = 'skill-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-acid-lime text-void shadow-[0_0_15px_rgba(212,255,0,0.6)] cursor-pointer';
+                        }
                     } else {
                         btn.className = 'skill-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-neutral-400 hover:text-white cursor-pointer';
                     }
                 });
 
-                const cards = document.querySelectorAll('.skill-node-card');
-                cards.forEach(card => {
-                    const cardCat = card.getAttribute('data-category');
-                    if (category === 'all' || cardCat === category) {
-                        card.style.display = 'block';
-                        card.style.opacity = '1';
+                // 2. Filter Column Containers & Perk Nodes
+                const columns = document.querySelectorAll('#skill-nodes-container > div[data-category]');
+                columns.forEach(col => {
+                    const colCat = col.getAttribute('data-category');
+                    if (category === 'all' || colCat === category) {
+                        col.style.display = 'block';
+                        col.style.opacity = '1';
+                        col.style.transform = 'scale(1)';
+                        col.style.transition = 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)';
                     } else {
-                        card.style.display = 'none';
-                        card.style.opacity = '0';
+                        col.style.display = 'none';
+                        col.style.opacity = '0';
+                        col.style.transform = 'scale(0.95)';
                     }
                 });
+
+                // 3. Toggle SVG connecting lines layer
+                const svgLayer = document.querySelector('#skill-nodes-container svg');
+                if (svgLayer) {
+                    svgLayer.style.opacity = category === 'all' ? '1' : '0.2';
+                }
             }
+
+
 
             // Use IntersectionObserver — triggers section reveals and HUD dot updates
             const hudObserver = new IntersectionObserver((entries) => {
