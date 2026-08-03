@@ -1,3 +1,15 @@
+/* Extreme 60 FPS Hardware Acceleration & GPU Compositing Layering */
+#hud-side-nav, #hud-header, #custom-cursor, .hud-nav-item, .hud-nav-label, .hud-dot, .reveal-item, .reveal-frame, .project-bg-img {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    will-change: transform, opacity;
+}
+
+section {
+    contain: layout style paint;
+}
+
 /* ==========================================================================
    PORTFOLIO DESIGN SYSTEM & HARDWARE-ACCELERATED ANIMATION STYLESHEET
    ========================================================================== */

@@ -195,6 +195,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Force Initial Theme Sync on Load
     setTimeout(() => updateActiveHUDDot('hero', true), 100);
 
+    // 60 FPS Performance Engine: Auto-pause offscreen videos to free GPU/CPU decoders
+    const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const video = entry.target;
+            if (entry.isIntersecting) {
+                video.play().catch(() => {});
+            } else {
+                video.pause();
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('video').forEach(video => {
+        videoObserver.observe(video);
+    });
+
+
     // Hardware-Accelerated Custom Cursor Engine with requestAnimationFrame
     const cursorOuter = document.getElementById('custom-cursor');
     const cursorInner = document.getElementById('custom-cursor-dot');
