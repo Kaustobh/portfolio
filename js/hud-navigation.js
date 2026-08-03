@@ -92,31 +92,35 @@ function updateActiveHUDDot(activeKey, force = false) {
             if (isCatActive) {
                 label.style.opacity = '1';
                 label.style.transform = 'translateX(0)';
+                label.style.pointerEvents = 'auto';
             } else {
                 label.style.opacity = '';
                 label.style.transform = '';
+                label.style.pointerEvents = '';
             }
         }
     });
 
     document.querySelectorAll('.hud-dot').forEach(dot => {
         const sec = dot.getAttribute('data-section');
+        const dotTarget = dot.querySelector('span') || dot;
         if (sec === activeKey) {
-            dot.style.height = '20px';
-            dot.style.width = '8px';
-            dot.style.borderRadius = '9999px';
-            dot.style.backgroundColor = activeColor;
-            dot.style.boxShadow = `0 0 16px ${activeShadow}, 0 0 25px ${activeColor}`;
-            dot.style.borderColor = activeColor;
-            dot.style.transform  = 'scale(1.1)';
+            // Restore active dot pill expansion back to 26px height
+            dotTarget.style.height = '26px';
+            dotTarget.style.width = '10px';
+            dotTarget.style.borderRadius = '9999px';
+            dotTarget.style.backgroundColor = activeColor;
+            dotTarget.style.boxShadow = `0 0 16px ${activeShadow}, 0 0 30px ${activeColor}`;
+            dotTarget.style.borderColor = activeColor;
+            dotTarget.style.transform  = 'scale(1.1)';
         } else {
-            dot.style.height = '';
-            dot.style.width = '';
-            dot.style.borderRadius = '';
-            dot.style.backgroundColor = '';
-            dot.style.boxShadow = '';
-            dot.style.borderColor = '';
-            dot.style.transform  = '';
+            dotTarget.style.height = '';
+            dotTarget.style.width = '';
+            dotTarget.style.borderRadius = '';
+            dotTarget.style.backgroundColor = '';
+            dotTarget.style.boxShadow = '';
+            dotTarget.style.borderColor = '';
+            dotTarget.style.transform  = '';
         }
     });
 }
