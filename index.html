@@ -3820,56 +3820,107 @@ gsap.to(camera.position, {
                 return [r, g, b];
             }
 
+                        // Principal Web Performance Optimization: Pre-allocated static color buffer (Zero GC allocation)
+            const rgbScratch = new Float32Array(3);
+            function hslToRgbInPlace(h, s, l, out) {
+                h /= 360; s /= 100; l /= 100;
+                let r, g, b;
+                if (s === 0) {
+                    r = g = b = l;
+                } else {
+                    const hue2rgb = (p, q, t) => {
+                        if (t < 0) t += 1;
+                        if (t > 1) t -= 1;
+                        if (t < 1/6) return p + (q - p) * 6 * t;
+                        if (t < 1/2) return q;
+                        if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+                        return p;
+                    };
+                    const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+                    const p = 2 * l - q;
+                    r = hue2rgb(p, q, h + 1/3);
+                    g = hue2rgb(p, q, h);
+                    b = hue2rgb(p, q, h - 1/3);
+                }
+                out[0] = r; out[1] = g; out[2] = b;
+            }
+
+            let lastFrameTime = performance.now();
+            let cachedScrollPercentage = 0;
+            let isHeroCanvasVisible = true;
+            let animationFrameId = null;
+
+            // Cached scroll listener (eliminates layout thrashing inside 60FPS loop)
+            window.addEventListener('scroll', () => {
+                const docH = document.documentElement.scrollHeight - window.innerHeight;
+                cachedScrollPercentage = docH > 0 ? window.scrollY / docH : 0;
+            }, { passive: true });
+
+            // Pause Three.js loop when offscreen or tab hidden
+            const heroObserver = new IntersectionObserver((entries) => {
+                isHeroCanvasVisible = entries[0].isIntersecting;
+                if (isHeroCanvasVisible && !animationFrameId) {
+                    lastFrameTime = performance.now();
+                    animate();
+                }
+            }, { threshold: 0.05 });
+            heroObserver.observe(el);
+
+            document.addEventListener('visibilitychange', () => {
+                if (document.visibilityState === 'visible' && isHeroCanvasVisible && !animationFrameId) {
+                    lastFrameTime = performance.now();
+                    animate();
+                }
+            });
+
             function animate() {
-                timeFactor += 0.008;
+                if (!isHeroCanvasVisible || document.visibilityState === 'hidden') {
+                    animationFrameId = null;
+                    return;
+                }
+
+                const now = performance.now();
+                const delta = Math.min((now - lastFrameTime) / 1000, 0.1); // Cap delta to prevent huge jumps
+                lastFrameTime = now;
+
+                timeFactor += delta * 0.48; // Delta-time standardized frame update (120Hz+ smooth)
                 
-                // Interpolate mouse movements
                 mouseX = THREE.MathUtils.lerp(mouseX, targetMouseX, 0.05);
                 mouseY = THREE.MathUtils.lerp(mouseY, targetMouseY, 0.05);
                 
-                // Scroll-based camera Zoom reactivity
-                const scrollPercentage = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-                camera.position.z = 70 + scrollPercentage * 25; // Zoom out slightly on scroll down
+                camera.position.z = 70 + cachedScrollPercentage * 25;
                 
-                // Subtle camera orbital rotation
                 points.rotation.y = timeFactor * 0.03 + mouseX * 0.05;
                 points.rotation.x = mouseY * 0.05;
                 
                 const posAttr = geometry.attributes.position;
                 const colAttr = geometry.attributes.color;
                 
-                // Dynamic math wave calculations with mouse wave ripple perturbations
                 for (let i = 0; i < cols; i++) {
                     for (let j = 0; j < rows; j++) {
                         const idx = i * rows + j;
                         const x = posAttr.getX(idx);
                         const z = posAttr.getZ(idx);
                         
-                        // 1. Physical ripples displacing terrain
-                        // Calculate grid coordinate distance from mouse mapped relative position
-                        const distToMouse = Math.sqrt(Math.pow(x - mouseX * 12, 2) + Math.pow(z - mouseY * 12, 2));
+                        const distToMouse = Math.sqrt((x - mouseX * 12) * (x - mouseX * 12) + (z - mouseY * 12) * (z - mouseY * 12));
                         
-                        // Sinusoidal ripple wave radiating
                         let rippleDisplacement = 0;
                         if (distToMouse < 22) {
                             rippleDisplacement = Math.sin(distToMouse * 0.3 - timeFactor * 6.5) * Math.max(0, 7.5 - distToMouse * 0.35);
                         }
                         
-                        // Gentle natural terrain wave + mouse ripple
                         const baseWave = Math.sin(x * 0.08 + timeFactor * 1.5) * Math.cos(z * 0.08 + timeFactor * 1.5) * 8.5;
                         posAttr.setY(idx, baseWave + rippleDisplacement);
 
-                        // 2. Vibrant multi-color Flow Spectrum HSL mapping
-                        // Dark: intense cyberpunk neons; Light: highly saturated pastels
                         let hue = (x * 2.2 + z * 2.2 + timeFactor * 55) % 360;
                         if (hue < 0) hue += 360;
                         
                         let sat = isLightMode ? 85 : 100;
-                        let light = isLightMode ? 65 : 45; // Pastel lights vs high contrast neons
+                        let light = isLightMode ? 65 : 45;
                         
-                        // Convert flowing color and update array
-                        const [r, g, b] = hslToRgb(hue, sat, light);
-                        colAttr.setXYZ(idx, r, g, b);
+                        // Zero allocation color assignment
+                        hslToRgbInPlace(hue, sat, light, rgbScratch);
+                        colAttr.setXYZ(idx, rgbScratch[0], rgbScratch[1], rgbScratch[2]);
                     }
                 }
                 
@@ -3877,7 +3928,7 @@ gsap.to(camera.position, {
                 colAttr.needsUpdate = true;
                 
                 renderer.render(scene, camera);
-                requestAnimationFrame(animate);
+                animationFrameId = requestAnimationFrame(animate);
             }
             animate();
         }
@@ -6149,7 +6200,23 @@ gsap.to(camera.position, {
                 ph = pCanvas.height = window.innerHeight; 
             });
 
+                        let is2DCanvasVisible = true;
+            let frameId2D = null;
+
+            const canvasObserver = new IntersectionObserver((entries) => {
+                is2DCanvasVisible = entries[0].isIntersecting;
+                if (is2DCanvasVisible && !frameId2D) {
+                    draw2DParticles();
+                }
+            }, { threshold: 0.05 });
+            if (pCanvas) canvasObserver.observe(pCanvas);
+
             function draw2DParticles() {
+                if (!is2DCanvasVisible || document.visibilityState === 'hidden') {
+                    frameId2D = null;
+                    return;
+                }
+
                 pCtx.clearRect(0, 0, pw, ph);
                 const isLight = document.body.classList.contains('light');
 
@@ -6157,7 +6224,6 @@ gsap.to(camera.position, {
                     p.x += p.vx;
                     p.y += p.vy;
                     
-                    // Screen borders bounce
                     if (p.x < 0 || p.x > pw) p.vx *= -1;
                     if (p.y < 0 || p.y > ph) p.vy *= -1;
                     
@@ -6165,24 +6231,21 @@ gsap.to(camera.position, {
                     const dy = p.y - pMouse.y;
                     const dist = Math.sqrt(dx*dx + dy*dy);
                     
-                    // Spring-back repulsion force
                     if (pMouse.active && dist < 125) {
                         const force = (125 - dist) / 125;
                         p.vx += (dx / dist) * force * 0.085;
                         p.vy += (dy / dist) * force * 0.085;
                     } else {
-                        // Slowly friction ease speed back to gentle baseline
                         p.vx += ((p.vx > 0 ? 0.15 : -0.15) - p.vx) * 0.02;
                         p.vy += ((p.vy > 0 ? 0.15 : -0.15) - p.vy) * 0.02;
                     }
                     
                     pCtx.beginPath();
-                    // Adaptive particle colors (electric pink vs cyan/magenta accents)
                     pCtx.fillStyle = isLight ? "rgba(230, 0, 122, 0.22)" : "rgba(255, 0, 160, 0.35)";
                     pCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
                     pCtx.fill();
                 }
-                requestAnimationFrame(draw2DParticles);
+                frameId2D = requestAnimationFrame(draw2DParticles);
             }
             draw2DParticles();
         });
