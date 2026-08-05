@@ -68,12 +68,25 @@ function startSoothingAmbientHymn() {
         filter.connect(ambientGainNode);
         ambientGainNode.connect(audioCtx.destination);
         isAmbientPlaying = true;
+
+        // Sync hero background video audio with ambient hymn
+        const heroVid = document.getElementById('hero-bg-video');
+        if (heroVid) {
+            heroVid.muted = false;
+            heroVid.volume = 0.6;
+            heroVid.play().catch(() => {});
+        }
     } catch (e) {
         // Fallback silently if audio policy restricts context
     }
 }
 
 function stopSoothingAmbientHymn() {
+    // Sync hero background video audio with ambient hymn
+    const heroVid = document.getElementById('hero-bg-video');
+    if (heroVid) {
+        heroVid.muted = true;
+    }
     if (!isAmbientPlaying) return;
     try {
         if (ambientGainNode && audioCtx) {
