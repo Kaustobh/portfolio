@@ -14,6 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="preload" href="hero.webm" as="video" type="video/webm" fetchpriority="high">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=Space+Mono&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS (CDN for standalone file) -->
@@ -855,19 +857,21 @@
 
     <!-- HERO SECTION -->
     <section id="hero-section" class="relative h-screen w-full flex flex-col justify-center px-8 md:px-24 overflow-hidden snap-start">
-        <!-- Portrait background image in the center (behind the animation) -->
-        <div class="absolute inset-0 flex items-center justify-center z-0 pointer-events-none overflow-hidden">
-            <img decoding="async" src="hero_portrait.jpg" width="800" height="1000" loading="lazy" 
-                alt="Kaustobh Portrait" 
-                class="h-[75%] md:h-[85%] object-contain opacity-25 dark:opacity-35 light:opacity-15 mix-blend-multiply dark:mix-blend-screen dark:invert transition-all duration-300" 
-            />
-        </div>
+        <!-- HTML5 Background Video -->
+        <video
+            id="hero-bg-video"
+            src="hero.webm"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            decoding="async"
+            class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-35 dark:opacity-40 light:opacity-20 transition-opacity duration-500 transform-gpu"
+        ></video>
 
-        <!-- 3D Hero Canvas Container -->
-        <div id="hero-canvas" class="absolute inset-0 z-0 pointer-events-none opacity-85 dark:opacity-85 light:opacity-95 transition-opacity"></div>
-        
-        <!-- Subtle noise overlay -->
-        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.12] dark:opacity-[0.12] light:opacity-[0.06] mix-blend-overlay z-0 pointer-events-none"></div>
+        <!-- Readability Backdrop Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-void via-void/80 to-transparent pointer-events-none z-5"></div>
 
         <div class="relative z-10 max-w-4xl">
             <h2 class="text-neon-cyan dark:text-neon-cyan light:text-electric-blue font-mono text-sm md:text-base uppercase tracking-[0.3em] mb-4 animate-fade-in inline-block font-semibold">
@@ -3714,226 +3718,6 @@ gsap.to(camera.position, {
 
     <!-- CORE FRAMEWORK JAVASCRIPT LOGIC -->
     
-    <!-- Three.js module and systems -->
-    <script type="module">
-        import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
-
-        // Check for reduced motion preference
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        if (!prefersReducedMotion) {
-            const el = document.getElementById('hero-canvas');
-            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-            el.appendChild(renderer.domElement);
-
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 1000);
-            camera.position.z = 70;
-
-            const geometry = new THREE.BufferGeometry();
-            
-            // Grid-based particle topography terrain
-            const cols = window.innerWidth < 768 ? 40 : 70;
-            const rows = window.innerWidth < 768 ? 30 : 60;
-            const count = cols * rows;
-            const positions = new Float32Array(count * 3);
-            const colors = new Float32Array(count * 3);
-            
-            const cellWidth = 3.5;
-            const cellHeight = 3.5;
-            const xOffset = -(cols - 1) * cellWidth / 2;
-            const zOffset = -(rows - 1) * cellHeight / 2;
-
-            for (let i = 0; i < cols; i++) {
-                for (let j = 0; j < rows; j++) {
-                    const idx = i * rows + j;
-                    const x = i * cellWidth + xOffset;
-                    const z = j * cellHeight + zOffset;
-                    
-                    positions[idx * 3 + 0] = x;
-                    positions[idx * 3 + 1] = Math.sin(x * 0.08) * Math.cos(z * 0.08) * 12; // Wave terrain base
-                    positions[idx * 3 + 2] = z;
-                }
-            }
-            
-            geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-            geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
-            
-            // Custom Points Material supporting vertex coloring
-            const material = new THREE.PointsMaterial({ 
-                size: 1.55, 
-                transparent: true, 
-                opacity: 0.9,
-                vertexColors: true
-            });
-            
-            const points = new THREE.Points(geometry, material);
-            scene.add(points);
-
-            let mouseX = 0, mouseY = 0;
-            let targetMouseX = 0, targetMouseY = 0;
-            let timeFactor = 0;
-            let isLightMode = !document.documentElement.classList.contains('dark');
-
-            window.addEventListener("mousemove", (e) => {
-                targetMouseX = (e.clientX - window.innerWidth / 2) * 0.015;
-                targetMouseY = (e.clientY - window.innerHeight / 2) * 0.015;
-            });
-
-            window.addEventListener("resize", () => {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
-            });
-
-            // Monitor theme updates
-            const themeObserver = new MutationObserver(() => {
-                isLightMode = !document.documentElement.classList.contains('dark');
-            });
-            themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-
-            // Helper: HSL to RGB conversion
-            function hslToRgb(h, s, l) {
-                h /= 360;
-                s /= 100;
-                l /= 100;
-                let r, g, b;
-                if (s === 0) {
-                    r = g = b = l; // achromatic
-                } else {
-                    const hue2rgb = (p, q, t) => {
-                        if (t < 0) t += 1;
-                        if (t > 1) t -= 1;
-                        if (t < 1/6) return p + (q - p) * 6 * t;
-                        if (t < 1/2) return q;
-                        if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
-                        return p;
-                    };
-                    const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-                    const p = 2 * l - q;
-                    r = hue2rgb(p, q, h + 1/3);
-                    g = hue2rgb(p, q, h);
-                    b = hue2rgb(p, q, h - 1/3);
-                }
-                return [r, g, b];
-            }
-
-                        // Principal Web Performance Optimization: Pre-allocated static color buffer (Zero GC allocation)
-            const rgbScratch = new Float32Array(3);
-            function hslToRgbInPlace(h, s, l, out) {
-                h /= 360; s /= 100; l /= 100;
-                let r, g, b;
-                if (s === 0) {
-                    r = g = b = l;
-                } else {
-                    const hue2rgb = (p, q, t) => {
-                        if (t < 0) t += 1;
-                        if (t > 1) t -= 1;
-                        if (t < 1/6) return p + (q - p) * 6 * t;
-                        if (t < 1/2) return q;
-                        if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
-                        return p;
-                    };
-                    const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-                    const p = 2 * l - q;
-                    r = hue2rgb(p, q, h + 1/3);
-                    g = hue2rgb(p, q, h);
-                    b = hue2rgb(p, q, h - 1/3);
-                }
-                out[0] = r; out[1] = g; out[2] = b;
-            }
-
-            let lastFrameTime = performance.now();
-            let cachedScrollPercentage = 0;
-            let isHeroCanvasVisible = true;
-            let animationFrameId = null;
-
-            // Cached scroll listener (eliminates layout thrashing inside 60FPS loop)
-            window.addEventListener('scroll', () => {
-                const docH = document.documentElement.scrollHeight - window.innerHeight;
-                cachedScrollPercentage = docH > 0 ? window.scrollY / docH : 0;
-            }, { passive: true });
-
-            // Pause Three.js loop when offscreen or tab hidden
-            const heroObserver = new IntersectionObserver((entries) => {
-                isHeroCanvasVisible = entries[0].isIntersecting;
-                if (isHeroCanvasVisible && !animationFrameId) {
-                    lastFrameTime = performance.now();
-                    animate();
-                }
-            }, { threshold: 0.05 });
-            heroObserver.observe(el);
-
-            document.addEventListener('visibilitychange', () => {
-                if (document.visibilityState === 'visible' && isHeroCanvasVisible && !animationFrameId) {
-                    lastFrameTime = performance.now();
-                    animate();
-                }
-            });
-
-            function animate() {
-                if (!isHeroCanvasVisible || document.visibilityState === 'hidden') {
-                    animationFrameId = null;
-                    return;
-                }
-
-                const now = performance.now();
-                const delta = Math.min((now - lastFrameTime) / 1000, 0.1); // Cap delta to prevent huge jumps
-                lastFrameTime = now;
-
-                timeFactor += delta * 0.48; // Delta-time standardized frame update (120Hz+ smooth)
-                
-                mouseX = THREE.MathUtils.lerp(mouseX, targetMouseX, 0.05);
-                mouseY = THREE.MathUtils.lerp(mouseY, targetMouseY, 0.05);
-                
-                camera.position.z = 70 + cachedScrollPercentage * 25;
-                
-                points.rotation.y = timeFactor * 0.03 + mouseX * 0.05;
-                points.rotation.x = mouseY * 0.05;
-                
-                const posAttr = geometry.attributes.position;
-                const colAttr = geometry.attributes.color;
-                
-                for (let i = 0; i < cols; i++) {
-                    for (let j = 0; j < rows; j++) {
-                        const idx = i * rows + j;
-                        const x = posAttr.getX(idx);
-                        const z = posAttr.getZ(idx);
-                        
-                        const distToMouse = Math.sqrt((x - mouseX * 12) * (x - mouseX * 12) + (z - mouseY * 12) * (z - mouseY * 12));
-                        
-                        let rippleDisplacement = 0;
-                        if (distToMouse < 22) {
-                            rippleDisplacement = Math.sin(distToMouse * 0.3 - timeFactor * 6.5) * Math.max(0, 7.5 - distToMouse * 0.35);
-                        }
-                        
-                        const baseWave = Math.sin(x * 0.08 + timeFactor * 1.5) * Math.cos(z * 0.08 + timeFactor * 1.5) * 8.5;
-                        posAttr.setY(idx, baseWave + rippleDisplacement);
-
-                        let hue = (x * 2.2 + z * 2.2 + timeFactor * 55) % 360;
-                        if (hue < 0) hue += 360;
-                        
-                        let sat = isLightMode ? 85 : 100;
-                        let light = isLightMode ? 65 : 45;
-                        
-                        // Zero allocation color assignment
-                        hslToRgbInPlace(hue, sat, light, rgbScratch);
-                        colAttr.setXYZ(idx, rgbScratch[0], rgbScratch[1], rgbScratch[2]);
-                    }
-                }
-                
-                posAttr.needsUpdate = true;
-                colAttr.needsUpdate = true;
-                
-                renderer.render(scene, camera);
-                animationFrameId = requestAnimationFrame(animate);
-            }
-            animate();
-        }
-    </script>
-
     <!-- UI/UX interactions, scheduler, validations, chatbot, wireframe slider, audio click synth -->
     <script>
         // Global Modal & Video Player Controls — defined immediately for instant click execution
