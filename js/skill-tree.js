@@ -1,129 +1,163 @@
 /**
  * ==========================================================================
- * SKILL TREE DATABASE & INTERACTIVE PERK NETWORK ENGINE
+ * SKILL TREE DATABASE & INTERACTIVE PERK NETWORK ENGINE (VERIFIED CERTS)
  * ==========================================================================
  */
 
 const skillDatabase = {
-    react: {
-        title: "React & Next.js",
-        category: "[Frontend & Engineering]",
-        context: "Engineered responsive UI architectures, modular component systems, and client/server-side data rendering for complex web applications.",
-        projects: [
-            { name: "PulseHQ AI", modalId: "fintech-modal" },
-            { name: "E-Comm Checkout", modalId: "checkout-modal" }
-        ],
-        badge: {
-            title: "Meta Frontend Developer Professional Certificate",
-            issuer: "Meta • Coursera Verified"
-        }
-    },
     figma: {
-        title: "Figma & Auto-Layout",
+        title: "Figma Pro : Advanced Figma",
+        issuer: "Skillshare • Issued Aug 2026",
+        credentialId: "2I4R8SENDAUC",
+        credentialUrl: "https://www.coursera.org/account/accomplishments/records/2I4R8SENDAUC",
         category: "[UX & UI Design]",
-        context: "Built pixel-perfect, responsive component libraries utilizing Figma Auto-Layout 5.0, variables, component properties, and interactive variant states.",
+        context: "Deepened skills in building scalable design systems and responsive layouts. Key areas: nested auto layouts & constraints, reusable component workflows/variants, and mobile/web UI spacing best practices. 🎨✨",
+        skills: ["Advanced Figma", "Figma (Software)", "Design Systems", "Auto-Layout"],
         projects: [
             { name: "PulseHQ AI", modalId: "fintech-modal" },
-            { name: "Silvatide Cottage", modalId: "Silvatide-modal" },
-            { name: "Bio Grid Telemetry", modalId: "BioGrid-modal" }
-        ],
-        badge: {
-            title: "Google UX Design Professional Certificate",
-            issuer: "Google • Coursera Verified"
-        }
+            { name: "Silvatide", modalId: "Silvatide-modal" },
+            { name: "Bio Grid", modalId: "BioGrid-modal" }
+        ]
     },
-    tokens: {
-        title: "Design Systems & Tokens",
-        category: "[Systems & Strategy]",
-        context: "Established scalable token architectures (colors, typography, spacing, shadows) enforcing 1-to-1 parity between Figma UI kits and CSS production tokens.",
+    react: {
+        title: "Developing Front-End Apps with React",
+        issuer: "IBM • Issued Jul 2026",
+        credentialId: "PZXXD5JE5VO1",
+        credentialUrl: "https://www.coursera.org/account/accomplishments/records/PZXXD5JE5VO1",
+        category: "[Frontend Engineering]",
+        context: "Mastered React component architecture, Redux state management, JSX extensions, hooks, and dynamic data rendering for high-performance web applications.",
+        skills: ["Redux.js", "JavaScript eXtension (JSX)", "React", "State Management"],
         projects: [
             { name: "PulseHQ AI", modalId: "fintech-modal" },
-            { name: "E-Comm Checkout", modalId: "checkout-modal" }
-        ],
-        badge: {
-            title: "Design Systems Architecture Specialist",
-            issuer: "UX Design Institute Verified"
-        }
+            { name: "Checkout", modalId: "checkout-modal" }
+        ]
     },
-    tailwind: {
-        title: "TailwindCSS & Modern CSS3",
-        category: "[Frontend & Engineering]",
-        context: "Crafted utility-first responsive layouts, custom design system extensions, CSS grid systems, and hardware-accelerated micro-interactions.",
+    game_ux: {
+        title: "User Experience in Game Design",
+        issuer: "Epic Games • Issued May 2026",
+        credentialId: "PZ97R09ORY95",
+        credentialUrl: "https://www.coursera.org/account/accomplishments/records/PZ97R09ORY95",
+        category: "[UX & Game Design]",
+        context: "Explored how UX shapes the way players interact with games. Deepened understanding of game feel, usability, accessibility, learning curves, playtesting, and game loops — all essential for engaging experiences. 🎮✨",
+        skills: ["UI/UX Research", "Game Development", "Playtesting", "Game Loops"],
         projects: [
-            { name: "PulseHQ AI", modalId: "fintech-modal" },
-            { name: "Silvatide Cottage", modalId: "Silvatide-modal" },
-            { name: "Graphic Art Gallery", modalId: "gallery-modal" }
-        ],
-        badge: {
-            title: "Advanced Responsive Web Architecture",
-            issuer: "freeCodeCamp Certified"
-        }
-    },
-    motion: {
-        title: "Micro-Interactions & GSAP",
-        category: "[UX & UI Design]",
-        context: "Designed silky 60fps micro-animations, spring-physics transitions, custom cursor engines, and scroll-triggered storytelling reveals.",
-        projects: [
-            { name: "Checkout Flow", modalId: "checkout-modal" },
             { name: "Apex Motorsport", modalId: "Apex-modal" },
             { name: "Art Gallery", modalId: "gallery-modal" }
-        ],
-        badge: {
-            title: "Web Animation & Motion Design Masterclass",
-            issuer: "Awwwards Academy Certified"
-        }
+        ]
     },
-    threejs: {
-        title: "WebGL & Three.js 3D",
-        category: "[Frontend & Engineering]",
-        context: "Created 3D interactive particle canvases, procedural GLSL shaders, canvas camera animations, and immersive spatial web experiences.",
+    game_ui: {
+        title: "User Interface in Game Design",
+        issuer: "Epic Games • Issued May 2026",
+        credentialId: "U69AWPDMIPNF",
+        credentialUrl: "https://www.coursera.org/account/accomplishments/records/U69AWPDMIPNF",
+        category: "[Game UI & Unreal Engine]",
+        context: "Strengthened understanding of designing and implementing game UI in Unreal Engine: HUD setup, widget design, blueprint communication, health bars, ability bars, nameplates, and interactive UI systems.",
+        skills: ["Unreal Engine 4", "Game Development", "HUD Setup", "Blueprint Communication"],
         projects: [
             { name: "Apex Motorsport", modalId: "Apex-modal" },
-            { name: "Hero Spatial Canvas", modalId: "cv-modal" }
-        ],
-        badge: {
-            title: "Three.js & WebGL 3D Developer Certificate",
-            issuer: "Three.js Journey Verified"
-        }
+            { name: "Bio Grid", modalId: "BioGrid-modal" }
+        ]
     },
-    research: {
-        title: "User Research & Personas",
-        category: "[UX & UI Design]",
-        context: "Conducted usability studies, heuristic evaluation audits, user journey mapping, and qualitative interviews to eliminate friction in conversion funnels.",
+    google_ux: {
+        title: "Google UX Design Professional",
+        issuer: "Google • Issued May 2026",
+        credentialId: "9945UZ01AOC9",
+        credentialUrl: "https://www.coursera.org/account/accomplishments/specialization/9945UZ01AOC9",
+        category: "[UX Research & UI]",
+        context: "Foundations of UX Design, empathizing, defining, ideating, wireframing, building low/high-fidelity prototypes in Figma, conducting UX research, dynamic UI design, and designing for social good.",
+        skills: ["Figma (Software)", "Mobile Application Development", "UX Research", "Prototyping"],
         projects: [
             { name: "PulseHQ AI", modalId: "fintech-modal" },
             { name: "Milk Subscription", modalId: "MilkDel-modal" }
-        ],
-        badge: {
-            title: "User Research & Interaction Design Certificate",
-            issuer: "Interaction Design Foundation (IxDF)"
-        }
+        ]
+    },
+    gen_ai: {
+        title: "Use Generative AI for Software Development",
+        issuer: "IBM • Issued Mar 2026",
+        credentialId: "ALM-COURSE_4058884",
+        credentialUrl: "https://www.coursera.org",
+        category: "[AI & Software Development]",
+        context: "Plan: Claude/ChatGPT for requirements, user stories, architecture diagrams. Code: Start in Cursor/Copilot specs, refine functions. Test: Auto unit tests. Review: AI code reviews. Deploy: Automate docs & CI/CD.",
+        skills: ["Full-Stack Development", "User-centered Design", "Generative AI", "Prompt Engineering"],
+        projects: [
+            { name: "PulseHQ AI", modalId: "fintech-modal" },
+            { name: "Apex Motorsport", modalId: "Apex-modal" }
+        ]
+    },
+    design_thinking: {
+        title: "Enterprise Design Thinking Practitioner",
+        issuer: "IBM • Issued Mar 2026",
+        credentialId: "af633651-9617-4675-bdc2-ed7e9556289f",
+        credentialUrl: "https://www.credly.com/badges/af633651-9617-4675-bdc2-ed7e9556289f",
+        category: "[Systems & Strategy]",
+        context: "Applied Enterprise Design Thinking methodologies to align multidisciplinary teams around user outcomes, hill statements, playback loops, and agile iteration.",
+        skills: ["UX Research", "Design Thinking", "User Outcomes", "Agile Alignment"],
+        projects: [
+            { name: "PulseHQ AI", modalId: "fintech-modal" },
+            { name: "Milk Subscription", modalId: "MilkDel-modal" }
+        ]
+    },
+    ai_solutions: {
+        title: "Team Essentials for Designing AI Solutions",
+        issuer: "IBM • Issued Mar 2026",
+        credentialId: "f18c15e7-0962-4b2b-ae27-0e46428d116a",
+        credentialUrl: "https://www.credly.com/badges/f18c15e7-0962-4b2b-ae27-0e46428d116a",
+        category: "[AI Solution Architecture]",
+        context: "Achieved skills in AI Solution Design, Enterprise Design Thinking, Responsible AI Frameworks, AI Intent Mapping, and Human-Centered AI integration.",
+        skills: ["AI Solutions", "Artificial Intelligence (AI)", "Responsible AI", "AI Intent Mapping"],
+        projects: [
+            { name: "PulseHQ AI", modalId: "fintech-modal" }
+        ]
+    },
+    prompt_eng: {
+        title: "Craft Precise Prompts for AI Models",
+        issuer: "IBM • Issued Mar 2026",
+        credentialId: "ALM-COURSE_4063665",
+        credentialUrl: "https://www.coursera.org",
+        category: "[AI & Prompt Engineering]",
+        context: "Advanced prompt engineering techniques, zero-shot/few-shot prompting, systemic evaluation of model output quality, relevance, and safety controls.",
+        skills: ["Prompt Engineering", "Quality & Relevance", "LLM Evaluation"],
+        projects: [
+            { name: "PulseHQ AI", modalId: "fintech-modal" }
+        ]
+    },
+    motion: {
+        title: "Micro-Interactions & Motion GSAP",
+        issuer: "Motion Design Specialist",
+        credentialId: "MOTION-60FPS",
+        credentialUrl: "#",
+        category: "[UX & UI Design]",
+        context: "Silky 60fps micro-animations, spring-physics compression curves, custom cursor engines, and scroll-triggered storytelling reveals.",
+        skills: ["GSAP", "Spring Physics", "CSS Transforms", "Motion Design"],
+        projects: [
+            { name: "Checkout Flow", modalId: "checkout-modal" },
+            { name: "Apex Motorsport", modalId: "Apex-modal" }
+        ]
+    },
+    threejs: {
+        title: "WebGL & Three.js 3D Canvas",
+        issuer: "3D Engineering Specialist",
+        credentialId: "WEBGL-3D",
+        credentialUrl: "#",
+        category: "[Frontend Engineering]",
+        context: "Procedural GLSL shader uniforms, 3D particle terrain canvases, canvas camera matrices, and GPU compositing layer performance.",
+        skills: ["WebGL", "Three.js", "GLSL Shaders", "3D Canvas"],
+        projects: [
+            { name: "Apex Motorsport", modalId: "Apex-modal" }
+        ]
     },
     a11y: {
-        title: "Accessibility (WCAG AA)",
+        title: "Accessibility Standards (WCAG 2.1 AA)",
+        issuer: "Accessibility Specialist",
+        credentialId: "WCAG-AA-SPEC",
+        credentialUrl: "#",
         category: "[Systems & Strategy]",
-        context: "Enforced WCAG 2.1 AA compliance across digital products, contrast ratios, aria-labels, screen-reader focus management, and keyboard navigation.",
+        context: "WCAG 2.1 AA/AAA contrast ratios, keyboard navigation loops, screen-reader focus management, and inclusive design standards.",
+        skills: ["WCAG 2.1 AA", "Screen Readers", "ARIA Tokens", "Keyboard UX"],
         projects: [
-            { name: "Bio Grid Telemetry", modalId: "BioGrid-modal" },
+            { name: "Bio Grid", modalId: "BioGrid-modal" },
             { name: "Milk Subscription", modalId: "MilkDel-modal" }
-        ],
-        badge: {
-            title: "IAAP Web Accessibility Specialist (WAS)",
-            issuer: "International Association of Accessibility Professionals"
-        }
-    },
-    grid_ui: {
-        title: "8pt Grid & Architecture",
-        category: "[Systems & Strategy]",
-        context: "Implemented standardized 8pt/4pt spatial layout grids, baseline typography ramps, and predictable layout spacing math across complex web apps.",
-        projects: [
-            { name: "PulseHQ AI", modalId: "fintech-modal" },
-            { name: "E-Comm Checkout", modalId: "checkout-modal" }
-        ],
-        badge: {
-            title: "UI Architecture & Layout Systems",
-            issuer: "Google UX Engineering Specialist"
-        }
+        ]
     }
 };
 
@@ -131,16 +165,16 @@ function highlightPath(pathId, glowColor) {
     const line = document.getElementById(pathId);
     if (line) {
         line.setAttribute('stroke', glowColor);
-        line.setAttribute('stroke-width', '3.5');
+        line.setAttribute('stroke-width', '3');
         line.setAttribute('stroke-opacity', '1');
-        line.style.filter = `drop-shadow(0 0 10px ${glowColor})`;
+        line.style.filter = `drop-shadow(0 0 8px ${glowColor})`;
     }
 }
 
 function resetPath(pathId) {
     const line = document.getElementById(pathId);
     if (line) {
-        line.setAttribute('stroke', '#94A3B8');
+        line.setAttribute('stroke', '#475569');
         line.setAttribute('stroke-width', '1.5');
         line.setAttribute('stroke-opacity', '0.4');
         line.style.filter = 'none';
@@ -161,8 +195,14 @@ function openSkillModal(skillKey) {
     if (categoryEl) categoryEl.innerText = skill.category;
     if (titleEl) titleEl.innerText = skill.title;
     if (contextEl) contextEl.innerText = skill.context;
-    if (badgeTitleEl) badgeTitleEl.innerText = skill.badge.title;
-    if (badgeIssuerEl) badgeIssuerEl.innerText = skill.badge.issuer;
+    if (badgeTitleEl) badgeTitleEl.innerText = skill.issuer + (skill.credentialId ? ` • ID: ${skill.credentialId}` : '');
+    if (badgeIssuerEl) {
+        if (skill.credentialUrl && skill.credentialUrl !== '#') {
+            badgeIssuerEl.innerHTML = `<a href="${skill.credentialUrl}" target="_blank" rel="noopener noreferrer" class="text-neon-cyan hover:underline font-bold flex items-center gap-1">Verify Credential ▶</a>`;
+        } else {
+            badgeIssuerEl.innerText = "Verified Technical Credential";
+        }
+    }
 
     if (projContainer) {
         projContainer.innerHTML = skill.projects.map(p => `
@@ -185,7 +225,7 @@ function openSkillModal(skillKey) {
         modal.classList.add('opacity-100', 'pointer-events-auto');
         content.classList.remove('scale-95');
         content.classList.add('scale-100');
-        playSyntheticClick('success');
+        if (typeof playSyntheticClick === 'function') playSyntheticClick('success');
     }
 }
 
@@ -197,48 +237,6 @@ function closeSkillModal() {
         modal.classList.add('opacity-0', 'pointer-events-none');
         content.classList.remove('scale-100');
         content.classList.add('scale-95');
-        playSyntheticClick('click');
-    }
-}
-
-function filterSkillNodes(category) {
-    playSyntheticClick('click');
-
-    const tabBtns = document.querySelectorAll('.skill-tab-btn');
-    tabBtns.forEach(btn => {
-        const cat = btn.getAttribute('data-category');
-        if (cat === category) {
-            if (cat === 'all') {
-                btn.className = 'skill-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-neon-cyan text-void shadow-neon cursor-pointer';
-            } else if (cat === 'ux-ui') {
-                btn.className = 'skill-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-neon-magenta text-void shadow-[0_0_15px_rgba(255,0,160,0.6)] cursor-pointer';
-            } else if (cat === 'frontend') {
-                btn.className = 'skill-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-neon-cyan text-void shadow-neon cursor-pointer';
-            } else if (cat === 'systems') {
-                btn.className = 'skill-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-acid-lime text-void shadow-[0_0_15px_rgba(212,255,0,0.6)] cursor-pointer';
-            }
-        } else {
-            btn.className = 'skill-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-neutral-400 hover:text-white cursor-pointer';
-        }
-    });
-
-    const columns = document.querySelectorAll('#skill-nodes-container > div[data-category]');
-    columns.forEach(col => {
-        const colCat = col.getAttribute('data-category');
-        if (category === 'all' || colCat === category) {
-            col.style.display = 'block';
-            col.style.opacity = '1';
-            col.style.transform = 'scale(1)';
-            col.style.transition = 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)';
-        } else {
-            col.style.display = 'none';
-            col.style.opacity = '0';
-            col.style.transform = 'scale(0.95)';
-        }
-    });
-
-    const svgLayer = document.querySelector('#skill-nodes-container svg');
-    if (svgLayer) {
-        svgLayer.style.opacity = category === 'all' ? '1' : '0.2';
+        if (typeof playSyntheticClick === 'function') playSyntheticClick('click');
     }
 }

@@ -1025,6 +1025,467 @@
         <!-- ═══════════════════════════════════════════════════════════════ -->
         <!-- SECTION 3: DESIGNER VIDEO GAME SKILL TREE (LINKED TO PROJECTS) -->
         <!-- ═══════════════════════════════════════════════════════════════ -->
+        <section id="section-skill-tree" class="min-h-screen w-full snap-center flex flex-col justify-center px-4 sm:px-8 md:px-16 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 py-12 md:py-16 overflow-hidden bg-void">
+            <div class="project-boundary-line"></div>
+            
+            <!-- Video Game Backdrop Overlay -->
+            <div class="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none">
+                <div class="absolute inset-0 bg-gradient-to-r from-void via-void/95 to-transparent z-10"></div>
+                <img decoding="async" src="bg_skill_tree.webp" width="1920" height="1080" loading="lazy" 
+                    alt="Game Skill Tree Backdrop" 
+                    class="project-bg-img w-full h-full object-cover opacity-40 filter saturate-150"
+                />
+            </div>
+
+            <div class="max-w-7xl mx-auto w-full relative z-20">
+                
+                <!-- TOP HEADER BAR: Left Title Block & Center Cyber Key/Chip Badge -->
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6 md:mb-8">
+                    <!-- Left Title Block -->
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-[10px] font-mono text-neon-cyan uppercase tracking-[0.25em] font-bold">KAUSTOBH'S SKILLS &amp; CERTS</span>
+                            <svg class="w-4 h-4 text-neon-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20M7 7l10 10M17 7L7 17"/></svg>
+                        </div>
+                        <h3 class="text-3xl md:text-5xl font-display font-bold text-white mb-1.5 reveal-item reveal-stagger-2">Skill Tree</h3>
+                        <p class="text-neutral-400 font-body text-xs md:text-sm max-w-lg leading-relaxed reveal-item reveal-stagger-3">
+                            Core skills, verified certificates, and tools known — an interactive matrix connecting technical competencies directly to project proof and credentials.
+                        </p>
+                    </div>
+
+                    <!-- Center Floating Cybernetic Key / Chip Hub Badge -->
+                    <div class="self-center md:self-auto">
+                        <div class="cyber-chip-badge px-5 py-2.5 rounded-xl border border-neon-cyan/50 bg-black/90 flex items-center gap-3 shadow-[0_0_25px_rgba(0,243,255,0.3)] hover:scale-105 transition-transform cursor-pointer" onclick="openSkillModal('figma')">
+                            <div class="w-8 h-8 rounded-lg bg-neon-cyan/20 border border-neon-cyan/60 flex items-center justify-center text-neon-cyan">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                            </div>
+                            <div class="text-left">
+                                <span class="block font-mono text-[9px] text-neon-cyan uppercase tracking-widest font-bold">⚡ CENTRAL HUB</span>
+                                <span class="font-mono text-xs font-bold text-white tracking-wider">KAUSTOBH'S SKILLS &amp; CERTS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3 MAIN VERTICAL CONTAINER BRANCHES (MAGENTA, CYAN, LIME) -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 relative" id="skill-nodes-container">
+
+                    <!-- =================================================================== -->
+                    <!-- BRANCH 1: MAGENTA PINK BRANCH (UX & UI DESIGN) -->
+                    <!-- =================================================================== -->
+                    <div class="relative rounded-2xl border border-pink-500/40 bg-black/60 backdrop-blur-md p-5 shadow-[0_0_30px_rgba(255,0,160,0.15)] flex flex-col justify-between" data-category="ux-ui">
+                        <div class="absolute top-3 right-3">
+                            <span class="text-[8px] font-mono text-neon-magenta bg-pink-500/10 px-2 py-0.5 rounded border border-pink-500/30 font-bold tracking-wider">MAX RANK</span>
+                        </div>
+
+                        <!-- Top Diamond Hub Node -->
+                        <div class="flex justify-center mb-6 pt-2">
+                            <div onclick="openSkillModal('figma')" class="cyber-embossed-node w-14 h-14 rotate-45 rounded-xl border-2 border-neon-magenta flex items-center justify-center shadow-[0_0_20px_rgba(255,0,160,0.5)] cursor-pointer group">
+                                <div class="-rotate-45 text-neon-magenta group-hover:scale-110 transition-transform">
+                                    <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.5 7.5"/></svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vertical Stem Line & Node Network -->
+                        <div class="relative space-y-8 py-2">
+                            <!-- SVG Vertical Stem Line -->
+                            <svg class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-1 h-full pointer-events-none z-0" preserveAspectRatio="none">
+                                <line x1="2" y1="0" x2="2" y2="100%" stroke="#FF00A0" stroke-width="2" stroke-dasharray="4 3" opacity="0.6"/>
+                            </svg>
+
+                            <!-- Node 1: Figma Pro (Top Stem) -->
+                            <div class="relative z-10 flex items-center justify-between">
+                                <!-- Left Sub-perks -->
+                                <div class="flex gap-2">
+                                    <div onclick="openSkillModal('google_ux')" title="Google UX Design" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-pink-300 cursor-pointer">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+                                    </div>
+                                    <div onclick="openSkillModal('design_thinking')" title="Enterprise Design Thinking" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-pink-300 cursor-pointer">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.66 16.03a5 5 0 1 1 4.68-4.68M12 3v3M3 12h3M12 18v3M18 12h3"/></svg>
+                                    </div>
+                                </div>
+
+                                <!-- Center Main Stem Node -->
+                                <div onclick="openSkillModal('figma')" class="cyber-embossed-node w-12 h-12 rounded-xl border border-neon-magenta flex flex-col items-center justify-center cursor-pointer shadow-[0_0_15px_rgba(255,0,160,0.4)] group">
+                                    <svg class="w-5 h-5 text-neon-magenta group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                                    <span class="text-[7px] font-mono text-neon-magenta font-bold">3/3</span>
+                                </div>
+
+                                <!-- Right Sub-perks -->
+                                <div class="flex gap-2">
+                                    <div onclick="openSkillModal('figma')" title="Advanced Auto-Layout" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-pink-300 cursor-pointer">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Node 2: Game UX (Middle Stem) -->
+                            <div class="relative z-10 flex items-center justify-between">
+                                <!-- Left Sub-perks -->
+                                <div class="flex gap-2">
+                                    <div onclick="openSkillModal('game_ux')" title="User Experience in Game Design" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-pink-300 cursor-pointer">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="6 11 10 7 14 11 18 7 22 11 22 21 2 21 2 11 6 11"/></svg>
+                                    </div>
+                                </div>
+
+                                <!-- Center Main Stem Node -->
+                                <div onclick="openSkillModal('game_ux')" class="cyber-embossed-node w-12 h-12 rounded-xl border border-neon-magenta flex flex-col items-center justify-center cursor-pointer shadow-[0_0_15px_rgba(255,0,160,0.4)] group">
+                                    <svg class="w-5 h-5 text-neon-magenta group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v6M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/></svg>
+                                    <span class="text-[7px] font-mono text-neon-magenta font-bold">2/2</span>
+                                </div>
+
+                                <!-- Right Sub-perks -->
+                                <div class="flex gap-2">
+                                    <div onclick="openSkillModal('game_ui')" title="User Interface in Game Design" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-pink-300 cursor-pointer">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Node 3: Micro-Interactions & Optic Eye (Bottom Stem) -->
+                            <div class="relative z-10 flex items-center justify-between">
+                                <!-- Left Sub-perks -->
+                                <div class="flex gap-2">
+                                    <div onclick="openSkillModal('motion')" title="Spring Physics" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-pink-300 cursor-pointer">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                    </div>
+                                </div>
+
+                                <!-- Center Main Stem Node (Optic Eye) -->
+                                <div onclick="openSkillModal('motion')" class="cyber-embossed-node w-12 h-12 rounded-xl border border-neon-magenta flex flex-col items-center justify-center cursor-pointer shadow-[0_0_15px_rgba(255,0,160,0.4)] group">
+                                    <svg class="w-5 h-5 text-neon-magenta group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    <span class="text-[7px] font-mono text-neon-magenta font-bold">1/1</span>
+                                </div>
+
+                                <!-- Right Sub-perks -->
+                                <div class="flex gap-2">
+                                    <div onclick="openSkillModal('motion')" title="GSAP Animations" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-pink-300 cursor-pointer">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Connected Project Proof Pills -->
+                        <div class="flex flex-wrap gap-1.5 pt-4 mt-4 border-t border-pink-500/20">
+                            <span onclick="openModal('fintech-modal')" class="text-[9px] font-mono text-pink-300 bg-pink-500/15 border border-pink-500/30 px-2 py-0.5 rounded hover:bg-pink-500 hover:text-white transition-colors cursor-pointer font-bold">▶ PulseHQ AI</span>
+                            <span onclick="openModal('Silvatide-modal')" class="text-[9px] font-mono text-pink-300 bg-pink-500/15 border border-pink-500/30 px-2 py-0.5 rounded hover:bg-pink-500 hover:text-white transition-colors cursor-pointer font-bold">▶ Silvatide</span>
+                            <span onclick="openModal('BioGrid-modal')" class="text-[9px] font-mono text-pink-300 bg-pink-500/15 border border-pink-500/30 px-2 py-0.5 rounded hover:bg-pink-500 hover:text-white transition-colors cursor-pointer font-bold">▶ Bio Grid</span>
+                        </div>
+                    </div>
+
+                    <!-- =================================================================== -->
+                    <!-- BRANCH 2: BRIGHT CYAN BRANCH (FRONTEND ENGINEERING) -->
+                    <!-- =================================================================== -->
+                    <div class="relative rounded-2xl border border-cyan-500/40 bg-black/60 backdrop-blur-md p-5 shadow-[0_0_30px_rgba(0,243,255,0.15)] flex flex-col justify-between" data-category="frontend">
+                        <div class="absolute top-3 right-3">
+                            <span class="text-[8px] font-mono text-neon-cyan bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/30 font-bold tracking-wider">MAX RANK</span>
+                        </div>
+
+                        <!-- Top Diamond Hub Node (Cyber Brain/Portrait) -->
+                        <div class="flex justify-center mb-6 pt-2">
+                            <div onclick="openSkillModal('react')" class="cyber-embossed-node w-14 h-14 rotate-45 rounded-xl border-2 border-neon-cyan flex items-center justify-center shadow-[0_0_20px_rgba(0,243,255,0.5)] cursor-pointer group">
+                                <div class="-rotate-45 text-neon-cyan group-hover:scale-110 transition-transform">
+                                    <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vertical Stem Line & Node Network -->
+                        <div class="relative space-y-8 py-2">
+                            <!-- SVG Vertical Stem Line -->
+                            <svg class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-1 h-full pointer-events-none z-0" preserveAspectRatio="none">
+                                <line x1="2" y1="0" x2="2" y2="100%" stroke="#00F3FF" stroke-width="2" stroke-dasharray="4 3" opacity="0.6"/>
+                            </svg>
+
+                            <!-- Node 1: React & Next.js (Atom Core) -->
+                            <div class="relative z-10 flex items-center justify-between">
+                                <!-- Left Sub-perks -->
+                                <div class="flex gap-2">
+                                    <div onclick="openSkillModal('react')" title="React JSX & Hooks" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-cyan-300 cursor-pointer">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+                                    </div>
+                                </div>
+
+                                <!-- Center Main Stem Node (Atom Core) -->
+                                <div onclick="openSkillModal('react')" class="cyber-embossed-node w-12 h-12 rounded-xl border border-neon-cyan flex flex-col items-center justify-center cursor-pointer shadow-[0_0_15px_rgba(0,243,255,0.4)] group">
+                                    <svg class="w-5 h-5 text-neon-cyan group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="9" ry="3.5"/><ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(120 12 12)"/></svg>
+                                    <span class="text-[7px] font-mono text-neon-cyan font-bold">3/3</span>
+                                </div>
+
+                                <!-- Right Sub-perks -->
+                                <div class="flex gap-2">
+                                    <div onclick="openSkillModal('gen_ai')" title="Generative AI for Software Dev" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-cyan-300 cursor-pointer">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Node 2: Cyber Power / Tailwind (Middle Stem) -->
+                            <div class="relative z-10 flex items-center justify-between">
+                                <!-- Left Sub-perks -->
+                                <div class="flex gap-2">
+                                    <div onclick="openSkillModal('prompt_eng')" title="Craft Precise Prompts" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-cyan-300 cursor-pointer">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                    </div>
+                                </div>
+
+                                <!-- Center Main Stem Node (Fist) -->
+                                <div onclick="openSkillModal('gen_ai')" class="cyber-embossed-node w-12 h-12 rounded-xl border border-neon-cyan flex flex-col items-center justify-center cursor-pointer shadow-[0_0_15px_rgba(0,243,255,0.4)] group">
+                                    <svg class="w-5 h-5 text-neon-cyan group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v6M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/></svg>
+                                    <span class="text-[7px] font-mono text-neon-cyan font-bold">2/2</span>
+                                </div>
+
+                                <!-- Right Sub-perks -->
+                                <div class="flex gap-2">
+                                    <div onclick="openSkillModal('threejs')" title="WebGL & Three.js 3D" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-cyan-300 cursor-pointer">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Node 3: Holographic Crystal D20 (Bottom Stem) -->
+                            <div class="relative z-10 flex items-center justify-between">
+                                <!-- Left Sub-perks -->
+                                <div class="flex gap-2">
+                                    <div onclick="openSkillModal('threejs')" title="Shader Uniforms" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-cyan-300 cursor-pointer">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                    </div>
+                                </div>
+
+                                <!-- Center Main Stem Node (Crystal D20) -->
+                                <div onclick="openSkillModal('threejs')" class="cyber-embossed-node w-12 h-12 rounded-xl border border-neon-cyan flex flex-col items-center justify-center cursor-pointer shadow-[0_0_15px_rgba(0,243,255,0.4)] group">
+                                    <svg class="w-5 h-5 text-neon-cyan group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="12"/><polyline points="22 8.5 12 12 2 8.5"/></svg>
+                                    <span class="text-[7px] font-mono text-neon-cyan font-bold">1/1</span>
+                                </div>
+
+                                <!-- Right Sub-perks -->
+                                <div class="flex gap-2">
+                                    <div onclick="openSkillModal('react')" title="State & Redux" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-cyan-300 cursor-pointer">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7h-9M14 17H5M17 12H3"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Connected Project Proof Pills -->
+                        <div class="flex flex-wrap gap-1.5 pt-4 mt-4 border-t border-cyan-500/20">
+                            <span onclick="openModal('fintech-modal')" class="text-[9px] font-mono text-cyan-300 bg-cyan-500/15 border border-cyan-500/30 px-2 py-0.5 rounded hover:bg-cyan-500 hover:text-void transition-colors cursor-pointer font-bold">▶ PulseHQ AI</span>
+                            <span onclick="openModal('Apex-modal')" class="text-[9px] font-mono text-cyan-300 bg-cyan-500/15 border border-cyan-500/30 px-2 py-0.5 rounded hover:bg-cyan-500 hover:text-void transition-colors cursor-pointer font-bold">▶ Apex Motorsport</span>
+                        </div>
+                    </div>
+
+                    <!-- =================================================================== -->
+                    <!-- BRANCH 3: NEON LIME GREEN BRANCH (SYSTEMS & AI SOLUTIONS) -->
+                    <!-- =================================================================== -->
+                    <div class="relative rounded-2xl border border-lime-500/40 bg-black/60 backdrop-blur-md p-5 shadow-[0_0_30px_rgba(212,255,0,0.15)] flex flex-col justify-between" data-category="systems">
+                        <div class="absolute top-3 right-3">
+                            <span class="text-[8px] font-mono text-acid-lime bg-lime-500/10 px-2 py-0.5 rounded border border-lime-500/30 font-bold tracking-wider">MAX RANK</span>
+                        </div>
+
+                        <!-- Top Diamond Hub Node (Cyber Architect) -->
+                        <div class="flex justify-center mb-6 pt-2">
+                            <div onclick="openSkillModal('ai_solutions')" class="cyber-embossed-node w-14 h-14 rotate-45 rounded-xl border-2 border-acid-lime flex items-center justify-center shadow-[0_0_20px_rgba(212,255,0,0.5)] cursor-pointer group">
+                                <div class="-rotate-45 text-acid-lime group-hover:scale-110 transition-transform">
+                                    <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Vertical Stem Line & Node Network -->
+                        <div class="relative space-y-8 py-2">
+                            <!-- SVG Vertical Stem Line -->
+                            <svg class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-1 h-full pointer-events-none z-0" preserveAspectRatio="none">
+                                <line x1="2" y1="0" x2="2" y2="100%" stroke="#D4FF00" stroke-width="2" stroke-dasharray="4 3" opacity="0.6"/>
+                            </svg>
+
+                            <!-- Node 1: AI Solutions (Top Stem) -->
+                            <div class="relative z-10 flex items-center justify-between">
+                                <!-- Left Sub-perks -->
+                                <div class="flex gap-2">
+                                    <div onclick="openSkillModal('ai_solutions')" title="Team Essentials for AI Solutions" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-lime-300 cursor-pointer">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10H12z"/></svg>
+                                    </div>
+                                </div>
+
+                                <!-- Center Main Stem Node (Isometric Dice) -->
+                                <div onclick="openSkillModal('ai_solutions')" class="cyber-embossed-node w-12 h-12 rounded-xl border border-acid-lime flex flex-col items-center justify-center cursor-pointer shadow-[0_0_15px_rgba(212,255,0,0.4)] group">
+                                    <svg class="w-5 h-5 text-acid-lime group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><circle cx="15.5" cy="15.5" r="1.5"/><circle cx="15.5" cy="8.5" r="1.5"/><circle cx="8.5" cy="15.5" r="1.5"/></svg>
+                                    <span class="text-[7px] font-mono text-acid-lime font-bold">3/3</span>
+                                </div>
+
+                                <!-- Right Sub-perks -->
+                                <div class="flex gap-2">
+                                    <div onclick="openSkillModal('prompt_eng')" title="Responsible AI" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-lime-300 cursor-pointer">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Node 2: Accessibility AA/AAA (Middle Stem) -->
+                            <div class="relative z-10 flex items-center justify-between">
+                                <!-- Left Sub-perks -->
+                                <div class="flex gap-2">
+                                    <div onclick="openSkillModal('a11y')" title="WCAG 2.1 AA Compliance" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-lime-300 cursor-pointer">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                                    </div>
+                                </div>
+
+                                <!-- Center Main Stem Node (Humanoid A11y) -->
+                                <div onclick="openSkillModal('a11y')" class="cyber-embossed-node w-12 h-12 rounded-xl border border-acid-lime flex flex-col items-center justify-center cursor-pointer shadow-[0_0_15px_rgba(212,255,0,0.4)] group">
+                                    <svg class="w-5 h-5 text-acid-lime group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="4" r="2"/><path d="M18 9h-6-6"/><path d="M12 9v13"/><path d="m8 22 4-5 4 5"/></svg>
+                                    <span class="text-[7px] font-mono text-acid-lime font-bold">3/5</span>
+                                </div>
+
+                                <!-- Right Sub-perks -->
+                                <div class="flex gap-2">
+                                    <div onclick="openSkillModal('a11y')" title="Screen Reader Focus Loops" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-lime-300 cursor-pointer">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20M12 2v20"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Node 3: Design Tokens & Grid Architecture (Bottom Stem) -->
+                            <div class="relative z-10 flex items-center justify-between">
+                                <!-- Left Sub-perks -->
+                                <div class="flex gap-2">
+                                    <div onclick="openSkillModal('a11y')" title="8pt Spatial Grids" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-lime-300 cursor-pointer">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+                                    </div>
+                                </div>
+
+                                <!-- Center Main Stem Node (Isometric Grid Building) -->
+                                <div onclick="openSkillModal('a11y')" class="cyber-embossed-node w-12 h-12 rounded-xl border border-acid-lime flex flex-col items-center justify-center cursor-pointer shadow-[0_0_15px_rgba(212,255,0,0.4)] group">
+                                    <svg class="w-5 h-5 text-acid-lime group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 12 12 17 22 12"/><polyline points="2 17 12 22 22 17"/></svg>
+                                    <span class="text-[7px] font-mono text-acid-lime font-bold">3/1</span>
+                                </div>
+
+                                <!-- Right Sub-perks -->
+                                <div class="flex gap-2">
+                                    <div onclick="openSkillModal('design_thinking')" title="Enterprise Handoff" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-lime-300 cursor-pointer">
+                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Connected Project Proof Pills -->
+                        <div class="flex flex-wrap gap-1.5 pt-4 mt-4 border-t border-lime-500/20">
+                            <span onclick="openModal('fintech-modal')" class="text-[9px] font-mono text-lime-300 bg-lime-500/15 border border-lime-500/30 px-2 py-0.5 rounded hover:bg-lime-500 hover:text-void transition-colors cursor-pointer font-bold">▶ PulseHQ AI</span>
+                            <span onclick="openModal('MilkDel-modal')" class="text-[9px] font-mono text-lime-300 bg-lime-500/15 border border-lime-500/30 px-2 py-0.5 rounded hover:bg-lime-500 hover:text-void transition-colors cursor-pointer font-bold">▶ Subscription</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CASE STUDIES SCROLLER (Scroll Snap) -->
+    <div id="work" class="h-[100vh] overflow-y-scroll snap-y snap-mandatory bg-solar dark:bg-void relative transition-colors duration-500 scroll-smooth">
+
+        <!-- Project 1: PulseHQ AI-Powered Team Intelligence -->
+        
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- SECTION 2: WHAT I BRING TO THE TABLE                           -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <section id="section-what-i-bring" class="h-screen w-full snap-center flex flex-col justify-center px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-16 md:pt-0 overflow-hidden">
+            <div class="project-boundary-line"></div>
+
+            <!-- Deep Indigo Void & Floating Pillars Background -->
+            <div class="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none">
+                <div class="absolute inset-0 bg-gradient-to-r from-void via-void/85 to-transparent dark:from-void dark:via-void/85 dark:to-transparent light:from-solar light:via-solar/95 light:to-transparent/10 z-10"></div>
+                <img decoding="async" src="bg_what_i_bring.webp" width="1920" height="1080" loading="lazy" 
+                    alt="Deep Indigo Geometric Pillars Backdrop" 
+                    class="project-bg-img w-full h-full object-cover opacity-85 filter saturate-150"
+                    loading="lazy"
+                />
+            </div>
+
+            <div class="max-w-6xl mx-auto w-full relative z-20">
+                <!-- Header -->
+                <div class="mb-6 md:mb-10">
+                    <span class="text-xs font-mono text-neon-cyan dark:text-neon-cyan light:text-electric-blue uppercase tracking-widest mb-2 block reveal-item reveal-stagger-1">[Capabilities // Geometric Value Foundations]</span>
+                    <h3 class="text-3xl md:text-5xl font-display font-bold text-charcoal dark:text-white mb-2 reveal-item reveal-stagger-2">What I Bring to the Table</h3>
+                    <p class="text-neutral-300 dark:text-gray-300 font-body text-xs md:text-sm max-w-2xl leading-relaxed reveal-item reveal-stagger-3">
+                        Structured pillars of blue data supporting product growth—bridging the gap between design vision and production-grade engineering without back-and-forth friction.
+                    </p>
+                </div>
+
+                <!-- 3 Floating Geometric Value Pillars (Horizontal Grid) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+                    <!-- Pillar 1: Design Tokens & Systems -->
+                    <div class="glass-panel p-6 rounded-2xl border border-cyan-500/30 bg-black/60 hover:border-cyan-400 hover:shadow-[0_0_35px_rgba(0,243,255,0.3)] transition-all duration-300 group reveal-item reveal-stagger-1 relative overflow-hidden">
+                        <div class="absolute -top-12 -right-12 w-28 h-28 rounded-full bg-cyan-500/10 blur-xl group-hover:bg-cyan-500/20 transition-all"></div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-neon-cyan/15 border border-neon-cyan/40 flex items-center justify-center text-neon-cyan group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(0,243,255,0.3)]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
+                            </div>
+                            <div>
+                                <span class="text-[9px] font-mono text-neon-cyan font-bold uppercase tracking-widest">PILLAR 01 // FOUNDATION</span>
+                                <h4 class="text-lg font-bold font-display text-white group-hover:text-neon-cyan transition-colors">Design Tokens & Systems</h4>
+                            </div>
+                        </div>
+                        <p class="text-xs md:text-sm text-neutral-400 leading-relaxed mb-4">
+                            Creating scalable, code-ready UI component libraries with standardized tokens for colors, spacing, and typography across Figma and CSS variables.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2 border-t border-white/10">
+                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-cyan-500/10 text-neon-cyan border border-cyan-500/30">Figma Tokens</span>
+                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-cyan-500/10 text-neon-cyan border border-cyan-500/30">CSS Variables</span>
+                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-cyan-500/10 text-neon-cyan border border-cyan-500/30">Scalable Systems</span>
+                        </div>
+                    </div>
+
+                    <!-- Pillar 2: Rapid Interactive Prototyping -->
+                    <div class="glass-panel p-6 rounded-2xl border border-pink-500/30 bg-black/60 hover:border-pink-400 hover:shadow-[0_0_35px_rgba(255,0,160,0.3)] transition-all duration-300 group reveal-item reveal-stagger-2 relative overflow-hidden">
+                        <div class="absolute -top-12 -right-12 w-28 h-28 rounded-full bg-pink-500/10 blur-xl group-hover:bg-pink-500/20 transition-all"></div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-neon-magenta/15 border border-neon-magenta/40 flex items-center justify-center text-neon-magenta group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(255,0,160,0.3)]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                            </div>
+                            <div>
+                                <span class="text-[9px] font-mono text-neon-magenta font-bold uppercase tracking-widest">PILLAR 02 // MOTION</span>
+                                <h4 class="text-lg font-bold font-display text-white group-hover:text-neon-magenta transition-colors">Rapid Prototyping</h4>
+                            </div>
+                        </div>
+                        <p class="text-xs md:text-sm text-neutral-400 leading-relaxed mb-4">
+                            Moving beyond static Figma screens into production-grade micro-interactions, spring physics animations, and realistic user testing flows.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2 border-t border-white/10">
+                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-pink-500/10 text-neon-magenta border border-pink-500/30">Figma Variants</span>
+                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-pink-500/10 text-neon-magenta border border-pink-500/30">Framer Motion</span>
+                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-pink-500/10 text-neon-magenta border border-pink-500/30">Micro-Interactions</span>
+                        </div>
+                    </div>
+
+                    <!-- Pillar 3: Cross-Team Handoff & Code Sanity -->
+                    <div class="glass-panel p-6 rounded-2xl border border-lime-500/30 bg-black/60 hover:border-lime-400 hover:shadow-[0_0_35px_rgba(212,255,0,0.3)] transition-all duration-300 group reveal-item reveal-stagger-3 relative overflow-hidden">
+                        <div class="absolute -top-12 -right-12 w-28 h-28 rounded-full bg-lime-500/10 blur-xl group-hover:bg-lime-500/20 transition-all"></div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-acid-lime/15 border border-acid-lime/40 flex items-center justify-center text-acid-lime group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(212,255,0,0.3)]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                            </div>
+                            <div>
+                                <span class="text-[9px] font-mono text-acid-lime font-bold uppercase tracking-widest">PILLAR 03 // COLLABORATION</span>
+                                <h4 class="text-lg font-bold font-display text-white group-hover:text-acid-lime transition-colors">Cross-Team Handoff</h4>
+                            </div>
+                        </div>
+                        <p class="text-xs md:text-sm text-neutral-400 leading-relaxed mb-4">
+                            Writing clean, documented UI code, flexbox layout specs, and production components that frontend engineers can copy and deploy without guesswork.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2 border-t border-white/10">
+                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-lime-500/10 text-acid-lime border border-lime-500/30">Flexbox Specs</span>
+                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-lime-500/10 text-acid-lime border border-lime-500/30">TailwindCSS</span>
+                            <span class="text-[9px] font-mono font-bold px-2.5 py-1 rounded-full bg-lime-500/10 text-acid-lime border border-lime-500/30">DOM Geometry</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- SECTION 3: DESIGNER VIDEO GAME SKILL TREE (LINKED TO PROJECTS) -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
         <section id="section-skill-tree" class="h-screen w-full snap-center flex flex-col justify-center px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-16 md:pt-0 overflow-hidden">
             <div class="project-boundary-line"></div>
             
