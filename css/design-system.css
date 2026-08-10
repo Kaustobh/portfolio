@@ -569,19 +569,90 @@ html.light .bg-void     { background-color: #F4F5F7 !important; }
 html.light .bg-charcoal { background-color: #E4E6EB !important; }
 html.light .bg-surface  { background-color: #FFFFFF !important; }
 
-/* 4. TEXT COLOUR OVERRIDES */
-html.light .text-white        { color: #1C1C24 !important; }
-html.light .text-neutral-100  { color: #1C1C24 !important; }
-html.light .text-neutral-200  { color: #2d2d35 !important; }
-html.light .text-neutral-300  { color: #404048 !important; }
-html.light .text-neutral-400  { color: #525260 !important; }
-html.light .text-neutral-500  { color: #6b6b7b !important; }
-html.light .text-charcoal     { color: #1C1C24 !important; }
+/* 4. TEXT COLOUR OVERRIDES — scoped to prevent invisible text on dark sections
+   ─────────────────────────────────────────────────────────────────────────────
+   Sections that STAY DARK in light mode → white text MUST be preserved:
+     #hero-section, #section-skill-tree, [id^="project-"]
+   Sections that BECOME LIGHT → dark text (#1C1C24 ink) enforced:
+     #section-what-i-bring, #section-why-devs-love-me, #recruiter-briefing
+   ─────────────────────────────────────────────────────────────────────────── */
 
-/* Preserve neon accent colours — they stay vivid in light mode */
-html.light .text-neon-cyan    { color: #005DFF !important; }
-html.light .text-neon-magenta { color: #D3108E !important; }
-html.light .text-acid-lime    { color: #008A3B !important; }
+/* A) RESTORE white text inside all intentionally dark sections */
+html.light #hero-section .text-white,
+html.light #section-skill-tree .text-white,
+html.light [id^="project-"] .text-white,
+html.light #hero-section .text-neutral-100,
+html.light #hero-section .text-neutral-200,
+html.light #hero-section .text-neutral-300,
+html.light #hero-section .text-neutral-400,
+html.light [id^="project-"] .text-neutral-100,
+html.light [id^="project-"] .text-neutral-200,
+html.light [id^="project-"] .text-neutral-300,
+html.light [id^="project-"] .text-neutral-400 {
+    color: inherit !important; /* Let Tailwind classes render naturally */
+}
+
+/* B) ENFORCE dark ink text in sections that become light-background */
+html.light #section-what-i-bring,
+html.light #section-why-devs-love-me,
+html.light #recruiter-briefing {
+    color: #1C1C24;
+}
+
+html.light #section-what-i-bring h1,
+html.light #section-what-i-bring h2,
+html.light #section-what-i-bring h3,
+html.light #section-what-i-bring h4,
+html.light #section-what-i-bring h5,
+html.light #section-what-i-bring p,
+html.light #section-what-i-bring span:not([class*="text-neon"]):not([class*="text-electric"]):not([class*="text-acid"]):not([class*="text-deep-rose"]),
+html.light #section-what-i-bring .text-white,
+html.light #section-what-i-bring .text-neutral-100,
+html.light #section-what-i-bring .text-neutral-200,
+html.light #section-what-i-bring .text-neutral-300,
+html.light #section-what-i-bring .text-neutral-400 { color: #1C1C24 !important; }
+
+html.light #section-why-devs-love-me h1,
+html.light #section-why-devs-love-me h2,
+html.light #section-why-devs-love-me h3,
+html.light #section-why-devs-love-me h4,
+html.light #section-why-devs-love-me h5,
+html.light #section-why-devs-love-me p,
+html.light #section-why-devs-love-me span:not([class*="text-neon"]):not([class*="text-electric"]):not([class*="text-acid"]):not([class*="text-deep-rose"]),
+html.light #section-why-devs-love-me .text-white,
+html.light #section-why-devs-love-me .text-neutral-100,
+html.light #section-why-devs-love-me .text-neutral-200,
+html.light #section-why-devs-love-me .text-neutral-300,
+html.light #section-why-devs-love-me .text-neutral-400 { color: #1C1C24 !important; }
+
+html.light #recruiter-briefing h1,
+html.light #recruiter-briefing h2,
+html.light #recruiter-briefing h3,
+html.light #recruiter-briefing h4,
+html.light #recruiter-briefing h5,
+html.light #recruiter-briefing p,
+html.light #recruiter-briefing span:not([class*="text-neon"]):not([class*="text-electric"]):not([class*="text-acid"]):not([class*="text-deep-rose"]),
+html.light #recruiter-briefing .text-white,
+html.light #recruiter-briefing .text-neutral-100,
+html.light #recruiter-briefing .text-neutral-200,
+html.light #recruiter-briefing .text-neutral-300,
+html.light #recruiter-briefing .text-neutral-400 { color: #1C1C24 !important; }
+
+/* C) Muted secondary text in light sections — WCAG AA ≥ 4.5:1 on #F4F5F7 */
+html.light #section-what-i-bring .text-neutral-300,
+html.light #section-what-i-bring .text-neutral-400,
+html.light #section-why-devs-love-me .text-neutral-300,
+html.light #section-why-devs-love-me .text-neutral-400,
+html.light #recruiter-briefing .text-neutral-300,
+html.light #recruiter-briefing .text-neutral-400 { color: #525260 !important; }
+
+/* D) Neon accent colours preserved in ALL sections */
+html.light .text-neon-cyan    { color: #005DFF; }
+html.light .text-neon-magenta { color: #D3108E; }
+html.light .text-acid-lime    { color: #008A3B; }
+
+/* E) HUD header elements: text-charcoal already dark → fine as-is */
+html.light .text-charcoal { color: #1C1C24; }
 
 /* 5. BORDER OVERRIDES */
 html.light .border-white\/10  { border-color: rgba(0,0,0,0.08) !important; }
