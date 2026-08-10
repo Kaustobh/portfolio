@@ -69,6 +69,8 @@
             }
         }
     </script>
+    <!-- Anti-FOUC: Synchronously restore saved theme before first paint to prevent flash -->
+    <script>(function(){var t=localStorage.getItem('theme_matrix');if(t==='light'){document.documentElement.classList.remove('dark');document.documentElement.classList.add('light');}else{document.documentElement.classList.add('dark');document.documentElement.classList.remove('light');}})();</script>
     <style>
         /* Custom scrollbar and snap behaviors */
         body { 
@@ -4897,46 +4899,27 @@ gsap.to(camera.position, {
             // ==========================================
             // C. PREMIUM DUAL-THEME SWITCHER MATRIX
             // ==========================================
-            const themeToggle = document.getElementById('theme-matrix-toggle');
-            
-            // Check if light mode is selected in storage
-            const savedTheme = localStorage.getItem('theme_matrix');
-            if (savedTheme === 'light') {
-                document.documentElement.classList.remove('dark');
-                document.body.classList.add('light');
-            } else {
-                document.documentElement.classList.add('dark');
-                document.body.classList.remove('light');
-            }
+            // NOTE: Class toggling (dark/light) is handled exclusively by hud-navigation.js
+            // to avoid double-firing. This block handles UI re-calibration on theme change.
 
-            themeToggle.addEventListener('click', () => {
-                const isLight = document.body.classList.contains('light');
-                if (isLight) {
-                    document.documentElement.classList.add('dark');
-                    document.body.classList.remove('light');
-                    localStorage.setItem('theme_matrix', 'dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                    document.body.classList.add('light');
-                    localStorage.setItem('theme_matrix', 'light');
-                }
-                playSyntheticClick('success');
+            // Listen for theme changes dispatched by hud-navigation.js
+            document.addEventListener('themechange', (e) => {
+                const updatedIsLight = e.detail.isLight;
 
-                // Dynamic UI Re-calibration: Re-populate dates/slots/chatbot immediately to match active theme rules
+                // Dynamic UI Re-calibration: Re-populate dates/slots on theme switch
                 if (schedulerPanel.classList.contains('max-h-[500px]')) {
                     populateDateRow();
                     if (selectedDateNode) {
                         populateTimeRow();
                     }
                 }
-                
-                // Re-render chatbot history to apply correct background bubble contrast
+
+                // Re-render chatbot history to apply correct bubble contrast
                 const existingBubbles = chatLog.querySelectorAll('.flex');
                 existingBubbles.forEach(b => {
                     const isUser = b.querySelector('span').innerText.includes('RECRUITER');
                     const bubbleBody = b.querySelector('div');
-                    const updatedIsLight = document.body.classList.contains('light');
-                    
+
                     if (isUser) {
                         bubbleBody.className = updatedIsLight
                             ? 'bg-electric-blue/15 border-electric-blue/30 text-ink rounded-lg rounded-tr-none p-2.5 max-w-[85%] border shadow-sm'

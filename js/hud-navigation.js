@@ -248,30 +248,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
-    // Dark / Light Theme Matrix Switcher
+    // Dark / Light Theme Matrix Switcher — single source of truth for class toggling
     const themeToggle = document.getElementById('theme-matrix-toggle');
     if (themeToggle) {
         const savedTheme = localStorage.getItem('theme_matrix');
         if (savedTheme === 'light') {
             document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
             document.body.classList.add('light');
         } else {
             document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
             document.body.classList.remove('light');
         }
 
         themeToggle.addEventListener('click', () => {
             const isLight = document.body.classList.contains('light');
             if (isLight) {
+                // Switch to DARK
                 document.documentElement.classList.add('dark');
+                document.documentElement.classList.remove('light');
                 document.body.classList.remove('light');
                 localStorage.setItem('theme_matrix', 'dark');
             } else {
+                // Switch to LIGHT
                 document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
                 document.body.classList.add('light');
                 localStorage.setItem('theme_matrix', 'light');
             }
-            playSyntheticClick('success');
+            // Dispatch event for inline UI re-calibration (chatbot, scheduler)
+            document.dispatchEvent(new CustomEvent('themechange', { detail: { isLight: !isLight } }));
+            if (typeof playSyntheticClick === 'function') playSyntheticClick('success');
         });
     }
 });

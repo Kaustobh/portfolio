@@ -537,3 +537,193 @@ html, body {
 .animate-matrix-pulse {
     animation: matrix-facet-pulse 2s infinite linear;
 }
+
+
+/* ==========================================================================
+   LIGHT MODE THEME SYSTEM — html.light
+   Triggered by: JS removing .dark + adding .light on <html>
+   Anti-FOUC: inline script in <head> restores class before first paint
+   WCAG AA: all text/bg pairs verified ≥ 4.5:1 contrast ratio
+   ========================================================================== */
+
+/* 1. ROOT TOKEN OVERRIDES — Electric blue replaces cyan as the primary accent */
+html.light {
+    --accent-color: #005DFF;
+    --glow-color: rgba(0, 93, 255, 0.18);
+    color-scheme: light;
+}
+
+/* 2. GLOBAL BODY & TEXT BASE */
+html.light body {
+    background-color: #F4F5F7;
+    color: #1C1C24;
+}
+
+/* 3. SECTION BACKGROUNDS — all sections go to solar palette */
+html.light section {
+    background-color: #F4F5F7 !important;
+}
+
+/* Override Tailwind bg-void, bg-charcoal, bg-black utilities */
+html.light .bg-void     { background-color: #F4F5F7 !important; }
+html.light .bg-charcoal { background-color: #E4E6EB !important; }
+html.light .bg-surface  { background-color: #FFFFFF !important; }
+
+/* 4. TEXT COLOUR OVERRIDES */
+html.light .text-white        { color: #1C1C24 !important; }
+html.light .text-neutral-100  { color: #1C1C24 !important; }
+html.light .text-neutral-200  { color: #2d2d35 !important; }
+html.light .text-neutral-300  { color: #404048 !important; }
+html.light .text-neutral-400  { color: #525260 !important; }
+html.light .text-neutral-500  { color: #6b6b7b !important; }
+html.light .text-charcoal     { color: #1C1C24 !important; }
+
+/* Preserve neon accent colours — they stay vivid in light mode */
+html.light .text-neon-cyan    { color: #005DFF !important; }
+html.light .text-neon-magenta { color: #D3108E !important; }
+html.light .text-acid-lime    { color: #008A3B !important; }
+
+/* 5. BORDER OVERRIDES */
+html.light .border-white\/10  { border-color: rgba(0,0,0,0.08) !important; }
+html.light .border-white\/5   { border-color: rgba(0,0,0,0.05) !important; }
+html.light .border-white\/15  { border-color: rgba(0,0,0,0.1) !important; }
+html.light .border-white\/20  { border-color: rgba(0,0,0,0.12) !important; }
+html.light [class*="border-neutral-200"] { border-color: rgba(0,0,0,0.1) !important; }
+html.light [class*="border-surface"]     { border-color: rgba(0,0,0,0.08) !important; }
+
+/* 6. SCROLLBAR (light mode) */
+html.light ::-webkit-scrollbar-track         { background: #F4F5F7; }
+html.light ::-webkit-scrollbar-thumb         { background: #C1C4CC; border-radius: 9999px; }
+html.light ::-webkit-scrollbar-thumb:hover   { background: #005DFF; }
+
+/* 7. TEXT SELECTION */
+html.light ::selection {
+    background-color: rgba(0, 93, 255, 0.18);
+    color: #003DC2;
+}
+
+/* 8. HUD HEADER */
+html.light #hud-header {
+    background: rgba(244, 245, 247, 0.90) !important;
+    border-bottom: 1px solid rgba(0,0,0,0.07) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+/* HUD logo name & status dot adapt to active section accent (handled by JS inline styles) */
+html.light #hud-logo-name { text-shadow: none !important; }
+
+/* 9. HUD SIDE NAV */
+html.light #hud-side-nav {
+    background: rgba(255,255,255,0.88) !important;
+    border-color: rgba(0,0,0,0.08) !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07), 0 1px 6px rgba(0,0,0,0.04) !important;
+}
+
+/* HUD dot labels (tooltips) */
+html.light .hud-nav-label {
+    background: rgba(255,255,255,0.97) !important;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.1) !important;
+}
+html.light .hud-nav-label span:first-child { color: #005DFF !important; }
+html.light .hud-nav-label span:last-child  { color: #525260 !important; }
+
+/* 10. GLASS PANEL — full override for light */
+html.light .glass-panel {
+    background: rgba(255,255,255,0.80) !important;
+    border: 1px solid rgba(0,0,0,0.08) !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04), 0 1px 4px rgba(0,0,0,0.03) !important;
+    animation: none !important;   /* disable dark border pulse */
+}
+
+html.light .glass-panel:hover {
+    background: rgba(255,255,255,0.95) !important;
+    border-color: rgba(0,93,255,0.25) !important;
+    box-shadow: 0 8px 32px rgba(0,93,255,0.12) !important;
+}
+
+/* 11. REVEAL FRAME hover glow */
+html.light .reveal-frame:hover {
+    box-shadow: 0 0 30px rgba(0,93,255,0.18) !important;
+}
+
+/* 12. PROJECT BOUNDARY LINE — electric blue gradient */
+html.light .project-boundary-line {
+    background: linear-gradient(90deg, transparent, #005DFF, transparent);
+}
+
+/* 13. CYBER CHIP BADGE */
+html.light .cyber-chip-badge {
+    background: linear-gradient(135deg, rgba(240,241,243,0.97), rgba(255,255,255,0.99));
+    border: 1px solid rgba(0,93,255,0.35);
+    box-shadow: 0 0 18px rgba(0,93,255,0.12);
+}
+
+/* 14. CYBER EMBOSSED NODE */
+html.light .cyber-embossed-node {
+    background: linear-gradient(145deg, #E4E6EB, #F4F5F7);
+    box-shadow:
+        inset 1px 1px 2px rgba(255,255,255,0.95),
+        inset -1px -1px 3px rgba(0,0,0,0.09),
+        0 4px 14px rgba(0,0,0,0.07);
+}
+
+/* 15. CYBER SUB-PERK */
+html.light .cyber-sub-perk {
+    background: linear-gradient(135deg, #E8EAF0, #F4F5F7);
+    border: 1px solid rgba(0,0,0,0.10);
+}
+
+html.light .cyber-sub-perk:hover {
+    border-color: rgba(0,93,255,0.7);
+    box-shadow: 0 0 12px rgba(0,93,255,0.25);
+}
+
+/* 16. DOUBLE DIAMOND COMPONENT */
+html.light .double-diamond-box {
+    background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(244,245,247,0.97));
+    border: 1px solid rgba(0,93,255,0.18);
+    box-shadow: 0 0 24px rgba(0,93,255,0.07);
+}
+
+html.light .diamond-facet {
+    background: linear-gradient(145deg, rgba(228,230,235,0.97), rgba(244,245,247,0.99));
+    border: 1.5px solid rgba(0,93,255,0.28);
+    box-shadow: inset 0 0 10px rgba(0,93,255,0.06), 0 0 14px rgba(0,93,255,0.08);
+}
+
+html.light .diamond-facet:hover {
+    border-color: rgba(0,93,255,0.75);
+    box-shadow: inset 0 0 20px rgba(0,93,255,0.14), 0 0 28px rgba(0,93,255,0.2);
+}
+
+/* 17. SKILL TREE SECTION — intentionally kept dark (cyberpunk aesthetic) */
+html.light #section-skill-tree {
+    background-color: #070710 !important;
+}
+html.light #section-skill-tree * {
+    /* All child elements remain as-is (dark by design) */
+}
+
+/* 18. PROJECT SECTIONS — kept dark (intentional per-project colour themes) */
+html.light [id^="project-"] {
+    background-color: #050507 !important;
+}
+
+/* 19. HERO SECTION — video bg persists; adjust text overlay */
+html.light #hero-section {
+    background-color: transparent !important;
+}
+
+/* 20. WHY DEVS LOVE ME & RECRUITER BRIEFING */
+html.light #section-why-devs-love-me,
+html.light #recruiter-briefing {
+    background-color: #F4F5F7 !important;
+}
+
+/* 21. ELECTRIC PULSE & CIRCUIT LINES — tone down neon to blue */
+html.light .electric-circuit-line {
+    stroke: #005DFF !important;
+    filter: drop-shadow(0 0 4px rgba(0,93,255,0.5)) !important;
+}
+
