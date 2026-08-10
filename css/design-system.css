@@ -503,3 +503,37 @@ html, body {
     border-color: rgba(0, 243, 255, 0.8);
     box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
 }
+
+
+/* ==========================================================================
+   DOUBLE DIAMOND DESIGN PROCESS INTERACTIVE COMPONENT
+   ========================================================================== */
+.double-diamond-box {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(5, 5, 7, 0.95));
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.15);
+    backdrop-filter: blur(12px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.diamond-facet {
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+    border: 1.5px solid rgba(0, 243, 255, 0.4);
+    box-shadow: inset 0 0 15px rgba(0, 243, 255, 0.2), 0 0 20px rgba(0, 243, 255, 0.15);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.diamond-facet:hover {
+    border-color: rgba(0, 243, 255, 0.9);
+    box-shadow: inset 0 0 25px rgba(0, 243, 255, 0.4), 0 0 35px rgba(0, 243, 255, 0.5);
+    transform: scale(1.05) rotate(45deg);
+}
+
+@keyframes matrix-facet-pulse {
+    0%, 100% { opacity: 0.4; stroke-dashoffset: 0; }
+    50% { opacity: 1; stroke-dashoffset: -10; }
+}
+
+.animate-matrix-pulse {
+    animation: matrix-facet-pulse 2s infinite linear;
+}

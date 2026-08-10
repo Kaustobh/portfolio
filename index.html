@@ -951,6 +951,103 @@
                     </p>
                 </div>
 
+                <!-- CENTERED HEADING: MY DESIGN PROCESS -->
+                <div class="flex flex-col items-center justify-center mb-5 text-center">
+                    <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-neon-cyan text-xs font-mono font-bold tracking-[0.25em] uppercase mb-1 shadow-[0_0_15px_rgba(0,243,255,0.2)]">
+                        <span class="w-2 h-2 rounded-full bg-neon-cyan animate-ping"></span>
+                        MY DESIGN PROCESS
+                    </div>
+                    <span class="text-[10px] font-mono text-neutral-400 tracking-widest uppercase">DOUBLE DIAMOND DESIGNING METHODOLOGY</span>
+                </div>
+
+                <!-- DOUBLE DIAMOND INTERACTIVE COMPONENT -->
+                <div class="double-diamond-box rounded-2xl p-6 md:p-8 mb-8 relative overflow-hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
+                        
+                        <!-- LEFT DIAMOND: PROBLEM SPACE -->
+                        <div class="flex flex-col items-center text-center group cursor-pointer" onclick="toggleProblemDiamond()">
+                            <span class="font-mono text-xs font-bold text-neon-cyan uppercase tracking-widest mb-3">[STAGE 01 // PROBLEM SPACE]</span>
+                            
+                            <!-- Faceted Translucent Diamond Shape -->
+                            <div id="problem-diamond-facet" class="diamond-facet w-24 h-24 sm:w-28 sm:h-28 rotate-45 rounded-xl flex items-center justify-center relative mb-4">
+                                <div class="-rotate-45 flex flex-col items-center">
+                                    <svg class="w-8 h-8 sm:w-10 sm:h-10 text-neon-cyan animate-matrix-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                                    <span class="font-mono text-[9px] font-bold text-white mt-1">RESEARCH</span>
+                                </div>
+                            </div>
+
+                            <!-- Hover Text Reveal -->
+                            <span class="font-mono text-sm font-bold text-neon-cyan opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all">
+                                DISCOVER &amp; DEFINE
+                            </span>
+                            <span class="text-[10px] font-mono text-neutral-400 mt-1">⚡ Click to Expand Sub-Layers</span>
+
+                            <!-- Click State Expanded Sub-Icon Layer -->
+                            <div id="problem-diamond-subpanel" class="hidden mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 w-full max-w-sm transition-all duration-300">
+                                <div class="p-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/40 flex items-center gap-2 text-left">
+                                    <svg class="w-4 h-4 text-neon-cyan flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+                                    <div>
+                                        <span class="block font-mono text-[10px] font-bold text-white">User Research</span>
+                                        <span class="block font-mono text-[8px] text-neutral-400">Audits &amp; Interviews</span>
+                                    </div>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/40 flex items-center gap-2 text-left">
+                                    <svg class="w-4 h-4 text-neon-cyan flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                                    <div>
+                                        <span class="block font-mono text-[10px] font-bold text-white">Data Analysis</span>
+                                        <span class="block font-mono text-[8px] text-neutral-400">Synthesis &amp; Personas</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT DIAMOND: SOLUTION SPACE -->
+                        <div class="flex flex-col items-center text-center group cursor-pointer" onclick="toggleSolutionDiamond()">
+                            <span class="font-mono text-xs font-bold text-neon-magenta uppercase tracking-widest mb-3">[STAGE 02 // SOLUTION SPACE]</span>
+                            
+                            <!-- Faceted Translucent Diamond Shape -->
+                            <div id="solution-diamond-facet" class="diamond-facet w-24 h-24 sm:w-28 sm:h-28 rotate-45 rounded-xl flex items-center justify-center relative mb-4 border-pink-500/50 shadow-[0_0_20px_rgba(255,0,160,0.2)]">
+                                <div class="-rotate-45 flex flex-col items-center">
+                                    <svg class="w-8 h-8 sm:w-10 sm:h-10 text-neon-magenta animate-matrix-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                                    <span class="font-mono text-[9px] font-bold text-white mt-1">EXECUTION</span>
+                                </div>
+                            </div>
+
+                            <!-- Hover Text Reveal -->
+                            <span class="font-mono text-sm font-bold text-neon-magenta opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all">
+                                DEVELOP &amp; DELIVER
+                            </span>
+                            <span class="text-[10px] font-mono text-neutral-400 mt-1">⚡ Click to Expand Sub-Layers</span>
+
+                            <!-- Click State Expanded Sub-Icon Layer -->
+                            <div id="solution-diamond-subpanel" class="hidden mt-4 grid grid-cols-1 sm:grid-cols-3 gap-2 w-full max-w-md transition-all duration-300">
+                                <div class="p-2 rounded-xl bg-pink-500/10 border border-pink-500/40 flex items-center gap-1.5 text-left">
+                                    <svg class="w-3.5 h-3.5 text-neon-magenta flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                                    <div>
+                                        <span class="block font-mono text-[9px] font-bold text-white">Prototyping</span>
+                                        <span class="block font-mono text-[7px] text-neutral-400">Interactive</span>
+                                    </div>
+                                </div>
+                                <div class="p-2 rounded-xl bg-pink-500/10 border border-pink-500/40 flex items-center gap-1.5 text-left">
+                                    <svg class="w-3.5 h-3.5 text-neon-magenta flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                                    <div>
+                                        <span class="block font-mono text-[9px] font-bold text-white">Testing</span>
+                                        <span class="block font-mono text-[7px] text-neutral-400">Usability Audits</span>
+                                    </div>
+                                </div>
+                                <div class="p-2 rounded-xl bg-pink-500/10 border border-pink-500/40 flex items-center gap-1.5 text-left">
+                                    <svg class="w-3.5 h-3.5 text-neon-magenta flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+                                    <div>
+                                        <span class="block font-mono text-[9px] font-bold text-white">Dev Handoff</span>
+                                        <span class="block font-mono text-[7px] text-neutral-400">Tokens &amp; Specs</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
                 <!-- 3 Floating Geometric Value Pillars (Horizontal Grid) -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
                     <!-- Pillar 1: Design Tokens & Systems -->
@@ -6230,5 +6327,34 @@ gsap.to(camera.position, {
     <script defer src="js/modals.js"></script>
     <script defer src="js/skill-tree.js"></script>
     <script defer src="js/mockup-engines.js"></script>
+
+    <script>
+    function toggleProblemDiamond() {
+        const subpanel = document.getElementById('problem-diamond-subpanel');
+        const facet = document.getElementById('problem-diamond-facet');
+        if (subpanel) {
+            subpanel.classList.toggle('hidden');
+            if (facet) {
+                facet.classList.toggle('scale-110');
+                facet.classList.toggle('shadow-[0_0_35px_rgba(0,243,255,0.6)]');
+            }
+            if (typeof playSyntheticClick === 'function') playSyntheticClick('click');
+        }
+    }
+
+    function toggleSolutionDiamond() {
+        const subpanel = document.getElementById('solution-diamond-subpanel');
+        const facet = document.getElementById('solution-diamond-facet');
+        if (subpanel) {
+            subpanel.classList.toggle('hidden');
+            if (facet) {
+                facet.classList.toggle('scale-110');
+                facet.classList.toggle('shadow-[0_0_35px_rgba(255,0,160,0.6)]');
+            }
+            if (typeof playSyntheticClick === 'function') playSyntheticClick('click');
+        }
+    }
+    </script>
+    
 </body>
 </html>
