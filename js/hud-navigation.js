@@ -22,6 +22,38 @@ const sectionRegistry = [
 let currentSection = 'hero';
 const sectionVisibility = {};
 
+// ── Section Transition Engine ──────────────────────────────────────────────
+let _flashCooldown = false;
+
+function triggerSectionFlash(color) {
+    if (_flashCooldown) return;
+    const bar = document.getElementById('snap-flash-bar');
+    if (!bar) return;
+    _flashCooldown = true;
+    bar.style.setProperty('--flash-accent', color);
+    bar.classList.remove('flash-active');
+    // Force reflow so the animation restarts cleanly every time
+    void bar.offsetWidth;
+    bar.classList.add('flash-active');
+    setTimeout(() => {
+        bar.classList.remove('flash-active');
+        _flashCooldown = false;
+    }, 500);
+}
+
+function triggerSectionBreatheIn(activeKey) {
+    const reg = sectionRegistry.find(s => s.key === activeKey);
+    if (!reg || !reg.el) return;
+    // Target the first direct child div — the inner content wrapper
+    const contentWrapper = reg.el.querySelector(':scope > div.relative, :scope > div.max-w-7xl, :scope > div.max-w-6xl, :scope > div.max-w-4xl, :scope > div.max-w-2xl');
+    if (!contentWrapper) return;
+    contentWrapper.classList.remove('section-breathe-in');
+    void contentWrapper.offsetWidth;
+    contentWrapper.classList.add('section-breathe-in');
+    setTimeout(() => contentWrapper.classList.remove('section-breathe-in'), 700);
+}
+// ───────────────────────────────────────────────────────────────────────────
+
 function updateHUDLogoTheme(hexColor) {
     const logoAura = document.getElementById('logo-hud-aura');
     const logoImg = document.getElementById('hud-logo-img');
@@ -60,6 +92,11 @@ function updateActiveHUDDot(activeKey, force = false) {
     const registry = sectionRegistry.find(s => s.key === activeKey);
     const activeColor  = registry ? registry.color  : '#00F3FF';
     const activeShadow = registry ? registry.shadow : 'rgba(0,243,255,0.7)';
+
+    // ── Trigger section transition effects ──
+    triggerSectionFlash(activeColor);
+    triggerSectionBreatheIn(activeKey);
+    // ────────────────────────────────────────
 
     document.documentElement.style.setProperty('--accent-color', activeColor);
     document.documentElement.style.setProperty('--glow-color', activeShadow);
