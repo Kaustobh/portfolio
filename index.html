@@ -859,12 +859,13 @@
 
     <!-- HERO SECTION -->
     <section id="hero-section" class="relative h-screen w-full flex flex-col justify-center px-8 md:px-24 overflow-hidden snap-start">
-        <!-- HTML5 Background Video (Unmuted Audio Synced with Hymn Engine, NO Gradient Overlay) -->
+        <!-- Hero Background Video — autoplay muted, unmutes on first user interaction -->
         <video
             id="hero-bg-video" poster="assets/posters/hero_poster.webp"
             src="hero.webm"
             autoplay
             loop
+            muted
             playsinline
             preload="auto"
             decoding="async"
@@ -5415,6 +5416,24 @@ gsap.to(camera.position, {
 
             // Set initial active dot on load
             updateActiveHUDDot('hero');
+
+            // ==========================================
+            // HERO VIDEO: Unmute on first user gesture
+            // Autoplay requires muted; unmute after interaction
+            // ==========================================
+            const heroVid = document.getElementById('hero-bg-video');
+            if (heroVid) {
+                const unmuteHeroVideo = () => {
+                    heroVid.muted = false;
+                    heroVid.volume = 0.6;
+                    window.removeEventListener('click',   unmuteHeroVideo);
+                    window.removeEventListener('scroll',  unmuteHeroVideo);
+                    window.removeEventListener('keydown', unmuteHeroVideo);
+                };
+                window.addEventListener('click',   unmuteHeroVideo, { passive: true, once: true });
+                window.addEventListener('scroll',  unmuteHeroVideo, { passive: true, once: true });
+                window.addEventListener('keydown', unmuteHeroVideo, { passive: true, once: true });
+            }
 
 
             // ==========================================
