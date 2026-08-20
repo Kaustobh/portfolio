@@ -1578,31 +1578,23 @@
             </div>
 
             
-            <!-- Right: Themed Video Frame (PulseHQ AI-Powered Team Intelligence) -->
-            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-cyan-500/40 hover:border-cyan-400/80 shadow-[0_0_30px_rgba(0,243,255,0.2)] hover:shadow-[0_0_40px_rgba(0,243,255,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('Pulse_HQ.mp4', 'PulseHQ // KPI Preview', '+14% Sprint Velocity & 1-Tap Rebalance', 'fintech-modal')">
+            <!-- Right: Themed Card Frame (PulseHQ AI-Powered Team Intelligence) -->
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-cyan-500/40 hover:border-cyan-400/80 shadow-[0_0_30px_rgba(0,243,255,0.2)] hover:shadow-[0_0_40px_rgba(0,243,255,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openModal('fintech-modal')">
                 <!-- Top Themed Header Bar -->
                 <div class="w-full px-4 py-2 bg-void/90 border-b border-cyan-500/20 flex items-center justify-between z-20 pointer-events-none">
                     <div class="flex items-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-neon-cyan animate-pulse"></span>
                         <span class="font-mono text-[9px] uppercase tracking-widest text-neon-cyan font-bold">[AI WORKSPACE // MOBILE PROTOTYPE]</span>
                     </div>
-                    <span class="font-mono text-[8px] text-white/50">▶ HD PREVIEW</span>
+                    <span class="font-mono text-[8px] text-white/50">CASE STUDY PREVIEW</span>
                 </div>
-                <!-- Video Container -->
-                <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-fintech" poster="assets/posters/pulse_hq_poster.webp" autoplay muted loop playsinline preload="auto" decoding="async" class="w-full h-full object-cover transform-gpu pointer-events-none">
-                        <source src="Pulse_HQ.mp4" type="video/mp4">
-                    </video>
-                    <!-- Play Overlay -->
-                    <div class="absolute inset-0 flex items-center justify-center bg-void/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
-                        <div class="w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300" style="background:#00F3FF; box-shadow:0 0 25px rgba(0,243,255,0.8);">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#000" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                        </div>
-                    </div>
+                <!-- Poster Container -->
+                <div class="relative w-full grow overflow-hidden bg-black/40">
+                    <img src="assets/posters/pulse_hq_poster.webp" alt="PulseHQ Preview" class="w-full h-full object-cover transform-gpu group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
                 </div>
                 <!-- Bottom CTA Strip -->
                 <div class="px-4 py-2.5 bg-gradient-to-t from-void/95 to-void/70 border-t border-cyan-500/20 flex items-center justify-between pointer-events-none z-20">
-                    <span class="font-mono text-[9px] font-bold text-neon-cyan uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-neon-cyan animate-ping"></span>▶ Click to Expand Fullscreen</span>
+                    <span class="font-mono text-[9px] font-bold text-neon-cyan uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-neon-cyan animate-ping"></span>View Case Study Matrix</span>
                     <span class="font-mono text-[9px] text-white/70 group-hover:text-white transition-colors">Full Case Study →</span>
                 </div>
             </div>
@@ -1642,31 +1634,23 @@
             </div>
 
             
-            <!-- Right: Themed Video Frame (E-Comm Checkout) -->
-            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-pink-500/40 hover:border-pink-400/80 shadow-[0_0_30px_rgba(255,0,160,0.2)] hover:shadow-[0_0_40px_rgba(255,0,160,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('NeonHex.mp4', 'E-Comm Checkout // KPI Preview', '+18% Checkout Rate', 'checkout-modal')">
+            <!-- Right: Themed Card Frame (E-Comm Checkout) -->
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-pink-500/40 hover:border-pink-400/80 shadow-[0_0_30px_rgba(255,0,160,0.2)] hover:shadow-[0_0_40px_rgba(255,0,160,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openModal('checkout-modal')">
                 <!-- Top Themed Header Bar -->
                 <div class="w-full px-4 py-2 bg-void/90 border-b border-pink-500/20 flex items-center justify-between z-20 pointer-events-none">
                     <div class="flex items-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-neon-magenta animate-pulse"></span>
                         <span class="font-mono text-[9px] uppercase tracking-widest text-neon-magenta font-bold">[E-COMM // CHECKOUT FLOW]</span>
                     </div>
-                    <span class="font-mono text-[8px] text-white/50">▶ HD PREVIEW</span>
+                    <span class="font-mono text-[8px] text-white/50">CASE STUDY PREVIEW</span>
                 </div>
-                <!-- Video Container -->
-                <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-checkout" poster="assets/posters/neonhex_poster.webp" autoplay muted loop playsinline preload="auto" decoding="async" class="w-full h-full object-cover transform-gpu pointer-events-none">
-                        <source src="NeonHex.mp4" type="video/mp4">
-                    </video>
-                    <!-- Play Overlay -->
-                    <div class="absolute inset-0 flex items-center justify-center bg-void/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
-                        <div class="w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300" style="background:#FF00A0; box-shadow:0 0 25px rgba(255,0,160,0.8);">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                        </div>
-                    </div>
+                <!-- Poster Container -->
+                <div class="relative w-full grow overflow-hidden bg-black/40">
+                    <img src="assets/posters/neonhex_poster.webp" alt="E-Comm Checkout Preview" class="w-full h-full object-cover transform-gpu group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
                 </div>
                 <!-- Bottom CTA Strip -->
                 <div class="px-4 py-2.5 bg-gradient-to-t from-void/95 to-void/70 border-t border-pink-500/20 flex items-center justify-between pointer-events-none z-20">
-                    <span class="font-mono text-[9px] font-bold text-neon-magenta uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-neon-magenta animate-ping"></span>▶ Click to Expand Fullscreen</span>
+                    <span class="font-mono text-[9px] font-bold text-neon-magenta uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-neon-magenta animate-ping"></span>View Case Study Matrix</span>
                     <span class="font-mono text-[9px] text-white/70 group-hover:text-white transition-colors">Full Case Study →</span>
                 </div>
             </div>
@@ -1714,31 +1698,23 @@
             </div>
 
             
-            <!-- Right: Themed Video Frame (Graphic Art Gallery) -->
-            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-lime-500/40 hover:border-lime-400/80 shadow-[0_0_30px_rgba(212,255,0,0.2)] hover:shadow-[0_0_40px_rgba(212,255,0,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('artt gallery.mp4', 'Graphic Art Gallery // KPI Preview', '+28% Inquiry Rate', 'gallery-modal')">
+            <!-- Right: Themed Card Frame (Graphic Art Gallery) -->
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-lime-500/40 hover:border-lime-400/80 shadow-[0_0_30px_rgba(212,255,0,0.2)] hover:shadow-[0_0_40px_rgba(212,255,0,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openModal('gallery-modal')">
                 <!-- Top Themed Header Bar -->
                 <div class="w-full px-4 py-2 bg-void/90 border-b border-lime-500/20 flex items-center justify-between z-20 pointer-events-none">
                     <div class="flex items-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-acid-lime animate-pulse"></span>
                         <span class="font-mono text-[9px] uppercase tracking-widest text-acid-lime font-bold">[ART GALLERY // SPATIAL CANVAS]</span>
                     </div>
-                    <span class="font-mono text-[8px] text-white/50">▶ HD PREVIEW</span>
+                    <span class="font-mono text-[8px] text-white/50">CASE STUDY PREVIEW</span>
                 </div>
-                <!-- Video Container -->
-                <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-gallery" poster="assets/posters/gallery_poster.webp" autoplay muted loop playsinline preload="auto" decoding="async" class="w-full h-full object-cover transform-gpu pointer-events-none">
-                        <source src="artt gallery.mp4" type="video/mp4">
-                    </video>
-                    <!-- Play Overlay -->
-                    <div class="absolute inset-0 flex items-center justify-center bg-void/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
-                        <div class="w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300" style="background:#D4FF00; box-shadow:0 0 25px rgba(212,255,0,0.8);">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#000" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                        </div>
-                    </div>
+                <!-- Poster Container -->
+                <div class="relative w-full grow overflow-hidden bg-black/40">
+                    <img src="assets/posters/gallery_poster.webp" alt="Graphic Art Gallery Preview" class="w-full h-full object-cover transform-gpu group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
                 </div>
                 <!-- Bottom CTA Strip -->
                 <div class="px-4 py-2.5 bg-gradient-to-t from-void/95 to-void/70 border-t border-lime-500/20 flex items-center justify-between pointer-events-none z-20">
-                    <span class="font-mono text-[9px] font-bold text-acid-lime uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-acid-lime animate-ping"></span>▶ Click to Expand Fullscreen</span>
+                    <span class="font-mono text-[9px] font-bold text-acid-lime uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-acid-lime animate-ping"></span>View Case Study Matrix</span>
                     <span class="font-mono text-[9px] text-white/70 group-hover:text-white transition-colors">Full Case Study →</span>
                 </div>
             </div>
@@ -1786,31 +1762,23 @@
             </div>
 
             
-            <!-- Right: Themed Video Frame (Doodh Subscription) -->
-            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-emerald-500/40 hover:border-emerald-400/80 shadow-[0_0_30px_rgba(168,207,161,0.2)] hover:shadow-[0_0_40px_rgba(168,207,161,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('Doodh.mp4', 'Milk Subscription Model // KPI Preview', '+30% Retention Lift', 'MilkDel-modal')">
+            <!-- Right: Themed Card Frame (Doodh Subscription) -->
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-emerald-500/40 hover:border-emerald-400/80 shadow-[0_0_30px_rgba(168,207,161,0.2)] hover:shadow-[0_0_40px_rgba(168,207,161,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openModal('MilkDel-modal')">
                 <!-- Top Themed Header Bar -->
                 <div class="w-full px-4 py-2 bg-void/90 border-b border-emerald-500/20 flex items-center justify-between z-20 pointer-events-none">
                     <div class="flex items-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-pista-green animate-pulse"></span>
                         <span class="font-mono text-[9px] uppercase tracking-widest text-pista-green font-bold">[DOODH // SUBSCRIPTION MATRIX]</span>
                     </div>
-                    <span class="font-mono text-[8px] text-white/50">▶ HD PREVIEW</span>
+                    <span class="font-mono text-[8px] text-white/50">CASE STUDY PREVIEW</span>
                 </div>
-                <!-- Video Container -->
-                <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-milkdel" poster="assets/posters/doodh_poster.webp" autoplay muted loop playsinline preload="auto" decoding="async" class="w-full h-full object-cover transform-gpu pointer-events-none">
-                        <source src="Doodh.mp4" type="video/mp4">
-                    </video>
-                    <!-- Play Overlay -->
-                    <div class="absolute inset-0 flex items-center justify-center bg-void/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
-                        <div class="w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300" style="background:#A8CFA1; box-shadow:0 0 25px rgba(168,207,161,0.8);">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#000" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                        </div>
-                    </div>
+                <!-- Poster Container -->
+                <div class="relative w-full grow overflow-hidden bg-black/40">
+                    <img src="assets/posters/doodh_poster.webp" alt="Doodh Subscription Preview" class="w-full h-full object-cover transform-gpu group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
                 </div>
                 <!-- Bottom CTA Strip -->
                 <div class="px-4 py-2.5 bg-gradient-to-t from-void/95 to-void/70 border-t border-emerald-500/20 flex items-center justify-between pointer-events-none z-20">
-                    <span class="font-mono text-[9px] font-bold text-pista-green uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-pista-green animate-ping"></span>▶ Click to Expand Fullscreen</span>
+                    <span class="font-mono text-[9px] font-bold text-pista-green uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-pista-green animate-ping"></span>View Case Study Matrix</span>
                     <span class="font-mono text-[9px] text-white/70 group-hover:text-white transition-colors">Full Case Study →</span>
                 </div>
             </div>
@@ -1858,31 +1826,23 @@
             </div>
 
             
-            <!-- Right: Themed Video Frame (Bio Grid Med Tech) -->
-            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-green-500/40 hover:border-green-400/80 shadow-[0_0_30px_rgba(74,222,128,0.2)] hover:shadow-[0_0_40px_rgba(74,222,128,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('Bio Grid.mp4', 'Bio Grid // KPI Preview', '+45% Scan Speed', 'BioGrid-modal')">
+            <!-- Right: Themed Card Frame (Bio Grid Med Tech) -->
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-green-500/40 hover:border-green-400/80 shadow-[0_0_30px_rgba(74,222,128,0.2)] hover:shadow-[0_0_40px_rgba(74,222,128,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openModal('BioGrid-modal')">
                 <!-- Top Themed Header Bar -->
                 <div class="w-full px-4 py-2 bg-void/90 border-b border-green-500/20 flex items-center justify-between z-20 pointer-events-none">
                     <div class="flex items-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-biogrid-mint animate-pulse"></span>
                         <span class="font-mono text-[9px] uppercase tracking-widest text-biogrid-mint font-bold">[MED TECH // TELEMETRY GRID]</span>
                     </div>
-                    <span class="font-mono text-[8px] text-white/50">▶ HD PREVIEW</span>
+                    <span class="font-mono text-[8px] text-white/50">CASE STUDY PREVIEW</span>
                 </div>
-                <!-- Video Container -->
-                <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-biogrid" poster="assets/posters/biogrid_poster.webp" autoplay muted loop playsinline preload="auto" decoding="async" class="w-full h-full object-cover transform-gpu pointer-events-none">
-                        <source src="Bio Grid.mp4" type="video/mp4">
-                    </video>
-                    <!-- Play Overlay -->
-                    <div class="absolute inset-0 flex items-center justify-center bg-void/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
-                        <div class="w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300" style="background:#4ade80; box-shadow:0 0 25px rgba(74,222,128,0.8);">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#000" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                        </div>
-                    </div>
+                <!-- Poster Container -->
+                <div class="relative w-full grow overflow-hidden bg-black/40">
+                    <img src="assets/posters/biogrid_poster.webp" alt="Bio Grid Preview" class="w-full h-full object-cover transform-gpu group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
                 </div>
                 <!-- Bottom CTA Strip -->
                 <div class="px-4 py-2.5 bg-gradient-to-t from-void/95 to-void/70 border-t border-green-500/20 flex items-center justify-between pointer-events-none z-20">
-                    <span class="font-mono text-[9px] font-bold text-biogrid-mint uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-biogrid-mint animate-ping"></span>▶ Click to Expand Fullscreen</span>
+                    <span class="font-mono text-[9px] font-bold text-biogrid-mint uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-biogrid-mint animate-ping"></span>View Case Study Matrix</span>
                     <span class="font-mono text-[9px] text-white/70 group-hover:text-white transition-colors">Full Case Study →</span>
                 </div>
             </div>
@@ -1933,31 +1893,23 @@
             </div>
 
             
-            <!-- Right: Themed Video Frame (Apex Motorsport) -->
-            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-red-600/40 hover:border-red-500/80 shadow-[0_0_30px_rgba(224,0,10,0.2)] hover:shadow-[0_0_40px_rgba(224,0,10,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('Apex Motorsport.mp4', 'Apex Motorsport // KPI Preview', '60+ FPS at Zero Dependencies', 'Apex-modal')">
+            <!-- Right: Themed Card Frame (Apex Motorsport) -->
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-red-600/40 hover:border-red-500/80 shadow-[0_0_30px_rgba(224,0,10,0.2)] hover:shadow-[0_0_40px_rgba(224,0,10,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openModal('Apex-modal')">
                 <!-- Top Themed Header Bar -->
                 <div class="w-full px-4 py-2 bg-void/90 border-b border-red-600/20 flex items-center justify-between z-20 pointer-events-none">
                     <div class="flex items-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-apex-scarlet animate-pulse"></span>
                         <span class="font-mono text-[9px] uppercase tracking-widest text-apex-scarlet font-bold">[MOTORSPORT // 3D SHOWROOM]</span>
                     </div>
-                    <span class="font-mono text-[8px] text-white/50">▶ HD PREVIEW</span>
+                    <span class="font-mono text-[8px] text-white/50">CASE STUDY PREVIEW</span>
                 </div>
-                <!-- Video Container -->
-                <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-apex" poster="assets/posters/apex_poster.webp" autoplay muted loop playsinline preload="auto" decoding="async" class="w-full h-full object-cover transform-gpu pointer-events-none">
-                        <source src="Apex Motorsport.mp4" type="video/mp4">
-                    </video>
-                    <!-- Play Overlay -->
-                    <div class="absolute inset-0 flex items-center justify-center bg-void/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
-                        <div class="w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300" style="background:#e0000a; box-shadow:0 0 25px rgba(224,0,10,0.8);">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                        </div>
-                    </div>
+                <!-- Poster Container -->
+                <div class="relative w-full grow overflow-hidden bg-black/40">
+                    <img src="assets/posters/apex_poster.webp" alt="Apex Motorsport Preview" class="w-full h-full object-cover transform-gpu group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
                 </div>
                 <!-- Bottom CTA Strip -->
                 <div class="px-4 py-2.5 bg-gradient-to-t from-void/95 to-void/70 border-t border-red-600/20 flex items-center justify-between pointer-events-none z-20">
-                    <span class="font-mono text-[9px] font-bold text-apex-scarlet uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-apex-scarlet animate-ping"></span>▶ Click to Expand Fullscreen</span>
+                    <span class="font-mono text-[9px] font-bold text-apex-scarlet uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-apex-scarlet animate-ping"></span>View Case Study Matrix</span>
                     <span class="font-mono text-[9px] text-white/70 group-hover:text-white transition-colors">Full Case Study →</span>
                 </div>
             </div>
@@ -2019,31 +1971,23 @@
             </div>
 
             
-            <!-- Right: Themed Video Frame (Silvatide Cottage) -->
-            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-emerald-500/40 hover:border-emerald-400/80 shadow-[0_0_30px_rgba(16,185,129,0.2)] hover:shadow-[0_0_40px_rgba(16,185,129,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openVideoModal('Silvatide.mp4', 'Silvatide Cottage // KPI Preview', '+22% Booking Conversion', 'Silvatide-modal')">
+            <!-- Right: Themed Card Frame (Silvatide Cottage) -->
+            <div class="w-full md:w-1/2 h-[45%] md:h-[65%] mt-6 md:mt-0 rounded-xl overflow-hidden relative group cursor-pointer border reveal-frame border-emerald-500/40 hover:border-emerald-400/80 shadow-[0_0_30px_rgba(16,185,129,0.2)] hover:shadow-[0_0_40px_rgba(16,185,129,0.4)] transition-all duration-300 transform-gpu hover:scale-[1.01] bg-black/60 backdrop-blur-md flex flex-col justify-between" onclick="openModal('Silvatide-modal')">
                 <!-- Top Themed Header Bar -->
                 <div class="w-full px-4 py-2 bg-void/90 border-b border-emerald-500/20 flex items-center justify-between z-20 pointer-events-none">
                     <div class="flex items-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
                         <span class="font-mono text-[9px] uppercase tracking-widest text-[#10B981] font-bold">[RETREAT // HOSPITALITY UI]</span>
                     </div>
-                    <span class="font-mono text-[8px] text-white/50">▶ HD PREVIEW</span>
+                    <span class="font-mono text-[8px] text-white/50">CASE STUDY PREVIEW</span>
                 </div>
-                <!-- Video Container -->
-                <div class="relative w-full grow overflow-hidden">
-                    <video id="kpi-video-silvatide" poster="assets/posters/silvatide_poster.webp" autoplay muted loop playsinline preload="auto" decoding="async" class="w-full h-full object-cover transform-gpu pointer-events-none">
-                        <source src="Silvatide.mp4" type="video/mp4">
-                    </video>
-                    <!-- Play Overlay -->
-                    <div class="absolute inset-0 flex items-center justify-center bg-void/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]">
-                        <div class="w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300" style="background:#10B981; box-shadow:0 0 25px rgba(16,185,129,0.8);">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                        </div>
-                    </div>
+                <!-- Poster Container -->
+                <div class="relative w-full grow overflow-hidden bg-black/40">
+                    <img src="assets/posters/silvatide_poster.webp" alt="Silvatide Cottage Preview" class="w-full h-full object-cover transform-gpu group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
                 </div>
                 <!-- Bottom CTA Strip -->
                 <div class="px-4 py-2.5 bg-gradient-to-t from-void/95 to-void/70 border-t border-emerald-500/20 flex items-center justify-between pointer-events-none z-20">
-                    <span class="font-mono text-[9px] font-bold text-[#10B981] uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-ping"></span>▶ Click to Expand Fullscreen</span>
+                    <span class="font-mono text-[9px] font-bold text-[#10B981] uppercase tracking-wider flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-ping"></span>View Case Study Matrix</span>
                     <span class="font-mono text-[9px] text-white/70 group-hover:text-white transition-colors">Full Case Study →</span>
                 </div>
             </div>
@@ -3690,42 +3634,7 @@ gsap.to(camera.position, {
         </div>
     </div>
 
-    <!-- VIDEO POPUP MODAL -->
-    <div id="video-modal" class="fixed inset-0 z-[60] opacity-0 pointer-events-none transition-all duration-300 bg-void/90 backdrop-blur-2xl flex items-center justify-center p-4">
-        <!-- Close overlay trigger -->
-        <div class="absolute inset-0 cursor-zoom-out" onclick="closeVideoModal()"></div>
-        
-        <!-- Modal card -->
-        <div id="video-modal-content" class="relative z-10 w-full max-w-3xl transition-transform duration-300 scale-95 flex flex-col">
-            <!-- Close button -->
-            <div class="flex justify-end mb-3">
-                <button onclick="closeVideoModal()" class="glass-panel p-2.5 rounded-full hover:bg-surface transition-colors cursor-pointer text-neutral-400 hover:text-neon-cyan">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                </button>
-            </div>
-            <!-- Video player card -->
-            <div class="glass-panel border border-neutral-300 dark:border-white/5 rounded-2xl overflow-hidden shadow-2xl">
-                <video preload="auto" decoding="async" id="video-modal-player" poster="assets/posters/nexusfin_poster.webp"
-                    controls 
-                    autoplay
-                    class="w-full max-h-[75vh] object-contain bg-black"
-                >
-                    <source src="NexusFin_tech.mp4" type="video/mp4">
-                </video>
-                <!-- Video info bar -->
-                <div class="p-4 flex justify-between items-center border-t border-neutral-300/30 dark:border-white/5">
-                    <div>
-                        <p class="text-acid-lime dark:text-acid-lime light:text-forest-lime font-mono text-[9px] uppercase tracking-wider font-bold video-kpi-title">Fintech Dashboard // KPI Preview</p>
-                        <p class="text-sm font-bold font-display text-charcoal dark:text-white video-kpi-text">Reduced task time by 40%</p>
-                    </div>
-                    <a href="#" onclick="event.preventDefault(); closeVideoModal(); setTimeout(()=>openModal('fintech-modal'), 300);" class="flex items-center gap-1.5 text-white font-mono text-[10px] font-bold hover:underline cursor-pointer video-case-study-link neon-link-cyan">
-                        See full case study
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <!-- CV QUICK PREVIEW MODAL OVERLAY (Print friendly markup) -->
     <div id="cv-modal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden opacity-0 pointer-events-none transition-all duration-300 bg-void/85 backdrop-blur-xl flex items-center justify-center p-4">
@@ -4060,60 +3969,7 @@ gsap.to(camera.position, {
             if (typeof playSyntheticClick === 'function') playSyntheticClick('mechanical');
         };
 
-        window.openVideoModal = function(videoSrc, kpiTitle, kpiText, caseStudyModalId) {
-            const modal = document.getElementById('video-modal');
-            if (!modal) return;
-            const content = document.getElementById('video-modal-content');
-            const player = document.getElementById('video-modal-player');
-            
-            const finalSrc = videoSrc || 'NexusFin_tech.mp4';
-            const finalTitle = kpiTitle || 'Fintech Dashboard // KPI Preview';
-            const finalTex = kpiText || 'Reduced task time by 40%';
-            const finalModalId = caseStudyModalId || 'fintech-modal';
-            
-            if (player) {
-                const sourceEl = player.querySelector('source');
-                if (sourceEl) sourceEl.setAttribute('src', finalSrc);
-                player.src = finalSrc;
-                player.currentTime = 0;
-                player.muted = false;
-                player.load();
-                player.play().catch(e => console.log("Autoplay info:", e));
-            }
-            
-            const titleEl = modal.querySelector('.video-kpi-title');
-            const textEl = modal.querySelector('.video-kpi-text');
-            const linkEl = modal.querySelector('.video-case-study-link');
-            
-            if (titleEl) titleEl.textContent = finalTitle;
-            if (textEl) textEl.textContent = finalTex;
-            if (linkEl && finalModalId) {
-                linkEl.style.display = 'flex';
-                linkEl.setAttribute('onclick', `event.preventDefault(); closeVideoModal(); setTimeout(()=>openModal('${finalModalId}'), 300);`);
-            }
-            
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            modal.classList.add('opacity-100');
-            if (content) {
-                content.classList.remove('scale-95');
-                content.classList.add('scale-100');
-            }
-            document.body.style.overflow = 'hidden';
-            if (typeof playSyntheticClick === 'function') playSyntheticClick('success');
-        };
 
-        window.closeVideoModal = function() {
-            const modal = document.getElementById('video-modal');
-            if (!modal) return;
-            const content = document.getElementById('video-modal-content');
-            const player = document.getElementById('video-modal-player');
-            
-            modal.classList.add('opacity-0', 'pointer-events-none');
-            modal.classList.remove('opacity-100');
-            if (player) player.pause();
-            document.body.style.overflow = '';
-            if (typeof playSyntheticClick === 'function') playSyntheticClick('mechanical');
-        };
 
         // Global Walker Automated Scheduler Engine
         let currentSchedulerStep = 1;
@@ -4582,12 +4438,10 @@ gsap.to(camera.position, {
                         }, { rootMargin: '250px 0px 250px 0px', threshold: [0, 0.05, 0.2] });
                         
                         document.querySelectorAll('video').forEach(video => {
-                            if (video.id !== 'video-modal-player') {
-                                video.muted = true;
-                                video.setAttribute('preload', 'auto');
-                                video.play().catch(() => {});
-                                videoObserver.observe(video);
-                            }
+                            video.muted = true;
+                            video.setAttribute('preload', 'auto');
+                            video.play().catch(() => {});
+                            videoObserver.observe(video);
                         });
 
                         setTimeout(() => {
@@ -6059,110 +5913,7 @@ gsap.to(camera.position, {
                 playSyntheticClick('mechanical');
             };
 
-            // Video popup modal open/close
-            window.openVideoModal = function(videoSrc, kpiTitle, kpiText, caseStudyModalId) {
-                const modal = document.getElementById('video-modal');
-                const content = document.getElementById('video-modal-content');
-                const player = document.getElementById('video-modal-player');
-                
-                // Fallbacks if not provided (defaulting to Fintech)
-                const finalSrc = videoSrc || 'NexusFin_tech.mp4';
-                const finalTitle = kpiTitle || 'Fintech Dashboard // KPI Preview';
-                const finalTex = kpiText || 'Reduced task time by 40%';
-                const finalModalId = caseStudyModalId || 'fintech-modal';
-                
-                // Update player source
-                const currentSrc = player.querySelector('source') ? player.querySelector('source').getAttribute('src') : '';
-                if (currentSrc !== finalSrc) {
-                    player.src = finalSrc;
-                    // If there's an inner source element, update it too
-                    const sourceEl = player.querySelector('source');
-                    if (sourceEl) sourceEl.setAttribute('src', finalSrc);
-                }
-                
-                // Update text elements
-                const titleEl = modal.querySelector('.video-kpi-title');
-                const textEl = modal.querySelector('.video-kpi-text');
-                const linkEl = modal.querySelector('.video-case-study-link');
-                
-                if (titleEl) {
-                    titleEl.textContent = finalTitle;
-                    titleEl.className = 'font-mono text-[9px] uppercase tracking-wider font-bold video-kpi-title';
-                    if (finalModalId === 'fintech-modal') {
-                        titleEl.classList.add('text-electric-blue', 'dark:text-neon-cyan');
-                    } else if (finalModalId === 'checkout-modal') {
-                        titleEl.classList.add('text-deep-rose', 'dark:text-neon-magenta');
-                    } else if (finalModalId === 'gallery-modal') {
-                        titleEl.classList.add('text-forest-lime', 'dark:text-acid-lime');
-                    } else if (finalModalId === 'MilkDel-modal') {
-                        titleEl.classList.add('text-deep-green', 'dark:text-pista-green');
-                    } else if (finalModalId === 'BioGrid-modal') {
-                        titleEl.classList.add('text-deep-green', 'dark:text-biogrid-mint');
-                    } else if (finalModalId === 'Apex-modal') {
-                        titleEl.classList.add('text-red-600', 'dark:text-apex-red');
-                    } else if (finalModalId === 'Silvatide-modal') {
-                        titleEl.classList.add('text-emerald-700', 'dark:text-[#10B981]');
-                    }
-                }
-                if (textEl) textEl.textContent = finalTex;
-                if (linkEl) {
-                    if (finalModalId) {
-                        linkEl.style.display = 'flex';
-                        linkEl.setAttribute('onclick', `event.preventDefault(); closeVideoModal(); setTimeout(()=>openModal('${finalModalId}'), 300);`);
-                        linkEl.className = 'flex items-center gap-1.5 font-mono text-[10px] font-bold hover:underline cursor-pointer video-case-study-link text-white';
-                        if (finalModalId === 'fintech-modal') {
-                            linkEl.classList.add('neon-link-cyan');
-                        } else if (finalModalId === 'checkout-modal') {
-                            linkEl.classList.add('neon-link-magenta');
-                        } else if (finalModalId === 'gallery-modal') {
-                            linkEl.classList.add('neon-link-lime');
-                        } else if (finalModalId === 'MilkDel-modal') {
-                            linkEl.classList.add('neon-link-pista');
-                        } else if (finalModalId === 'BioGrid-modal') {
-                            linkEl.classList.add('neon-link-mint');
-                        } else if (finalModalId === 'Apex-modal') {
-                            linkEl.classList.add('neon-link-red');
-                        } else if (finalModalId === 'Silvatide-modal') {
-                            linkEl.classList.add('neon-link-emerald');
-                        }
-                    } else {
-                        linkEl.style.display = 'none';
-                    }
-                }
-                
-                modal.classList.remove('opacity-0', 'pointer-events-none');
-                modal.classList.add('opacity-100');
-                content.classList.remove('scale-95');
-                content.classList.add('scale-100');
-                
-                // Start playing with sound
-                player.currentTime = 0;
-                player.muted = false;
-                player.load(); // Force reload the video with the new source
-                
-                // Play and catch errors to prevent console errors if blocked
-                player.play().catch(e => console.log("Autoplay prevented:", e));
-                
-                document.body.style.overflow = 'hidden';
-                playSyntheticClick('success');
-            };
 
-            window.closeVideoModal = function() {
-                const modal = document.getElementById('video-modal');
-                const content = document.getElementById('video-modal-content');
-                const player = document.getElementById('video-modal-player');
-                
-                modal.classList.add('opacity-0', 'pointer-events-none');
-                modal.classList.remove('opacity-100');
-                content.classList.add('scale-95');
-                content.classList.remove('scale-100');
-                
-                // Pause video
-                player.pause();
-                
-                document.body.style.overflow = '';
-                playSyntheticClick('mechanical');
-            };
             // Draggable comparison image-slider mechanism (Multi-slider support for all modals)
             const sliders = document.querySelectorAll('.slider-handle');
             
