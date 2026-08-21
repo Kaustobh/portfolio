@@ -671,6 +671,159 @@
             will-change: scroll-position;
         }
 
+    
+        /* Multi-Device Fluid Typography & Responsive Ergonomics */
+        :root {
+            --fluid-h1: clamp(2.75rem, 8vw, 6.5rem);
+            --fluid-h2: clamp(1.75rem, 4.5vw, 3.25rem);
+            --fluid-sub: clamp(0.75rem, 2.5vw, 0.95rem);
+            --fluid-body: clamp(0.95rem, 2.5vw, 1.15rem);
+        }
+
+        .fluid-h1 { font-size: var(--fluid-h1) !important; line-height: 0.95 !important; }
+        .fluid-sub { font-size: var(--fluid-sub) !important; }
+        .fluid-body { font-size: var(--fluid-body) !important; }
+
+        /* Hide custom cursor on mobile touch devices */
+        @media (hover: none) and (pointer: coarse) {
+            #custom-cursor, #custom-cursor-dot {
+                display: none !important;
+            }
+            body, button, a, input, select, textarea {
+                cursor: auto !important;
+            }
+        }
+
+        /* Mobile Modal Bottom Sheet Adaptation */
+        @media (max-width: 639px) {
+            [id$="-modal-content"] {
+                max-height: 94dvh !important;
+                border-bottom-left-radius: 0 !important;
+                border-bottom-right-radius: 0 !important;
+                margin-top: auto !important;
+            }
+            #side-hud-nav {
+                display: none !important;
+            }
+            #projects-carousel-track {
+                scroll-snap-type: x mandatory !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+            .project-carousel-card {
+                scroll-snap-align: center !important;
+            }
+        }
+
+        /* Prevent Horizontal Body Overflow on Mobile */
+        html, body {
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+
+    
+        /* ==========================================================================
+           REFINED DYNAMIC VIEWPORT & MULTI-DEVICE RESPONSIVE ENGINE
+           ========================================================================== */
+        
+        /* 1. Progressive 3-Tier Viewport Fallback */
+        .section-viewport {
+            min-height: 100vh;
+            min-height: 100svh;
+            min-height: 100dvh;
+            height: auto;
+            scroll-margin-top: 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .section-viewport {
+                height: 100vh;
+                height: 100svh;
+                height: 100dvh;
+                scroll-margin-top: 0;
+            }
+        }
+
+        /* 2. Intelligent Mobile Snap Softening (Prevents scroll-trapping on mobile) */
+        @media (max-width: 1023px) {
+            html {
+                scroll-snap-type: y proximity !important;
+            }
+            .snap-start {
+                scroll-snap-align: start !important;
+                scroll-snap-stop: normal !important;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            html {
+                scroll-snap-type: y mandatory !important;
+            }
+            .snap-start {
+                scroll-snap-align: start !important;
+                scroll-snap-stop: always !important;
+            }
+        }
+
+        /* 3. Hardware Safe-Area Inset Protection (Dynamic Island & Home Bar) */
+        .safe-padding-top {
+            padding-top: max(1.5rem, env(safe-area-inset-top)) !important;
+        }
+        .safe-padding-bottom {
+            padding-bottom: max(1.5rem, env(safe-area-inset-bottom)) !important;
+        }
+
+        /* 4. Full-Height Dynamic WebGL Canvas Coverage */
+        canvas.webgl-dynamic-bg {
+            position: absolute;
+            inset: 0;
+            width: 100% !important;
+            height: 100% !important;
+            min-height: 100% !important;
+            pointer-events: none;
+            object-fit: cover;
+        }
+
+        /* 5. Modal Scroll Containment (Prevents background page bouncing on iOS) */
+        [id$="-modal"] {
+            overscroll-behavior: contain !important;
+            -webkit-overflow-scrolling: touch !important;
+        }
+        [id$="-modal-content"] {
+            overscroll-behavior: contain !important;
+        }
+
+    
+        /* ==========================================================================
+           LOW-GPU & MOBILE ZERO-GLITCH HARDWARE OPTIMIZATIONS
+           ========================================================================== */
+        
+        /* Eliminate Heavy GPU Backdrop Blur Choke on Mobile / Low-End Devices */
+        @media (max-width: 768px) {
+            .backdrop-blur-3xl, .backdrop-blur-2xl, .backdrop-blur-xl, .backdrop-blur-lg, .backdrop-blur-md {
+                backdrop-filter: blur(8px) !important;
+                -webkit-backdrop-filter: blur(8px) !important;
+            }
+            .glass-panel, .glassmorphic-card {
+                background-color: rgba(10, 10, 15, 0.88) !important;
+            }
+            /* Hardware render layers */
+            .project-carousel-card, .matrix-chapter, [id$="-modal-content"] {
+                transform: translateZ(0);
+                backface-visibility: hidden;
+                will-change: auto; /* Avoid VRAM layer exhaustion */
+            }
+        }
+
+        /* Respect Device Battery Saver & Reduced Motion Preferences */
+        @media (prefers-reduced-motion: reduce) {
+            *, ::before, ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
     </style>
     <link rel="stylesheet" href="css/design-system.css" />
 </head>
@@ -820,7 +973,7 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <section id="hero-section" class="relative h-screen w-full flex flex-col justify-center px-8 md:px-24 overflow-hidden snap-start">
+    <section id="hero-section" class="min-h-[100dvh] h-auto lg:h-[100dvh] w-full snap-start relative flex flex-col justify-center px-4 sm:px-8 md:px-16 overflow-hidden py-16 lg:py-0 section-viewport safe-padding-top safe-padding-bottom">
         <!-- Hero Background Video — autoplay muted, unmutes on first user interaction -->
         <video id="hero-bg-video" poster="assets/posters/hero_poster.webp"
             src="hero.webm"
@@ -934,7 +1087,7 @@
         <!-- ═══════════════════════════════════════════════════════════════ -->
         <!-- SECTION 2: WHAT I BRING TO THE TABLE                           -->
         <!-- ═══════════════════════════════════════════════════════════════ -->
-        <section id="section-what-i-bring" class="h-screen w-full snap-start flex flex-col justify-center px-6 md:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 pt-16 md:pt-0 overflow-hidden">
+        <section id="section-what-i-bring" class="min-h-[100dvh] h-auto lg:h-[100dvh] w-full snap-start flex flex-col justify-center px-4 sm:px-8 md:px-16 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 py-16 lg:py-0 overflow-hidden bg-void section-viewport safe-padding-top safe-padding-bottom">
             <div class="project-boundary-line"></div>
 
             <!-- Atmospheric LightRays WebGL Shader Background -->
@@ -1125,7 +1278,7 @@
         <!-- ═══════════════════════════════════════════════════════════════ -->
         <!-- SECTION 3: DESIGNER VIDEO GAME SKILL TREE (LINKED TO PROJECTS) -->
         <!-- ═══════════════════════════════════════════════════════════════ -->
-        <section id="section-skill-tree" class="h-screen w-full snap-start flex flex-col justify-center px-4 sm:px-8 md:px-16 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 py-12 md:py-16 overflow-hidden bg-void">
+        <section id="section-skill-tree" class="min-h-[100dvh] h-auto lg:h-[100dvh] w-full snap-start flex flex-col justify-center px-4 sm:px-8 md:px-16 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 py-16 lg:py-8 overflow-hidden bg-void section-viewport safe-padding-top safe-padding-bottom">
             <div class="project-boundary-line"></div>
             
             <!-- Tubes Interactive 3D WebGL Background -->
@@ -1489,7 +1642,7 @@
                 </div>
             </div>
         </section>
-                        <section id="section-selected-projects" class="h-screen w-full snap-start flex flex-col justify-between px-4 sm:px-8 md:px-16 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 py-6 md:py-10 overflow-hidden bg-void">
+                        <section id="section-selected-projects" class="min-h-[100dvh] h-auto lg:h-[100dvh] w-full snap-start flex flex-col justify-between px-4 sm:px-8 md:px-16 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 py-12 lg:py-8 overflow-hidden bg-void section-viewport safe-padding-top safe-padding-bottom">
             <div class="project-boundary-line"></div>
 
             <!-- GhostCursor WebGL Fluid Trail Background Effect -->
@@ -1525,7 +1678,7 @@
                 <div id="projects-carousel-track" class="flex gap-5 md:gap-7 overflow-x-auto scrollbar-none py-6 px-2 md:px-8 cursor-grab active:cursor-grabbing select-none items-stretch" style="scroll-snap-type: none; scroll-behavior: auto;">
                     
                     <!-- ─── CARD 1: PulseHQ AI (Cyan) ─── -->
-                    <div onclick="openModal('fintech-modal')" class="project-carousel-card w-[310px] sm:w-[360px] md:w-[410px] lg:w-[440px] shrink-0 h-[490px] sm:h-[530px] md:h-[550px] rounded-3xl overflow-hidden relative border border-cyan-500/40 hover:border-cyan-300 shadow-[0_0_30px_rgba(0,243,255,0.2)] hover:shadow-[0_0_55px_rgba(0,243,255,0.5)] transition-all duration-500 transform-gpu hover:scale-[1.015] flex flex-col justify-between p-6 md:p-7 bg-black/35 backdrop-blur-md cursor-pointer group" data-index="0" data-domain="ai" data-color="#00F3FF">
+                    <div onclick="openModal('fintech-modal')" class="project-carousel-card w-[86vw] sm:w-[360px] md:w-[410px] lg:w-[440px] shrink-0 h-[490px] sm:h-[530px] md:h-[550px] rounded-3xl overflow-hidden relative border border-cyan-500/40 hover:border-cyan-300 shadow-[0_0_30px_rgba(0,243,255,0.2)] hover:shadow-[0_0_55px_rgba(0,243,255,0.5)] transition-all duration-500 transform-gpu hover:scale-[1.015] flex flex-col justify-between p-6 md:p-7 bg-black/35 backdrop-blur-md cursor-pointer group" data-index="0" data-domain="ai" data-color="#00F3FF">
                         <!-- Ambient Volumetric Halo -->
                         <div class="absolute -inset-2 rounded-3xl opacity-30 group-hover:opacity-85 blur-2xl transition-opacity duration-700 pointer-events-none -z-10" style="background: radial-gradient(circle at 50% 30%, rgba(0,243,255,0.45), transparent 70%);"></div>
 
@@ -1578,7 +1731,7 @@
                     </div>
 
                     <!-- ─── CARD 2: E-Comm Checkout (Magenta) ─── -->
-                    <div onclick="openModal('checkout-modal')" class="project-carousel-card w-[310px] sm:w-[360px] md:w-[410px] lg:w-[440px] shrink-0 h-[490px] sm:h-[530px] md:h-[550px] rounded-3xl overflow-hidden relative border border-pink-500/40 hover:border-pink-300 shadow-[0_0_30px_rgba(255,0,160,0.2)] hover:shadow-[0_0_55px_rgba(255,0,160,0.5)] transition-all duration-500 transform-gpu hover:scale-[1.015] flex flex-col justify-between p-6 md:p-7 bg-black/35 backdrop-blur-md cursor-pointer group" data-index="1" data-domain="ecomm" data-color="#FF00A0">
+                    <div onclick="openModal('checkout-modal')" class="project-carousel-card w-[86vw] sm:w-[360px] md:w-[410px] lg:w-[440px] shrink-0 h-[490px] sm:h-[530px] md:h-[550px] rounded-3xl overflow-hidden relative border border-pink-500/40 hover:border-pink-300 shadow-[0_0_30px_rgba(255,0,160,0.2)] hover:shadow-[0_0_55px_rgba(255,0,160,0.5)] transition-all duration-500 transform-gpu hover:scale-[1.015] flex flex-col justify-between p-6 md:p-7 bg-black/35 backdrop-blur-md cursor-pointer group" data-index="1" data-domain="ecomm" data-color="#FF00A0">
                         <!-- Ambient Volumetric Halo -->
                         <div class="absolute -inset-2 rounded-3xl opacity-30 group-hover:opacity-85 blur-2xl transition-opacity duration-700 pointer-events-none -z-10" style="background: radial-gradient(circle at 50% 30%, rgba(255,0,160,0.45), transparent 70%);"></div>
 
@@ -1627,7 +1780,7 @@
                     </div>
 
                     <!-- ─── CARD 3: Graphic Art Gallery (Lime) ─── -->
-                    <div onclick="openModal('gallery-modal')" class="project-carousel-card w-[310px] sm:w-[360px] md:w-[410px] lg:w-[440px] shrink-0 h-[490px] sm:h-[530px] md:h-[550px] rounded-3xl overflow-hidden relative border border-lime-500/40 hover:border-lime-300 shadow-[0_0_30px_rgba(212,255,0,0.2)] hover:shadow-[0_0_55px_rgba(212,255,0,0.5)] transition-all duration-500 transform-gpu hover:scale-[1.015] flex flex-col justify-between p-6 md:p-7 bg-black/35 backdrop-blur-md cursor-pointer group" data-index="2" data-domain="hospitality" data-color="#D4FF00">
+                    <div onclick="openModal('gallery-modal')" class="project-carousel-card w-[86vw] sm:w-[360px] md:w-[410px] lg:w-[440px] shrink-0 h-[490px] sm:h-[530px] md:h-[550px] rounded-3xl overflow-hidden relative border border-lime-500/40 hover:border-lime-300 shadow-[0_0_30px_rgba(212,255,0,0.2)] hover:shadow-[0_0_55px_rgba(212,255,0,0.5)] transition-all duration-500 transform-gpu hover:scale-[1.015] flex flex-col justify-between p-6 md:p-7 bg-black/35 backdrop-blur-md cursor-pointer group" data-index="2" data-domain="hospitality" data-color="#D4FF00">
                         <!-- Ambient Volumetric Halo -->
                         <div class="absolute -inset-2 rounded-3xl opacity-30 group-hover:opacity-85 blur-2xl transition-opacity duration-700 pointer-events-none -z-10" style="background: radial-gradient(circle at 50% 30%, rgba(212,255,0,0.45), transparent 70%);"></div>
 
@@ -1676,7 +1829,7 @@
                     </div>
 
                     <!-- ─── CARD 4: Doodh Milk Subscription (Pista) ─── -->
-                    <div onclick="openModal('MilkDel-modal')" class="project-carousel-card w-[310px] sm:w-[360px] md:w-[410px] lg:w-[440px] shrink-0 h-[490px] sm:h-[530px] md:h-[550px] rounded-3xl overflow-hidden relative border border-emerald-500/40 hover:border-emerald-300 shadow-[0_0_30px_rgba(168,207,161,0.2)] hover:shadow-[0_0_55px_rgba(168,207,161,0.5)] transition-all duration-500 transform-gpu hover:scale-[1.015] flex flex-col justify-between p-6 md:p-7 bg-black/35 backdrop-blur-md cursor-pointer group" data-index="3" data-domain="ecomm" data-color="#A8CFA1">
+                    <div onclick="openModal('MilkDel-modal')" class="project-carousel-card w-[86vw] sm:w-[360px] md:w-[410px] lg:w-[440px] shrink-0 h-[490px] sm:h-[530px] md:h-[550px] rounded-3xl overflow-hidden relative border border-emerald-500/40 hover:border-emerald-300 shadow-[0_0_30px_rgba(168,207,161,0.2)] hover:shadow-[0_0_55px_rgba(168,207,161,0.5)] transition-all duration-500 transform-gpu hover:scale-[1.015] flex flex-col justify-between p-6 md:p-7 bg-black/35 backdrop-blur-md cursor-pointer group" data-index="3" data-domain="ecomm" data-color="#A8CFA1">
                         <!-- Ambient Volumetric Halo -->
                         <div class="absolute -inset-2 rounded-3xl opacity-30 group-hover:opacity-85 blur-2xl transition-opacity duration-700 pointer-events-none -z-10" style="background: radial-gradient(circle at 50% 30%, rgba(168,207,161,0.45), transparent 70%);"></div>
 
@@ -1725,7 +1878,7 @@
                     </div>
 
                     <!-- ─── CARD 5: Bio Grid (Mint) ─── -->
-                    <div onclick="openModal('BioGrid-modal')" class="project-carousel-card w-[310px] sm:w-[360px] md:w-[410px] lg:w-[440px] shrink-0 h-[490px] sm:h-[530px] md:h-[550px] rounded-3xl overflow-hidden relative border border-green-500/40 hover:border-green-300 shadow-[0_0_30px_rgba(74,222,128,0.2)] hover:shadow-[0_0_55px_rgba(74,222,128,0.5)] transition-all duration-500 transform-gpu hover:scale-[1.015] flex flex-col justify-between p-6 md:p-7 bg-black/35 backdrop-blur-md cursor-pointer group" data-index="4" data-domain="telemetry" data-color="#4ade80">
+                    <div onclick="openModal('BioGrid-modal')" class="project-carousel-card w-[86vw] sm:w-[360px] md:w-[410px] lg:w-[440px] shrink-0 h-[490px] sm:h-[530px] md:h-[550px] rounded-3xl overflow-hidden relative border border-green-500/40 hover:border-green-300 shadow-[0_0_30px_rgba(74,222,128,0.2)] hover:shadow-[0_0_55px_rgba(74,222,128,0.5)] transition-all duration-500 transform-gpu hover:scale-[1.015] flex flex-col justify-between p-6 md:p-7 bg-black/35 backdrop-blur-md cursor-pointer group" data-index="4" data-domain="telemetry" data-color="#4ade80">
                         <!-- Ambient Volumetric Halo -->
                         <div class="absolute -inset-2 rounded-3xl opacity-30 group-hover:opacity-85 blur-2xl transition-opacity duration-700 pointer-events-none -z-10" style="background: radial-gradient(circle at 50% 30%, rgba(74,222,128,0.45), transparent 70%);"></div>
 
@@ -1774,7 +1927,7 @@
                     </div>
 
                     <!-- ─── CARD 6: Apex Motorsport (Scarlet Red) ─── -->
-                    <div onclick="openModal('Apex-modal')" class="project-carousel-card w-[310px] sm:w-[360px] md:w-[410px] lg:w-[440px] shrink-0 h-[490px] sm:h-[530px] md:h-[550px] rounded-3xl overflow-hidden relative border border-red-500/40 hover:border-red-300 shadow-[0_0_30px_rgba(255,26,36,0.2)] hover:shadow-[0_0_55px_rgba(255,26,36,0.5)] transition-all duration-500 transform-gpu hover:scale-[1.015] flex flex-col justify-between p-6 md:p-7 bg-black/35 backdrop-blur-md cursor-pointer group" data-index="5" data-domain="telemetry" data-color="#ff1a24">
+                    <div onclick="openModal('Apex-modal')" class="project-carousel-card w-[86vw] sm:w-[360px] md:w-[410px] lg:w-[440px] shrink-0 h-[490px] sm:h-[530px] md:h-[550px] rounded-3xl overflow-hidden relative border border-red-500/40 hover:border-red-300 shadow-[0_0_30px_rgba(255,26,36,0.2)] hover:shadow-[0_0_55px_rgba(255,26,36,0.5)] transition-all duration-500 transform-gpu hover:scale-[1.015] flex flex-col justify-between p-6 md:p-7 bg-black/35 backdrop-blur-md cursor-pointer group" data-index="5" data-domain="telemetry" data-color="#ff1a24">
                         <!-- Ambient Volumetric Halo -->
                         <div class="absolute -inset-2 rounded-3xl opacity-30 group-hover:opacity-85 blur-2xl transition-opacity duration-700 pointer-events-none -z-10" style="background: radial-gradient(circle at 50% 30%, rgba(255,26,36,0.45), transparent 70%);"></div>
 
@@ -1823,7 +1976,7 @@
                     </div>
 
                     <!-- ─── CARD 7: Silvatide Cottage (Emerald) ─── -->
-                    <div onclick="openModal('Silvatide-modal')" class="project-carousel-card w-[310px] sm:w-[360px] md:w-[410px] lg:w-[440px] shrink-0 h-[490px] sm:h-[530px] md:h-[550px] rounded-3xl overflow-hidden relative border border-[#10B981]/40 hover:border-[#10B981] shadow-[0_0_30px_rgba(16,185,129,0.2)] hover:shadow-[0_0_55px_rgba(16,185,129,0.5)] transition-all duration-500 transform-gpu hover:scale-[1.015] flex flex-col justify-between p-6 md:p-7 bg-black/35 backdrop-blur-md cursor-pointer group" data-index="6" data-domain="hospitality" data-color="#10B981">
+                    <div onclick="openModal('Silvatide-modal')" class="project-carousel-card w-[86vw] sm:w-[360px] md:w-[410px] lg:w-[440px] shrink-0 h-[490px] sm:h-[530px] md:h-[550px] rounded-3xl overflow-hidden relative border border-[#10B981]/40 hover:border-[#10B981] shadow-[0_0_30px_rgba(16,185,129,0.2)] hover:shadow-[0_0_55px_rgba(16,185,129,0.5)] transition-all duration-500 transform-gpu hover:scale-[1.015] flex flex-col justify-between p-6 md:p-7 bg-black/35 backdrop-blur-md cursor-pointer group" data-index="6" data-domain="hospitality" data-color="#10B981">
                         <!-- Ambient Volumetric Halo -->
                         <div class="absolute -inset-2 rounded-3xl opacity-30 group-hover:opacity-85 blur-2xl transition-opacity duration-700 pointer-events-none -z-10" style="background: radial-gradient(circle at 50% 30%, rgba(16,185,129,0.45), transparent 70%);"></div>
 
@@ -1889,7 +2042,7 @@
                     <span>[SPACE] PAUSE GLIDE</span>
                 </div>
             </div>
-        </section><section id="section-why-devs-love-me" class="h-screen w-full snap-start flex flex-col justify-center px-6 md:px-16 lg:px-24 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 py-8 md:py-12 overflow-hidden bg-void text-white">
+        </section><section id="section-why-devs-love-me" class="min-h-[100dvh] h-auto lg:h-[100dvh] w-full snap-start flex flex-col justify-center px-4 sm:px-8 md:px-16 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 py-16 lg:py-8 overflow-hidden bg-void section-viewport safe-padding-top safe-padding-bottom">
             <div class="project-boundary-line"></div>
 
             <!-- FaultyTerminal WebGL CRT Glitch Background -->
@@ -1974,7 +2127,7 @@
         </section>
 
         <!-- Recruiter / Contact Footer with Liquid Metal WebGL Shader Background -->
-        <section id="recruiter-briefing" class="h-screen w-full snap-start flex flex-col items-center justify-center px-8 text-center relative z-10 bg-solar dark:bg-void transition-colors duration-500 overflow-hidden">
+        <section id="recruiter-briefing" class="min-h-[100dvh] h-auto lg:h-[100dvh] w-full snap-start flex flex-col justify-center px-4 sm:px-8 md:px-16 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 py-16 lg:py-8 overflow-hidden bg-void section-viewport safe-padding-top safe-padding-bottom">
             <!-- Full-bleed Liquid Metal WebGL Canvas (Pointer-reactive, zero chroma, steep value ramp) -->
             <canvas id="liquid-metal-canvas" class="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-45 dark:opacity-40 filter contrast-125"></canvas>
             <!-- Readability vignette overlay -->
@@ -2121,7 +2274,7 @@
     <!-- ======================================================================= -->
     <!-- MODAL 1: PULSEHQ AI TEAM INTELLIGENCE (CYAN THEME)                      -->
     <!-- ======================================================================= -->
-    <div id="fintech-modal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden opacity-0 pointer-events-none transition-all duration-300 bg-void/85 backdrop-blur-2xl flex items-center justify-center p-3 sm:p-6">
+    <div id="fintech-modal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden opacity-0 pointer-events-none transition-all duration-300 bg-void/85 backdrop-blur-2xl flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-6">
         <div class="absolute inset-0 cursor-zoom-out" onclick="closeModal('fintech-modal')"></div>
         <div class="w-full max-w-5xl rounded-3xl overflow-hidden relative z-10 max-h-[92vh] flex flex-col bg-black/95 text-white transition-transform duration-300 scale-95" style="border: 2px solid #00F3FF !important; box-shadow: 0 0 70px rgba(0, 243, 255, 0.45) !important;" id="fintech-modal-content">
             
@@ -2316,7 +2469,7 @@
     <!-- ======================================================================= -->
     <!-- MODAL 2: NEONHEX CHECKOUT ENGINE (MAGENTA THEME)                        -->
     <!-- ======================================================================= -->
-    <div id="checkout-modal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden opacity-0 pointer-events-none transition-all duration-300 bg-void/85 backdrop-blur-2xl flex items-center justify-center p-3 sm:p-6">
+    <div id="checkout-modal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden opacity-0 pointer-events-none transition-all duration-300 bg-void/85 backdrop-blur-2xl flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-6">
         <div class="absolute inset-0 cursor-zoom-out" onclick="closeModal('checkout-modal')"></div>
         <div class="w-full max-w-5xl rounded-3xl overflow-hidden relative z-10 max-h-[92vh] flex flex-col bg-black/95 text-white transition-transform duration-300 scale-95" style="border: 2px solid #FF00A0 !important; box-shadow: 0 0 70px rgba(255, 0, 160, 0.45) !important;" id="checkout-modal-content">
             
@@ -2503,7 +2656,7 @@
     <!-- ======================================================================= -->
     <!-- MODAL 3: ELYSIUM VAULT DIGITAL ART GALLERY (ACID LIME THEME)            -->
     <!-- ======================================================================= -->
-    <div id="gallery-modal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden opacity-0 pointer-events-none transition-all duration-300 bg-void/85 backdrop-blur-2xl flex items-center justify-center p-3 sm:p-6">
+    <div id="gallery-modal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden opacity-0 pointer-events-none transition-all duration-300 bg-void/85 backdrop-blur-2xl flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-6">
         <div class="absolute inset-0 cursor-zoom-out" onclick="closeModal('gallery-modal')"></div>
         <div class="w-full max-w-5xl rounded-3xl overflow-hidden relative z-10 max-h-[92vh] flex flex-col bg-black/95 text-white transition-transform duration-300 scale-95" style="border: 2px solid #D4FF00 !important; box-shadow: 0 0 70px rgba(212, 255, 0, 0.45) !important;" id="gallery-modal-content">
             
@@ -2698,7 +2851,7 @@
     <!-- ======================================================================= -->
     <!-- MODAL 4: DOODH MILK SUBSCRIPTION (PISTA GREEN THEME)                     -->
     <!-- ======================================================================= -->
-    <div id="MilkDel-modal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden opacity-0 pointer-events-none transition-all duration-300 bg-void/85 backdrop-blur-2xl flex items-center justify-center p-3 sm:p-6">
+    <div id="MilkDel-modal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden opacity-0 pointer-events-none transition-all duration-300 bg-void/85 backdrop-blur-2xl flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-6">
         <div class="absolute inset-0 cursor-zoom-out" onclick="closeModal('MilkDel-modal')"></div>
         <div class="w-full max-w-5xl rounded-3xl overflow-hidden relative z-10 max-h-[92vh] flex flex-col bg-black/95 text-white transition-transform duration-300 scale-95" style="border: 2px solid #A8CFA1 !important; box-shadow: 0 0 70px rgba(168, 207, 161, 0.45) !important;" id="MilkDel-modal-content">
             
@@ -2893,7 +3046,7 @@
     <!-- ======================================================================= -->
     <!-- MODAL 5: BIO GRID MEDICAL TELEMETRY (MINT THEME)                        -->
     <!-- ======================================================================= -->
-    <div id="BioGrid-modal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden opacity-0 pointer-events-none transition-all duration-300 bg-void/85 backdrop-blur-2xl flex items-center justify-center p-3 sm:p-6">
+    <div id="BioGrid-modal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden opacity-0 pointer-events-none transition-all duration-300 bg-void/85 backdrop-blur-2xl flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-6">
         <div class="absolute inset-0 cursor-zoom-out" onclick="closeModal('BioGrid-modal')"></div>
         <div class="w-full max-w-5xl rounded-3xl overflow-hidden relative z-10 max-h-[92vh] flex flex-col bg-black/95 text-white transition-transform duration-300 scale-95" style="border: 2px solid #4ADE80 !important; box-shadow: 0 0 70px rgba(74, 222, 128, 0.45) !important;" id="BioGrid-modal-content">
             
@@ -3064,7 +3217,7 @@
     <!-- ======================================================================= -->
     <!-- MODAL 6: APEX MOTORSPORT 3D SHOWROOM (SCARLET RED THEME)                -->
     <!-- ======================================================================= -->
-    <div id="Apex-modal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden opacity-0 pointer-events-none transition-all duration-300 bg-void/85 backdrop-blur-2xl flex items-center justify-center p-3 sm:p-6">
+    <div id="Apex-modal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden opacity-0 pointer-events-none transition-all duration-300 bg-void/85 backdrop-blur-2xl flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-6">
         <div class="absolute inset-0 cursor-zoom-out" onclick="closeModal('Apex-modal')"></div>
         <div class="w-full max-w-5xl rounded-3xl overflow-hidden relative z-10 max-h-[92vh] flex flex-col bg-black/95 text-white transition-transform duration-300 scale-95" style="border: 2px solid #FF1A24 !important; box-shadow: 0 0 70px rgba(255, 26, 36, 0.45) !important;" id="Apex-modal-content">
             
@@ -3235,7 +3388,7 @@
     <!-- ======================================================================= -->
     <!-- MODAL 7: SILVATIDE RETREAT & COTTAGE (FOREST EMERALD THEME)             -->
     <!-- ======================================================================= -->
-    <div id="Silvatide-modal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden opacity-0 pointer-events-none transition-all duration-300 bg-void/85 backdrop-blur-2xl flex items-center justify-center p-3 sm:p-6">
+    <div id="Silvatide-modal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden opacity-0 pointer-events-none transition-all duration-300 bg-void/85 backdrop-blur-2xl flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-6">
         <div class="absolute inset-0 cursor-zoom-out" onclick="closeModal('Silvatide-modal')"></div>
         <div class="w-full max-w-5xl rounded-3xl overflow-hidden relative z-10 max-h-[92vh] flex flex-col bg-black/95 text-white transition-transform duration-300 scale-95" style="border: 2px solid #10B981 !important; box-shadow: 0 0 70px rgba(16, 185, 129, 0.45) !important;" id="Silvatide-modal-content">
             

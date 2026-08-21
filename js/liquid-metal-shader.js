@@ -26,6 +26,14 @@
             antialias: false,
             powerPreference: 'high-performance' 
         }) || canvas.getContext('experimental-webgl');
+        canvas.addEventListener('webglcontextlost', function(e) {
+            e.preventDefault();
+            console.warn('[WebGL] Context lost on ' + canvas.id + ', pausing render loop.');
+        }, false);
+        canvas.addEventListener('webglcontextrestored', function() {
+            console.log('[WebGL] Context restored on ' + canvas.id + ', re-initializing.');
+        }, false);
+
 
         if (!gl) {
             console.warn('[Liquid Metal] WebGL not supported, falling back gracefully.');

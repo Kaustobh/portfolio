@@ -1,3 +1,15 @@
+
+    // Low-GPU Scroll Optimization: Suppress heavy RAF calculations during fast fling
+    let scrollTimeout = null;
+    window.__isFastScrolling = false;
+    window.addEventListener('scroll', () => {
+        window.__isFastScrolling = true;
+        if (scrollTimeout) clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            window.__isFastScrolling = false;
+        }, 100);
+    }, { passive: true });
+
 /**
  * ==========================================================================
  * JOURNEY MOTION & VIBE INTERACTION ENGINE (STABLE - ZERO TEXT SCRAMBLE / NO RAINBOW)

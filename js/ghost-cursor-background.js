@@ -28,6 +28,14 @@
             powerPreference: 'high-performance',
             premultipliedAlpha: false
         }) || canvas.getContext('experimental-webgl');
+        canvas.addEventListener('webglcontextlost', function(e) {
+            e.preventDefault();
+            console.warn('[WebGL] Context lost on ' + canvas.id + ', pausing render loop.');
+        }, false);
+        canvas.addEventListener('webglcontextrestored', function() {
+            console.log('[WebGL] Context restored on ' + canvas.id + ', re-initializing.');
+        }, false);
+
 
         if (!gl) {
             console.warn('[GhostCursor] WebGL not supported, skipping.');
@@ -241,7 +249,8 @@
         }
 
         function resize() {
-            const dpr = Math.min(Math.min(window.devicePixelRatio || 1, 1.5), 1.5);
+            const isLowGPU = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
+        const dpr = isLowGPU ? 1.0 : Math.min(window.devicePixelRatio || 1, 1.5);
             const w = Math.floor(section.clientWidth * dpr);
             const h = Math.floor(section.clientHeight * dpr);
 

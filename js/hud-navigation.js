@@ -99,6 +99,13 @@ function updateActiveHUDDot(activeKey, force = false) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+    if (isTouchDevice) {
+        const cursor = document.getElementById('custom-cursor');
+        if (cursor) cursor.style.display = 'none';
+    }
+
     // Smooth click handler for all HUD nav items
     document.querySelectorAll('.hud-nav-item').forEach(item => {
         item.addEventListener('click', (e) => {

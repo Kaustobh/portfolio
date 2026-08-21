@@ -27,6 +27,14 @@
             antialias: false,
             powerPreference: 'high-performance' 
         }) || canvas.getContext('experimental-webgl');
+        canvas.addEventListener('webglcontextlost', function(e) {
+            e.preventDefault();
+            console.warn('[WebGL] Context lost on ' + canvas.id + ', pausing render loop.');
+        }, false);
+        canvas.addEventListener('webglcontextrestored', function() {
+            console.log('[WebGL] Context restored on ' + canvas.id + ', re-initializing.');
+        }, false);
+
 
         if (!gl) {
             console.warn('[LightRays] WebGL not supported, skipping.');
@@ -206,7 +214,8 @@
 
         let width = 0;
         let height = 0;
-        const dpr = Math.min(Math.min(window.devicePixelRatio || 1, 1.5), 2);
+        const isLowGPU = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
+        const dpr = isLowGPU ? 1.0 : Math.min(window.devicePixelRatio || 1, 1.5);
 
         function updatePlacement() {
             const rect = section.getBoundingClientRect();
