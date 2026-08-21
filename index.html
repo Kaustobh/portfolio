@@ -107,6 +107,7 @@
         /* Multicolor text rules removed - solid crisp text only */
 
         /* Custom scrollbar and snap behaviors */
+                
         body { 
             background-color: #050507; 
             color: white; 
@@ -743,7 +744,7 @@
             }
         }
 
-        /* 2. Intelligent Mobile Snap Softening (Prevents scroll-trapping on mobile) */
+                /* 2. Intelligent Mobile Snap Softening (Prevents scroll-trapping on mobile) */
         @media (max-width: 1023px) {
             html {
                 scroll-snap-type: y proximity !important;
@@ -823,6 +824,9 @@
                 scroll-behavior: auto !important;
             }
         }
+
+    
+        
 
     </style>
     <link rel="stylesheet" href="css/design-system.css" />
@@ -938,10 +942,19 @@
             </div>
             <span class="hud-dot w-3.5 h-3.5 rounded-full bg-neutral-600 border border-transparent transition-all duration-300 block" data-section="skill-tree" title="Skills"></span>
         </a>
-        <!-- Category 04: SELECTED PROJECTS -->
+        <!-- Category 04: EXPERIENCES (Golden Synchronized) -->
+        <a href="#section-experiences" class="hud-nav-item group relative flex items-center justify-center p-1 cursor-pointer" data-category="experiences">
+            <div class="hud-nav-label absolute right-full mr-3.5 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 pointer-events-none flex flex-col items-end px-3 py-1.5 rounded-lg bg-void/95 border border-[#F59E0B]/50 shadow-[0_0_15px_rgba(245,158,11,0.5)] whitespace-nowrap z-50">
+                <span class="font-mono text-[10px] font-bold text-[#FBBF24] tracking-widest">04 // EXPERIENCES</span>
+                <span class="font-mono text-[8px] text-neutral-400">CAREER ARCHITECTURE (06)</span>
+            </div>
+            <span class="hud-dot w-3.5 h-3.5 rounded-full bg-neutral-600 border border-transparent transition-all duration-300 block" data-section="experiences" title="Experiences"></span>
+        </a>
+
+        <!-- Category 05: SELECTED PROJECTS -->
         <a href="#section-selected-projects" class="hud-nav-item group relative flex items-center justify-center p-1 cursor-pointer" data-category="projects">
             <div class="hud-nav-label absolute right-full mr-3.5 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 pointer-events-none flex flex-col items-end px-3 py-1.5 rounded-lg bg-void/95 border border-[#FF00A0]/40 shadow-[0_0_15px_rgba(255,0,160,0.4)] whitespace-nowrap z-50">
-                <span class="font-mono text-[10px] font-bold text-[#FF00A0] tracking-widest">04 // SELECTED PROJECTS</span>
+                <span class="font-mono text-[10px] font-bold text-[#FF00A0] tracking-widest">05 // SELECTED PROJECTS</span>
                 <span class="font-mono text-[8px] text-neutral-400">HORIZONTAL GALLERY (07)</span>
             </div>
             <span class="hud-dot w-3.5 h-3.5 rounded-full bg-neutral-600 border border-transparent transition-all duration-300 block" data-section="projects" title="Selected Projects"></span>
@@ -950,7 +963,7 @@
         <!-- Category 05: DEV SYNERGY -->
         <a href="#section-why-devs-love-me" class="hud-nav-item group relative flex items-center justify-center p-1 cursor-pointer" data-category="dev-love">
             <div class="hud-nav-label absolute right-full mr-3.5 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 pointer-events-none flex flex-col items-end px-3 py-1.5 rounded-lg bg-void/95 border border-[#FF00A0]/40 shadow-[0_0_15px_rgba(255,0,160,0.4)] whitespace-nowrap z-50">
-                <span class="font-mono text-[10px] font-bold text-[#FF00A0] tracking-widest">05 // DEV SYNERGY</span>
+                <span class="font-mono text-[10px] font-bold text-[#FF00A0] tracking-widest">06 // DEV SYNERGY</span>
                 <span class="font-mono text-[8px] text-neutral-400">ENGINEERING HANDOFF</span>
             </div>
             <span class="hud-dot w-3.5 h-3.5 rounded-full bg-neutral-600 border border-transparent transition-all duration-300 block" data-section="dev-love" title="Dev Synergy"></span>
@@ -959,7 +972,7 @@
         <!-- Category 06: SCHEDULE -->
         <a href="#recruiter-briefing" class="hud-nav-item group relative flex items-center justify-center p-1 cursor-pointer" data-category="briefing">
             <div class="hud-nav-label absolute right-full mr-3.5 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 pointer-events-none flex flex-col items-end px-3 py-1.5 rounded-lg bg-void/95 border border-neutral-400/40 shadow-[0_0_15px_rgba(163,163,163,0.4)] whitespace-nowrap z-50">
-                <span class="font-mono text-[10px] font-bold text-neutral-300 tracking-widest">06 // SCHEDULE</span>
+                <span class="font-mono text-[10px] font-bold text-neutral-300 tracking-widest">07 // SCHEDULE</span>
                 <span class="font-mono text-[8px] text-neutral-400">BOOK 15-MIN WALKTHROUGH</span>
             </div>
             <span class="hud-dot w-3.5 h-3.5 rounded-full bg-neutral-600 border border-transparent transition-all duration-300 block" data-section="briefing" title="Schedule Meeting"></span>
@@ -1002,7 +1015,7 @@
 
             <!-- CTA Buttons -->
             <div class="flex flex-wrap gap-4 mb-16">
-                <a href="#work"
+                <a href="#section-what-i-bring"
                    class="px-8 py-4 bg-[#0a0a0a] text-white font-bold rounded-lg border border-[#0a0a0a] hover:bg-neon-cyan hover:text-void hover:border-neon-cyan hover:shadow-[0_0_25px_rgba(0,243,255,0.7)] transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer font-display tracking-wide text-sm uppercase">
                     See the impact
                 </a>
@@ -1636,7 +1649,432 @@
                 </div>
             </div>
         </section>
-                        <section id="section-selected-projects" class="min-h-[100dvh] h-auto lg:h-[100dvh] w-full snap-start flex flex-col justify-between px-4 sm:px-8 md:px-16 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 py-12 lg:py-8 overflow-hidden bg-void section-viewport safe-padding-top safe-padding-bottom">
+                        
+        <!-- ======================================================================= -->
+        <!-- ======================================================================= -->
+        <!-- ======================================================================= -->
+        <!-- ======================================================================= -->
+        <!-- ======================================================================= -->
+        <!-- ======================================================================= -->
+        <!-- ======================================================================= -->
+        <!-- ======================================================================= -->
+        <!-- SECTION 04: EXPERIENCES (CYBERPUNK CIRCUIT & GOLDEN SPINE)              -->
+        <!-- ======================================================================= -->
+        <section id="section-experiences" class="min-h-[100dvh] h-auto lg:h-[100dvh] w-full snap-start flex flex-col justify-between px-4 sm:px-8 md:px-16 border-b border-neutral-200/50 dark:border-white/10 relative z-10 py-16 lg:py-8 overflow-hidden bg-[#09090b] section-viewport safe-padding-top safe-padding-bottom" data-section="experiences">
+            
+            <!-- Subtle Ambient Studio Vignette -->
+
+            <!-- WebGL Atmospheric Lightning Background (Golden Electric Discharge) -->
+            <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+                <canvas id="lightning-canvas" class="w-full h-full block absolute inset-0 mix-blend-screen opacity-40"></canvas>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#09090b]/80 via-transparent to-[#09090b]/80 pointer-events-none"></div>
+            </div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-amber-500/[0.025] rounded-full blur-[160px] pointer-events-none -z-10"></div>
+
+            <!-- Left-Side Middle Floating Editorial Title (Desktop) -->
+            <div class="hidden lg:flex absolute left-6 md:left-10 top-1/2 -translate-y-1/2 flex-col items-center gap-4 z-20 pointer-events-none select-none">
+                <div class="w-[1px] h-16 bg-gradient-to-b from-transparent via-amber-400 to-amber-400/20"></div>
+                <div class="flex items-center gap-2 [writing-mode:vertical-lr] rotate-180">
+                    <span class="font-mono text-[10px] text-amber-400/80 uppercase tracking-[0.3em] font-semibold">04 // CAREER ARCHITECTURE</span>
+                    <h2 class="text-3xl xl:text-4xl font-display font-bold bg-gradient-to-r from-amber-200 via-amber-400 to-amber-300 bg-clip-text text-transparent tracking-tight py-2">
+                        Experiences
+                    </h2>
+                </div>
+                <div class="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.9)] animate-pulse"></div>
+                <div class="w-[1px] h-16 bg-gradient-to-b from-amber-400/20 via-amber-400 to-transparent"></div>
+            </div>
+
+            <!-- Top Header (Mobile / Tablet Only) -->
+            <div class="lg:hidden mb-4 z-10 w-full">
+                <div class="flex items-center justify-between border-b border-white/10 pb-2">
+                    <div class="flex items-center gap-2.5">
+                        <span class="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.9)] animate-pulse"></span>
+                        <h2 class="text-2xl sm:text-3xl font-display font-bold bg-gradient-to-r from-amber-200 via-amber-400 to-amber-300 bg-clip-text text-transparent tracking-tight">
+                            Experiences
+                        </h2>
+                    </div>
+                    <span class="font-mono text-[10px] text-neutral-400 bg-white/5 border border-white/10 px-2 py-0.5 rounded-lg">[1-6] Tap</span>
+                </div>
+            </div>
+
+            <!-- Main Spine & Elongated Cyberpunk Circuit Viewport -->
+            <div class="relative w-full max-w-5xl mx-auto flex-1 min-h-[460px] flex flex-col justify-center py-2 z-10" id="experiences-spine-container">
+                
+                <!-- Central Golden Glowing String (The Luminous Spine) -->
+                <div class="absolute left-4 sm:left-1/2 top-2 bottom-2 -translate-x-1/2 w-[2px] bg-gradient-to-b from-amber-200 via-amber-400 to-amber-200 shadow-[0_0_12px_rgba(251,191,36,0.6),0_0_24px_rgba(217,119,6,0.3)] z-0 rounded-full" id="luminous-spine-track">
+                    <!-- Electric Photon Bead -->
+                    <div id="electric-photon-bead" class="absolute left-1/2 top-0 -translate-x-1/2 w-3 h-3 rounded-full bg-amber-200 shadow-[0_0_15px_#fbbf24,0_0_25px_#f59e0b] pointer-events-none transition-all duration-300"></div>
+                </div>
+
+                <!-- Top Start Cap: 2020 -->
+                <div class="absolute left-4 sm:left-1/2 top-0 -translate-x-1/2 z-10">
+                    <span class="font-mono text-[9px] font-bold px-2.5 py-0.5 rounded-full bg-black/90 border border-amber-400/60 text-amber-300 shadow-[0_0_10px_rgba(251,191,36,0.3)]">2020 // START</span>
+                </div>
+
+                <!-- Bottom End Cap: 2026 -->
+                <div class="absolute left-4 sm:left-1/2 bottom-0 -translate-x-1/2 z-10">
+                    <span class="font-mono text-[9px] font-bold px-2.5 py-0.5 rounded-full bg-black/90 border border-amber-400/60 text-amber-300 shadow-[0_0_10px_rgba(251,191,36,0.3)]">2026 // NOW</span>
+                </div>
+
+                <!-- 6 Chronological Cyberpunk Branch Rows -->
+                <div class="space-y-4 sm:space-y-3 relative z-10 pl-8 sm:pl-0">
+                    
+                    <!-- ========================================== -->
+                    <!-- BRANCH 01 (LEFT): IT Infrastructure       -->
+                    <!-- ========================================== -->
+                    <div class="branch-row relative flex flex-col sm:flex-row sm:items-center group" data-index="0">
+                        <!-- Left Wing (Pill on Desktop) -->
+                        <div class="sm:w-1/2 sm:pr-10 sm:text-right flex sm:justify-end">
+                            <div onclick="toggleBranch(0)" class="branch-pill p-3 rounded-xl border border-white/10 bg-[#121214] hover:border-amber-400/70 hover:bg-[#18181c] transition-all duration-300 cursor-pointer shadow-md inline-block max-w-sm text-left sm:text-right group-hover:shadow-[0_0_25px_rgba(251,191,36,0.25)] relative">
+                                <!-- Top: Roman Numeral Badge & Year -->
+                                <div class="flex items-center sm:justify-end gap-2 text-[11px] font-mono text-neutral-400 mb-1">
+                                    <span class="font-bold text-amber-300 px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/30">01 // I</span>
+                                    <span>·</span>
+                                    <span class="text-neutral-300 font-bold">2020–2021</span>
+                                </div>
+                                <!-- Below: Job Role Title -->
+                                <h3 class="text-sm sm:text-base font-display font-bold text-white group-hover:text-amber-200 transition-colors">
+                                    IT System &amp; Network Administrator
+                                </h3>
+                                <p class="text-[11px] font-mono text-neutral-400">Trishna Biotech · Systems Infrastructure</p>
+                            </div>
+                        </div>
+
+                        <!-- Elongated Left Connector Trace Line (Desktop) -->
+                        <div class="hidden sm:block absolute right-1/2 top-1/2 w-10 h-[1px] bg-gradient-to-l from-amber-400 via-amber-400/40 to-transparent group-hover:bg-amber-400 transition-colors z-10"></div>
+
+                        <!-- Central Node Dot on Golden String -->
+                        <div class="absolute left-[-20px] sm:left-1/2 top-4 sm:top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+                            <button onclick="toggleBranch(0)" class="branch-node-dot w-3.5 h-3.5 rounded-full bg-black border-2 border-amber-400 group-hover:scale-125 group-hover:bg-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.6)] transition-all duration-300 cursor-pointer" title="01 // IT Administrator"></button>
+                        </div>
+
+                        <!-- Right Wing (Story Card on Desktop) -->
+                        <div class="sm:w-1/2 sm:pl-10 mt-2 sm:mt-0">
+                            <div class="branch-story-card hidden p-4 rounded-xl border border-amber-400/40 bg-[#141416]/95 backdrop-blur-xl shadow-2xl transition-all duration-400 text-left transform-gpu" id="branch-card-0">
+                                <div class="flex items-center justify-between border-b border-white/10 pb-2 mb-2.5">
+                                    <span class="text-[10px] font-mono text-amber-300 font-bold uppercase tracking-wider">Perspective Lens</span>
+                                    <div class="flex bg-black/50 p-0.5 rounded-lg border border-white/10 text-[9px] font-mono">
+                                        <button onclick="setCardLens(0, 'reality', event)" class="lens-btn-reality-0 px-2 py-0.5 rounded text-neutral-400 hover:text-white transition-colors active bg-white/10 text-white font-bold">Physical Reality</button>
+                                        <button onclick="setCardLens(0, 'ux', event)" class="lens-btn-ux-0 px-2 py-0.5 rounded text-neutral-400 hover:text-white transition-colors">UX Translation</button>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-neutral-300 font-body leading-relaxed mb-3" id="branch-text-0">
+                                    "Maintained 100% network uptime during COVID transition. Proved that reliability is the invisible foundation of user trust."
+                                </p>
+                                <div class="pt-2 border-t border-white/10 flex flex-wrap items-center justify-between gap-1.5 text-[10px] font-mono">
+                                    <span class="text-amber-300 font-bold">✦ Experience Gained:</span>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-neutral-300">Network Topology</span>
+                                        <span class="px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-neutral-300">Server Admin</span>
+                                        <span class="px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-neutral-300">Uptime</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ========================================== -->
+                    <!-- BRANCH 02 (RIGHT): Specialty Barista       -->
+                    <!-- ========================================== -->
+                    <div class="branch-row relative flex flex-col sm:flex-row sm:items-center group" data-index="1">
+                        <!-- Left Wing (Story Card on Desktop) -->
+                        <div class="sm:w-1/2 sm:pr-10 sm:text-right hidden sm:flex sm:justify-end order-2 sm:order-1">
+                            <div class="branch-story-card hidden p-4 rounded-xl border border-amber-400/40 bg-[#141416]/95 backdrop-blur-xl shadow-2xl transition-all duration-400 text-left max-w-sm transform-gpu" id="branch-card-1">
+                                <div class="flex items-center justify-between border-b border-white/10 pb-2 mb-2.5">
+                                    <span class="text-[10px] font-mono text-amber-300 font-bold uppercase tracking-wider">Perspective Lens</span>
+                                    <div class="flex bg-black/50 p-0.5 rounded-lg border border-white/10 text-[9px] font-mono">
+                                        <button onclick="setCardLens(1, 'reality', event)" class="lens-btn-reality-1 px-2 py-0.5 rounded text-neutral-400 hover:text-white transition-colors active bg-white/10 text-white font-bold">Physical Reality</button>
+                                        <button onclick="setCardLens(1, 'ux', event)" class="lens-btn-ux-1 px-2 py-0.5 rounded text-neutral-400 hover:text-white transition-colors">UX Translation</button>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-neutral-300 font-body leading-relaxed mb-3" id="branch-text-1">
+                                    "Managed high-volume rushes with 90-second ticket cycles. Taught me spatial ergonomics and anticipatory cognitive load reduction."
+                                </p>
+                                <div class="pt-2 border-t border-white/10 flex flex-wrap items-center justify-between gap-1.5 text-[10px] font-mono">
+                                    <span class="text-amber-300 font-bold">✦ Experience Gained:</span>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-neutral-300">Service Ergonomics</span>
+                                        <span class="px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-neutral-300">Cognitive Load</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Elongated Right Connector Trace Line (Desktop) -->
+                        <div class="hidden sm:block absolute left-1/2 top-1/2 w-10 h-[1px] bg-gradient-to-r from-amber-400 via-amber-400/40 to-transparent group-hover:bg-amber-400 transition-colors z-10"></div>
+
+                        <!-- Central Node Dot on Golden String -->
+                        <div class="absolute left-[-20px] sm:left-1/2 top-4 sm:top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+                            <button onclick="toggleBranch(1)" class="branch-node-dot w-3.5 h-3.5 rounded-full bg-black border-2 border-amber-400 group-hover:scale-125 group-hover:bg-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.6)] transition-all duration-300 cursor-pointer" title="02 // Barista"></button>
+                        </div>
+
+                        <!-- Right Wing (Pill on Desktop) -->
+                        <div class="sm:w-1/2 sm:pl-10 text-left order-1 sm:order-2">
+                            <div onclick="toggleBranch(1)" class="branch-pill p-3 rounded-xl border border-white/10 bg-[#121214] hover:border-amber-400/70 hover:bg-[#18181c] transition-all duration-300 cursor-pointer shadow-md inline-block max-w-sm text-left group-hover:shadow-[0_0_25px_rgba(251,191,36,0.25)] relative">
+                                <!-- Top: Roman Numeral Badge & Duration -->
+                                <div class="flex items-center gap-2 text-[11px] font-mono text-neutral-400 mb-1">
+                                    <span class="font-bold text-amber-300 px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/30">02 // II</span>
+                                    <span>·</span>
+                                    <span class="text-neutral-300 font-bold">9 Months</span>
+                                </div>
+                                <!-- Below: Job Role Title -->
+                                <h3 class="text-sm sm:text-base font-display font-bold text-white group-hover:text-amber-200 transition-colors">
+                                    Specialty Craft Coffee Barista
+                                </h3>
+                                <p class="text-[11px] font-mono text-neutral-400">Specialty Coffee · High-Pressure Service</p>
+                            </div>
+
+                            <!-- Mobile Story Card Dropdown -->
+                            <div class="sm:hidden mt-2">
+                                <div class="branch-story-card-mobile hidden p-3 rounded-xl border border-amber-400/30 bg-[#141416] text-left" id="branch-card-mobile-1">
+                                    <p class="text-xs text-neutral-300 font-body leading-relaxed mb-2">
+                                        "Managed high-volume rushes with 90-second ticket cycles. Taught me spatial ergonomics and anticipatory cognitive load reduction."
+                                    </p>
+                                    <span class="text-[10px] font-mono text-amber-300">✦ Experience Gained: Service Ergonomics · Cognitive Load</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ========================================== -->
+                    <!-- BRANCH 03 (LEFT): Bartender                -->
+                    <!-- ========================================== -->
+                    <div class="branch-row relative flex flex-col sm:flex-row sm:items-center group" data-index="2">
+                        <!-- Left Wing (Pill on Desktop) -->
+                        <div class="sm:w-1/2 sm:pr-10 sm:text-right flex sm:justify-end">
+                            <div onclick="toggleBranch(2)" class="branch-pill p-3 rounded-xl border border-white/10 bg-[#121214] hover:border-amber-400/70 hover:bg-[#18181c] transition-all duration-300 cursor-pointer shadow-md inline-block max-w-sm text-left sm:text-right group-hover:shadow-[0_0_25px_rgba(251,191,36,0.25)] relative">
+                                <!-- Top: Roman Numeral Badge & Duration -->
+                                <div class="flex items-center sm:justify-end gap-2 text-[11px] font-mono text-neutral-400 mb-1">
+                                    <span class="font-bold text-amber-300 px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/30">03 // III</span>
+                                    <span>·</span>
+                                    <span class="text-neutral-300 font-bold">3 Months</span>
+                                </div>
+                                <!-- Below: Job Role Title -->
+                                <h3 class="text-sm sm:text-base font-display font-bold text-white group-hover:text-amber-200 transition-colors">
+                                    High-Volume Hospitality Bartender
+                                </h3>
+                                <p class="text-[11px] font-mono text-neutral-400">Hospitality Group · Dynamic Operations</p>
+                            </div>
+                        </div>
+
+                        <!-- Elongated Left Connector Trace Line (Desktop) -->
+                        <div class="hidden sm:block absolute right-1/2 top-1/2 w-10 h-[1px] bg-gradient-to-l from-amber-400 via-amber-400/40 to-transparent group-hover:bg-amber-400 transition-colors z-10"></div>
+
+                        <!-- Central Node Dot on Golden String -->
+                        <div class="absolute left-[-20px] sm:left-1/2 top-4 sm:top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+                            <button onclick="toggleBranch(2)" class="branch-node-dot w-3.5 h-3.5 rounded-full bg-black border-2 border-amber-400 group-hover:scale-125 group-hover:bg-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.6)] transition-all duration-300 cursor-pointer" title="03 // Bartender"></button>
+                        </div>
+
+                        <!-- Right Wing (Story Card on Desktop) -->
+                        <div class="sm:w-1/2 sm:pl-10 mt-2 sm:mt-0">
+                            <div class="branch-story-card hidden p-4 rounded-xl border border-amber-400/40 bg-[#141416]/95 backdrop-blur-xl shadow-2xl transition-all duration-400 text-left transform-gpu" id="branch-card-2">
+                                <div class="flex items-center justify-between border-b border-white/10 pb-2 mb-2.5">
+                                    <span class="text-[10px] font-mono text-amber-300 font-bold uppercase tracking-wider">Perspective Lens</span>
+                                    <div class="flex bg-black/50 p-0.5 rounded-lg border border-white/10 text-[9px] font-mono">
+                                        <button onclick="setCardLens(2, 'reality', event)" class="lens-btn-reality-2 px-2 py-0.5 rounded text-neutral-400 hover:text-white transition-colors active bg-white/10 text-white font-bold">Physical Reality</button>
+                                        <button onclick="setCardLens(2, 'ux', event)" class="lens-btn-ux-2 px-2 py-0.5 rounded text-neutral-400 hover:text-white transition-colors">UX Translation</button>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-neutral-300 font-body leading-relaxed mb-3" id="branch-text-2">
+                                    "Handled peak-volume custom orders under sensory overload. Proved that an interface is defined by how gracefully it handles chaotic edge-cases."
+                                </p>
+                                <div class="pt-2 border-t border-white/10 flex flex-wrap items-center justify-between gap-1.5 text-[10px] font-mono">
+                                    <span class="text-amber-300 font-bold">✦ Experience Gained:</span>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-neutral-300">Edge-Case Recovery</span>
+                                        <span class="px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-neutral-300">Calm UI</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ========================================== -->
+                    <!-- BRANCH 04 (RIGHT): Logistics Specialist   -->
+                    <!-- ========================================== -->
+                    <div class="branch-row relative flex flex-col sm:flex-row sm:items-center group" data-index="3">
+                        <!-- Left Wing (Story Card on Desktop) -->
+                        <div class="sm:w-1/2 sm:pr-10 sm:text-right hidden sm:flex sm:justify-end order-2 sm:order-1">
+                            <div class="branch-story-card hidden p-4 rounded-xl border border-amber-400/40 bg-[#141416]/95 backdrop-blur-xl shadow-2xl transition-all duration-400 text-left max-w-sm transform-gpu" id="branch-card-3">
+                                <div class="flex items-center justify-between border-b border-white/10 pb-2 mb-2.5">
+                                    <span class="text-[10px] font-mono text-amber-300 font-bold uppercase tracking-wider">Perspective Lens</span>
+                                    <div class="flex bg-black/50 p-0.5 rounded-lg border border-white/10 text-[9px] font-mono">
+                                        <button onclick="setCardLens(3, 'reality', event)" class="lens-btn-reality-3 px-2 py-0.5 rounded text-neutral-400 hover:text-white transition-colors active bg-white/10 text-white font-bold">Physical Reality</button>
+                                        <button onclick="setCardLens(3, 'ux', event)" class="lens-btn-ux-3 px-2 py-0.5 rounded text-neutral-400 hover:text-white transition-colors">UX Translation</button>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-neutral-300 font-body leading-relaxed mb-3" id="branch-text-3">
+                                    "Orchestrated European B2B luxury fulfillment and CRM data pipelines with 99.8% precision. Taught me systems thinking at scale."
+                                </p>
+                                <div class="pt-2 border-t border-white/10 flex flex-wrap items-center justify-between gap-1.5 text-[10px] font-mono">
+                                    <span class="text-amber-300 font-bold">✦ Experience Gained:</span>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-neutral-300">Data Pipelines</span>
+                                        <span class="px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-neutral-300">Automation</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Elongated Right Connector Trace Line (Desktop) -->
+                        <div class="hidden sm:block absolute left-1/2 top-1/2 w-10 h-[1px] bg-gradient-to-r from-amber-400 via-amber-400/40 to-transparent group-hover:bg-amber-400 transition-colors z-10"></div>
+
+                        <!-- Central Node Dot on Golden String -->
+                        <div class="absolute left-[-20px] sm:left-1/2 top-4 sm:top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+                            <button onclick="toggleBranch(3)" class="branch-node-dot w-3.5 h-3.5 rounded-full bg-black border-2 border-amber-400 group-hover:scale-125 group-hover:bg-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.6)] transition-all duration-300 cursor-pointer" title="04 // Logistics"></button>
+                        </div>
+
+                        <!-- Right Wing (Pill on Desktop) -->
+                        <div class="sm:w-1/2 sm:pl-10 text-left order-1 sm:order-2">
+                            <div onclick="toggleBranch(3)" class="branch-pill p-3 rounded-xl border border-white/10 bg-[#121214] hover:border-amber-400/70 hover:bg-[#18181c] transition-all duration-300 cursor-pointer shadow-md inline-block max-w-sm text-left group-hover:shadow-[0_0_25px_rgba(251,191,36,0.25)] relative">
+                                <!-- Top: Roman Numeral Badge & Year -->
+                                <div class="flex items-center gap-2 text-[11px] font-mono text-neutral-400 mb-1">
+                                    <span class="font-bold text-amber-300 px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/30">04 // IV</span>
+                                    <span>·</span>
+                                    <span class="text-neutral-300 font-bold">2025–2026</span>
+                                </div>
+                                <!-- Below: Job Role Title -->
+                                <h3 class="text-sm sm:text-base font-display font-bold text-white group-hover:text-amber-200 transition-colors">
+                                    Logistics &amp; Operations Specialist
+                                </h3>
+                                <p class="text-[11px] font-mono text-neutral-400">LOGO Fulfilment GmbH · Germany</p>
+                            </div>
+
+                            <!-- Mobile Story Card Dropdown -->
+                            <div class="sm:hidden mt-2">
+                                <div class="branch-story-card-mobile hidden p-3 rounded-xl border border-amber-400/30 bg-[#141416] text-left" id="branch-card-mobile-3">
+                                    <p class="text-xs text-neutral-300 font-body leading-relaxed mb-2">
+                                        "Orchestrated European B2B luxury fulfillment and CRM data pipelines with 99.8% precision. Taught me systems thinking at scale."
+                                    </p>
+                                    <span class="text-[10px] font-mono text-amber-300">✦ Experience Gained: Data Pipelines · Automation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ========================================== -->
+                    <!-- BRANCH 05 (LEFT): Web Developer            -->
+                    <!-- ========================================== -->
+                    <div class="branch-row relative flex flex-col sm:flex-row sm:items-center group" data-index="4">
+                        <!-- Left Wing (Pill on Desktop) -->
+                        <div class="sm:w-1/2 sm:pr-10 sm:text-right flex sm:justify-end">
+                            <div onclick="toggleBranch(4)" class="branch-pill p-3 rounded-xl border border-white/10 bg-[#121214] hover:border-amber-400/70 hover:bg-[#18181c] transition-all duration-300 cursor-pointer shadow-md inline-block max-w-sm text-left sm:text-right group-hover:shadow-[0_0_25px_rgba(251,191,36,0.25)] relative">
+                                <!-- Top: Roman Numeral Badge & Year -->
+                                <div class="flex items-center sm:justify-end gap-2 text-[11px] font-mono text-neutral-400 mb-1">
+                                    <span class="font-bold text-amber-300 px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/30">05 // V</span>
+                                    <span>·</span>
+                                    <span class="text-neutral-300 font-bold">2024–2025</span>
+                                </div>
+                                <!-- Below: Job Role Title -->
+                                <h3 class="text-sm sm:text-base font-display font-bold text-white group-hover:text-amber-200 transition-colors">
+                                    Web Developer &amp; Brand Builder
+                                </h3>
+                                <p class="text-[11px] font-mono text-neutral-400">Independent / Freelance · Frontend Craft</p>
+                            </div>
+                        </div>
+
+                        <!-- Elongated Left Connector Trace Line (Desktop) -->
+                        <div class="hidden sm:block absolute right-1/2 top-1/2 w-10 h-[1px] bg-gradient-to-l from-amber-400 via-amber-400/40 to-transparent group-hover:bg-amber-400 transition-colors z-10"></div>
+
+                        <!-- Central Node Dot on Golden String -->
+                        <div class="absolute left-[-20px] sm:left-1/2 top-4 sm:top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+                            <button onclick="toggleBranch(4)" class="branch-node-dot w-3.5 h-3.5 rounded-full bg-black border-2 border-amber-400 group-hover:scale-125 group-hover:bg-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.6)] transition-all duration-300 cursor-pointer" title="05 // Web Developer"></button>
+                        </div>
+
+                        <!-- Right Wing (Story Card on Desktop) -->
+                        <div class="sm:w-1/2 sm:pl-10 mt-2 sm:mt-0">
+                            <div class="branch-story-card hidden p-4 rounded-xl border border-amber-400/40 bg-[#141416]/95 backdrop-blur-xl shadow-2xl transition-all duration-400 text-left transform-gpu" id="branch-card-4">
+                                <div class="flex items-center justify-between border-b border-white/10 pb-2 mb-2.5">
+                                    <span class="text-[10px] font-mono text-amber-300 font-bold uppercase tracking-wider">Perspective Lens</span>
+                                    <div class="flex bg-black/50 p-0.5 rounded-lg border border-white/10 text-[9px] font-mono">
+                                        <button onclick="setCardLens(4, 'reality', event)" class="lens-btn-reality-4 px-2 py-0.5 rounded text-neutral-400 hover:text-white transition-colors active bg-white/10 text-white font-bold">Physical Reality</button>
+                                        <button onclick="setCardLens(4, 'ux', event)" class="lens-btn-ux-4 px-2 py-0.5 rounded text-neutral-400 hover:text-white transition-colors">UX Translation</button>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-neutral-300 font-body leading-relaxed mb-3" id="branch-text-4">
+                                    "Translated brand identities into responsive markup and WebGL shaders. Closed the gap between Figma artboards and production code."
+                                </p>
+                                <div class="pt-2 border-t border-white/10 flex flex-wrap items-center justify-between gap-1.5 text-[10px] font-mono">
+                                    <span class="text-amber-300 font-bold">✦ Experience Gained:</span>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-neutral-300">Design-to-Code</span>
+                                        <span class="px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-neutral-300">WebGL Shaders</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ========================================== -->
+                    <!-- BRANCH 06 (RIGHT): Product UX Designer     -->
+                    <!-- ========================================== -->
+                    <div class="branch-row relative flex flex-col sm:flex-row sm:items-center group" data-index="5">
+                        <!-- Left Wing (Story Card on Desktop) -->
+                        <div class="sm:w-1/2 sm:pr-10 sm:text-right hidden sm:flex sm:justify-end order-2 sm:order-1">
+                            <div class="branch-story-card hidden p-4 rounded-xl border border-amber-400/40 bg-[#141416]/95 backdrop-blur-xl shadow-2xl transition-all duration-400 text-left max-w-sm transform-gpu" id="branch-card-5">
+                                <div class="flex items-center justify-between border-b border-white/10 pb-2 mb-2.5">
+                                    <span class="text-[10px] font-mono text-amber-300 font-bold uppercase tracking-wider">Perspective Lens</span>
+                                    <div class="flex bg-black/50 p-0.5 rounded-lg border border-white/10 text-[9px] font-mono">
+                                        <button onclick="setCardLens(5, 'reality', event)" class="lens-btn-reality-5 px-2 py-0.5 rounded text-neutral-400 hover:text-white transition-colors active bg-white/10 text-white font-bold">Physical Reality</button>
+                                        <button onclick="setCardLens(5, 'ux', event)" class="lens-btn-ux-5 px-2 py-0.5 rounded text-neutral-400 hover:text-white transition-colors">UX Translation</button>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-neutral-300 font-body leading-relaxed mb-3" id="branch-text-5">
+                                    "Designed an educational Super App overhaul with WCAG AAA token systems and usability testing, accelerating release velocity."
+                                </p>
+                                <div class="pt-2 border-t border-white/10 flex flex-wrap items-center justify-between gap-1.5 text-[10px] font-mono">
+                                    <span class="text-amber-300 font-bold">✦ Experience Gained:</span>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-neutral-300">WCAG AAA</span>
+                                        <span class="px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-neutral-300">Atomic Tokens</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Elongated Right Connector Trace Line (Desktop) -->
+                        <div class="hidden sm:block absolute left-1/2 top-1/2 w-10 h-[1px] bg-gradient-to-r from-amber-400 via-amber-400/40 to-transparent group-hover:bg-amber-400 transition-colors z-10"></div>
+
+                        <!-- Central Node Dot on Golden String -->
+                        <div class="absolute left-[-20px] sm:left-1/2 top-4 sm:top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+                            <button onclick="toggleBranch(5)" class="branch-node-dot w-3.5 h-3.5 rounded-full bg-black border-2 border-amber-400 group-hover:scale-125 group-hover:bg-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.6)] transition-all duration-300 cursor-pointer" title="06 // Product UX Designer"></button>
+                        </div>
+
+                        <!-- Right Wing (Pill on Desktop) -->
+                        <div class="sm:w-1/2 sm:pl-10 text-left order-1 sm:order-2">
+                            <div onclick="toggleBranch(5)" class="branch-pill p-3 rounded-xl border border-white/10 bg-[#121214] hover:border-amber-400/70 hover:bg-[#18181c] transition-all duration-300 cursor-pointer shadow-md inline-block max-w-sm text-left group-hover:shadow-[0_0_25px_rgba(251,191,36,0.25)] relative">
+                                <!-- Top: Roman Numeral Badge & Year -->
+                                <div class="flex items-center gap-2 text-[11px] font-mono text-neutral-400 mb-1">
+                                    <span class="font-bold text-amber-300 px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/30">06 // VI</span>
+                                    <span>·</span>
+                                    <span class="text-neutral-300 font-bold">2026</span>
+                                </div>
+                                <!-- Below: Job Role Title -->
+                                <h3 class="text-sm sm:text-base font-display font-bold text-white group-hover:text-amber-200 transition-colors">
+                                    Product UX Designer
+                                </h3>
+                                <p class="text-[11px] font-mono text-neutral-400">Techsnap · Education &amp; Super App</p>
+                            </div>
+
+                            <!-- Mobile Story Card Dropdown -->
+                            <div class="sm:hidden mt-2">
+                                <div class="branch-story-card-mobile hidden p-3 rounded-xl border border-amber-400/30 bg-[#141416] text-left" id="branch-card-mobile-5">
+                                    <p class="text-xs text-neutral-300 font-body leading-relaxed mb-2">
+                                        "Designed an educational Super App overhaul with WCAG AAA token systems and usability testing, accelerating release velocity."
+                                    </p>
+                                    <span class="text-[10px] font-mono text-amber-300">✦ Experience Gained: WCAG AAA · Atomic Tokens</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="section-selected-projects" class="min-h-[100dvh] h-auto lg:h-[100dvh] w-full snap-start flex flex-col justify-between px-4 sm:px-8 md:px-16 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 py-12 lg:py-8 overflow-hidden bg-void section-viewport safe-padding-top safe-padding-bottom">
             <div class="project-boundary-line"></div>
 
             <!-- GhostCursor WebGL Fluid Trail Background Effect -->
@@ -1651,7 +2089,7 @@
                     <div>
                         <div class="flex items-center gap-2 mb-1">
                             <span class="w-2 h-2 rounded-full bg-neon-cyan animate-ping"></span>
-                            <span class="text-[10px] font-mono text-neon-cyan uppercase tracking-[0.25em] font-bold">[04 // SELECTED PROJECTS]</span>
+                            <span class="text-[10px] font-mono text-neon-cyan uppercase tracking-[0.25em] font-bold">[05 // SELECTED PROJECTS]</span>
                         </div>
                         <h2 class="text-3xl md:text-5xl font-display font-bold text-white shimmer-headline tracking-tight">Selected Projects</h2>
                     </div>
@@ -5865,5 +6303,7 @@
         <img id="lightbox-img" src="" alt="Enlarged design view" class="max-w-[95vw] max-h-[90vh] object-contain rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.8)] transition-transform duration-300 scale-95" onclick="event.stopPropagation()" loading="lazy" decoding="async">
     </div>
 
+    <script defer src="js/experiences-studio.js"></script>
+    <script defer src="js/lightning-background.js"></script>
 </body>
 </html>

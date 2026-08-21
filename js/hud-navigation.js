@@ -8,6 +8,7 @@ const sectionRegistry = [
     { key: 'hero',        id: 'hero-section',              color: '#00F3FF', shadow: 'rgba(0,243,255,0.7)' },
     { key: 'value-prop',  id: 'section-what-i-bring',      color: '#10B981', shadow: 'rgba(16,185,129,0.7)' },
     { key: 'skill-tree',  id: 'section-skill-tree',        color: '#A855F7', shadow: 'rgba(168,85,247,0.7)' },
+    { key: 'experiences', id: 'section-experiences',       color: '#F59E0B', shadow: 'rgba(245,158,11,0.8)' },
     { key: 'projects',    id: 'section-selected-projects', color: '#FF00A0', shadow: 'rgba(255,0,160,0.7)' },
     { key: 'dev-love',    id: 'section-why-devs-love-me', color: '#00F3FF', shadow: 'rgba(0,243,255,0.7)' },
     { key: 'briefing',    id: 'recruiter-briefing',        color: '#A3A3A3', shadow: 'rgba(163,163,163,0.6)'},
