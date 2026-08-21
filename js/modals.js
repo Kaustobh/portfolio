@@ -24,7 +24,7 @@
             content.classList.add('scale-100');
         }
         document.body.style.overflow = 'hidden';
-        if (typeof playSyntheticClick === 'function') playSyntheticClick('success');
+        if (typeof playClickSound === 'function') playClickSound();
     }
 
     function closeModal(modalId) {
@@ -47,7 +47,7 @@
             }
         }, 300);
 
-        if (typeof playSyntheticClick === 'function') playSyntheticClick('click');
+        if (typeof playCloseSound === 'function') playCloseSound();
     }
 
     // Pre-warm modal DOM node into browser compositor
