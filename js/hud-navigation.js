@@ -249,24 +249,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
-    // Dark / Light Theme Matrix Switcher
-    const themeToggle = document.getElementById('theme-matrix-toggle');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const isLight = document.body.classList.contains('light');
-            if (isLight) {
-                document.documentElement.classList.add('dark');
-                document.documentElement.classList.remove('light');
-                document.body.classList.remove('light');
-                localStorage.setItem('theme_matrix', 'dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-                document.documentElement.classList.add('light');
-                document.body.classList.add('light');
-                localStorage.setItem('theme_matrix', 'light');
-            }
-            document.dispatchEvent(new CustomEvent('themechange', { detail: { isLight: !isLight } }));
-            if (typeof playSyntheticClick === 'function') playSyntheticClick('success');
-        });
-    }
+    // Permanent Cyberpunk Dark Mode Matrix Locked
+    document.documentElement.classList.add('dark');
+    document.documentElement.classList.remove('light');
+    if (document.body) document.body.classList.remove('light');
+    localStorage.setItem('theme_matrix', 'dark');
 });
