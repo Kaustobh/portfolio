@@ -798,3 +798,55 @@ html.light .electric-circuit-line {
     filter: drop-shadow(0 0 4px rgba(0,93,255,0.5)) !important;
 }
 
+
+/* ==========================================================================
+   STRICT SIGNATURE THEME BORDERS FOR ALL 7 CASE STUDY MODALS
+   ========================================================================== */
+#fintech-modal-content {
+    border: 2px solid #00F3FF !important;
+    border-color: #00F3FF !important;
+    box-shadow: 0 0 60px rgba(0, 243, 255, 0.4) !important;
+    animation: none !important;
+}
+
+#checkout-modal-content {
+    border: 2px solid #FF00A0 !important;
+    border-color: #FF00A0 !important;
+    box-shadow: 0 0 60px rgba(255, 0, 160, 0.4) !important;
+    animation: none !important;
+}
+
+#gallery-modal-content {
+    border: 2px solid #D4FF00 !important;
+    border-color: #D4FF00 !important;
+    box-shadow: 0 0 60px rgba(212, 255, 0, 0.4) !important;
+    animation: none !important;
+}
+
+#MilkDel-modal-content {
+    border: 2px solid #A8CFA1 !important;
+    border-color: #A8CFA1 !important;
+    box-shadow: 0 0 60px rgba(168, 207, 161, 0.4) !important;
+    animation: none !important;
+}
+
+#BioGrid-modal-content {
+    border: 2px solid #4ADE80 !important;
+    border-color: #4ADE80 !important;
+    box-shadow: 0 0 60px rgba(74, 222, 128, 0.4) !important;
+    animation: none !important;
+}
+
+#Apex-modal-content {
+    border: 2px solid #FF1A24 !important;
+    border-color: #FF1A24 !important;
+    box-shadow: 0 0 60px rgba(255, 26, 36, 0.4) !important;
+    animation: none !important;
+}
+
+#Silvatide-modal-content {
+    border: 2px solid #10B981 !important;
+    border-color: #10B981 !important;
+    box-shadow: 0 0 60px rgba(16, 185, 129, 0.4) !important;
+    animation: none !important;
+}

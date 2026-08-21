@@ -1,0 +1,68 @@
+/* ==========================================================================
+   JOURNEY MOTION & VIBE INTERACTION STYLESHEET
+   ========================================================================== */
+
+/* Kinetic Shimmering Headings (Monochrome Metallic Silver/White Drift) */
+.shimmer-headline {
+    background: linear-gradient(110deg, #ffffff 20%, #e2e8f0 40%, #ffffff 55%, #94a3b8 75%, #ffffff 100%);
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmerDrift 9s linear infinite;
+    transition: letter-spacing 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-block;
+}
+
+.shimmer-headline:hover {
+    letter-spacing: -0.035em;
+}
+
+@keyframes shimmerDrift {
+    0% { background-position: 250% 0; }
+    100% { background-position: -50% 0; }
+}
+
+/* Magnetic Button Physics */
+.magnetic-btn {
+    position: relative;
+    will-change: transform;
+}
+
+/* Specular Sheen Layer for Glass Cards */
+.specular-sheen-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+    z-index: 25;
+    mix-blend-mode: screen;
+}
+
+/* Pulse on Count Up finish */
+.stat-pulse-glow {
+    animation: statGlow 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes statGlow {
+    0% {
+        transform: scale(1.08);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+    .shimmer-headline {
+        animation: none !important;
+        background: none !important;
+        -webkit-text-fill-color: #ffffff !important;
+    }
+    .stat-pulse-glow {
+        animation: none !important;
+    }
+}
