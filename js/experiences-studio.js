@@ -61,7 +61,9 @@
                 }
             });
         }
-        photonAnimFrame = requestAnimationFrame(animatePhoton);
+        if (isSectionVisible) {
+            photonAnimFrame = requestAnimationFrame(animatePhoton);
+        }
     }
 
     // 2. Optical Rack-Focus Toggle Branch
@@ -177,13 +179,38 @@
         }
     });
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-            toggleBranch(0);
-            animatePhoton();
-        });
-    } else {
+    let isSectionVisible = false;
+
+    function initPhotonLifecycle() {
         toggleBranch(0);
-        animatePhoton();
+        const expSection = document.getElementById('section-experiences');
+        if (expSection && 'IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        isSectionVisible = true;
+                        if (!photonAnimFrame) {
+                            photonAnimFrame = requestAnimationFrame(animatePhoton);
+                        }
+                    } else {
+                        isSectionVisible = false;
+                        if (photonAnimFrame) {
+                            cancelAnimationFrame(photonAnimFrame);
+                            photonAnimFrame = null;
+                        }
+                    }
+                });
+            }, { threshold: 0.05 });
+            observer.observe(expSection);
+        } else {
+            isSectionVisible = true;
+            photonAnimFrame = requestAnimationFrame(animatePhoton);
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPhotonLifecycle);
+    } else {
+        initPhotonLifecycle();
     }
 })();

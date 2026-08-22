@@ -5,13 +5,13 @@
  */
 
 const sectionRegistry = [
-    { key: 'hero',        id: 'hero-section',              color: '#00F3FF', shadow: 'rgba(0,243,255,0.7)' },
-    { key: 'value-prop',  id: 'section-what-i-bring',      color: '#10B981', shadow: 'rgba(16,185,129,0.7)' },
-    { key: 'skill-tree',  id: 'section-skill-tree',        color: '#A855F7', shadow: 'rgba(168,85,247,0.7)' },
-    { key: 'experiences', id: 'section-experiences',       color: '#F59E0B', shadow: 'rgba(245,158,11,0.8)' },
-    { key: 'projects',    id: 'section-selected-projects', color: '#FF00A0', shadow: 'rgba(255,0,160,0.7)' },
-    { key: 'dev-love',    id: 'section-why-devs-love-me', color: '#00F3FF', shadow: 'rgba(0,243,255,0.7)' },
-    { key: 'briefing',    id: 'recruiter-briefing',        color: '#A3A3A3', shadow: 'rgba(163,163,163,0.6)'},
+    { key: 'hero',        id: 'hero-section',              color: '#00F3FF', shadow: 'rgba(0,243,255,0.7)',  ambient: 'rgba(0, 243, 255, 0.04)' },
+    { key: 'value-prop',  id: 'section-what-i-bring',      color: '#10B981', shadow: 'rgba(16,185,129,0.7)', ambient: 'rgba(16, 185, 129, 0.05)' },
+    { key: 'skill-tree',  id: 'section-skill-tree',        color: '#A855F7', shadow: 'rgba(168,85,247,0.7)', ambient: 'rgba(168, 85, 247, 0.05)' },
+    { key: 'experiences', id: 'section-experiences',       color: '#F59E0B', shadow: 'rgba(245,158,11,0.8)', ambient: 'rgba(245, 158, 11, 0.06)' },
+    { key: 'projects',    id: 'section-selected-projects', color: '#FF00A0', shadow: 'rgba(255,0,160,0.7)',  ambient: 'rgba(255, 0, 160, 0.05)' },
+    { key: 'dev-love',    id: 'section-why-devs-love-me', color: '#00F3FF', shadow: 'rgba(0,243,255,0.7)',  ambient: 'rgba(0, 243, 255, 0.05)' },
+    { key: 'briefing',    id: 'recruiter-briefing',        color: '#D4FF00', shadow: 'rgba(212,255,0,0.7)',  ambient: 'rgba(212, 255, 0, 0.05)' },
 ];
 
 let currentSection = 'hero';
@@ -49,11 +49,23 @@ function updateActiveHUDDot(activeKey, force = false) {
     currentSection = activeKey;
 
     const registry = sectionRegistry.find(s => s.key === activeKey);
-    const activeColor  = registry ? registry.color  : '#00F3FF';
-    const activeShadow = registry ? registry.shadow : 'rgba(0,243,255,0.7)';
+    const activeColor   = registry ? registry.color   : '#00F3FF';
+    const activeShadow  = registry ? registry.shadow  : 'rgba(0,243,255,0.7)';
+    const activeAmbient = registry ? registry.ambient : 'rgba(0,243,255,0.04)';
 
     document.documentElement.style.setProperty('--accent-color', activeColor);
     document.documentElement.style.setProperty('--glow-color', activeShadow);
+    document.documentElement.style.setProperty('--ambient-glow', activeAmbient);
+
+    // Apply active class & boundary laser color to the current section
+    document.querySelectorAll('section').forEach(sec => {
+        if (registry && sec.id === registry.id) {
+            sec.classList.add('section-active', 'is-revealed');
+            sec.style.setProperty('--boundary-color', activeColor);
+        } else {
+            sec.classList.remove('section-active');
+        }
+    });
 
     updateHUDLogoTheme(activeColor);
 

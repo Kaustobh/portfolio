@@ -86,8 +86,15 @@
 
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-            const openModals = document.querySelectorAll('[id$="-modal"].opacity-100');
-            openModals.forEach(m => closeModal(m.id));
+            const openModals = document.querySelectorAll('[id$="-modal"].opacity-100, #cv-modal.opacity-100, #image-lightbox.opacity-100');
+            openModals.forEach(m => {
+                if (m.id === 'image-lightbox' && typeof window.closeLightbox === 'function') {
+                    window.closeLightbox();
+                } else {
+                    closeModal(m.id);
+                }
+            });
+            document.body.style.overflow = '';
         }
     });
 

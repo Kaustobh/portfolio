@@ -828,6 +828,118 @@
     
         
 
+    
+        /* ==========================================================================
+           CINEMATIC PROXIMITY SOFT-SNAP & SECTION-TO-SECTION TRANSITIONS
+           ========================================================================== */
+        
+        html {
+            scroll-snap-type: y proximity !important;
+            scroll-behavior: smooth !important;
+            overflow-x: hidden;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: #050507;
+            color: white;
+            transition: background-color 0.5s ease;
+        }
+
+        .snap-start {
+            scroll-snap-align: start !important;
+            scroll-snap-stop: normal !important;
+            scroll-margin-top: 0px !important;
+        }
+
+        /* 1. Laser Boundary Pulse Hairlines */
+        .project-boundary-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 50%, transparent 100%);
+            overflow: hidden;
+            z-index: 25;
+            pointer-events: none;
+        }
+
+        .project-boundary-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--boundary-color, #00F3FF), transparent);
+            box-shadow: 0 0 16px var(--boundary-color, #00F3FF);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .section-active .project-boundary-line::after {
+            opacity: 1;
+            animation: laserSweep 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes laserSweep {
+            0% { left: -50%; }
+            100% { left: 150%; }
+        }
+
+        /* 2. Optical Rack-Focus Reveal (Smooth Entrance) */
+        .reveal-item {
+            opacity: 0.15;
+            transform: translateY(20px);
+            filter: blur(4px);
+            transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity, filter;
+        }
+
+        .is-revealed .reveal-item, 
+        .section-active .reveal-item {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0px);
+        }
+
+        /* Stagger Delays */
+        .reveal-stagger-1 { transition-delay: 0.05s; }
+        .reveal-stagger-2 { transition-delay: 0.12s; }
+        .reveal-stagger-3 { transition-delay: 0.20s; }
+        .reveal-stagger-4 { transition-delay: 0.28s; }
+
+        /* 3. Dynamic Chromatic Ambient Backdrop Flare */
+        #global-chromatic-aura {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1000px;
+            height: 650px;
+            border-radius: 9999px;
+            background: var(--ambient-glow, rgba(0, 243, 255, 0.03));
+            filter: blur(180px);
+            pointer-events: none;
+            z-index: 1;
+            transition: background 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+    
+        /* Hardware Repaint Isolation */
+        canvas.webgl-dynamic-bg,
+        #lightning-canvas,
+        #ghost-cursor-canvas,
+        #light-rays-canvas,
+        #tubes-canvas,
+        #faulty-terminal-canvas,
+        #liquid-metal-canvas {
+            contain: layout paint;
+            will-change: transform;
+            transform: translateZ(0);
+        }
+
     </style>
     <link rel="stylesheet" href="css/design-system.css" />
 </head>
@@ -996,19 +1108,19 @@
 
                 <div class="relative z-10 max-w-3xl">
             <!-- Tightly Fitted Transparent Frosted Text Capsule -->
-            <div class="w-fit p-6 sm:p-8 rounded-3xl bg-white/15 dark:bg-white/15 backdrop-blur-md border border-white/20 shadow-xl mb-8">
+            <div class="w-fit p-6 sm:p-8 rounded-3xl bg-black/30 backdrop-blur-sm border border-white/15 shadow-2xl mb-8">
                 <!-- Subtitle: UX/UI Designer & Web Engineer in Black -->
-                <h2 class="font-mono text-sm md:text-base fluid-sub uppercase tracking-[0.25em] mb-3 text-black dark:text-black font-bold block">
+                <h2 class="font-mono text-sm md:text-base fluid-sub uppercase tracking-[0.25em] mb-3 text-white/90 font-bold block">
                     UX/UI DESIGNER &amp; WEB ENGINEER
                 </h2>
                 
                 <!-- Headline: Single name Kaustobh in Black -->
-                <h1 class="text-6xl md:text-8xl fluid-h1 font-display font-bold text-black dark:text-black tracking-tighter mb-4 leading-none block">
+                <h1 class="text-6xl md:text-8xl fluid-h1 font-display font-bold text-white tracking-tighter mb-4 leading-none block">
                     Kaustobh.
                 </h1>
 
                 <!-- Paragraph: Description in Black -->
-                <p class="text-lg md:text-xl fluid-body font-body text-neutral-900 dark:text-neutral-900 max-w-2xl leading-relaxed font-semibold block">
+                <p class="text-lg md:text-xl fluid-body font-body text-neutral-200 max-w-2xl leading-relaxed font-normal block">
                     Design that ships results. I engineer premium digital experiences that bridge the gap between ruthless user logic and cinematic visual craft.
                 </p>
             </div>
@@ -1029,16 +1141,16 @@
             <!-- Metrics: Black Text -->
             <div class="flex gap-12 border-t border-neutral-400/40 dark:border-neutral-400/40 pt-8">
                 <div class="group cursor-pointer">
-                    <h4 class="text-3xl font-display font-bold text-black dark:text-black group-hover:scale-105 transition-transform duration-300 inline-block" id="metric-projects">0</h4>
-                    <p class="text-[10px] font-mono text-neutral-800 dark:text-neutral-800 uppercase tracking-widest mt-1 font-bold">Projects Shipped</p>
+                    <h4 class="text-3xl font-display font-bold text-white group-hover:scale-105 transition-transform duration-300 inline-block" id="metric-projects">0</h4>
+                    <p class="text-[10px] font-mono text-neutral-400 uppercase tracking-widest mt-1 font-medium">Projects Shipped</p>
                 </div>
                 <div class="group cursor-pointer">
-                    <h4 class="text-3xl font-display font-bold text-black dark:text-black group-hover:scale-105 transition-transform duration-300 inline-block" id="metric-lift">0</h4>
-                    <p class="text-[10px] font-mono text-neutral-800 dark:text-neutral-800 uppercase tracking-widest mt-1 font-bold">Avg. Metric Lift</p>
+                    <h4 class="text-3xl font-display font-bold text-white group-hover:scale-105 transition-transform duration-300 inline-block" id="metric-lift">0</h4>
+                    <p class="text-[10px] font-mono text-neutral-400 uppercase tracking-widest mt-1 font-medium">Avg. Metric Lift</p>
                 </div>
                 <div class="hidden md:block group cursor-pointer">
-                    <h4 class="text-3xl font-display font-bold text-black dark:text-black group-hover:scale-105 transition-transform duration-300 inline-block" id="metric-hires">0</h4>
-                    <p class="text-[10px] font-mono text-neutral-800 dark:text-neutral-800 uppercase tracking-widest mt-1 font-bold">Hires/Consults</p>
+                    <h4 class="text-3xl font-display font-bold text-white group-hover:scale-105 transition-transform duration-300 inline-block" id="metric-hires">0</h4>
+                    <p class="text-[10px] font-mono text-neutral-400 uppercase tracking-widest mt-1 font-medium">Hires/Consults</p>
                 </div>
             </div>
 
@@ -1087,7 +1199,7 @@
     </section>
 
     <!-- CASE STUDIES SCROLLER (Scroll Snap) -->
-    <div id="work" class="h-[100vh] overflow-y-scroll snap-y snap-mandatory bg-solar dark:bg-void relative transition-colors duration-500 scroll-smooth">
+    <main id="work" class="w-full relative bg-solar dark:bg-void transition-colors duration-500">
 
         <!-- Project 1: PulseHQ AI-Powered Team Intelligence -->
         
@@ -1099,9 +1211,9 @@
 
             <!-- Atmospheric LightRays WebGL Shader Background -->
             <div class="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none">
-                <canvas id="light-rays-canvas" class="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-70 dark:opacity-75"></canvas>
+                <canvas id="light-rays-canvas" class="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-90 dark:opacity-95"></canvas>
                 <!-- Subtle dark vignette overlay for sharp double diamond card contrast -->
-                <div class="absolute inset-0 bg-gradient-to-t from-void/90 via-void/40 to-void/70 dark:from-void/90 dark:via-void/40 dark:to-void/70 pointer-events-none z-[1]"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-void/40 via-transparent to-void/30 pointer-events-none z-[1]"></div>
             </div>
 
             <div class="max-w-6xl mx-auto w-full relative z-20">
@@ -1292,7 +1404,7 @@
             <div class="absolute inset-0 z-0 overflow-hidden select-none pointer-events-auto">
                 <canvas id="tubes-canvas" class="w-full h-full block absolute inset-0 z-0 pointer-events-auto" style="touch-action: none;"></canvas>
                 <!-- Subtle dark veil overlay for card contrast and crisp readability -->
-                <div class="absolute inset-0 bg-void/40 dark:bg-void/50 pointer-events-none z-[1]"></div>
+                <div class="absolute inset-0 bg-void/20 dark:bg-void/25 pointer-events-none z-[1]"></div>
             </div>
 
             <div class="max-w-7xl mx-auto w-full relative z-20">
@@ -1666,8 +1778,8 @@
 
             <!-- WebGL Atmospheric Lightning Background (Golden Electric Discharge) -->
             <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
-                <canvas id="lightning-canvas" class="w-full h-full block absolute inset-0 mix-blend-screen opacity-40"></canvas>
-                <div class="absolute inset-0 bg-gradient-to-t from-[#09090b]/80 via-transparent to-[#09090b]/80 pointer-events-none"></div>
+                <canvas id="lightning-canvas" class="w-full h-full block absolute inset-0 mix-blend-screen opacity-75"></canvas>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#09090b]/25 via-transparent to-[#09090b]/25 pointer-events-none"></div>
             </div>
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-amber-500/[0.025] rounded-full blur-[160px] pointer-events-none -z-10"></div>
 
@@ -2080,7 +2192,7 @@
             <!-- GhostCursor WebGL Fluid Trail Background Effect -->
             <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
                 <canvas id="ghost-cursor-canvas" class="w-full h-full block absolute inset-0 mix-blend-screen opacity-90"></canvas>
-                <div class="absolute inset-0 bg-gradient-to-t from-void/80 via-transparent to-void/70 pointer-events-none"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-void/30 via-transparent to-void/30 pointer-events-none"></div>
             </div>
 
             <!-- Top Header Row & Domain Filter Dock -->
@@ -2479,22 +2591,22 @@
 
             <!-- FaultyTerminal WebGL CRT Glitch Background -->
             <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
-                <canvas id="faulty-terminal-canvas" class="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-50 dark:opacity-45"></canvas>
-                <div class="absolute inset-0 bg-gradient-to-t from-void via-void/70 to-void/85 pointer-events-none z-[1]"></div>
+                <canvas id="faulty-terminal-canvas" class="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-80 dark:opacity-85"></canvas>
+                <div class="absolute inset-0 bg-gradient-to-t from-void/40 via-void/20 to-void/30 pointer-events-none z-[1]"></div>
             </div>
 
             <div class="max-w-6xl mx-auto w-full relative z-20 flex flex-col justify-center my-auto">
-                <!-- Header -->
-                <div class="mb-6 md:mb-8 text-left">
+                <!-- Snug Translucent Frosted Header Capsule -->
+                <div class="w-fit max-w-4xl p-5 sm:p-7 rounded-3xl bg-black/35 backdrop-blur-md border border-white/15 shadow-2xl mb-6 md:mb-8 text-left">
                     <div class="flex items-center gap-2 mb-2">
                         <span class="w-2 h-2 rounded-full bg-neon-cyan animate-ping"></span>
                         <span class="text-[11px] font-mono text-neon-cyan uppercase tracking-[0.25em] font-bold">[Dev Synergy // Engineering Collaboration]</span>
                     </div>
-                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white  tracking-tight mb-3 reveal-item reveal-stagger-2">Why Developers Like Working with Me</h3>
-                    <p class="text-neutral-300 font-body text-xs sm:text-sm md:text-base max-w-3xl leading-relaxed reveal-item reveal-stagger-3">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white tracking-tight mb-3 reveal-item reveal-stagger-2">Why Developers Like Working with Me</h3>
+                    <p class="text-neutral-200 font-body text-xs sm:text-sm md:text-base max-w-3xl leading-relaxed reveal-item reveal-stagger-3">
                         Great design fails when it can't survive the handoff. Rather than treating design files like static artwork, I design through the lens of <strong class="text-white font-semibold">DOM constraints</strong>, <strong class="text-white font-semibold">token architecture</strong>, and <strong class="text-white font-semibold">production realities</strong>.
                     </p>
-                    <p class="text-neutral-400 font-body text-xs sm:text-xs md:text-sm max-w-3xl leading-relaxed mt-1.5 reveal-item reveal-stagger-3">
+                    <p class="text-neutral-300 font-body text-xs sm:text-xs md:text-sm max-w-3xl leading-relaxed mt-2 reveal-item reveal-stagger-3">
                         The result is a zero-friction handoff that saves engineering hours, prevents visual regressions, and treats developers as primary collaborators.
                     </p>
                 </div>
@@ -2502,7 +2614,7 @@
                 <!-- 3 Structured Pillar Cards (Full Width Grid) -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                     <!-- Pillar 1: Token-Driven Consistency -->
-                    <div class="p-5 md:p-6 rounded-2xl bg-[#111111]/85 backdrop-blur-xl border border-white/10 hover:border-cyan-500/60 hover:shadow-[0_0_25px_rgba(0,243,255,0.25)] transition-all duration-300 flex flex-col justify-between group reveal-item reveal-stagger-1">
+                    <div class="p-5 md:p-6 rounded-2xl bg-[#111111]/60 backdrop-blur-sm border border-white/10 hover:border-cyan-500/60 hover:shadow-[0_0_25px_rgba(0,243,255,0.25)] transition-all duration-300 flex flex-col justify-between group reveal-item reveal-stagger-1">
                         <div>
                             <div class="flex items-center justify-between mb-3 border-b border-white/10 pb-2.5">
                                 <span class="font-mono text-[10px] text-neon-cyan font-bold uppercase tracking-wider">01 // TOKEN PARITY</span>
@@ -2520,7 +2632,7 @@
                     </div>
 
                     <!-- Pillar 2: Predictable Edge Cases -->
-                    <div class="p-5 md:p-6 rounded-2xl bg-[#111111]/85 backdrop-blur-xl border border-white/10 hover:border-cyan-500/60 hover:shadow-[0_0_25px_rgba(0,243,255,0.25)] transition-all duration-300 flex flex-col justify-between group reveal-item reveal-stagger-2">
+                    <div class="p-5 md:p-6 rounded-2xl bg-[#111111]/60 backdrop-blur-sm border border-white/10 hover:border-cyan-500/60 hover:shadow-[0_0_25px_rgba(0,243,255,0.25)] transition-all duration-300 flex flex-col justify-between group reveal-item reveal-stagger-2">
                         <div>
                             <div class="flex items-center justify-between mb-3 border-b border-white/10 pb-2.5">
                                 <span class="font-mono text-[10px] text-neon-cyan font-bold uppercase tracking-wider">02 // STATE SPECS</span>
@@ -2538,7 +2650,7 @@
                     </div>
 
                     <!-- Pillar 3: Layouts Built for Real Data -->
-                    <div class="p-5 md:p-6 rounded-2xl bg-[#111111]/85 backdrop-blur-xl border border-white/10 hover:border-cyan-500/60 hover:shadow-[0_0_25px_rgba(0,243,255,0.25)] transition-all duration-300 flex flex-col justify-between group reveal-item reveal-stagger-3">
+                    <div class="p-5 md:p-6 rounded-2xl bg-[#111111]/60 backdrop-blur-sm border border-white/10 hover:border-cyan-500/60 hover:shadow-[0_0_25px_rgba(0,243,255,0.25)] transition-all duration-300 flex flex-col justify-between group reveal-item reveal-stagger-3">
                         <div>
                             <div class="flex items-center justify-between mb-3 border-b border-white/10 pb-2.5">
                                 <span class="font-mono text-[10px] text-neon-cyan font-bold uppercase tracking-wider">03 // DOM REALISM</span>
@@ -2561,19 +2673,19 @@
         <!-- Recruiter / Contact Footer with Liquid Metal WebGL Shader Background -->
         <section id="recruiter-briefing" class="min-h-[100dvh] h-auto lg:h-[100dvh] w-full snap-start flex flex-col justify-center px-4 sm:px-8 md:px-16 border-b border-neutral-200/50 dark:border-surface/50 relative z-10 py-16 lg:py-8 overflow-hidden bg-void section-viewport safe-padding-top safe-padding-bottom">
             <!-- Full-bleed Liquid Metal WebGL Canvas (Pointer-reactive, zero chroma, steep value ramp) -->
-            <canvas id="liquid-metal-canvas" class="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-45 dark:opacity-40 filter contrast-125"></canvas>
+            <canvas id="liquid-metal-canvas" class="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-75 dark:opacity-75 filter contrast-125"></canvas>
             <!-- Readability vignette overlay -->
-            <div class="absolute inset-0 bg-gradient-to-t from-void via-void/60 to-void/85 dark:from-void dark:via-void/70 dark:to-void/90 pointer-events-none z-[1]"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-void/40 via-void/20 to-void/35 pointer-events-none z-[1]"></div>
             
-            <div class="max-w-2xl mx-auto flex flex-col items-center relative z-10">
+            <div class="w-fit max-w-2xl mx-auto p-6 sm:p-9 rounded-3xl bg-black/40 backdrop-blur-md border border-white/15 shadow-2xl flex flex-col items-center text-center relative z-10">
                 <span class="text-xs font-mono text-acid-lime dark:text-acid-lime light:text-forest-lime uppercase tracking-widest mb-4 font-bold">[Scheduling // Availability]</span>
                 <h3 class="text-4xl md:text-5xl font-display font-bold text-white  mb-4 reveal-item reveal-stagger-2">Ready to ship results?</h3>
-                <p class="text-neutral-500 dark:text-gray-400 font-body max-w-lg mb-6 text-sm md:text-base leading-relaxed">
+                <p class="text-neutral-200 font-body max-w-lg mb-6 text-sm md:text-base leading-relaxed">
                     Currently open for full-time or contract roles bridging UX/UI design and high-performance frontend web engineering. Hire-ready with a 2-week notice period.
                 </p>
                 <!-- Contact Me Icons -->
                 <div class="flex flex-col items-center gap-3 mb-6">
-                    <span class="text-[10px] font-mono uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500 font-bold">Contact Me</span>
+                    <span class="text-[10px] font-mono uppercase tracking-[0.3em] text-neutral-300 font-bold">Contact Me</span>
                     <div class="flex items-center gap-5">
                         <!-- Instagram -->
                         <a href="https://www.instagram.com/ka.us.s?igsh=amZ3eWRraHk4dzB4"
@@ -2699,7 +2811,7 @@
                 &copy; 2026 Kaustobh Bhattacharya. All rights reserved.
             </div>
         </section>
-    </div>
+    </main>
 
     <!-- HIGH-FIDELITY CASE STUDY MODALS -->
 
