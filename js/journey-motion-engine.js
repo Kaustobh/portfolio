@@ -397,7 +397,8 @@
         'MilkDel-modal',
         'BioGrid-modal',
         'Apex-modal',
-        'Silvatide-modal'
+        'Silvatide-modal',
+        'Steady-modal'
     ];
 
     function initKeyboardNavigation() {

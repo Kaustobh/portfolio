@@ -66,7 +66,8 @@
             '3': 'MilkDel-modal',
             '4': 'BioGrid-modal',
             '5': 'Apex-modal',
-            '6': 'Silvatide-modal'
+            '6': 'Silvatide-modal',
+            '7': 'Steady-modal'
         };
 
         const cards = document.querySelectorAll('.project-carousel-card');
