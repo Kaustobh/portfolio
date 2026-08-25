@@ -1203,6 +1203,187 @@
             box-shadow: 0 0 12px rgba(16, 185, 129, 0.3) !important;
         }
 
+    
+        /* ==========================================================================
+           AAA VIDEO GAME KINETIC CIRCUIT CONDUIT & PHOTON PULSE ANIMATION
+           ========================================================================== */
+        @keyframes circuitPulseFlow {
+            0% { stroke-dashoffset: 80; }
+            100% { stroke-dashoffset: 0; }
+        }
+
+        .kinetic-circuit-track {
+            stroke-dasharray: 8 12;
+            animation: circuitPulseFlow 2.4s linear infinite;
+        }
+
+        .game-socket-card {
+            position: relative;
+            background: rgba(10, 10, 14, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .game-socket-card:hover {
+            transform: translateY(-4px) scale(1.02);
+        }
+
+        .game-socket-card-magenta:hover {
+            border-color: rgba(255, 0, 160, 0.8);
+            box-shadow: 0 0 25px rgba(255, 0, 160, 0.4), inset 0 0 15px rgba(255, 0, 160, 0.2);
+        }
+
+        .game-socket-card-cyan:hover {
+            border-color: rgba(0, 243, 255, 0.8);
+            box-shadow: 0 0 25px rgba(0, 243, 255, 0.4), inset 0 0 15px rgba(0, 243, 255, 0.2);
+        }
+
+        .game-socket-card-lime:hover {
+            border-color: rgba(212, 255, 0, 0.8);
+            box-shadow: 0 0 25px rgba(212, 255, 0, 0.4), inset 0 0 15px rgba(212, 255, 0, 0.2);
+        }
+
+    
+        /* ==========================================================================
+           TACTICAL SUBCLASS CONSOLE (DESTINY 2 STYLE) & CIRCULAR MASTERY METERS
+           ========================================================================== */
+        @keyframes masteryRingRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+                .tactical-pillar {
+            position: relative;
+            background: rgba(0, 0, 0, 0.38);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-radius: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .tactical-pillar-magenta {
+            border: 1px solid rgba(255, 0, 160, 0.35);
+            box-shadow: 0 0 35px rgba(255, 0, 160, 0.18), 0 25px 50px -12px rgba(0, 0, 0, 0.85);
+        }
+        .tactical-pillar-magenta:hover {
+            border-color: rgba(255, 0, 160, 0.80);
+            box-shadow: 0 0 60px rgba(255, 0, 160, 0.35), inset 0 0 25px rgba(255, 0, 160, 0.12);
+        }
+
+        .tactical-pillar-cyan {
+            border: 1px solid rgba(0, 243, 255, 0.35);
+            box-shadow: 0 0 35px rgba(0, 243, 255, 0.18), 0 25px 50px -12px rgba(0, 0, 0, 0.85);
+        }
+        .tactical-pillar-cyan:hover {
+            border-color: rgba(0, 243, 255, 0.80);
+            box-shadow: 0 0 60px rgba(0, 243, 255, 0.35), inset 0 0 25px rgba(0, 243, 255, 0.12);
+        }
+
+        .tactical-pillar-lime {
+            border: 1px solid rgba(212, 255, 0, 0.35);
+            box-shadow: 0 0 35px rgba(212, 255, 0, 0.18), 0 25px 50px -12px rgba(0, 0, 0, 0.85);
+        }
+        .tactical-pillar-lime:hover {
+            border-color: rgba(212, 255, 0, 0.80);
+            box-shadow: 0 0 60px rgba(212, 255, 0, 0.35), inset 0 0 25px rgba(212, 255, 0, 0.12);
+        }
+
+        .tactical-cyber-chip {
+            position: relative;
+            background: rgba(0, 0, 0, 0.32);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+            transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .tactical-cyber-chip:hover {
+            background: rgba(0, 0, 0, 0.48);
+            transform: translateY(-4px) scale(1.02);
+        }
+
+        .tactical-cyber-chip:active {
+            transform: scale(0.97) translateY(0px);
+            transition-duration: 0.08s;
+        }
+
+        .chip-magenta:hover {
+            border-color: rgba(255, 0, 160, 0.85);
+            box-shadow: 0 0 25px rgba(255, 0, 160, 0.4), inset 0 0 10px rgba(255, 0, 160, 0.2);
+        }
+        .chip-magenta:active {
+            border-color: #FF00A0;
+            box-shadow: 0 0 35px rgba(255, 0, 160, 0.6), inset 0 0 15px rgba(255, 0, 160, 0.35);
+        }
+
+        .chip-cyan:hover {
+            border-color: rgba(0, 243, 255, 0.85);
+            box-shadow: 0 0 25px rgba(0, 243, 255, 0.4), inset 0 0 10px rgba(0, 243, 255, 0.2);
+        }
+        .chip-cyan:active {
+            border-color: #00F3FF;
+            box-shadow: 0 0 35px rgba(0, 243, 255, 0.6), inset 0 0 15px rgba(0, 243, 255, 0.35);
+        }
+
+        .chip-lime:hover {
+            border-color: rgba(212, 255, 0, 0.85);
+            box-shadow: 0 0 25px rgba(212, 255, 0, 0.4), inset 0 0 10px rgba(212, 255, 0, 0.2);
+        }
+        .chip-lime:active {
+            border-color: #D4FF00;
+            box-shadow: 0 0 35px rgba(212, 255, 0, 0.6), inset 0 0 15px rgba(212, 255, 0, 0.35);
+        }
+
+        .mastery-ring-circle {
+            stroke-dasharray: 100;
+            stroke-dashoffset: 0;
+            transition: stroke-dashoffset 0.6s ease;
+        }
+
+    
+        /* Mobile Safe-Area & 120FPS Viewport Fluidity */
+        .modal-scroll-container {
+            overscroll-behavior: contain;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        @media (max-width: 640px) {
+            .tactical-cyber-chip {
+                min-height: 48px;
+            }
+            button, .cursor-pointer {
+                min-height: 44px;
+                min-width: 44px;
+            }
+        }
+
+    
+        /* ==========================================================================
+           120FPS HARDWARE ENGINE & CORE WEB VITALS (CLS = 0.00 / INP < 50ms)
+           ========================================================================== */
+        #section-what-i-bring,
+        #section-experiences,
+        #section-projects,
+        #section-interactive-matrix,
+        #section-contact {
+            content-visibility: auto;
+            contain-intrinsic-size: 900px;
+        }
+
+        /* Prevent Layout Shifts (CLS = 0.00) */
+        .project-carousel-card img,
+        .modal-screen-flow-img {
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+        }
+
+        /* Hardware Accelerated Scroll Pipeline */
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
     </style>
     <link rel="stylesheet" href="css/design-system.css" />
 </head>
@@ -1240,6 +1421,58 @@
             </div>
         </div>
     </div>
+
+    <!-- Fast Bulletproof Boot Overlay Sequence -->
+    <script>
+        (function() {
+            const overlay = document.getElementById('boot-overlay');
+            const fill = document.getElementById('boot-loader-fill');
+            const percent = document.getElementById('boot-load-percent');
+            const log1 = document.getElementById('boot-log-1');
+            const log2 = document.getElementById('boot-log-2');
+            const log3 = document.getElementById('boot-log-3');
+            const log4 = document.getElementById('boot-log-4');
+
+            if (!overlay) return;
+
+            let progress = 0;
+            const startTime = performance.now();
+            const duration = 650; // Fast 650ms boot sequence
+
+            function updateBoot(now) {
+                const elapsed = now - startTime;
+                progress = Math.min(100, Math.floor((elapsed / duration) * 100));
+
+                if (fill) fill.style.width = progress + '%';
+                if (percent) percent.innerText = progress + '% LOADED';
+
+                if (progress > 25 && log2) log2.classList.remove('hidden');
+                if (progress > 55 && log3) log3.classList.remove('hidden');
+                if (progress > 85 && log4) log4.classList.remove('hidden');
+
+                if (progress < 100) {
+                    requestAnimationFrame(updateBoot);
+                } else {
+                    setTimeout(dismissBootOverlay, 150);
+                }
+            }
+
+            function dismissBootOverlay() {
+                overlay.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                overlay.style.opacity = '0';
+                overlay.style.pointerEvents = 'none';
+                overlay.style.transform = 'scale(1.03)';
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                }, 550);
+            }
+
+            requestAnimationFrame(updateBoot);
+
+            // Bulletproof safety timeout (max 1.2s)
+            setTimeout(dismissBootOverlay, 1200);
+        })();
+    </script>
 
     <!-- Premium Custom Cursor -->
     <div id="custom-cursor" class="hidden md:block border-neon-cyan dark:border-neon-cyan light:border-electric-blue"></div>
@@ -1728,320 +1961,317 @@
                     <button class="skill-filter-btn px-4 py-1.5 rounded-full bg-white/20 text-white border border-white/40 font-bold hover:bg-white/30 transition-all cursor-pointer" data-filter="all">All Disciplines (03)</button>
                     <button class="skill-filter-btn px-4 py-1.5 rounded-full bg-white/5 text-neutral-400 border border-white/10 hover:border-pink-500/50 hover:text-pink-400 transition-all cursor-pointer" data-filter="ux-ui">UI &amp; UX Design</button>
                     <button class="skill-filter-btn px-4 py-1.5 rounded-full bg-white/5 text-neutral-400 border border-white/10 hover:border-cyan-500/50 hover:text-cyan-400 transition-all cursor-pointer" data-filter="frontend">Frontend Engineering</button>
-                    <button class="skill-filter-btn px-4 py-1.5 rounded-full bg-white/5 text-neutral-400 border border-white/10 hover:border-lime-500/50 hover:text-lime-400 transition-all cursor-pointer" data-filter="business">Architecture &amp; Strategy</button>
+                    <button class="skill-filter-btn px-4 py-1.5 rounded-full bg-white/5 text-neutral-400 border border-white/10 hover:border-lime-500/50 hover:text-lime-400 transition-all cursor-pointer" data-filter="systems">Architecture &amp; Strategy</button>
                 </div>
 
-                <!-- 3 MAIN VERTICAL CONTAINER BRANCHES (MAGENTA, CYAN, LIME) -->
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 relative" id="skill-nodes-container">
+                                                <!-- 3 MAIN VERTICAL MONOLITH PILLARS (TACTICAL SUBCLASS CONSOLE) -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-7 relative" id="skill-nodes-container">
 
                     <!-- =================================================================== -->
-                    <!-- BRANCH 1: MAGENTA PINK BRANCH (UX & UI DESIGN) -->
+                    <!-- PILLAR 01: UI & UX DESIGN (MAGENTA // CREATIVE ARCHITECT)           -->
                     <!-- =================================================================== -->
-                    <div class="relative rounded-2xl border border-white/10 bg-black/30 backdrop-blur-md p-5 shadow-[0_0_30px_rgba(255,0,160,0.15)] hover:border-pink-500/50 flex flex-col justify-between transition-all duration-300" data-category="ux-ui">
-                        <div class="flex items-center justify-between mb-3 border-b border-pink-500/20 pb-2.5">
-                            <span class="font-mono text-xs font-bold text-neon-magenta uppercase tracking-wider flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-neon-magenta animate-ping"></span>01 // UI &amp; UX Design</span>
-                            <span class="text-[8px] font-mono text-neon-magenta bg-pink-500/10 px-2 py-0.5 rounded border border-pink-500/30 font-bold tracking-wider">MAX RANK</span>
-                        </div>
-
-                        <!-- Top Diamond Hub Node -->
-                        <div class="flex justify-center mb-6 pt-2">
-                            <div onclick="openSkillModal('figma')" class="cyber-embossed-node w-14 h-14 rotate-45 rounded-xl border-2 border-neon-magenta flex items-center justify-center shadow-[0_0_20px_rgba(255,0,160,0.5)] cursor-pointer group">
-                                <div class="-rotate-45 text-neon-magenta group-hover:scale-110 transition-transform">
-                                    <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.5 7.5"/></svg>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Vertical Stem Line & Node Network -->
-                        <div class="relative space-y-8 py-2">
-                            <!-- SVG Vertical Stem Line -->
-                            <svg class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-1 h-full pointer-events-none z-0" preserveAspectRatio="none">
-                                <line x1="2" y1="0" x2="2" y2="100%" stroke="#FF00A0" stroke-width="2" stroke-dasharray="4 3" opacity="0.6"/>
-                            </svg>
-
-                            <!-- Node 1: Figma Pro (Top Stem) -->
-                            <div class="relative z-10 flex items-center justify-between">
-                                <!-- Left Sub-perks -->
-                                <div class="flex gap-2">
-                                    <div onclick="openSkillModal('google_ux')" title="Google UX Design" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-pink-300 cursor-pointer">
-                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+                    <div class="tactical-pillar tactical-pillar-magenta rounded-3xl p-6 sm:p-7 flex flex-col justify-between group shadow-2xl bg-black/38 backdrop-blur-md border border-pink-500/40 hover:border-pink-500/90 shadow-[0_0_40px_rgba(255,0,160,0.2)] hover:shadow-[0_0_65px_rgba(255,0,160,0.4)] transition-all duration-300" data-category="ux-ui">
+                        
+                        <div>
+                            <!-- Pillar Keystone Header -->
+                            <div class="flex items-center justify-between pb-4 mb-5 border-b border-pink-500/20">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-11 h-11 rounded-2xl bg-pink-500/15 border border-neon-magenta/60 flex items-center justify-center text-neon-magenta shadow-[0_0_20px_rgba(255,0,160,0.35)] group-hover:scale-105 transition-transform">
+                                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.5 7.5"/></svg>
                                     </div>
-                                    <div onclick="openSkillModal('design_thinking')" title="Enterprise Design Thinking" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-pink-300 cursor-pointer">
-                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.66 16.03a5 5 0 1 1 4.68-4.68M12 3v3M3 12h3M12 18v3M18 12h3"/></svg>
+                                    <div>
+                                        <span class="font-mono text-[9px] font-bold text-neon-magenta uppercase tracking-widest block">KEYSTONE // SUBCLASS 01</span>
+                                        <h4 class="font-display font-extrabold text-lg sm:text-xl text-white tracking-tight">UI &amp; UX Design</h4>
                                     </div>
                                 </div>
-
-                                <!-- Center Main Stem Node -->
-                                <div onclick="openSkillModal('figma')" class="cyber-embossed-node w-12 h-12 rounded-xl border border-neon-magenta flex flex-col items-center justify-center cursor-pointer shadow-[0_0_15px_rgba(255,0,160,0.4)] group">
-                                    <svg class="w-5 h-5 text-neon-magenta group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-                                    <span class="text-[7px] font-mono text-neon-magenta font-bold">3/3</span>
-                                </div>
-
-                                <!-- Right Sub-perks -->
-                                <div class="flex gap-2">
-                                    <div onclick="openSkillModal('figma')" title="Advanced Auto-Layout" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-pink-300 cursor-pointer">
-                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg>
-                                    </div>
-                                </div>
+                                <span class="text-[9px] font-mono text-neon-magenta bg-pink-500/10 px-2.5 py-1 rounded-full border border-pink-500/30 font-bold">3/3 MASTERED</span>
                             </div>
 
-                            <!-- Node 2: Game UX (Middle Stem) -->
-                            <div class="relative z-10 flex items-center justify-between">
-                                <!-- Left Sub-perks -->
-                                <div class="flex gap-2">
-                                    <div onclick="openSkillModal('game_ux')" title="User Experience in Game Design" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-pink-300 cursor-pointer">
-                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="6 11 10 7 14 11 18 7 22 11 22 21 2 21 2 11 6 11"/></svg>
+                            <!-- Tactical Cyber Chips Stack -->
+                            <div class="space-y-3.5">
+                                
+                                <!-- CHIP 01: DESIGN (Figma Pro) -->
+                                <div onclick="openSkillModal('design')" class="tactical-cyber-chip chip-magenta p-4 rounded-2xl cursor-pointer flex items-center justify-between select-none bg-black/32 backdrop-blur-sm border border-pink-500/25 hover:border-pink-500 hover:bg-black/48 active:scale-95 active:border-pink-400 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_0_25px_rgba(255,0,160,0.35)] transition-all duration-200">
+                                    <div class="flex items-center gap-3.5">
+                                        <!-- Circular Mastery Meter (100%) -->
+                                        <div class="relative w-9 h-9 flex items-center justify-center shrink-0">
+                                            <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                                                <circle cx="18" cy="18" r="14" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2.5"/>
+                                                <circle cx="18" cy="18" r="14" fill="none" stroke="#FF00A0" stroke-width="2.5" stroke-dasharray="88" stroke-dashoffset="0" class="mastery-ring-circle" style="filter: drop-shadow(0 0 6px #FF00A0);"/>
+                                            </svg>
+                                            <span class="absolute font-mono text-[8px] font-bold text-white">100</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-mono text-[8px] text-pink-400 font-bold uppercase tracking-wider block">FIGMA PRO // AUTO-LAYOUT</span>
+                                            <span class="font-display font-bold text-sm text-white group-hover/chip:text-pink-300">DESIGN</span>
+                                        </div>
                                     </div>
+                                    <span class="font-mono text-[9px] text-neon-magenta bg-pink-500/10 px-2.5 py-1 rounded-full border border-pink-500/30 font-bold">VERIFIED ✦</span>
                                 </div>
 
-                                <!-- Center Main Stem Node -->
-                                <div onclick="openSkillModal('game_ux')" class="cyber-embossed-node w-12 h-12 rounded-xl border border-neon-magenta flex flex-col items-center justify-center cursor-pointer shadow-[0_0_15px_rgba(255,0,160,0.4)] group">
-                                    <svg class="w-5 h-5 text-neon-magenta group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v6M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/></svg>
-                                    <span class="text-[7px] font-mono text-neon-magenta font-bold">2/2</span>
-                                </div>
-
-                                <!-- Right Sub-perks -->
-                                <div class="flex gap-2">
-                                    <div onclick="openSkillModal('game_ui')" title="User Interface in Game Design" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-pink-300 cursor-pointer">
-                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/></svg>
+                                <!-- CHIP 02: WIREFRAME (Google UX) -->
+                                <div onclick="openSkillModal('wireframe')" class="tactical-cyber-chip chip-magenta p-4 rounded-2xl cursor-pointer flex items-center justify-between select-none bg-black/32 backdrop-blur-sm border border-pink-500/25 hover:border-pink-500 hover:bg-black/48 active:scale-95 active:border-pink-400 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_0_25px_rgba(255,0,160,0.35)] transition-all duration-200">
+                                    <div class="flex items-center gap-3.5">
+                                        <!-- Circular Mastery Meter (100%) -->
+                                        <div class="relative w-9 h-9 flex items-center justify-center shrink-0">
+                                            <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                                                <circle cx="18" cy="18" r="14" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2.5"/>
+                                                <circle cx="18" cy="18" r="14" fill="none" stroke="#FF00A0" stroke-width="2.5" stroke-dasharray="88" stroke-dashoffset="0" class="mastery-ring-circle" style="filter: drop-shadow(0 0 6px #FF00A0);"/>
+                                            </svg>
+                                            <span class="absolute font-mono text-[8px] font-bold text-white">100</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-mono text-[8px] text-pink-400 font-bold uppercase tracking-wider block">GOOGLE UX // RESEARCH</span>
+                                            <span class="font-display font-bold text-sm text-white group-hover/chip:text-pink-300">WIREFRAME</span>
+                                        </div>
                                     </div>
+                                    <span class="font-mono text-[9px] text-neon-magenta bg-pink-500/10 px-2.5 py-1 rounded-full border border-pink-500/30 font-bold">VERIFIED ✦</span>
                                 </div>
-                            </div>
 
-                            <!-- Node 3: Micro-Interactions & Optic Eye (Bottom Stem) -->
-                            <div class="relative z-10 flex items-center justify-between">
-                                <!-- Left Sub-perks -->
-                                <div class="flex gap-2">
-                                    <div onclick="openSkillModal('motion')" title="Spring Physics" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-pink-300 cursor-pointer">
-                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <!-- CHIP 03: PROTOTYPE (Epic Games & Motion) -->
+                                <div onclick="openSkillModal('prototype')" class="tactical-cyber-chip chip-magenta p-4 rounded-2xl cursor-pointer flex items-center justify-between select-none bg-black/32 backdrop-blur-sm border border-pink-500/25 hover:border-pink-500 hover:bg-black/48 active:scale-95 active:border-pink-400 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_0_25px_rgba(255,0,160,0.35)] transition-all duration-200">
+                                    <div class="flex items-center gap-3.5">
+                                        <!-- Circular Mastery Meter (100%) -->
+                                        <div class="relative w-9 h-9 flex items-center justify-center shrink-0">
+                                            <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                                                <circle cx="18" cy="18" r="14" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2.5"/>
+                                                <circle cx="18" cy="18" r="14" fill="none" stroke="#FF00A0" stroke-width="2.5" stroke-dasharray="88" stroke-dashoffset="0" class="mastery-ring-circle" style="filter: drop-shadow(0 0 6px #FF00A0);"/>
+                                            </svg>
+                                            <span class="absolute font-mono text-[8px] font-bold text-white">100</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-mono text-[8px] text-pink-400 font-bold uppercase tracking-wider block">EPIC GAMES // 60FPS MOTION</span>
+                                            <span class="font-display font-bold text-sm text-white group-hover/chip:text-pink-300">PROTOTYPE</span>
+                                        </div>
                                     </div>
+                                    <span class="font-mono text-[9px] text-neon-magenta bg-pink-500/10 px-2.5 py-1 rounded-full border border-pink-500/30 font-bold">VERIFIED ✦</span>
                                 </div>
 
-                                <!-- Center Main Stem Node (Optic Eye) -->
-                                <div onclick="openSkillModal('motion')" class="cyber-embossed-node w-12 h-12 rounded-xl border border-neon-magenta flex flex-col items-center justify-center cursor-pointer shadow-[0_0_15px_rgba(255,0,160,0.4)] group">
-                                    <svg class="w-5 h-5 text-neon-magenta group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                                    <span class="text-[7px] font-mono text-neon-magenta font-bold">1/1</span>
-                                </div>
-
-                                <!-- Right Sub-perks -->
-                                <div class="flex gap-2">
-                                    <div onclick="openSkillModal('motion')" title="GSAP Animations" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-pink-300 cursor-pointer">
-                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
                         <!-- Bottom Connected Project Proof Pills -->
-                        <div class="flex flex-wrap gap-1.5 pt-4 mt-4 border-t border-pink-500/20">
-                            <span onclick="openModal('fintech-modal')" class="text-[9px] font-mono text-pink-300 bg-pink-500/15 border border-pink-500/30 px-2 py-0.5 rounded hover:bg-pink-500 hover:text-white transition-colors cursor-pointer font-bold">▶ PulseHQ AI</span>
-                            <span onclick="openModal('Silvatide-modal')" class="text-[9px] font-mono text-pink-300 bg-pink-500/15 border border-pink-500/30 px-2 py-0.5 rounded hover:bg-pink-500 hover:text-white transition-colors cursor-pointer font-bold">▶ Silvatide</span>
-                            <span onclick="openModal('BioGrid-modal')" class="text-[9px] font-mono text-pink-300 bg-pink-500/15 border border-pink-500/30 px-2 py-0.5 rounded hover:bg-pink-500 hover:text-white transition-colors cursor-pointer font-bold">▶ Bio Grid</span>
+                        <div class="pt-5 mt-5 border-t border-pink-500/20">
+                            <span class="text-[9px] font-mono text-neutral-400 uppercase tracking-widest block mb-2 font-bold">Live Project Synergies:</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span onclick="openModal('fintech-modal')" class="text-[9px] font-mono text-pink-300 bg-pink-500/15 border border-pink-500/30 px-2.5 py-1 rounded-lg hover:bg-pink-500 hover:text-white transition-colors cursor-pointer font-bold">▶ PulseHQ AI</span>
+                                <span onclick="openModal('Steady-modal')" class="text-[9px] font-mono text-pink-300 bg-pink-500/15 border border-pink-500/30 px-2.5 py-1 rounded-lg hover:bg-pink-500 hover:text-white transition-colors cursor-pointer font-bold">▶ Steady</span>
+                                <span onclick="openModal('Silvatide-modal')" class="text-[9px] font-mono text-pink-300 bg-pink-500/15 border border-pink-500/30 px-2.5 py-1 rounded-lg hover:bg-pink-500 hover:text-white transition-colors cursor-pointer font-bold">▶ Silvatide</span>
+                                <span onclick="openModal('checkout-modal')" class="text-[9px] font-mono text-pink-300 bg-pink-500/15 border border-pink-500/30 px-2.5 py-1 rounded-lg hover:bg-pink-500 hover:text-white transition-colors cursor-pointer font-bold">▶ Checkout</span>
+                            </div>
                         </div>
+
                     </div>
 
                     <!-- =================================================================== -->
-                    <!-- BRANCH 2: BRIGHT CYAN BRANCH (FRONTEND ENGINEERING) -->
+                    <!-- PILLAR 02: FRONTEND ENGINEERING (CYAN // INTERFACE ENGINEER)        -->
                     <!-- =================================================================== -->
-                    <div class="relative rounded-2xl border border-white/10 bg-black/30 backdrop-blur-md p-5 shadow-[0_0_30px_rgba(0,243,255,0.15)] hover:border-cyan-500/50 flex flex-col justify-between transition-all duration-300" data-category="frontend">
-                        <div class="flex items-center justify-between mb-3 border-b border-cyan-500/20 pb-2.5">
-                            <span class="font-mono text-xs font-bold text-neon-cyan uppercase tracking-wider flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-neon-cyan animate-ping"></span>02 // Frontend Engineer</span>
-                            <span class="text-[8px] font-mono text-neon-cyan bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/30 font-bold tracking-wider">MAX RANK</span>
-                        </div>
-
-                        <!-- Top Diamond Hub Node (Cyber Brain/Portrait) -->
-                        <div class="flex justify-center mb-6 pt-2">
-                            <div onclick="openSkillModal('react')" class="cyber-embossed-node w-14 h-14 rotate-45 rounded-xl border-2 border-neon-cyan flex items-center justify-center shadow-[0_0_20px_rgba(0,243,255,0.5)] cursor-pointer group">
-                                <div class="-rotate-45 text-neon-cyan group-hover:scale-110 transition-transform">
-                                    <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"/></svg>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Vertical Stem Line & Node Network -->
-                        <div class="relative space-y-8 py-2">
-                            <!-- SVG Vertical Stem Line -->
-                            <svg class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-1 h-full pointer-events-none z-0" preserveAspectRatio="none">
-                                <line x1="2" y1="0" x2="2" y2="100%" stroke="#00F3FF" stroke-width="2" stroke-dasharray="4 3" opacity="0.6"/>
-                            </svg>
-
-                            <!-- Node 1: React & Next.js (Atom Core) -->
-                            <div class="relative z-10 flex items-center justify-between">
-                                <!-- Left Sub-perks -->
-                                <div class="flex gap-2">
-                                    <div onclick="openSkillModal('react')" title="React JSX & Hooks" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-cyan-300 cursor-pointer">
-                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+                    <div class="tactical-pillar tactical-pillar-cyan rounded-3xl p-6 sm:p-7 flex flex-col justify-between group shadow-2xl bg-black/38 backdrop-blur-md border border-cyan-500/40 hover:border-cyan-500/90 shadow-[0_0_40px_rgba(0,243,255,0.2)] hover:shadow-[0_0_65px_rgba(0,243,255,0.4)] transition-all duration-300" data-category="frontend">
+                        
+                        <div>
+                            <!-- Pillar Keystone Header -->
+                            <div class="flex items-center justify-between pb-4 mb-5 border-b border-cyan-500/20">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-11 h-11 rounded-2xl bg-cyan-500/15 border border-neon-cyan/60 flex items-center justify-center text-neon-cyan shadow-[0_0_20px_rgba(0,243,255,0.35)] group-hover:scale-105 transition-transform">
+                                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+                                    </div>
+                                    <div>
+                                        <span class="font-mono text-[9px] font-bold text-neon-cyan uppercase tracking-widest block">KEYSTONE // SUBCLASS 02</span>
+                                        <h4 class="font-display font-extrabold text-lg sm:text-xl text-white tracking-tight">Frontend Engineering</h4>
                                     </div>
                                 </div>
-
-                                <!-- Center Main Stem Node (Atom Core) -->
-                                <div onclick="openSkillModal('react')" class="cyber-embossed-node w-12 h-12 rounded-xl border border-neon-cyan flex flex-col items-center justify-center cursor-pointer shadow-[0_0_15px_rgba(0,243,255,0.4)] group">
-                                    <svg class="w-5 h-5 text-neon-cyan group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="9" ry="3.5"/><ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(120 12 12)"/></svg>
-                                    <span class="text-[7px] font-mono text-neon-cyan font-bold">3/3</span>
-                                </div>
-
-                                <!-- Right Sub-perks -->
-                                <div class="flex gap-2">
-                                    <div onclick="openSkillModal('gen_ai')" title="Generative AI for Software Dev" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-cyan-300 cursor-pointer">
-                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-                                    </div>
-                                </div>
+                                <span class="text-[9px] font-mono text-neon-cyan bg-cyan-500/10 px-2.5 py-1 rounded-full border border-cyan-500/30 font-bold">4/4 MASTERED</span>
                             </div>
 
-                            <!-- Node 2: Cyber Power / Tailwind (Middle Stem) -->
-                            <div class="relative z-10 flex items-center justify-between">
-                                <!-- Left Sub-perks -->
-                                <div class="flex gap-2">
-                                    <div onclick="openSkillModal('prompt_eng')" title="Craft Precise Prompts" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-cyan-300 cursor-pointer">
-                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            <!-- Tactical Cyber Chips Stack -->
+                            <div class="space-y-3">
+                                
+                                <!-- CHIP 01: JAVASCRIPT -->
+                                <div onclick="openSkillModal('javascript')" class="tactical-cyber-chip chip-cyan p-3.5 rounded-2xl cursor-pointer flex items-center justify-between select-none bg-black/32 backdrop-blur-sm border border-cyan-500/25 hover:border-cyan-500 hover:bg-black/48 active:scale-95 active:border-cyan-400 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_0_25px_rgba(0,243,255,0.35)] transition-all duration-200">
+                                    <div class="flex items-center gap-3">
+                                        <!-- Circular Mastery Meter (100%) -->
+                                        <div class="relative w-8 h-8 flex items-center justify-center shrink-0">
+                                            <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                                                <circle cx="18" cy="18" r="14" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2.5"/>
+                                                <circle cx="18" cy="18" r="14" fill="none" stroke="#00F3FF" stroke-width="2.5" stroke-dasharray="88" stroke-dashoffset="0" class="mastery-ring-circle" style="filter: drop-shadow(0 0 6px #00F3FF);"/>
+                                            </svg>
+                                            <span class="absolute font-mono text-[8px] font-bold text-white">100</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-mono text-[8px] text-cyan-400 font-bold uppercase tracking-wider block">MODERN ES6+ // DOM ENGINE</span>
+                                            <span class="font-display font-bold text-sm text-white group-hover/chip:text-cyan-300">JAVASCRIPT</span>
+                                        </div>
                                     </div>
+                                    <span class="font-mono text-[8px] text-neon-cyan bg-cyan-500/10 px-2 py-0.5 rounded-full border border-cyan-500/30 font-bold">VERIFIED ✦</span>
                                 </div>
 
-                                <!-- Center Main Stem Node (Fist) -->
-                                <div onclick="openSkillModal('gen_ai')" class="cyber-embossed-node w-12 h-12 rounded-xl border border-neon-cyan flex flex-col items-center justify-center cursor-pointer shadow-[0_0_15px_rgba(0,243,255,0.4)] group">
-                                    <svg class="w-5 h-5 text-neon-cyan group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v6M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/></svg>
-                                    <span class="text-[7px] font-mono text-neon-cyan font-bold">2/2</span>
-                                </div>
-
-                                <!-- Right Sub-perks -->
-                                <div class="flex gap-2">
-                                    <div onclick="openSkillModal('threejs')" title="WebGL & Three.js 3D" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-cyan-300 cursor-pointer">
-                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                                <!-- CHIP 02: REACT (IBM) -->
+                                <div onclick="openSkillModal('react')" class="tactical-cyber-chip chip-cyan p-3.5 rounded-2xl cursor-pointer flex items-center justify-between select-none bg-black/32 backdrop-blur-sm border border-cyan-500/25 hover:border-cyan-500 hover:bg-black/48 active:scale-95 active:border-cyan-400 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_0_25px_rgba(0,243,255,0.35)] transition-all duration-200">
+                                    <div class="flex items-center gap-3">
+                                        <!-- Circular Mastery Meter (100%) -->
+                                        <div class="relative w-8 h-8 flex items-center justify-center shrink-0">
+                                            <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                                                <circle cx="18" cy="18" r="14" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2.5"/>
+                                                <circle cx="18" cy="18" r="14" fill="none" stroke="#00F3FF" stroke-width="2.5" stroke-dasharray="88" stroke-dashoffset="0" class="mastery-ring-circle" style="filter: drop-shadow(0 0 6px #00F3FF);"/>
+                                            </svg>
+                                            <span class="absolute font-mono text-[8px] font-bold text-white">100</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-mono text-[8px] text-cyan-400 font-bold uppercase tracking-wider block">IBM CERTIFIED // REDUX</span>
+                                            <span class="font-display font-bold text-sm text-white group-hover/chip:text-cyan-300">REACT</span>
+                                        </div>
                                     </div>
+                                    <span class="font-mono text-[8px] text-neon-cyan bg-cyan-500/10 px-2 py-0.5 rounded-full border border-cyan-500/30 font-bold">VERIFIED ✦</span>
                                 </div>
-                            </div>
 
-                            <!-- Node 3: Holographic Crystal D20 (Bottom Stem) -->
-                            <div class="relative z-10 flex items-center justify-between">
-                                <!-- Left Sub-perks -->
-                                <div class="flex gap-2">
-                                    <div onclick="openSkillModal('threejs')" title="Shader Uniforms" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-cyan-300 cursor-pointer">
-                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                <!-- CHIP 03: CSS (Tailwind) -->
+                                <div onclick="openSkillModal('css')" class="tactical-cyber-chip chip-cyan p-3.5 rounded-2xl cursor-pointer flex items-center justify-between select-none bg-black/32 backdrop-blur-sm border border-cyan-500/25 hover:border-cyan-500 hover:bg-black/48 active:scale-95 active:border-cyan-400 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_0_25px_rgba(0,243,255,0.35)] transition-all duration-200">
+                                    <div class="flex items-center gap-3">
+                                        <!-- Circular Mastery Meter (100%) -->
+                                        <div class="relative w-8 h-8 flex items-center justify-center shrink-0">
+                                            <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                                                <circle cx="18" cy="18" r="14" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2.5"/>
+                                                <circle cx="18" cy="18" r="14" fill="none" stroke="#00F3FF" stroke-width="2.5" stroke-dasharray="88" stroke-dashoffset="0" class="mastery-ring-circle" style="filter: drop-shadow(0 0 6px #00F3FF);"/>
+                                            </svg>
+                                            <span class="absolute font-mono text-[8px] font-bold text-white">100</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-mono text-[8px] text-cyan-400 font-bold uppercase tracking-wider block">TAILWIND // DESIGN TOKENS</span>
+                                            <span class="font-display font-bold text-sm text-white group-hover/chip:text-cyan-300">CSS</span>
+                                        </div>
                                     </div>
+                                    <span class="font-mono text-[8px] text-neon-cyan bg-cyan-500/10 px-2 py-0.5 rounded-full border border-cyan-500/30 font-bold">VERIFIED ✦</span>
                                 </div>
 
-                                <!-- Center Main Stem Node (Crystal D20) -->
-                                <div onclick="openSkillModal('threejs')" class="cyber-embossed-node w-12 h-12 rounded-xl border border-neon-cyan flex flex-col items-center justify-center cursor-pointer shadow-[0_0_15px_rgba(0,243,255,0.4)] group">
-                                    <svg class="w-5 h-5 text-neon-cyan group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="12"/><polyline points="22 8.5 12 12 2 8.5"/></svg>
-                                    <span class="text-[7px] font-mono text-neon-cyan font-bold">1/1</span>
-                                </div>
-
-                                <!-- Right Sub-perks -->
-                                <div class="flex gap-2">
-                                    <div onclick="openSkillModal('react')" title="State & Redux" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-cyan-300 cursor-pointer">
-                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7h-9M14 17H5M17 12H3"/></svg>
+                                <!-- CHIP 04: WEBGL (Three.js 3D) -->
+                                <div onclick="openSkillModal('webgl')" class="tactical-cyber-chip chip-cyan p-3.5 rounded-2xl cursor-pointer flex items-center justify-between select-none bg-black/32 backdrop-blur-sm border border-cyan-500/25 hover:border-cyan-500 hover:bg-black/48 active:scale-95 active:border-cyan-400 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_0_25px_rgba(0,243,255,0.35)] transition-all duration-200">
+                                    <div class="flex items-center gap-3">
+                                        <!-- Circular Mastery Meter (100%) -->
+                                        <div class="relative w-8 h-8 flex items-center justify-center shrink-0">
+                                            <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                                                <circle cx="18" cy="18" r="14" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2.5"/>
+                                                <circle cx="18" cy="18" r="14" fill="none" stroke="#00F3FF" stroke-width="2.5" stroke-dasharray="88" stroke-dashoffset="0" class="mastery-ring-circle" style="filter: drop-shadow(0 0 6px #00F3FF);"/>
+                                            </svg>
+                                            <span class="absolute font-mono text-[8px] font-bold text-white">100</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-mono text-[8px] text-cyan-400 font-bold uppercase tracking-wider block">THREE.JS // GLSL SHADERS</span>
+                                            <span class="font-display font-bold text-sm text-white group-hover/chip:text-cyan-300">WEBGL</span>
+                                        </div>
                                     </div>
+                                    <span class="font-mono text-[8px] text-neon-cyan bg-cyan-500/10 px-2 py-0.5 rounded-full border border-cyan-500/30 font-bold">VERIFIED ✦</span>
                                 </div>
+
                             </div>
                         </div>
 
                         <!-- Bottom Connected Project Proof Pills -->
-                        <div class="flex flex-wrap gap-1.5 pt-4 mt-4 border-t border-cyan-500/20">
-                            <span onclick="openModal('fintech-modal')" class="text-[9px] font-mono text-cyan-300 bg-cyan-500/15 border border-cyan-500/30 px-2 py-0.5 rounded hover:bg-cyan-500 hover:text-void transition-colors cursor-pointer font-bold">▶ PulseHQ AI</span>
-                            <span onclick="openModal('Apex-modal')" class="text-[9px] font-mono text-cyan-300 bg-cyan-500/15 border border-cyan-500/30 px-2 py-0.5 rounded hover:bg-cyan-500 hover:text-void transition-colors cursor-pointer font-bold">▶ Apex Motorsport</span>
+                        <div class="pt-5 mt-5 border-t border-cyan-500/20">
+                            <span class="text-[9px] font-mono text-neutral-400 uppercase tracking-widest block mb-2 font-bold">Live Project Synergies:</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span onclick="openModal('fintech-modal')" class="text-[9px] font-mono text-cyan-300 bg-cyan-500/15 border border-cyan-500/30 px-2.5 py-1 rounded-lg hover:bg-cyan-500 hover:text-white transition-colors cursor-pointer font-bold">▶ PulseHQ AI</span>
+                                <span onclick="openModal('Apex-modal')" class="text-[9px] font-mono text-cyan-300 bg-cyan-500/15 border border-cyan-500/30 px-2.5 py-1 rounded-lg hover:bg-cyan-500 hover:text-white transition-colors cursor-pointer font-bold">▶ Apex Motorsport</span>
+                                <span onclick="openModal('Silvatide-modal')" class="text-[9px] font-mono text-cyan-300 bg-cyan-500/15 border border-cyan-500/30 px-2.5 py-1 rounded-lg hover:bg-cyan-500 hover:text-white transition-colors cursor-pointer font-bold">▶ Silvatide</span>
+                                <span onclick="openModal('gallery-modal')" class="text-[9px] font-mono text-cyan-300 bg-cyan-500/15 border border-cyan-500/30 px-2.5 py-1 rounded-lg hover:bg-cyan-500 hover:text-white transition-colors cursor-pointer font-bold">▶ Art Gallery</span>
+                            </div>
                         </div>
+
                     </div>
 
                     <!-- =================================================================== -->
-                    <!-- BRANCH 3: NEON LIME GREEN BRANCH (SYSTEMS & AI SOLUTIONS) -->
+                    <!-- PILLAR 03: SYNERGY & STRATEGY (LIME // SYSTEMS STRATEGIST)          -->
                     <!-- =================================================================== -->
-                    <div class="relative rounded-2xl border border-white/10 bg-black/30 backdrop-blur-md p-5 shadow-[0_0_30px_rgba(212,255,0,0.15)] hover:border-lime-500/50 flex flex-col justify-between transition-all duration-300" data-category="systems">
-                        <div class="flex items-center justify-between mb-3 border-b border-lime-500/20 pb-2.5">
-                            <span class="font-mono text-xs font-bold text-acid-lime uppercase tracking-wider flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-acid-lime animate-ping"></span>03 // System &amp; Strategy</span>
-                            <span class="text-[8px] font-mono text-acid-lime bg-lime-500/10 px-2 py-0.5 rounded border border-lime-500/30 font-bold tracking-wider">MAX RANK</span>
-                        </div>
-
-                        <!-- Top Diamond Hub Node (Cyber Architect) -->
-                        <div class="flex justify-center mb-6 pt-2">
-                            <div onclick="openSkillModal('ai_solutions')" class="cyber-embossed-node w-14 h-14 rotate-45 rounded-xl border-2 border-acid-lime flex items-center justify-center shadow-[0_0_20px_rgba(212,255,0,0.5)] cursor-pointer group">
-                                <div class="-rotate-45 text-acid-lime group-hover:scale-110 transition-transform">
-                                    <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Vertical Stem Line & Node Network -->
-                        <div class="relative space-y-8 py-2">
-                            <!-- SVG Vertical Stem Line -->
-                            <svg class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-1 h-full pointer-events-none z-0" preserveAspectRatio="none">
-                                <line x1="2" y1="0" x2="2" y2="100%" stroke="#D4FF00" stroke-width="2" stroke-dasharray="4 3" opacity="0.6"/>
-                            </svg>
-
-                            <!-- Node 1: AI Solutions (Top Stem) -->
-                            <div class="relative z-10 flex items-center justify-between">
-                                <!-- Left Sub-perks -->
-                                <div class="flex gap-2">
-                                    <div onclick="openSkillModal('ai_solutions')" title="Team Essentials for AI Solutions" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-lime-300 cursor-pointer">
-                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10H12z"/></svg>
+                    <div class="tactical-pillar tactical-pillar-lime rounded-3xl p-6 sm:p-7 flex flex-col justify-between group shadow-2xl bg-black/38 backdrop-blur-md border border-lime-500/40 hover:border-lime-500/90 shadow-[0_0_40px_rgba(212,255,0,0.2)] hover:shadow-[0_0_65px_rgba(212,255,0,0.4)] transition-all duration-300" data-category="systems">
+                        
+                        <div>
+                            <!-- Pillar Keystone Header -->
+                            <div class="flex items-center justify-between pb-4 mb-5 border-b border-lime-500/20">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-11 h-11 rounded-2xl bg-lime-500/15 border border-acid-lime/60 flex items-center justify-center text-acid-lime shadow-[0_0_20px_rgba(212,255,0,0.35)] group-hover:scale-105 transition-transform">
+                                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10H12z"/></svg>
+                                    </div>
+                                    <div>
+                                        <span class="font-mono text-[9px] font-bold text-acid-lime uppercase tracking-widest block">KEYSTONE // SUBCLASS 03</span>
+                                        <h4 class="font-display font-extrabold text-lg sm:text-xl text-white tracking-tight">Synergy &amp; Strategy</h4>
                                     </div>
                                 </div>
-
-                                <!-- Center Main Stem Node (Isometric Dice) -->
-                                <div onclick="openSkillModal('ai_solutions')" class="cyber-embossed-node w-12 h-12 rounded-xl border border-acid-lime flex flex-col items-center justify-center cursor-pointer shadow-[0_0_15px_rgba(212,255,0,0.4)] group">
-                                    <svg class="w-5 h-5 text-acid-lime group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><circle cx="15.5" cy="15.5" r="1.5"/><circle cx="15.5" cy="8.5" r="1.5"/><circle cx="8.5" cy="15.5" r="1.5"/></svg>
-                                    <span class="text-[7px] font-mono text-acid-lime font-bold">3/3</span>
-                                </div>
-
-                                <!-- Right Sub-perks -->
-                                <div class="flex gap-2">
-                                    <div onclick="openSkillModal('prompt_eng')" title="Responsible AI" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-lime-300 cursor-pointer">
-                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                                    </div>
-                                </div>
+                                <span class="text-[9px] font-mono text-acid-lime bg-lime-500/10 px-2.5 py-1 rounded-full border border-lime-500/30 font-bold">3/3 MASTERED</span>
                             </div>
 
-                            <!-- Node 2: Accessibility AA/AAA (Middle Stem) -->
-                            <div class="relative z-10 flex items-center justify-between">
-                                <!-- Left Sub-perks -->
-                                <div class="flex gap-2">
-                                    <div onclick="openSkillModal('a11y')" title="WCAG 2.1 AA Compliance" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-lime-300 cursor-pointer">
-                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                            <!-- Tactical Cyber Chips Stack -->
+                            <div class="space-y-3.5">
+                                
+                                <!-- CHIP 01: AI SOLUTIONS (IBM Credly) -->
+                                <div onclick="openSkillModal('ai')" class="tactical-cyber-chip chip-lime p-4 rounded-2xl cursor-pointer flex items-center justify-between select-none bg-black/32 backdrop-blur-sm border border-lime-500/25 hover:border-lime-500 hover:bg-black/48 active:scale-95 active:border-lime-400 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_0_25px_rgba(212,255,0,0.35)] transition-all duration-200">
+                                    <div class="flex items-center gap-3.5">
+                                        <!-- Circular Mastery Meter (100%) -->
+                                        <div class="relative w-9 h-9 flex items-center justify-center shrink-0">
+                                            <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                                                <circle cx="18" cy="18" r="14" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2.5"/>
+                                                <circle cx="18" cy="18" r="14" fill="none" stroke="#D4FF00" stroke-width="2.5" stroke-dasharray="88" stroke-dashoffset="0" class="mastery-ring-circle" style="filter: drop-shadow(0 0 6px #D4FF00);"/>
+                                            </svg>
+                                            <span class="absolute font-mono text-[8px] font-bold text-white">100</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-mono text-[8px] text-lime-400 font-bold uppercase tracking-wider block">IBM CREDLY // GENAI DEV</span>
+                                            <span class="font-display font-bold text-sm text-white group-hover/chip:text-lime-300">AI SOLUTIONS</span>
+                                        </div>
                                     </div>
+                                    <span class="font-mono text-[9px] text-acid-lime bg-lime-500/10 px-2.5 py-1 rounded-full border border-lime-500/30 font-bold">VERIFIED ✦</span>
                                 </div>
 
-                                <!-- Center Main Stem Node (Humanoid A11y) -->
-                                <div onclick="openSkillModal('a11y')" class="cyber-embossed-node w-12 h-12 rounded-xl border border-acid-lime flex flex-col items-center justify-center cursor-pointer shadow-[0_0_15px_rgba(212,255,0,0.4)] group">
-                                    <svg class="w-5 h-5 text-acid-lime group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="4" r="2"/><path d="M18 9h-6-6"/><path d="M12 9v13"/><path d="m8 22 4-5 4 5"/></svg>
-                                    <span class="text-[7px] font-mono text-acid-lime font-bold">3/5</span>
-                                </div>
-
-                                <!-- Right Sub-perks -->
-                                <div class="flex gap-2">
-                                    <div onclick="openSkillModal('a11y')" title="Screen Reader Focus Loops" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-lime-300 cursor-pointer">
-                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20M12 2v20"/></svg>
+                                <!-- CHIP 02: DESIGN SYSTEM (Tokens) -->
+                                <div onclick="openSkillModal('design_systems')" class="tactical-cyber-chip chip-lime p-4 rounded-2xl cursor-pointer flex items-center justify-between select-none bg-black/32 backdrop-blur-sm border border-lime-500/25 hover:border-lime-500 hover:bg-black/48 active:scale-95 active:border-lime-400 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_0_25px_rgba(212,255,0,0.35)] transition-all duration-200">
+                                    <div class="flex items-center gap-3.5">
+                                        <!-- Circular Mastery Meter (100%) -->
+                                        <div class="relative w-9 h-9 flex items-center justify-center shrink-0">
+                                            <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                                                <circle cx="18" cy="18" r="14" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2.5"/>
+                                                <circle cx="18" cy="18" r="14" fill="none" stroke="#D4FF00" stroke-width="2.5" stroke-dasharray="88" stroke-dashoffset="0" class="mastery-ring-circle" style="filter: drop-shadow(0 0 6px #D4FF00);"/>
+                                            </svg>
+                                            <span class="absolute font-mono text-[8px] font-bold text-white">100</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-mono text-[8px] text-lime-400 font-bold uppercase tracking-wider block">8PT GRIDS // ZERO-HANDOFF</span>
+                                            <span class="font-display font-bold text-sm text-white group-hover/chip:text-lime-300">DESIGN SYSTEM</span>
+                                        </div>
                                     </div>
+                                    <span class="font-mono text-[9px] text-acid-lime bg-lime-500/10 px-2.5 py-1 rounded-full border border-lime-500/30 font-bold">VERIFIED ✦</span>
                                 </div>
-                            </div>
 
-                            <!-- Node 3: Design Tokens & Grid Architecture (Bottom Stem) -->
-                            <div class="relative z-10 flex items-center justify-between">
-                                <!-- Left Sub-perks -->
-                                <div class="flex gap-2">
-                                    <div onclick="openSkillModal('a11y')" title="8pt Spatial Grids" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-lime-300 cursor-pointer">
-                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+                                <!-- CHIP 03: STRATEGY (IBM Design Thinking & WCAG AAA) -->
+                                <div onclick="openSkillModal('strategy')" class="tactical-cyber-chip chip-lime p-4 rounded-2xl cursor-pointer flex items-center justify-between select-none bg-black/32 backdrop-blur-sm border border-lime-500/25 hover:border-lime-500 hover:bg-black/48 active:scale-95 active:border-lime-400 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_0_25px_rgba(212,255,0,0.35)] transition-all duration-200">
+                                    <div class="flex items-center gap-3.5">
+                                        <!-- Circular Mastery Meter (100%) -->
+                                        <div class="relative w-9 h-9 flex items-center justify-center shrink-0">
+                                            <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                                                <circle cx="18" cy="18" r="14" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2.5"/>
+                                                <circle cx="18" cy="18" r="14" fill="none" stroke="#D4FF00" stroke-width="2.5" stroke-dasharray="88" stroke-dashoffset="0" class="mastery-ring-circle" style="filter: drop-shadow(0 0 6px #D4FF00);"/>
+                                            </svg>
+                                            <span class="absolute font-mono text-[8px] font-bold text-white">100</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-mono text-[8px] text-lime-400 font-bold uppercase tracking-wider block">IBM CREDLY // WCAG AAA</span>
+                                            <span class="font-display font-bold text-sm text-white group-hover/chip:text-lime-300">STRATEGY &amp; A11Y</span>
+                                        </div>
                                     </div>
+                                    <span class="font-mono text-[9px] text-acid-lime bg-lime-500/10 px-2.5 py-1 rounded-full border border-lime-500/30 font-bold">VERIFIED ✦</span>
                                 </div>
 
-                                <!-- Center Main Stem Node (Isometric Grid Building) -->
-                                <div onclick="openSkillModal('a11y')" class="cyber-embossed-node w-12 h-12 rounded-xl border border-acid-lime flex flex-col items-center justify-center cursor-pointer shadow-[0_0_15px_rgba(212,255,0,0.4)] group">
-                                    <svg class="w-5 h-5 text-acid-lime group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 12 12 17 22 12"/><polyline points="2 17 12 22 22 17"/></svg>
-                                    <span class="text-[7px] font-mono text-acid-lime font-bold">3/1</span>
-                                </div>
-
-                                <!-- Right Sub-perks -->
-                                <div class="flex gap-2">
-                                    <div onclick="openSkillModal('design_thinking')" title="Enterprise Handoff" class="cyber-sub-perk w-10 h-10 rounded-lg flex items-center justify-center text-lime-300 cursor-pointer">
-                                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/></svg>
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
                         <!-- Bottom Connected Project Proof Pills -->
-                        <div class="flex flex-wrap gap-1.5 pt-4 mt-4 border-t border-lime-500/20">
-                            <span onclick="openModal('fintech-modal')" class="text-[9px] font-mono text-lime-300 bg-lime-500/15 border border-lime-500/30 px-2 py-0.5 rounded hover:bg-lime-500 hover:text-void transition-colors cursor-pointer font-bold">▶ PulseHQ AI</span>
-                            <span onclick="openModal('MilkDel-modal')" class="text-[9px] font-mono text-lime-300 bg-lime-500/15 border border-lime-500/30 px-2 py-0.5 rounded hover:bg-lime-500 hover:text-void transition-colors cursor-pointer font-bold">▶ Subscription</span>
+                        <div class="pt-5 mt-5 border-t border-lime-500/20">
+                            <span class="text-[9px] font-mono text-neutral-400 uppercase tracking-widest block mb-2 font-bold">Live Project Synergies:</span>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span onclick="openModal('Steady-modal')" class="text-[9px] font-mono text-lime-300 bg-lime-500/15 border border-lime-500/30 px-2.5 py-1 rounded-lg hover:bg-lime-500 hover:text-black transition-colors cursor-pointer font-bold">▶ Steady</span>
+                                <span onclick="openModal('fintech-modal')" class="text-[9px] font-mono text-lime-300 bg-lime-500/15 border border-lime-500/30 px-2.5 py-1 rounded-lg hover:bg-lime-500 hover:text-black transition-colors cursor-pointer font-bold">▶ PulseHQ AI</span>
+                                <span onclick="openModal('BioGrid-modal')" class="text-[9px] font-mono text-lime-300 bg-lime-500/15 border border-lime-500/30 px-2.5 py-1 rounded-lg hover:bg-lime-500 hover:text-black transition-colors cursor-pointer font-bold">▶ Bio Grid</span>
+                                <span onclick="openModal('MilkDel-modal')" class="text-[9px] font-mono text-lime-300 bg-lime-500/15 border border-lime-500/30 px-2.5 py-1 rounded-lg hover:bg-lime-500 hover:text-black transition-colors cursor-pointer font-bold">▶ Doodh Milk</span>
+                            </div>
                         </div>
+
                     </div>
 
                 </div>
@@ -4983,1911 +5213,8 @@
     </div>
 
 
-    <!-- CORE FRAMEWORK JAVASCRIPT LOGIC -->
-    
-    <!-- UI/UX interactions, scheduler, validations, chatbot, wireframe slider, audio click synth -->
-    <script>
-        // Global Modal & Video Player Controls — defined immediately for instant click execution
-        window.openModal = function(modalId) {
-            const modal = document.getElementById(modalId);
-            if (!modal) return;
-            const content = document.getElementById(`${modalId}-content`);
-            
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            modal.classList.add('opacity-100');
-            if (content) {
-                content.classList.remove('scale-95');
-                content.classList.add('scale-100');
-            }
-            document.body.style.overflow = 'hidden';
-            if (typeof playSyntheticClick === 'function') playSyntheticClick('success');
-        };
-
-        window.closeModal = function(modalId) {
-            const modal = document.getElementById(modalId);
-            if (!modal) return;
-            const content = document.getElementById(`${modalId}-content`);
-            
-            modal.classList.add('opacity-0', 'pointer-events-none');
-            modal.classList.remove('opacity-100');
-            if (content) {
-                content.classList.add('scale-95');
-                content.classList.remove('scale-100');
-            }
-            document.body.style.overflow = '';
-            if (typeof playSyntheticClick === 'function') playSyntheticClick('mechanical');
-        };
-
-
-
-        // Global Walker Automated Scheduler Engine
-        let currentSchedulerStep = 1;
-        let selectedDateNode = '';
-        let selectedTimeNode = '';
-
-        window.openBookingScheduler = function() {
-            const bookTrigger = document.getElementById('book-walkthrough-trigger');
-            const schedulerPanel = document.getElementById('booking-scheduler-panel');
-            if (!bookTrigger || !schedulerPanel) return;
-            bookTrigger.classList.add('hidden');
-            schedulerPanel.classList.remove('max-h-0', 'opacity-0', 'scale-95');
-            schedulerPanel.classList.add('max-h-[500px]', 'opacity-100', 'scale-100', 'animate-spring');
-            populateDateRow();
-            if (typeof playSyntheticClick === 'function') playSyntheticClick('success');
-        };
-
-        window.populateDateRow = function() {
-            const dateRow = document.getElementById('scheduler-date-row');
-            if (!dateRow) return;
-            dateRow.innerHTML = '';
-            
-            const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-            
-            let count = 0;
-            let dateIter = new Date();
-            const isLight = document.body.classList.contains('light');
-
-            while (count < 5) {
-                if (dateIter.getDay() === 0) {
-                    dateIter.setDate(dateIter.getDate() + 1);
-                    continue;
-                }
-                
-                const dayName = days[dateIter.getDay()];
-                const dateNum = dateIter.getDate();
-                const monthName = months[dateIter.getMonth()];
-                const fullDateStr = `${dayName}, ${dateNum} ${monthName}`;
-                
-                const chip = document.createElement('button');
-                chip.type = 'button';
-                chip.className = isLight
-                    ? "grow p-2 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 text-ink rounded text-center transition-all cursor-pointer shadow-sm"
-                    : "grow p-2 glass-panel border border-neutral-300 dark:border-surface/40 hover:border-neon-cyan rounded text-center transition-all cursor-pointer";
-                    
-                chip.innerHTML = `<p class="text-[8px] uppercase text-neutral-400 dark:text-neutral-500 font-semibold">${dayName}</p><p class="text-xs font-bold">${dateNum}</p>`;
-                chip.setAttribute('data-date', fullDateStr);
-                
-                chip.addEventListener('click', () => {
-                    const siblings = dateRow.querySelectorAll('button');
-                    siblings.forEach(s => {
-                        s.className = isLight
-                            ? "grow p-2 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 text-ink rounded text-center transition-all cursor-pointer shadow-sm"
-                            : "grow p-2 glass-panel border border-neutral-300 dark:border-surface/40 hover:border-neon-cyan rounded text-center transition-all cursor-pointer";
-                    });
-                    
-                    chip.className = isLight
-                        ? "grow p-2 bg-electric-blue/15 border-2 border-electric-blue text-electric-blue rounded text-center font-bold transition-all cursor-pointer shadow-light-blue"
-                        : "grow p-2 bg-neon-cyan/20 border-2 border-neon-cyan text-neon-cyan rounded text-center font-bold transition-all cursor-pointer shadow-neon";
-                        
-                    selectedDateNode = fullDateStr;
-                    populateTimeRow();
-                    validateSchedulerStep();
-                    if (typeof playSyntheticClick === 'function') playSyntheticClick('mechanical');
-                });
-                
-                dateRow.appendChild(chip);
-                dateIter.setDate(dateIter.getDate() + 1);
-                count++;
-            }
-        };
-
-        window.populateTimeRow = function() {
-            const timeRow = document.getElementById('scheduler-time-row');
-            if (!timeRow) return;
-            timeRow.innerHTML = '';
-            
-            const slots = ["10:00 AM", "11:30 AM", "2:00 PM", "3:30 PM", "5:00 PM"];
-            const isLight = document.body.classList.contains('light');
-
-            slots.forEach(slot => {
-                const chip = document.createElement('button');
-                chip.type = 'button';
-                chip.className = isLight
-                    ? "p-2 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 text-ink rounded text-center transition-all cursor-pointer font-mono text-[9px] shadow-sm"
-                    : "p-2 glass-panel border border-neutral-300 dark:border-surface/40 hover:border-neon-cyan rounded text-center transition-all cursor-pointer font-mono text-[9px]";
-                chip.innerText = slot;
-                chip.setAttribute('data-time', slot);
-                
-                chip.addEventListener('click', () => {
-                    const siblings = timeRow.querySelectorAll('button');
-                    siblings.forEach(s => {
-                        s.className = isLight
-                            ? "p-2 bg-neutral-100 hover:bg-neutral-200 border border-neutral-300 text-ink rounded text-center transition-all cursor-pointer font-mono text-[9px] shadow-sm"
-                            : "p-2 glass-panel border border-neutral-300 dark:border-surface/40 hover:border-neon-cyan rounded text-center transition-all cursor-pointer font-mono text-[9px]";
-                    });
-                    
-                    chip.className = isLight
-                        ? "p-2 bg-electric-blue/15 border-2 border-electric-blue text-electric-blue rounded text-center font-bold font-mono text-[9px] transition-all cursor-pointer shadow-light-blue"
-                        : "p-2 bg-neon-cyan/25 border-2 border-neon-cyan text-neon-cyan rounded text-center font-bold font-mono text-[9px] transition-all cursor-pointer shadow-neon";
-                        
-                    selectedTimeNode = slot;
-                    validateSchedulerStep();
-                    if (typeof playSyntheticClick === 'function') playSyntheticClick('mechanical');
-                });
-                
-                timeRow.appendChild(chip);
-            });
-        };
-
-        window.validateSchedulerStep = function() {
-            const nextStepBtn = document.getElementById('scheduler-next-btn');
-            if (!nextStepBtn) return;
-            
-            if (currentSchedulerStep === 1) {
-                if (selectedDateNode && selectedTimeNode) {
-                    nextStepBtn.removeAttribute('disabled');
-                } else {
-                    nextStepBtn.setAttribute('disabled', 'true');
-                }
-            } else if (currentSchedulerStep === 2) {
-                const name = document.getElementById('book-recruiter-name')?.value || '';
-                const email = document.getElementById('book-recruiter-email')?.value || '';
-                const company = document.getElementById('book-recruiter-company')?.value || '';
-                
-                if (name.trim().length >= 2 && email.includes('@') && company.trim().length >= 1) {
-                    nextStepBtn.removeAttribute('disabled');
-                } else {
-                    nextStepBtn.setAttribute('disabled', 'true');
-                }
-            }
-        };
-
-        window.handleSchedulerNext = function() {
-            const nextStepBtn = document.getElementById('scheduler-next-btn');
-            const backStepBtn = document.getElementById('scheduler-back-btn');
-            const slideDateTime = document.getElementById('scheduler-slide-datetime');
-            const slideDetails = document.getElementById('scheduler-slide-details');
-            const slideConfirm = document.getElementById('scheduler-slide-confirm');
-            const stepLabel = document.getElementById('scheduler-step-indicator');
-            const stepNum = document.getElementById('scheduler-step-number');
-            const progressBar = document.getElementById('scheduler-progress-bar');
-
-            if (currentSchedulerStep === 1) {
-                currentSchedulerStep = 2;
-                slideDateTime.classList.add('opacity-0');
-                setTimeout(() => {
-                    slideDateTime.classList.add('hidden');
-                    slideDetails.classList.remove('hidden');
-                    slideDetails.classList.remove('opacity-0');
-                    slideDetails.classList.add('opacity-100');
-                }, 200);
-
-                stepLabel.innerText = "Step 2 // Recruiter Information";
-                stepNum.innerText = "2 / 3";
-                progressBar.style.width = "66%";
-                backStepBtn.removeAttribute('disabled');
-                validateSchedulerStep();
-            } else if (currentSchedulerStep === 2) {
-                currentSchedulerStep = 3;
-                const rName = document.getElementById('book-recruiter-name').value;
-                const rEmail = document.getElementById('book-recruiter-email').value;
-                const rCompany = document.getElementById('book-recruiter-company').value;
-                const rMsg = document.getElementById('book-recruiter-msg').value;
-
-                const bookingPayload = {
-                    date: selectedDateNode,
-                    time: selectedTimeNode,
-                    name: rName,
-                    email: rEmail,
-                    company: rCompany,
-                    message: rMsg,
-                    timestamp: new Date().toISOString()
-                };
-
-                localStorage.setItem('kaustobh_portfolio_booking', JSON.stringify(bookingPayload));
-
-                slideDetails.classList.add('opacity-0');
-                setTimeout(() => {
-                    slideDetails.classList.add('hidden');
-                    slideConfirm.classList.remove('hidden');
-                    slideConfirm.classList.remove('opacity-0');
-                    slideConfirm.classList.add('opacity-100', 'flex');
-                }, 200);
-
-                stepLabel.innerText = "Briefing Node Confirmed";
-                stepNum.innerText = "3 / 3";
-                progressBar.style.width = "100%";
-                
-                document.getElementById('scheduler-progress-bar-wrap').classList.add('hidden');
-                document.getElementById('scheduler-navigation-ctas').classList.add('hidden');
-                document.getElementById('confirm-booking-details').innerText = `Briefing locked on ${selectedDateNode} at ${selectedTimeNode}. Virtual call matrix sync dispatched to ${rEmail}.`;
-            }
-            if (typeof playSyntheticClick === 'function') playSyntheticClick('success');
-        };
-
-        window.handleSchedulerBack = function() {
-            const nextStepBtn = document.getElementById('scheduler-next-btn');
-            const backStepBtn = document.getElementById('scheduler-back-btn');
-            const slideDateTime = document.getElementById('scheduler-slide-datetime');
-            const slideDetails = document.getElementById('scheduler-slide-details');
-            const stepLabel = document.getElementById('scheduler-step-indicator');
-            const stepNum = document.getElementById('scheduler-step-number');
-            const progressBar = document.getElementById('scheduler-progress-bar');
-
-            if (currentSchedulerStep === 2) {
-                currentSchedulerStep = 1;
-                slideDetails.classList.add('opacity-0');
-                setTimeout(() => {
-                    slideDetails.classList.add('hidden');
-                    slideDateTime.classList.remove('hidden');
-                    slideDateTime.classList.remove('opacity-0');
-                    slideDateTime.classList.add('opacity-100');
-                }, 200);
-
-                stepLabel.innerText = "Step 1 // Choose Date & Time";
-                stepNum.innerText = "1 / 3";
-                progressBar.style.width = "33%";
-                backStepBtn.setAttribute('disabled', 'true');
-                validateSchedulerStep();
-            }
-            if (typeof playSyntheticClick === 'function') playSyntheticClick('mechanical');
-        };
-
-        window.resetBookingScheduler = function() {
-            const slideDateTime = document.getElementById('scheduler-slide-datetime');
-            const slideConfirm = document.getElementById('scheduler-slide-confirm');
-            const stepLabel = document.getElementById('scheduler-step-indicator');
-            const stepNum = document.getElementById('scheduler-step-number');
-            const progressBar = document.getElementById('scheduler-progress-bar');
-            const backStepBtn = document.getElementById('scheduler-back-btn');
-            const nextStepBtn = document.getElementById('scheduler-next-btn');
-
-            localStorage.removeItem('kaustobh_portfolio_booking');
-            currentSchedulerStep = 1;
-            selectedDateNode = '';
-            selectedTimeNode = '';
-            
-            document.getElementById('book-recruiter-name').value = '';
-            document.getElementById('book-recruiter-email').value = '';
-            document.getElementById('book-recruiter-company').value = '';
-            document.getElementById('book-recruiter-msg').value = '';
-            
-            slideConfirm.classList.add('opacity-0');
-            slideConfirm.classList.remove('flex');
-            
-            setTimeout(() => {
-                slideConfirm.classList.add('hidden');
-                slideDateTime.classList.remove('hidden');
-                slideDateTime.classList.add('opacity-100');
-            }, 200);
-
-            stepLabel.innerText = "Step 1 // Choose Date & Time";
-            stepNum.innerText = "1 / 3";
-            progressBar.style.width = "33%";
-            
-            document.getElementById('scheduler-progress-bar-wrap').classList.remove('hidden');
-            document.getElementById('scheduler-navigation-ctas').classList.remove('hidden');
-            
-            backStepBtn.setAttribute('disabled', 'true');
-            nextStepBtn.setAttribute('disabled', 'true');
-            populateDateRow();
-        };
-
-        const chatbotDatabase = {
-            greetings: [
-                "Greeting node established. I am Kaustobh's customized AI representative. How can I orient your search?",
-                "System online // Kaustobh's virtual briefing core loaded. Direct your question or choose a suggested shortcut."
-            ],
-            who: "Kaustobh is a junior UX/UI designer and web engineer who specializes in bridging core design logic with front-end high-performance engineering. He works with Next.js, Tailwind, Three.js, React, and databases to ship premium experiences.",
-            fintech: "PulseHQ is an AI-powered team intelligence platform designed to transform raw project data into proactive, 1-tap manager decisions. It features an automated AI Manager Brief, Team Burnout Radar, and a 6-week Delivery Risk Heatmap built on a dark slate UI with smooth 300ms micro-interactions. <button onclick=\"openModal('fintech-modal')\" class='mt-2 block px-2.5 py-1 bg-neon-cyan text-void rounded font-mono font-bold text-[9px] hover:shadow-neon cursor-pointer'>Open Case Study Modal</button>",
-            checkout: "The E-Commerce Checkout project optimized cart friction, leading to an 18% lift in conversions through progressive disclosure and validation animations. <button onclick=\"openModal('checkout-modal')\" class='mt-2 block px-2.5 py-1 bg-neon-magenta text-white rounded font-mono font-bold text-[9px] hover:shadow-neon-pink cursor-pointer'>Open Case Study Modal</button>",
-            gallery: "The Graphic Art Gallery case study focuses on spatial digital acquisition. It features fluid canvas interactions, a contextual wall-scaler, and low-friction inquiry flows, yielding +28% inquiry conversions and +35% immersion lift. <button onclick=\"openModal('gallery-modal')\" class='mt-2 block px-2.5 py-1 bg-[#79C000] text-void rounded font-mono font-bold text-[9px] cursor-pointer'>Open Case Study Modal</button>",
-            doodh: "The Doodh Subscription Management experience focuses on everyday utility and subscription state handling (active, paused, cancelled). It features a flexible weekly quantity scheduler and respectful exit paths, yielding a +30% retention lift. <button onclick=\"openModal('MilkDel-modal')\" class='mt-2 block px-2.5 py-1 bg-pista-green text-void rounded font-mono font-bold text-[9px] hover:shadow-neon-green cursor-pointer'>Open Case Study Modal</button>",
-            biogrid: "Bio Grid is a clinical-grade medical telemetry dashboard designed to reduce cognitive load and enforce layout stability. It features a horizontal KPI carousel, WCAG AA compliant contrast colors, and physiology simulation widgets, yielding +45% scan speed improvements. <button onclick=\"openModal('BioGrid-modal')\" class='mt-2 block px-2.5 py-1 bg-[#4ade80] text-void rounded font-mono font-bold text-[9px] hover:shadow-neon-green cursor-pointer'>Open Case Study Modal</button>",
-            apex: "Apex Motorsport is a museum-grade, scroll-linked 3D digital showroom for the Mercedes-AMG GT4 & GT3 EVO. It merges WebGL (Three.js), GSAP scroll timelines, procedural GLSL exhaust flame shaders, and a real-time synthesized V8 Web Audio engine into a cinematic 60+ FPS racing experience built on zero external build tools. <button onclick=\"openModal('Apex-modal')\" class='mt-2 block px-2.5 py-1 bg-[#e0000a] text-white rounded font-mono font-bold text-[9px] cursor-pointer'>Open Case Study Modal</button>",
-            silvatide: "Silvatide Cottage is a pixel-perfect Astro-powered frontend for a premium lakeside retreat. Built from Figma designs, it features advanced CSS clip-path typography masking sandwiched between foreground cabin and background trees, an infinitely rotating masonry gallery, and IntersectionObserver-driven fade-up scroll animations — all under a strict 8px spatial grid. Result: 100% design fidelity and a +22% booking conversion lift. <button onclick=\"openModal('Silvatide-modal')\" class='mt-2 block px-2.5 py-1 bg-[#10B981] text-white rounded font-mono font-bold text-[9px] cursor-pointer'>Open Case Study Modal</button>",
-            book: "You can book a 20-minute slot directly on his automated calendar widget in the footer! Let me open it for you. <button onclick=\"document.getElementById('recruiter-briefing').scrollIntoView(); setTimeout(openBookingScheduler, 500);\" class='mt-2 block px-2.5 py-1 bg-acid-lime text-void rounded font-mono font-bold text-[9px] cursor-pointer'>Initialize Booking Calendar</button>",
-            fallback: "Query processed, but response yields low certainty. Try selecting a suggested capability matrix chip or typing 'Who is Kaustobh?' or 'Book a briefing'."
-        };
-
-        window.appendChatMessage = function(sender, text) {
-            const chatLog = document.getElementById('ai-chat-log');
-            if (!chatLog) return;
-            const bubbleWrapper = document.createElement('div');
-            bubbleWrapper.className = `flex flex-col ${sender === 'user' ? 'items-end' : 'items-start'} gap-1`;
-            
-            const label = document.createElement('span');
-            label.className = "text-[8px] font-mono text-neutral-400 tracking-wider";
-            label.innerText = sender === 'user' ? 'RECRUITER // GUEST' : 'K-Bot // AI Representative';
-            
-            const bubble = document.createElement('div');
-            const isLight = document.body.classList.contains('light');
-            
-            if (sender === 'user') {
-                bubble.className = isLight
-                    ? 'bg-electric-blue/15 border-electric-blue/30 text-ink rounded-lg rounded-tr-none p-2.5 max-w-[85%] border shadow-sm'
-                    : 'bg-neon-cyan/20 border-neon-cyan/40 text-white rounded-lg rounded-tr-none p-2.5 max-w-[85%] border border-white/5';
-            } else {
-                bubble.className = isLight
-                    ? 'bg-neutral-100 border-neutral-300/60 text-ink rounded-lg rounded-tl-none p-2.5 max-w-[85%] border shadow-sm'
-                    : 'bg-neutral-200 dark:bg-surface/75 text-white rounded-lg rounded-tl-none p-2.5 max-w-[85%] border border-white/5';
-            }
-            
-            bubble.innerHTML = text;
-            bubbleWrapper.appendChild(label);
-            bubbleWrapper.appendChild(bubble);
-            chatLog.appendChild(bubbleWrapper);
-            chatLog.scrollTop = chatLog.scrollHeight;
-        };
-
-        window.triggerAgentTyping = function(userMessage) {
-            const chatLog = document.getElementById('ai-chat-log');
-            if (!chatLog) return;
-            const typingWrapper = document.createElement('div');
-            typingWrapper.id = "chat-typing-dots";
-            typingWrapper.className = "flex flex-col items-start gap-1";
-            
-            const label = document.createElement('span');
-            label.className = "text-[8px] font-mono text-neutral-400 tracking-wider";
-            label.innerText = 'K-Bot // Representative';
-            
-            const bubble = document.createElement('div');
-            const isLight = document.body.classList.contains('light');
-            
-            bubble.className = isLight
-                ? "bg-neutral-100 border border-neutral-300 text-ink rounded-lg rounded-tl-none p-2.5 max-w-[85%] flex gap-1 items-center font-mono shadow-sm"
-                : "bg-neutral-200 dark:bg-surface/75 text-white rounded-lg rounded-tl-none p-2.5 max-w-[85%] border border-white/5 flex gap-1 items-center font-mono";
-                
-            bubble.innerHTML = `<span class="animate-ping h-1.5 w-1.5 rounded-full bg-neon-cyan"></span><span class="animate-ping h-1.5 w-1.5 rounded-full bg-neon-cyan delay-100"></span><span class="animate-ping h-1.5 w-1.5 rounded-full bg-neon-cyan delay-200"></span>`;
-            
-            typingWrapper.appendChild(label);
-            typingWrapper.appendChild(bubble);
-            chatLog.appendChild(typingWrapper);
-            chatLog.scrollTop = chatLog.scrollHeight;
-
-            const q = userMessage.toLowerCase();
-            let reply = chatbotDatabase.fallback;
-
-            if (q.includes('who') || q.includes('skills') || q.includes('about') || q.includes('kaustobh')) {
-                reply = chatbotDatabase.who;
-            } else if (q.includes('fintech') || q.includes('dashboard') || q.includes('audit')) {
-                reply = chatbotDatabase.fintech;
-            } else if (q.includes('e-comm') || q.includes('checkout') || q.includes('friction') || q.includes('watch')) {
-                reply = chatbotDatabase.checkout;
-            } else if (q.includes('gallery') || q.includes('art') || q.includes('immersion') || q.includes('acquisition') || q.includes('painting')) {
-                reply = chatbotDatabase.gallery;
-            } else if (q.includes('doodh') || q.includes('milk') || q.includes('subscription')) {
-                reply = chatbotDatabase.doodh;
-            } else if (q.includes('biogrid') || q.includes('bio') || q.includes('telemetry') || q.includes('medical') || q.includes('clinical')) {
-                reply = chatbotDatabase.biogrid;
-            } else if (q.includes('apex') || q.includes('motorsport') || q.includes('racing') || q.includes('car') || q.includes('3d')) {
-                reply = chatbotDatabase.apex;
-            } else if (q.includes('silvatide') || q.includes('cottage') || q.includes('retreat') || q.includes('astro')) {
-                reply = chatbotDatabase.silvatide;
-            } else if (q.includes('book') || q.includes('briefing') || q.includes('walkthrough') || q.includes('schedule') || q.includes('call')) {
-                reply = chatbotDatabase.book;
-            }
-
-            setTimeout(() => {
-                const dots = document.getElementById('chat-typing-dots');
-                if (dots) dots.remove();
-                
-                appendChatMessage('agent', reply);
-                if (typeof playSyntheticClick === 'function') playSyntheticClick('mechanical');
-            }, 600);
-        };
-
-        window.handleChatSend = function() {
-            const chatInput = document.getElementById('ai-chat-input');
-            if (!chatInput) return;
-            const text = chatInput.value.trim();
-            if (!text) return;
-            
-            chatInput.value = '';
-            appendChatMessage('user', text);
-            triggerAgentTyping(text);
-        };
-
-        window.sendChipQuestion = function(question) {
-            if (!question) return;
-            appendChatMessage('user', question);
-            triggerAgentTyping(question);
-        };
-
-        let isChatOpen = false;
-        window.toggleAIChat = function(forceOpen = null) {
-            const chatWindow = document.getElementById('ai-chat-window');
-            const chatInput = document.getElementById('ai-chat-input');
-            if (!chatWindow) return;
-            
-            if (forceOpen !== null) {
-                isChatOpen = forceOpen;
-            } else {
-                isChatOpen = !isChatOpen;
-            }
-            
-            if (isChatOpen) {
-                chatWindow.classList.remove('opacity-0', 'pointer-events-none', 'scale-95', 'translate-y-4');
-                chatWindow.classList.add('opacity-100', 'scale-100', 'translate-y-0', 'pointer-events-auto');
-                if (chatInput) setTimeout(() => chatInput.focus(), 150);
-            } else {
-                chatWindow.classList.add('opacity-0', 'pointer-events-none', 'scale-95', 'translate-y-4');
-                chatWindow.classList.remove('opacity-100', 'scale-100', 'translate-y-0', 'pointer-events-auto');
-            }
-            if (typeof playSyntheticClick === 'function') playSyntheticClick('mechanical');
-        };
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeVideoModal();
-                toggleAIChat(false);
-                ['fintech-modal', 'checkout-modal', 'gallery-modal', 'MilkDel-modal', 'BioGrid-modal', 'Apex-modal', 'Silvatide-modal', 'cv-modal'].forEach(m => closeModal(m));
-            }
-        });
-
-        document.addEventListener("DOMContentLoaded", () => {
-            
-            // ==========================================
-            // PRELOAD SEQUENCE & ANIMATED CYBER BOOT LOADING HUD
-            // ==========================================
-            const bootOverlay = document.getElementById('boot-overlay');
-            const bootLog1 = document.getElementById('boot-log-1');
-            const bootLog2 = document.getElementById('boot-log-2');
-            const bootLog3 = document.getElementById('boot-log-3');
-            const bootLog4 = document.getElementById('boot-log-4');
-            const bootLoaderFill = document.getElementById('boot-loader-fill');
-            const bootLoadPercent = document.getElementById('boot-load-percent');
-
-            let loadPercent = 0;
-            
-            // Fast loading boot timers
-            const bootInterval = setInterval(() => {
-                loadPercent += 2;
-                if (loadPercent > 100) loadPercent = 100;
-                
-                bootLoaderFill.style.width = `${loadPercent}%`;
-                bootLoadPercent.innerText = `${loadPercent}% LOADED`;
-                
-                if (loadPercent === 20) {
-                    bootLog2.classList.remove('hidden');
-                } else if (loadPercent === 55) {
-                    bootLog3.classList.remove('hidden');
-                } else if (loadPercent === 85) {
-                    bootLog4.classList.remove('hidden');
-                } else if (loadPercent === 100) {
-                    clearInterval(bootInterval);
-                    setTimeout(() => {
-                        // Dismiss loader split doors
-                        bootOverlay.style.transform = 'scale(1.05)';
-                        bootOverlay.style.opacity = '0';
-                        bootOverlay.style.pointerEvents = 'none';
-                        
-                        // Initialize High-Performance Instant Video Autoplay Engine
-                        const videoObserver = new IntersectionObserver((entries) => {
-                            entries.forEach(entry => {
-                                const video = entry.target;
-                                if (entry.isIntersecting || entry.intersectionRatio > 0.05) {
-                                    video.muted = true;
-                                    video.play().catch(() => {});
-                                } else {
-                                    video.pause();
-                                }
-                            });
-                        }, { rootMargin: '250px 0px 250px 0px', threshold: [0, 0.05, 0.2] });
-                        
-                        document.querySelectorAll('video').forEach(video => {
-                            video.muted = true;
-                            video.setAttribute('preload', 'auto');
-                            video.play().catch(() => {});
-                            videoObserver.observe(video);
-                        });
-
-                        setTimeout(() => {
-                            bootOverlay.remove();
-                            // Trigger metric countup animations
-                            animateAllMetrics();
-                        }, 700);
-                    }, 400);
-                }
-            }, 24); // Boot load sequence locks in ~1.2s
-
-            // ==========================================
-            // HIGH-FIDELITY COUNTUP ANIMATIONS FOR HERO METRICS
-            // ==========================================
-            function animateCountUp(targetId, targetValue, durationMs = 1200, prefix = "", suffix = "") {
-                const el = document.getElementById(targetId);
-                if (!el) return;
-                
-                let start = 0;
-                const startTime = performance.now();
-                
-                function updateNumber(timestamp) {
-                    const elapsed = timestamp - startTime;
-                    const progress = Math.min(elapsed / durationMs, 1);
-                    
-                    // Simple easing function
-                    const easeProgress = 1 - Math.pow(1 - progress, 3);
-                    const current = Math.floor(easeProgress * targetValue);
-                    
-                    el.innerText = `${prefix}${current}${suffix}`;
-                    
-                    if (progress < 1) {
-                        requestAnimationFrame(updateNumber);
-                    } else {
-                        el.innerText = `${prefix}${targetValue}${suffix}`;
-                    }
-                }
-                
-                requestAnimationFrame(updateNumber);
-            }
-
-            function animateAllMetrics() {
-                animateCountUp("metric-projects", 10, 1500, "", "+");
-                animateCountUp("metric-lift", 32, 1800, "+", "%");
-                animateCountUp("metric-hires", 8, 1500, "", "+");
-            }
-
-            // ==========================================
-            // A. PRESETS & STATE MANAGEMENT
-            // ==========================================
-            let audioEnabled = false;
-            let audioCtx = null;
-            let bookedSlot = JSON.parse(localStorage.getItem('kaustobh_portfolio_booking')) || null;
-
-            // Chart coordinates map for Fintech dashboard Redesign
-            // 7 points in each timescales structure mapped exactly to allow CSS path morphing
-            const chartDataScales = {
-                '1W': {
-                    points: [
-                        {x: 0, y: 110, date: "May 19", val: "$139,400"},
-                        {x: 16.6, y: 95, date: "May 20", val: "$140,250"},
-                        {x: 33.3, y: 105, date: "May 21", val: "$141,200"},
-                        {x: 50, y: 70, date: "May 22", val: "$141,800"},
-                        {x: 66.6, y: 80, date: "May 23", val: "$142,100"},
-                        {x: 83.3, y: 40, date: "May 24", val: "$142,550"},
-                        {x: 100, y: 25, date: "May 25", val: "$142,854"}
-                    ],
-                    scaleLabel: "Scale: 1W"
-                },
-                '1M': {
-                    points: [
-                        {x: 0, y: 120, date: "May 1", val: "$124,100"},
-                        {x: 16.6, y: 90, date: "May 7", val: "$131,800"},
-                        {x: 33.3, y: 75, date: "May 14", val: "$135,300"},
-                        {x: 50, y: 85, date: "May 17", val: "$137,900"},
-                        {x: 66.6, y: 55, date: "May 21", val: "$140,200"},
-                        {x: 83.3, y: 40, date: "May 24", val: "$142,550"},
-                        {x: 100, y: 25, date: "May 25", val: "$142,854"}
-                    ],
-                    scaleLabel: "Scale: 1M"
-                },
-                'ALL': {
-                    points: [
-                        {x: 0, y: 125, date: "Year 2024", val: "$88,000"},
-                        {x: 16.6, y: 100, date: "Q1 2025", val: "$98,400"},
-                        {x: 33.3, y: 85, date: "Q2 2025", val: "$105,400"},
-                        {x: 50, y: 70, date: "Q3 2025", val: "$118,900"},
-                        {x: 66.6, y: 48, date: "Q4 2025", val: "$126,100"},
-                        {x: 83.3, y: 35, date: "Q1 2026", val: "$135,100"},
-                        {x: 100, y: 25, date: "May 2026", val: "$142,854"}
-                    ],
-                    scaleLabel: "Scale: ALL TIME"
-                }
-            };
-            let currentChartScale = '1W';
-
-            // Custom watch model customizer configs
-            const watchConfigs = {
-                cyan: { name: "Chronos Cyan // Standard", price: "$299.00", accentColor: "#00F3FF", glowColor: "rgba(0, 243, 255, 0.08)" },
-                magenta: { name: "Chronos Magenta // Spec", price: "$329.00", accentColor: "#FF00A0", glowColor: "rgba(255, 0, 160, 0.08)" },
-                lime: { name: "Chronos Acid // Limited", price: "$349.00", accentColor: "#D4FF00", glowColor: "rgba(212, 255, 0, 0.08)" },
-                white: { name: "Chronos Frost // Concept", price: "$399.00", accentColor: "#FFFFFF", glowColor: "rgba(255, 255, 255, 0.08)" }
-            };
-            let selectedWatchColor = 'cyan';
-            let cartCount = 0;
-
-            // AI chatbot knowledge matrix
-            const chatbotDatabase = {
-                greetings: [
-                    "Greeting node established. I am Kaustobh's customized AI representative. How can I orient your search?",
-                    "System online // Kaustobh's virtual briefing core loaded. Direct your question or choose a suggested shortcut."
-                ],
-                who: "Kaustobh is a junior UX/UI designer and web engineer who specializes in bridging core design logic with front-end high-performance engineering. He works with Next.js, Tailwind, Three.js, React, and databases to ship premium experiences.",
-                fintech: "PulseHQ is an AI-powered team intelligence platform designed to transform raw project data into proactive, 1-tap manager decisions. It features an automated AI Manager Brief, Team Burnout Radar, and a 6-week Delivery Risk Heatmap built on a dark slate UI with smooth 300ms micro-interactions. <button onclick=\"openModal('fintech-modal')\" class='mt-2 block px-2.5 py-1 bg-neon-cyan text-void rounded font-mono font-bold text-[9px] hover:shadow-neon cursor-pointer'>Open Case Study Modal</button>",
-                checkout: "The E-Commerce Checkout project optimized cart friction, leading to an 18% lift in conversions through progressive disclosure and validation animations. <button onclick=\"openModal('checkout-modal')\" class='mt-2 block px-2.5 py-1 bg-neon-magenta text-white rounded font-mono font-bold text-[9px] hover:shadow-neon-pink cursor-pointer'>Open Case Study Modal</button>",
-                gallery: "The Graphic Art Gallery case study focuses on spatial digital acquisition. It features fluid canvas interactions, a contextual wall-scaler, and low-friction inquiry flows, yielding +28% inquiry conversions and +35% immersion lift. <button onclick=\"openModal('gallery-modal')\" class='mt-2 block px-2.5 py-1 bg-[#79C000] text-void rounded font-mono font-bold text-[9px] cursor-pointer'>Open Case Study Modal</button>",
-                doodh: "The Doodh Subscription Management experience focuses on everyday utility and subscription state handling (active, paused, cancelled). It features a flexible weekly quantity scheduler and respectful exit paths, yielding a +30% retention lift. <button onclick=\"openModal('MilkDel-modal')\" class='mt-2 block px-2.5 py-1 bg-pista-green text-void rounded font-mono font-bold text-[9px] hover:shadow-neon-green cursor-pointer'>Open Case Study Modal</button>",
-                biogrid: "Bio Grid is a clinical-grade medical telemetry dashboard designed to reduce cognitive load and enforce layout stability. It features a horizontal KPI carousel, WCAG AA compliant contrast colors, and physiology simulation widgets, yielding +45% scan speed improvements. <button onclick=\"openModal('BioGrid-modal')\" class='mt-2 block px-2.5 py-1 bg-[#4ade80] text-void rounded font-mono font-bold text-[9px] hover:shadow-neon-green cursor-pointer'>Open Case Study Modal</button>",
-                apex: "Apex Motorsport is a museum-grade, scroll-linked 3D digital showroom for the Mercedes-AMG GT4 & GT3 EVO. It merges WebGL (Three.js), GSAP scroll timelines, procedural GLSL exhaust flame shaders, and a real-time synthesized V8 Web Audio engine into a cinematic 60+ FPS racing experience built on zero external build tools. <button onclick=\"openModal('Apex-modal')\" class='mt-2 block px-2.5 py-1 bg-[#e0000a] text-white rounded font-mono font-bold text-[9px] cursor-pointer'>Open Case Study Modal</button>",
-                silvatide: "Silvatide Cottage is a pixel-perfect Astro-powered frontend for a premium lakeside retreat. Built from Figma designs, it features advanced CSS clip-path typography masking sandwiched between foreground cabin and background trees, an infinitely rotating masonry gallery, and IntersectionObserver-driven fade-up scroll animations — all under a strict 8px spatial grid. Result: 100% design fidelity and a +22% booking conversion lift. <button onclick=\"openModal('Silvatide-modal')\" class='mt-2 block px-2.5 py-1 bg-[#10B981] text-white rounded font-mono font-bold text-[9px] cursor-pointer'>Open Case Study Modal</button>",
-                book: "You can book a 20-minute slot directly on his automated calendar widget in the footer! Let me open it for you. <button onclick=\"document.getElementById('recruiter-briefing').scrollIntoView(); setTimeout(openBookingScheduler, 500);\" class='mt-2 block px-2.5 py-1 bg-acid-lime text-void rounded font-mono font-bold text-[9px] cursor-pointer'>Initialize Booking Calendar</button>",
-                fallback: "Query processed, but response yields low certainty. Try selecting a suggested capability matrix chip or typing 'Who is Kaustobh?' or 'Book a briefing'."
-            };
-
-            // ==========================================
-            // B. AUDIO SYNC CONTROLLER (Handled cleanly in js/audio-engine.js)
-            // Legacy complex synthesis engine completely removed.
-            
-            // C. PREMIUM DUAL-THEME SWITCHER MATRIX
-            // ==========================================
-            // NOTE: Class toggling (dark/light) is handled exclusively by hud-navigation.js
-            // to avoid double-firing. This block handles UI re-calibration on theme change.
-
-            // Listen for theme changes dispatched by hud-navigation.js
-            document.addEventListener('themechange', (e) => {
-                const updatedIsLight = e.detail.isLight;
-
-                // Dynamic UI Re-calibration: Re-populate dates/slots on theme switch
-                if (schedulerPanel.classList.contains('max-h-[500px]')) {
-                    populateDateRow();
-                    if (selectedDateNode) {
-                        populateTimeRow();
-                    }
-                }
-
-                // Re-render chatbot history to apply correct bubble contrast
-                const existingBubbles = chatLog.querySelectorAll('.flex');
-                existingBubbles.forEach(b => {
-                    const isUser = b.querySelector('span').innerText.includes('RECRUITER');
-                    const bubbleBody = b.querySelector('div');
-
-                    if (isUser) {
-                        bubbleBody.className = updatedIsLight
-                            ? 'bg-electric-blue/15 border-electric-blue/30 text-ink rounded-lg rounded-tr-none p-2.5 max-w-[85%] border shadow-sm'
-                            : 'bg-neon-cyan/20 border-neon-cyan/40 text-white rounded-lg rounded-tr-none p-2.5 max-w-[85%] border border-white/5';
-                    } else {
-                        bubbleBody.className = updatedIsLight
-                            ? 'bg-neutral-100 border-neutral-300/60 text-ink rounded-lg rounded-tl-none p-2.5 max-w-[85%] border shadow-sm'
-                            : 'bg-neutral-200 dark:bg-surface/75 text-white rounded-lg rounded-tl-none p-2.5 max-w-[85%] border border-white/5';
-                    }
-                });
-            });
-
-
-            // High-Performance Hardware-Accelerated Custom Cursor Engine (Zero Lag)
-            const cursorOuter = document.getElementById('custom-cursor');
-            const cursorInner = document.getElementById('custom-cursor-dot');
-            
-            if (cursorOuter && cursorInner) {
-                let outerX = 0, outerY = 0;
-                let targetX = 0, targetY = 0;
-
-                window.addEventListener('mousemove', (e) => {
-                    targetX = e.clientX;
-                    targetY = e.clientY;
-                    cursorInner.style.transform = `translate3d(${targetX - 3}px, ${targetY - 3}px, 0)`;
-                }, { passive: true });
-
-                function updateCursor() {
-                    outerX += (targetX - outerX) * 0.25;
-                    outerY += (targetY - outerY) * 0.25;
-                    cursorOuter.style.transform = `translate3d(${outerX - 12}px, ${outerY - 12}px, 0)`;
-                    requestAnimationFrame(updateCursor);
-                }
-                updateCursor();
-
-                // Passive event delegation for cursor hovers
-                document.addEventListener('mouseover', (e) => {
-                    const target = e.target.closest('button, a, input, select, textarea, [onclick]');
-                    if (target) {
-                        cursorOuter.style.width = '38px';
-                        cursorOuter.style.height = '38px';
-                        cursorOuter.style.borderColor = '#FF00A0';
-                    } else {
-                        cursorOuter.style.width = '24px';
-                        cursorOuter.style.height = '24px';
-                        cursorOuter.style.borderColor = '#00F3FF';
-                    }
-                }, { passive: true });
-            }
-
-
-            // ==========================================
-            // E. HUD ACTIVE PROGRESS SCROLLER TRACKER
-            // ==========================================
-
-            // Section registry — maps data-section slug → element + accent color
-            const sectionRegistry = [
-                { key: 'hero',        el: document.getElementById('hero-section'),          color: '#00F3FF', shadow: 'rgba(0,243,255,0.7)' },
-                { key: 'value-prop',  el: document.getElementById('section-what-i-bring'),  color: '#10B981', shadow: 'rgba(16,185,129,0.7)' }, // Neon Emerald
-                { key: 'skill-tree',  el: document.getElementById('section-skill-tree'),    color: '#A855F7', shadow: 'rgba(168,85,247,0.7)' }, // Neon Purple
-                { key: 'fintech',     el: document.getElementById('project-fintech'),       color: '#00F3FF', shadow: 'rgba(0,243,255,0.7)' },
-                { key: 'checkout',    el: document.getElementById('project-checkout'),      color: '#FF00A0', shadow: 'rgba(255,0,160,0.7)' },
-                { key: 'gallery',     el: document.getElementById('project-gallery'),       color: '#D4FF00', shadow: 'rgba(212,255,0,0.7)'  },
-                { key: 'MilkDel',     el: document.getElementById('project-MilkDel'),       color: '#A8CFA1', shadow: 'rgba(168,207,161,0.7)'},
-                { key: 'BioGrid',     el: document.getElementById('project-BioGrid'),       color: '#4ade80', shadow: 'rgba(74,222,128,0.7)' },
-                { key: 'Apex',        el: document.getElementById('project-Apex'),          color: '#e0000a', shadow: 'rgba(224,0,10,0.7)'   },
-                { key: 'Silvatide',   el: document.getElementById('project-Silvatide'),     color: '#10B981', shadow: 'rgba(16,185,129,0.7)' },
-                { key: 'dev-love',    el: document.getElementById('section-why-devs-love-me'), color: '#FF00A0', shadow: 'rgba(255,0,160,0.7)' }, // Neon Magenta
-                { key: 'briefing',    el: document.getElementById('recruiter-briefing'),    color: '#A3A3A3', shadow: 'rgba(163,163,163,0.6)'},
-            ];
-
-            // Track which section is most visible
-            let currentSection = 'hero';
-            const sectionVisibility = {};
-
-            /**
-             * Updates the HUD header logo backlight aura and drop-shadow to match the active section theme
-             * @param {string} hexColor - Active section neon color (e.g., '#00F3FF')
-             */
-            function updateHUDLogoTheme(hexColor) {
-                const logoAura = document.getElementById('logo-hud-aura');
-                const logoImg = document.getElementById('hud-logo-img');
-                const logoName = document.getElementById('hud-logo-name');
-                const logoDot = document.getElementById('hud-logo-status-dot');
-                const logoIconBox = document.getElementById('logo-hud-icon-box');
-
-                if (logoAura) {
-                    logoAura.style.backgroundColor = hexColor;
-                    logoAura.style.opacity = '0.5';
-                }
-                
-                if (logoImg) {
-                    logoImg.style.filter = `drop-shadow(0 0 10px ${hexColor})`;
-                }
-
-                if (logoName) {
-                    logoName.style.color = hexColor;
-                    logoName.style.textShadow = `0 0 12px ${hexColor}80`;
-                }
-
-                if (logoDot) {
-                    logoDot.style.backgroundColor = hexColor;
-                    logoDot.style.boxShadow = `0 0 8px ${hexColor}`;
-                }
-
-                if (logoIconBox) {
-                    logoIconBox.style.borderColor = `${hexColor}60`;
-                }
-            }
-
-            function updateActiveHUDDot(activeKey) {
-                if (activeKey === currentSection) return; // no-op if unchanged
-                currentSection = activeKey;
-
-                const registry = sectionRegistry.find(s => s.key === activeKey);
-                const activeColor  = registry ? registry.color  : '#00F3FF';
-                const activeShadow = registry ? registry.shadow : 'rgba(0,243,255,0.7)';
-
-                // Update root CSS variables for dynamic neon color metamorphosis
-                document.documentElement.style.setProperty('--accent-color', activeColor);
-                document.documentElement.style.setProperty('--glow-color', activeShadow);
-
-                // Update HUD Logo Backlight Aura & Drop-Shadow Theme Sync
-                updateHUDLogoTheme(activeColor);
-
-                document.querySelectorAll('.hud-dot').forEach(dot => {
-                    const sec = dot.getAttribute('data-section');
-                    if (sec === activeKey) {
-                        // Active state: Expand into vertical pill indicator with accent glow
-                        dot.style.height = '24px';
-                        dot.style.width = '8px';
-                        dot.style.borderRadius = '9999px';
-                        dot.style.backgroundColor = activeColor;
-                        dot.style.boxShadow = `0 0 14px ${activeShadow}`;
-                        dot.style.borderColor = activeColor;
-                        dot.style.transform  = 'none';
-                    } else {
-                        // Inactive state: reset to neutral circle
-                        dot.style.height = '';
-                        dot.style.width = '';
-                        dot.style.borderRadius = '';
-                        dot.style.backgroundColor = '';
-                        dot.style.boxShadow = '';
-                        dot.style.borderColor = '';
-                        dot.style.transform  = '';
-                    }
-                });
-            }
-
-            
-            
-            // 2077 Cyber-Skill Network Prerequisite Light-Line Path Highlighting
-            function highlightPath(pathId, glowColor) {
-                const line = document.getElementById(pathId);
-                if (line) {
-                    line.setAttribute('stroke', glowColor);
-                    line.setAttribute('stroke-width', '3.5');
-                    line.setAttribute('stroke-opacity', '1');
-                    line.style.filter = `drop-shadow(0 0 10px ${glowColor})`;
-                }
-            }
-
-            function resetPath(pathId) {
-                const line = document.getElementById(pathId);
-                if (line) {
-                    line.setAttribute('stroke', '#94A3B8');
-                    line.setAttribute('stroke-width', '1.5');
-                    line.setAttribute('stroke-opacity', '0.4');
-                    line.style.filter = 'none';
-                }
-            }
-
-            // Interactive Skill Tree Database & Modal Control
-            const skillDatabase = {
-                react: {
-                    title: "React & Next.js",
-                    category: "[Frontend & Engineering]",
-                    context: "Engineered responsive UI architectures, modular component systems, and client/server-side data rendering for complex web applications.",
-                    projects: [
-                        { name: "PulseHQ AI", modalId: "fintech-modal" },
-                        { name: "E-Comm Checkout", modalId: "checkout-modal" }
-                    ],
-                    badge: {
-                        title: "Meta Frontend Developer Professional Certificate",
-                        issuer: "Meta • Coursera Verified"
-                    }
-                },
-                figma: {
-                    title: "Figma & Auto-Layout",
-                    category: "[UX & UI Design]",
-                    context: "Built pixel-perfect, responsive component libraries utilizing Figma Auto-Layout 5.0, variables, component properties, and interactive variant states.",
-                    projects: [
-                        { name: "PulseHQ AI", modalId: "fintech-modal" },
-                        { name: "Silvatide Cottage", modalId: "Silvatide-modal" },
-                        { name: "Bio Grid Telemetry", modalId: "BioGrid-modal" },
-                        { name: "Graphic Art Gallery", modalId: "gallery-modal" }
-                    ],
-                    badge: {
-                        title: "Figma Design Systems & Advanced Auto-Layout Specialist",
-                        issuer: "Figma Community • Verified Creator"
-                    }
-                },
-                tokens: {
-                    title: "Design Systems & Tokens",
-                    category: "[Systems & Strategy]",
-                    context: "Centralized spacing, typography, and color tokens into standardized CSS variables, ensuring 1-to-1 parity between Figma design tokens and code execution.",
-                    projects: [
-                        { name: "PulseHQ AI", modalId: "fintech-modal" },
-                        { name: "E-Comm Checkout", modalId: "checkout-modal" },
-                        { name: "Milk Subscription", modalId: "MilkDel-modal" }
-                    ],
-                    badge: {
-                        title: "Enterprise UI Token Architecture Certificate",
-                        issuer: "Design Systems Institute • Verified"
-                    }
-                },
-                a11y: {
-                    title: "Accessibility (WCAG AA)",
-                    category: "[Systems & Strategy]",
-                    context: "Enforced WCAG AA contrast ratios, ARIA landmark tags, screen-reader focus traps, and keyboard navigation rings across clinical and SaaS interfaces.",
-                    projects: [
-                        { name: "Bio Grid Telemetry", modalId: "BioGrid-modal" },
-                        { name: "Milk Subscription", modalId: "MilkDel-modal" }
-                    ],
-                    badge: {
-                        title: "W3C Web Accessibility Specialist",
-                        issuer: "WAI • Verified Credential"
-                    }
-                },
-                tailwind: {
-                    title: "TailwindCSS & CSS3",
-                    category: "[Frontend & Engineering]",
-                    context: "Architected utility-first responsive grids, custom CSS animations, hardware-accelerated transforms, and high-contrast dark/light theme matrices.",
-                    projects: [
-                        { name: "PulseHQ AI", modalId: "fintech-modal" },
-                        { name: "Silvatide Cottage", modalId: "Silvatide-modal" },
-                        { name: "Graphic Art Gallery", modalId: "gallery-modal" },
-                        { name: "E-Comm Checkout", modalId: "checkout-modal" },
-                        { name: "Apex Motorsport", modalId: "Apex-modal" }
-                    ],
-                    badge: {
-                        title: "Advanced Responsive CSS Architecture",
-                        issuer: "Frontend Masters • Verified"
-                    }
-                },
-                threejs: {
-                    title: "WebGL & Three.js",
-                    category: "[Frontend & Engineering]",
-                    context: "Rendered interactive 3D particle terrains, WebGL canvases, procedural shaders, and audio-synthesized 60+ FPS motion experiences.",
-                    projects: [
-                        { name: "Apex Motorsport", modalId: "Apex-modal" },
-                        { name: "Hero 3D Canvas", modalId: "cv-modal" }
-                    ],
-                    badge: {
-                        title: "WebGL 3D Graphics & Audio Synth Specialist",
-                        issuer: "Three.js Journey • Verified"
-                    }
-                },
-                research: {
-                    title: "User Research & Personas",
-                    category: "[UX & UI Design]",
-                    context: "Conducted manager persona audits, cognitive friction mapping, A/B wireframe testing, and subscription retention flow optimization.",
-                    projects: [
-                        { name: "PulseHQ AI", modalId: "fintech-modal" },
-                        { name: "Milk Subscription", modalId: "MilkDel-modal" },
-                        { name: "E-Comm Checkout", modalId: "checkout-modal" }
-                    ],
-                    badge: {
-                        title: "Google UX Design Professional Certificate",
-                        issuer: "Google • Coursera Verified"
-                    }
-                },
-                grid_ui: {
-                    title: "8pt Grid & Typography Systems",
-                    category: "[Design Engineering]",
-                    context: "Structured rigid 8pt spatial layout grids, typography scaling ramps, and modular baseline alignments across web and desktop interfaces.",
-                    projects: [
-                        { name: "PulseHQ AI", modalId: "fintech-modal" },
-                        { name: "E-Comm Checkout", modalId: "checkout-modal" },
-                        { name: "Bio Grid Telemetry", modalId: "BioGrid-modal" }
-                    ],
-                    badge: {
-                        title: "Enterprise Typography & Layout Architecture",
-                        issuer: "UI/UX Academy • Verified Credential"
-                    }
-                },
-                motion: {
-                    title: "Micro-Interactions & GSAP",
-                    category: "[UX & UI Design]",
-                    context: "Designed tactile hover states, 300ms spring physics, scroll-linked GSAP timelines, and hardware-accelerated custom mouse cursor engines.",
-                    projects: [
-                        { name: "PulseHQ AI", modalId: "fintech-modal" },
-                        { name: "E-Comm Checkout", modalId: "checkout-modal" },
-                        { name: "Apex Motorsport", modalId: "Apex-modal" },
-                        { name: "Graphic Art Gallery", modalId: "gallery-modal" }
-                    ],
-                    badge: {
-                        title: "Interactive Motion & Micro-Interaction Specialist",
-                        issuer: "UI Animation Academy • Verified"
-                    }
-                }
-            };
-
-            function openSkillModal(skillKey) {
-                const skill = skillDatabase[skillKey];
-                if (!skill) return;
-
-                document.getElementById('skill-modal-category').innerText = skill.category;
-                document.getElementById('skill-modal-title').innerText = skill.title;
-                document.getElementById('skill-modal-context').innerText = skill.context;
-                document.getElementById('skill-badge-title').innerText = skill.badge.title;
-                document.getElementById('skill-badge-issuer').innerText = skill.badge.issuer;
-
-                const projContainer = document.getElementById('skill-modal-projects');
-                projContainer.innerHTML = skill.projects.map(p => `
-                    <button onclick="closeSkillModal(); setTimeout(()=>openModal('${p.modalId}'), 300);" class="px-3 py-1.5 bg-neon-cyan/10 border border-neon-cyan/30 text-neon-cyan rounded-lg font-mono font-bold text-xs hover:bg-neon-cyan hover:text-void transition-all cursor-pointer flex items-center gap-1.5">
-                        <span>▶ ${p.name}</span>
-                    </button>
-                `).join('');
-
-                const modal = document.getElementById('skill-detail-modal');
-                const content = document.getElementById('skill-detail-content');
-                modal.classList.remove('opacity-0', 'pointer-events-none');
-                modal.classList.add('opacity-100', 'pointer-events-auto');
-                content.classList.remove('scale-95');
-                content.classList.add('scale-100');
-                playSyntheticClick('success');
-            }
-
-            function closeSkillModal() {
-                const modal = document.getElementById('skill-detail-modal');
-                const content = document.getElementById('skill-detail-content');
-                if (!modal) return;
-                modal.classList.remove('opacity-100', 'pointer-events-auto');
-                modal.classList.add('opacity-0', 'pointer-events-none');
-                content.classList.remove('scale-100');
-                content.classList.add('scale-95');
-                playSyntheticClick('click');
-            }
-
-            function filterSkillNodes(category) {
-                playSyntheticClick('click');
-
-                // 1. Update active tab styling with glowing category accents
-                const tabBtns = document.querySelectorAll('.skill-tab-btn');
-                tabBtns.forEach(btn => {
-                    const cat = btn.getAttribute('data-category');
-                    if (cat === category) {
-                        if (cat === 'all') {
-                            btn.className = 'skill-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-neon-cyan text-void shadow-neon cursor-pointer';
-                        } else if (cat === 'ux-ui') {
-                            btn.className = 'skill-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-neon-magenta text-void shadow-[0_0_15px_rgba(255,0,160,0.6)] cursor-pointer';
-                        } else if (cat === 'frontend') {
-                            btn.className = 'skill-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-neon-cyan text-void shadow-neon cursor-pointer';
-                        } else if (cat === 'systems') {
-                            btn.className = 'skill-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-acid-lime text-void shadow-[0_0_15px_rgba(212,255,0,0.6)] cursor-pointer';
-                        }
-                    } else {
-                        btn.className = 'skill-tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all text-neutral-400 hover:text-white cursor-pointer';
-                    }
-                });
-
-                // 2. Filter Column Containers & Perk Nodes
-                const columns = document.querySelectorAll('#skill-nodes-container > div[data-category]');
-                columns.forEach(col => {
-                    const colCat = col.getAttribute('data-category');
-                    if (category === 'all' || colCat === category) {
-                        col.style.display = 'block';
-                        col.style.opacity = '1';
-                        col.style.transform = 'scale(1)';
-                        col.style.transition = 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)';
-                    } else {
-                        col.style.display = 'none';
-                        col.style.opacity = '0';
-                        col.style.transform = 'scale(0.95)';
-                    }
-                });
-
-                // 3. Toggle SVG connecting lines layer
-                const svgLayer = document.querySelector('#skill-nodes-container svg');
-                if (svgLayer) {
-                    svgLayer.style.opacity = category === 'all' ? '1' : '0.2';
-                }
-            }
-
-
-
-            // Use IntersectionObserver — triggers section reveals and HUD dot updates
-            const hudObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting || entry.intersectionRatio > 0.15) {
-                        entry.target.classList.add('is-revealed');
-                    }
-                    const reg = sectionRegistry.find(s => s.el === entry.target);
-                    if (reg) {
-                        sectionVisibility[reg.key] = entry.intersectionRatio;
-                    }
-                });
-
-                // Find the section with highest visibility ratio
-                let bestKey = currentSection;
-                let bestRatio = 0;
-                Object.entries(sectionVisibility).forEach(([k, ratio]) => {
-                    if (ratio > bestRatio) {
-                        bestRatio = ratio;
-                        bestKey = k;
-                    }
-                });
-
-                if (bestRatio > 0) {
-                    updateActiveHUDDot(bestKey, true);
-                }
-            }, {
-                threshold: [0, 0.15, 0.3, 0.5, 0.75, 1.0]
-            });
-
-            // Observe every registered section
-            sectionRegistry.forEach(({ el }) => {
-                if (el) hudObserver.observe(el);
-            });
-
-            // Container #work scroll listener for 100% real-time scroll sync
-            const workContainer = document.getElementById('work');
-            if (workContainer) {
-                workContainer.addEventListener('scroll', () => {
-                    const viewportHeight = workContainer.clientHeight || window.innerHeight;
-                    sectionRegistry.forEach(({ key, el }) => {
-                        if (!el) return;
-                        const rect = el.getBoundingClientRect();
-                        const visibleHeight = Math.max(0, Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0));
-                        sectionVisibility[key] = visibleHeight / viewportHeight;
-                    });
-
-                    let bestKey = currentSection;
-                    let bestRatio = 0;
-                    Object.entries(sectionVisibility).forEach(([k, ratio]) => {
-                        if (ratio > bestRatio) {
-                            bestRatio = ratio;
-                            bestKey = k;
-                        }
-                    });
-
-                    if (bestRatio > 0) {
-                        updateActiveHUDDot(bestKey, true);
-                    }
-                }, { passive: true });
-            }
-
-            // Initial theme sync on page load
-            setTimeout(() => updateActiveHUDDot('hero', true), 100);
-
-            // Set initial active dot on load
-            updateActiveHUDDot('hero');
-
-            // ==========================================
-            // HERO VIDEO: Unmute on first user gesture
-            // Autoplay requires muted; unmute after interaction
-            // ==========================================
-            const heroVid = document.getElementById('hero-bg-video');
-            if (heroVid) {
-                const unmuteHeroVideo = () => {
-                    heroVid.muted = false;
-                    heroVid.volume = 0.6;
-                    window.removeEventListener('click',   unmuteHeroVideo);
-                    window.removeEventListener('scroll',  unmuteHeroVideo);
-                    window.removeEventListener('keydown', unmuteHeroVideo);
-                };
-                window.addEventListener('click',   unmuteHeroVideo, { passive: true, once: true });
-                window.addEventListener('scroll',  unmuteHeroVideo, { passive: true, once: true });
-                window.addEventListener('keydown', unmuteHeroVideo, { passive: true, once: true });
-            }
-
-
-            // ==========================================
-            // F. MOCKUP ENGINE 1: FINTECH INTERACTIVE GRAPH
-            // ==========================================
-            const chartSvg = document.getElementById('fintech-chart-svg');
-            const tooltipLine = document.getElementById('chart-tooltip-line');
-            const tooltipBubble = document.getElementById('chart-tooltip-bubble');
-            const tooltipDot = document.getElementById('chart-tooltip-dot');
-            const balanceLabel = document.getElementById('fintech-balance-value');
-            const timeframeLabel = document.getElementById('fintech-timeframe-label');
-
-            function renderChartPath(scale) {
-                currentChartScale = scale;
-                const config = chartDataScales[scale];
-                const points = config.points;
-                
-                timeframeLabel.innerText = config.scaleLabel;
-                
-                const width = chartSvg.clientWidth || 320;
-                const height = 120;
-                
-                // Build SVG cubic splines path string
-                let d = `M 0 ${points[0].y}`;
-                let dFill = `M 0 120 L 0 ${points[0].y}`;
-
-                for (let i = 1; i < points.length; i++) {
-                    const cx = points[i-1].x + (points[i].x - points[i-1].x) / 2;
-                    // Draw bezier curve coordinates
-                    d += ` C ${cx * width / 100} ${points[i-1].y}, ${cx * width / 100} ${points[i].y}, ${points[i].x * width / 100} ${points[i].y}`;
-                    dFill += ` C ${cx * width / 100} ${points[i-1].y}, ${cx * width / 100} ${points[i].y}, ${points[i].x * width / 100} ${points[i].y}`;
-                }
-                
-                dFill += ` L ${width} 120 Z`;
-                
-                document.getElementById('chart-path-line').setAttribute('d', d);
-                document.getElementById('chart-path-fill').setAttribute('d', dFill);
-            }
-
-            // Init default line chart
-            setTimeout(() => renderChartPath('1W'), 300);
-            window.addEventListener('resize', () => renderChartPath(currentChartScale));
-
-            // Chart interaction event listeners
-            chartSvg.addEventListener('mousemove', (e) => {
-                const rect = chartSvg.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const pct = (x / rect.width) * 100;
-                
-                // Find closest data coordinate
-                const points = chartDataScales[currentChartScale].points;
-                let closest = points[0];
-                let minDist = 100;
-
-                for (let p of points) {
-                    const dist = Math.abs(p.x - pct);
-                    if (dist < minDist) {
-                        minDist = dist;
-                        closest = p;
-                    }
-                }
-
-                // Move visual tooltip indicators
-                const targetX = closest.x * rect.width / 100;
-                const targetY = closest.y;
-
-                tooltipLine.style.left = `${targetX}px`;
-                tooltipLine.classList.remove('hidden');
-                
-                tooltipDot.setAttribute('cx', targetX);
-                tooltipDot.setAttribute('cy', targetY);
-                tooltipDot.classList.remove('hidden');
-
-                // Move tooltip bubble card
-                tooltipBubble.style.left = `${targetX - 25}px`;
-                tooltipBubble.style.top = `${targetY - 35}px`;
-                tooltipBubble.classList.remove('hidden');
-                
-                document.getElementById('tooltip-date').innerText = closest.date;
-                document.getElementById('tooltip-value').innerText = closest.val;
-                balanceLabel.innerText = closest.val;
-            });
-
-            chartSvg.addEventListener('mouseleave', () => {
-                tooltipLine.classList.add('hidden');
-                tooltipBubble.classList.add('hidden');
-                tooltipDot.classList.add('hidden');
-                
-                // Reset balance display text
-                const points = chartDataScales[currentChartScale].points;
-                balanceLabel.innerText = points[points.length - 1].val;
-            });
-
-            // Timescale button selectors
-            const chartButtons = document.querySelectorAll('#chart-timescale-selectors button');
-            chartButtons.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    chartButtons.forEach(b => b.className = "px-1.5 py-0.5 rounded text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer");
-                    e.target.className = "px-1.5 py-0.5 rounded bg-neon-cyan/25 dark:bg-neon-cyan/20 light:bg-electric-blue/20 text-neon-cyan dark:text-neon-cyan light:text-electric-blue font-bold cursor-pointer";
-                    renderChartPath(e.target.getAttribute('data-scale'));
-                });
-            });
-
-
-            // ==========================================
-            // G. MOCKUP ENGINE 2: E-COMM WATCH BUILDER
-            // ==========================================
-            const colorButtons = document.querySelectorAll('#product-color-selector button');
-            const watchAccentRing = document.getElementById('watch-accent-ring');
-            const watchSecondHand = document.getElementById('watch-second-hand');
-            const watchDialGlow = document.getElementById('watch-dial-glow');
-            const watchModelName = document.getElementById('product-model-name');
-            const watchPriceLabel = document.getElementById('product-price');
-            
-            const addToCartBtn = document.getElementById('add-to-cart-btn');
-            const cartBadge = document.getElementById('cart-badge-count');
-            const customizerCheckoutBtn = document.getElementById('customizer-checkout-btn');
-
-            colorButtons.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const color = e.target.getAttribute('data-color');
-                    selectedWatchColor = color;
-                    
-                    // Reset active ring classes on color buttons
-                    colorButtons.forEach(b => {
-                        b.className = "w-4 h-4 rounded-full border border-transparent hover:scale-110 cursor-pointer transition-transform";
-                        if (b.getAttribute('data-color') === 'white') b.classList.add('bg-white', 'dark:bg-zinc-300');
-                        else if (b.getAttribute('data-color') === 'cyan') b.classList.add('bg-neon-cyan');
-                        else if (b.getAttribute('data-color') === 'magenta') b.classList.add('bg-neon-magenta');
-                        else if (b.getAttribute('data-color') === 'lime') b.classList.add('bg-acid-lime');
-                    });
-                    
-                    // Set active highlight ring
-                    e.target.className = `w-4 h-4 rounded-full border-2 border-white dark:border-white ring-2 cursor-pointer transition-transform`;
-                    if (color === 'white') e.target.classList.add('bg-white', 'dark:bg-zinc-300', 'ring-neutral-400');
-                    else if (color === 'cyan') e.target.classList.add('bg-neon-cyan', 'ring-neon-cyan');
-                    else if (color === 'magenta') e.target.classList.add('bg-neon-magenta', 'ring-neon-magenta');
-                    else if (color === 'lime') e.target.classList.add('bg-acid-lime', 'ring-acid-lime');
-
-                    // Update watch visual accent properties
-                    const config = watchConfigs[color];
-                    watchAccentRing.style.stroke = config.accentColor;
-                    watchSecondHand.style.stroke = config.accentColor;
-                    watchDialGlow.style.fill = config.glowColor;
-                    
-                    // Update text elements
-                    watchModelName.innerText = config.name;
-                    watchPriceLabel.innerText = config.price;
-                });
-            });
-
-            // Cart updates & animations
-            addToCartBtn.addEventListener('click', () => {
-                cartCount++;
-                cartBadge.innerText = cartCount;
-                cartBadge.classList.add('scale-125', 'bg-neon-cyan');
-                
-                // Flying checkout bubble +1 animation
-                const flyingDot = document.getElementById('cart-flying-particle');
-                flyingDot.style.color = watchConfigs[selectedWatchColor].accentColor;
-                flyingDot.classList.remove('hidden');
-                
-                setTimeout(() => {
-                    flyingDot.classList.add('hidden');
-                    cartBadge.classList.remove('scale-125', 'bg-neon-cyan');
-                }, 800);
-                
-                customizerCheckoutBtn.removeAttribute('disabled');
-            });
-
-            // Checkout UI slider transitions
-            const checkoutViewCustomizer = document.getElementById('checkout-view-customizer');
-            const checkoutViewForm = document.getElementById('checkout-view-form');
-            const checkoutViewSuccess = document.getElementById('checkout-view-success');
-
-            customizerCheckoutBtn.addEventListener('click', () => {
-                checkoutViewCustomizer.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-                checkoutViewForm.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
-                checkoutViewForm.classList.add('opacity-100', 'scale-100');
-                
-                // Populate invoice fields
-                const config = watchConfigs[selectedWatchColor];
-                document.getElementById('checkout-receipt-item').innerText = `${cartCount}x ${config.name}`;
-                
-                const numericPrice = parseFloat(config.price.replace('$', ''));
-                const totalPrice = numericPrice * cartCount;
-                document.getElementById('checkout-receipt-total').innerText = `$${totalPrice.toFixed(2)}`;
-            });
-
-            document.getElementById('checkout-back-btn').addEventListener('click', () => {
-                checkoutViewForm.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-                checkoutViewCustomizer.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
-                checkoutViewCustomizer.classList.add('opacity-100', 'scale-100');
-            });
-
-            // Card inputs dynamically spaced
-            const cardNumInput = document.getElementById('card-number');
-            cardNumInput.addEventListener('input', (e) => {
-                let v = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
-                let matches = v.match(/\d{4,16}/g);
-                let match = matches && matches[0] || '';
-                let parts = [];
-
-                for (let i=0, len=match.length; i<len; i+=4) {
-                    parts.push(match.substring(i, i+4));
-                }
-
-                if (parts.length > 0) {
-                    e.target.value = parts.join(' ');
-                } else {
-                    e.target.value = v;
-                }
-
-                // Check formatting success
-                const checkNum = document.getElementById('valid-check-number');
-                if (v.length === 16) {
-                    checkNum.classList.remove('hidden');
-                } else {
-                    checkNum.classList.add('hidden');
-                }
-            });
-
-            const cardNameInput = document.getElementById('card-name');
-            cardNameInput.addEventListener('input', (e) => {
-                const checkName = document.getElementById('valid-check-name');
-                if (e.target.value.length > 3) {
-                    checkName.classList.remove('hidden');
-                } else {
-                    checkName.classList.add('hidden');
-                }
-            });
-
-            // Expiry input validation inline mask formatting (MM/YY)
-            const cardExpiryInput = document.getElementById('card-expiry');
-            cardExpiryInput.addEventListener('input', (e) => {
-                let v = e.target.value.replace(/\D/g, '');
-                if (v.length >= 2) {
-                    e.target.value = v.slice(0, 2) + '/' + v.slice(2, 4);
-                } else {
-                    e.target.value = v;
-                }
-                const checkExpiry = document.getElementById('valid-check-expiry');
-                if (e.target.value.length === 5) {
-                    checkExpiry.classList.remove('hidden');
-                } else {
-                    checkExpiry.classList.add('hidden');
-                }
-            });
-
-            // CVV input validation checkmark
-            const cardCvvInput = document.getElementById('card-cvv');
-            cardCvvInput.addEventListener('input', (e) => {
-                let v = e.target.value.replace(/\D/g, '');
-                e.target.value = v;
-                const checkCvv = document.getElementById('valid-check-cvv');
-                if (v.length === 3) {
-                    checkCvv.classList.remove('hidden');
-                } else {
-                    checkCvv.classList.add('hidden');
-                }
-            });
-
-            // Settle payment node
-            document.getElementById('checkout-pay-btn').addEventListener('click', () => {
-                // Perform manual card verification to validate inputs
-                const name = cardNameInput.value;
-                const num = cardNumInput.value;
-                const expiry = cardExpiryInput.value;
-                const cvv = cardCvvInput.value;
-
-                if (name.length < 3 || num.length < 19 || expiry.length < 5 || cvv.length < 3) {
-                    playSyntheticClick('error');
-                    
-                    // Card shake effect on error
-                    const panel = document.getElementById('checkout-panel-root');
-                    panel.classList.add('animate-bounce');
-                    setTimeout(() => panel.classList.remove('animate-bounce'), 500);
-                    return;
-                }
-
-                playSyntheticClick('success');
-                checkoutViewForm.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-                checkoutViewSuccess.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
-                checkoutViewSuccess.classList.add('opacity-100', 'scale-100');
-            });
-
-            // Reset configurator
-            document.getElementById('success-reset-btn').addEventListener('click', () => {
-                cartCount = 0;
-                cartBadge.innerText = 0;
-                customizerCheckoutBtn.setAttribute('disabled', 'true');
-                
-                // Clear input form
-                cardNameInput.value = '';
-                cardNumInput.value = '';
-                cardExpiryInput.value = '';
-                cardCvvInput.value = '';
-                document.getElementById('valid-check-name').classList.add('hidden');
-                document.getElementById('valid-check-number').classList.add('hidden');
-                document.getElementById('valid-check-expiry').classList.add('hidden');
-                document.getElementById('valid-check-cvv').classList.add('hidden');
-                
-                checkoutViewSuccess.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-                checkoutViewCustomizer.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
-                checkoutViewCustomizer.classList.add('opacity-100', 'scale-100');
-            });
-
-
-            // ==========================================
-            // G2. MOCKUP ENGINE 3: GRAPHIC ART GALLERY INTERACTION
-            // ==========================================
-            const btnScaleArt = document.getElementById('btn-scale-art');
-            const btnScaleWall = document.getElementById('btn-scale-wall');
-            const wallRoom = document.getElementById('gallery-wall-room');
-            const artworkFrame = document.getElementById('gallery-artwork-frame');
-            
-            const galleryInquireBtn = document.getElementById('gallery-inquire-btn');
-            const galleryViewMain = document.getElementById('gallery-view-main');
-            const galleryViewForm = document.getElementById('gallery-view-form');
-            const galleryViewSuccess = document.getElementById('gallery-view-success');
-            
-            const galleryBudgetSlider = document.getElementById('gallery-inquirer-budget');
-            const galleryBudgetLabel = document.getElementById('gallery-budget-label');
-
-            // Contextual wall-scaling visualizer toggling
-            btnScaleArt.addEventListener('click', (e) => {
-                btnScaleWall.className = "px-1.5 py-0.5 rounded text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer text-[8px] font-mono";
-                btnScaleArt.className = "px-1.5 py-0.5 rounded bg-acid-lime/25 dark:bg-acid-lime/20 light:bg-forest-lime/20 text-acid-lime dark:text-acid-lime light:text-forest-lime font-bold cursor-pointer text-[8px] font-mono";
-                
-                // Hide Room backgrounds, scale Frame back to full frame size
-                wallRoom.style.opacity = '0';
-                setTimeout(() => wallRoom.classList.add('hidden'), 300);
-                
-                artworkFrame.className = "w-28 h-28 border-[6px] border-charcoal bg-[#0a0a0c] shadow-2xl relative flex items-center justify-center transition-all duration-500 transform scale-100 z-10 hover:rotate-1";
-            });
-
-            btnScaleWall.addEventListener('click', (e) => {
-                btnScaleArt.className = "px-1.5 py-0.5 rounded text-neutral-400 hover:text-charcoal dark:hover:text-white cursor-pointer text-[8px] font-mono";
-                btnScaleWall.className = "px-1.5 py-0.5 rounded bg-acid-lime/25 dark:bg-acid-lime/20 light:bg-forest-lime/20 text-acid-lime dark:text-acid-lime light:text-forest-lime font-bold cursor-pointer text-[8px] font-mono";
-                
-                // Show Room backgrounds, scale Frame down to represent 50x50cm art context hanging on couch wall!
-                wallRoom.classList.remove('hidden');
-                setTimeout(() => wallRoom.style.opacity = '1', 50);
-                
-                artworkFrame.className = "w-12 h-12 border-2 border-charcoal bg-[#0a0a0c] shadow-lg relative flex items-center justify-center transition-all duration-500 transform scale-100 z-10 -translate-y-6";
-            });
-
-            // Click canvas artwork to cycle styled generative arts
-            let artStyleCycle = 0;
-            const artLayer1 = document.getElementById('art-layer-1');
-            const artLayer2 = document.getElementById('art-layer-2');
-            
-            document.getElementById('gallery-art-svg').addEventListener('click', () => {
-                artStyleCycle = (artStyleCycle + 1) % 3;
-                playSyntheticClick('mechanical');
-                
-                if (artStyleCycle === 0) {
-                    artLayer1.setAttribute('r', '30');
-                    artLayer2.setAttribute('r', '20');
-                    document.getElementById('art-line-1').setAttribute('x1', '20');
-                    document.getElementById('art-line-2').setAttribute('x1', '80');
-                } else if (artStyleCycle === 1) {
-                    // Elliptical grid morphs
-                    artLayer1.setAttribute('r', '35');
-                    artLayer2.setAttribute('r', '10');
-                    document.getElementById('art-line-1').setAttribute('x1', '40');
-                    document.getElementById('art-line-2').setAttribute('x1', '60');
-                } else {
-                    // Generative cyber spiral coordinates
-                    artLayer1.setAttribute('r', '15');
-                    artLayer2.setAttribute('r', '25');
-                    document.getElementById('art-line-1').setAttribute('x1', '10');
-                    document.getElementById('art-line-2').setAttribute('x1', '90');
-                }
-            });
-
-            // Form triggers
-            galleryInquireBtn.addEventListener('click', () => {
-                galleryViewMain.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-                galleryViewForm.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
-                galleryViewForm.classList.add('opacity-100', 'scale-100');
-            });
-
-            document.getElementById('gallery-back-btn').addEventListener('click', () => {
-                galleryViewForm.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-                galleryViewMain.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
-                galleryViewMain.classList.add('opacity-100', 'scale-100');
-            });
-
-            galleryBudgetSlider.addEventListener('input', (e) => {
-                galleryBudgetLabel.innerText = `$${parseInt(e.target.value).toLocaleString()}`;
-            });
-
-            document.getElementById('gallery-send-inquiry-btn').addEventListener('click', () => {
-                const name = document.getElementById('gallery-inquirer-name').value;
-                const email = document.getElementById('gallery-inquirer-email').value;
-
-                if (name.length < 3 || !email.includes('@')) {
-                    playSyntheticClick('error');
-                    
-                    const panel = document.getElementById('gallery-panel-root');
-                    panel.classList.add('animate-bounce');
-                    setTimeout(() => panel.classList.remove('animate-bounce'), 500);
-                    return;
-                }
-
-                playSyntheticClick('success');
-                galleryViewForm.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-                galleryViewSuccess.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
-                galleryViewSuccess.classList.add('opacity-100', 'scale-100');
-            });
-
-            document.getElementById('gallery-success-reset').addEventListener('click', () => {
-                document.getElementById('gallery-validation-form').reset();
-                galleryBudgetSlider.value = 2500;
-                galleryBudgetLabel.innerText = "$2,500";
-                
-                galleryViewSuccess.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-                galleryViewMain.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
-                galleryViewMain.classList.add('opacity-100', 'scale-100');
-            });
-
-
-            // ==========================================
-            // G3. MOCKUP ENGINE 4: DOODH MILK SUBSCRIPTION INTERACTIVE WORKFLOW
-            // ==========================================
-            const milkdelViewHome = document.getElementById('milkdel-view-home');
-            const milkdelViewSchedule = document.getElementById('milkdel-view-schedule');
-            const milkdelViewPaused = document.getElementById('milkdel-view-paused');
-
-            const milkdelBtnGotoPause = document.getElementById('milkdel-btn-goto-pause');
-            const milkdelBtnGotoSchedule = document.getElementById('milkdel-btn-goto-schedule');
-            const milkdelBtnBackFromSched = document.getElementById('milkdel-btn-back-from-sched');
-            const milkdelBtnSaveSchedule = document.getElementById('milkdel-btn-save-schedule');
-            const milkdelBtnResume = document.getElementById('milkdel-btn-resume');
-
-            const milkdelSchedTotalLabel = document.getElementById('milkdel-sched-total-label');
-            const milkdelHomeWeeklyTotal = document.getElementById('milkdel-home-weekly-total');
-
-            // Initial quantities Mon-Sun
-            let milkdelQuantities = [1, 1, 1, 1, 1, 2, 2];
-
-            // Expose a global update function for onclick event in stepper buttons
-            window.updateMockQty = function(dayIndex, amount) {
-                const newQty = Math.max(0, Math.min(5, milkdelQuantities[dayIndex] + amount));
-                
-                // Calculate temporary total if we made this change
-                const tempQuantities = [...milkdelQuantities];
-                tempQuantities[dayIndex] = newQty;
-                const tempSum = tempQuantities.reduce((a, b) => a + b, 0);
-
-                // Edge case constraint: At least one delivery day must remain active (sum > 0)
-                if (tempSum === 0) {
-                    playSyntheticClick('error');
-                    // Shake the phone layout for validation warning
-                    const card = document.getElementById('milkdel-mockup-card');
-                    card.classList.add('animate-bounce');
-                    setTimeout(() => card.classList.remove('animate-bounce'), 500);
-                    return;
-                }
-
-                // Apply the change
-                milkdelQuantities[dayIndex] = newQty;
-                document.getElementById(`mockqty-${dayIndex}`).innerText = `${newQty}L`;
-                milkdelSchedTotalLabel.innerText = `${tempSum}L/week`;
-                playSyntheticClick('mechanical');
-            };
-
-            // Switch to Pause screen
-            milkdelBtnGotoPause.addEventListener('click', () => {
-                playSyntheticClick('mechanical');
-                milkdelViewHome.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-                milkdelViewPaused.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
-                milkdelViewPaused.classList.add('opacity-100', 'scale-100');
-            });
-
-            // Resume from Pause screen
-            milkdelBtnResume.addEventListener('click', () => {
-                playSyntheticClick('success');
-                milkdelViewPaused.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-                milkdelViewHome.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
-                milkdelViewHome.classList.add('opacity-100', 'scale-100');
-            });
-
-            // Switch to Edit Schedule screen
-            milkdelBtnGotoSchedule.addEventListener('click', () => {
-                playSyntheticClick('mechanical');
-                // Sync labels and view
-                for (let i = 0; i < 7; i++) {
-                    document.getElementById(`mockqty-${i}`).innerText = `${milkdelQuantities[i]}L`;
-                }
-                const sum = milkdelQuantities.reduce((a, b) => a + b, 0);
-                milkdelSchedTotalLabel.innerText = `${sum}L/week`;
-
-                milkdelViewHome.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-                milkdelViewSchedule.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
-                milkdelViewSchedule.classList.add('opacity-100', 'scale-100');
-            });
-
-            // Go back from Schedule screen (Reset/cancel changes)
-            milkdelBtnBackFromSched.addEventListener('click', () => {
-                playSyntheticClick('mechanical');
-                milkdelViewSchedule.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-                milkdelViewHome.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
-                milkdelViewHome.classList.add('opacity-100', 'scale-100');
-            });
-
-            // Save Schedule modifications
-            milkdelBtnSaveSchedule.addEventListener('click', () => {
-                playSyntheticClick('success');
-                const sum = milkdelQuantities.reduce((a, b) => a + b, 0);
-                milkdelHomeWeeklyTotal.innerText = `${sum}L/wk`;
-
-                // Update home summary grids
-                for (let i = 0; i < 7; i++) {
-                    document.getElementById(`homesched-${i}`).innerText = milkdelQuantities[i];
-                }
-
-                milkdelViewSchedule.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-                milkdelViewHome.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
-                milkdelViewHome.classList.add('opacity-100', 'scale-100');
-            });
-
-
-            // ==========================================
-            // G4. MOCKUP ENGINE 5: BIO GRID CLINICAL TELEMETRY INTERACTION
-            // ==========================================
-            const biogridO2Slider = document.getElementById('biogrid-o2-slider');
-            const biogridO2Label = document.getElementById('biogrid-o2-label');
-            const biogridHrValue = document.getElementById('biogrid-hr-value');
-            const biogridSpo2Value = document.getElementById('biogrid-spo2-value');
-            const biogridAlarmBanner = document.getElementById('biogrid-alarm-banner');
-            
-            if (biogridO2Slider) {
-                biogridO2Slider.addEventListener('input', (e) => {
-                    const val = parseInt(e.target.value);
-                    biogridO2Label.innerText = `${val}% FLOW`;
-                    
-                    // Physiology simulation logic
-                    let spo2 = Math.round(98 - Math.max(0, (100 - val) * 0.4));
-                    if (spo2 < 80) spo2 = 80;
-                    if (val > 120) spo2 = 100;
-                    biogridSpo2Value.innerText = spo2;
-                    
-                    let hr = Math.round(72 + Math.max(0, (100 - val) * 0.8) + Math.max(0, (val - 120) * 0.5));
-                    biogridHrValue.innerText = hr;
-                    
-                    if (val < 85) {
-                        biogridAlarmBanner.className = "bg-[#ef4444]/20 border border-[#ef4444]/50 rounded p-1.5 text-[8px] flex items-center justify-between text-[#ef4444] transition-all duration-300 animate-pulse";
-                        biogridAlarmBanner.innerHTML = `<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-[#ef4444] animate-ping"></span> ALERT: DEEP HYPOXIA</span><span>CRITICAL LIMIT</span>`;
-                        playSyntheticClick('error');
-                    } else if (val > 125) {
-                        biogridAlarmBanner.className = "bg-[#fbbf24]/20 border border-[#fbbf24]/50 rounded p-1.5 text-[8px] flex items-center justify-between text-[#fbbf24] transition-all duration-300";
-                        biogridAlarmBanner.innerHTML = `<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-[#fbbf24]"></span> WARNING: HYPEROXIA</span><span>OXYGEN HIGH</span>`;
-                        playSyntheticClick('mechanical');
-                    } else {
-                        biogridAlarmBanner.className = "bg-[#4ade80]/10 border border-[#4ade80]/30 rounded p-1.5 text-[8px] flex items-center justify-between text-[#4ade80] transition-all duration-300";
-                        biogridAlarmBanner.innerHTML = `<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-[#4ade80]"></span> SYSTEM NOMINAL</span><span>METRICS STABLE</span>`;
-                        playSyntheticClick('mechanical');
-                    }
-                });
-            }
-
-
-            // ==========================================
-            // H. IMMERSIVE GLASSMORPHIC CASE STUDY MODALS
-            // ==========================================
-            window.openModal = function(modalId) {
-                const modal = document.getElementById(modalId);
-                const content = document.getElementById(`${modalId}-content`);
-                
-                modal.classList.remove('opacity-0', 'pointer-events-none');
-                modal.classList.add('opacity-100');
-                
-                content.classList.remove('scale-95');
-                content.classList.add('scale-100');
-                
-                document.body.style.overflow = 'hidden';
-                playSyntheticClick('success');
-            };
-
-            window.closeModal = function(modalId) {
-                const modal = document.getElementById(modalId);
-                const content = document.getElementById(`${modalId}-content`);
-                
-                modal.classList.add('opacity-0', 'pointer-events-none');
-                modal.classList.remove('opacity-100');
-                
-                content.classList.add('scale-95');
-                content.classList.remove('scale-100');
-                
-                document.body.style.overflow = '';
-                playSyntheticClick('mechanical');
-            };
-
-
-            // Draggable comparison image-slider mechanism (Multi-slider support for all modals)
-            const sliders = document.querySelectorAll('.slider-handle');
-            
-            sliders.forEach(slider => {
-                const before = slider.parentElement.querySelector('.slider-before');
-                const container = slider.parentElement;
-                
-                let isDragging = false;
-                
-                slider.addEventListener('mousedown', () => isDragging = true);
-                window.addEventListener('mouseup', () => isDragging = false);
-                
-                window.addEventListener('mousemove', (e) => {
-                    if (!isDragging) return;
-                    
-                    const rect = container.getBoundingClientRect();
-                    let x = e.clientX - rect.left;
-                    
-                    if (x < 0) x = 0;
-                    if (x > rect.width) x = rect.width;
-                    
-                    const pct = (x / rect.width) * 100;
-                    before.style.width = `${pct}%`;
-                    slider.style.left = `${pct}%`;
-                });
-                
-                // Mobile touch support
-                slider.addEventListener('touchstart', () => isDragging = true);
-                window.addEventListener('touchend', () => isDragging = false);
-                window.addEventListener('touchmove', (e) => {
-                    if (!isDragging) return;
-                    
-                    const rect = container.getBoundingClientRect();
-                    const touch = e.touches[0];
-                    let x = touch.clientX - rect.left;
-                    
-                    if (x < 0) x = 0;
-                    if (x > rect.width) x = rect.width;
-                    
-                    const pct = (x / rect.width) * 100;
-                    before.style.width = `${pct}%`;
-                    slider.style.left = `${pct}%`;
-                });
-            });
-
-            // CV Matrix Quick Modal launcher
-            document.getElementById('download-cv-btn').addEventListener('click', () => {
-                openModal('cv-modal');
-            });
-
-
-            // Auto-load booked status on refresh
-            const savedBooking = localStorage.getItem('kaustobh_portfolio_booking');
-            if (savedBooking) {
-                try {
-                    const parsed = JSON.parse(savedBooking);
-                    if (parsed && parsed.date && parsed.time) {
-                        openBookingScheduler();
-                        currentSchedulerStep = 3;
-                        
-                        document.getElementById('scheduler-slide-datetime').classList.add('hidden');
-                        const confirmSlide = document.getElementById('scheduler-slide-confirm');
-                        confirmSlide.classList.remove('hidden');
-                        confirmSlide.classList.add('opacity-100', 'flex');
-                        
-                        document.getElementById('scheduler-step-indicator').innerText = "Briefing Node Confirmed";
-                        document.getElementById('scheduler-step-number').innerText = "3 / 3";
-                        document.getElementById('scheduler-progress-bar').style.width = "100%";
-                        
-                        document.getElementById('scheduler-progress-bar-wrap').classList.add('hidden');
-                        document.getElementById('scheduler-navigation-ctas').classList.add('hidden');
-                        document.getElementById('confirm-booking-details').innerText = `Briefing locked on ${parsed.date} at ${parsed.time}. Virtual call matrix sync dispatched to ${parsed.email || 'your email'}.`;
-                    }
-                } catch(e) {}
-            }
-
-
-            // ==========================================
-            // J. LIGHT/DARK ADAPTABLE AI CHATBOT SYSTEM
-            // ==========================================
-            const chatToggleBtn = document.getElementById('ai-chat-toggle-btn');
-            const chatWindow = document.getElementById('ai-chat-window');
-            const chatCloseBtn = document.getElementById('ai-chat-close-btn');
-            const chatLog = document.getElementById('ai-chat-log');
-            const chatInput = document.getElementById('ai-chat-input');
-            const chatSendBtn = document.getElementById('ai-chat-send-btn');
-
-            if (chatCloseBtn) {
-                chatCloseBtn.addEventListener('click', () => window.toggleAIChat(false));
-            }
-
-
-            // ==========================================
-            // K. 2D PARTICLE PHYSICS CANVAS ENGINE
-            // ==========================================
-            const pCanvas = document.getElementById('particles-canvas');
-            const pCtx = pCanvas.getContext('2d');
-            
-            let pw = pCanvas.width = window.innerWidth;
-            let ph = pCanvas.height = window.innerHeight;
-            let particles = [];
-            const pCount = Math.floor(Math.min(45, pw / 30)); 
-            
-            for (let i = 0; i < pCount; i++) {
-                particles.push({ 
-                    x: Math.random() * pw, 
-                    y: Math.random() * ph, 
-                    vx: (Math.random() - 0.5) * 0.35, 
-                    vy: (Math.random() - 0.5) * 0.35, 
-                    baseVx: 0,
-                    baseVy: 0,
-                    r: Math.random() * 1.6 + 0.85 
-                });
-            }
-
-            let pMouse = { x: pw / 2, y: ph / 2, active: false };
-            
-            window.addEventListener("mousemove", (e) => { 
-                pMouse.x = e.clientX; 
-                pMouse.y = e.clientY; 
-                pMouse.active = true; 
-            });
-            window.addEventListener("mouseout", () => pMouse.active = false);
-            
-            window.addEventListener("resize", () => { 
-                pw = pCanvas.width = window.innerWidth; 
-                ph = pCanvas.height = window.innerHeight; 
-            });
-
-                        let is2DCanvasVisible = true;
-            let frameId2D = null;
-
-            const canvasObserver = new IntersectionObserver((entries) => {
-                is2DCanvasVisible = entries[0].isIntersecting;
-                if (is2DCanvasVisible && !frameId2D) {
-                    draw2DParticles();
-                }
-            }, { threshold: 0.05 });
-            if (pCanvas) canvasObserver.observe(pCanvas);
-
-            function draw2DParticles() {
-                if (!is2DCanvasVisible || document.visibilityState === 'hidden') {
-                    frameId2D = null;
-                    return;
-                }
-
-                pCtx.clearRect(0, 0, pw, ph);
-                const isLight = document.body.classList.contains('light');
-
-                for (let p of particles) {
-                    p.x += p.vx;
-                    p.y += p.vy;
-                    
-                    if (p.x < 0 || p.x > pw) p.vx *= -1;
-                    if (p.y < 0 || p.y > ph) p.vy *= -1;
-                    
-                    const dx = p.x - pMouse.x;
-                    const dy = p.y - pMouse.y;
-                    const dist = Math.sqrt(dx*dx + dy*dy);
-                    
-                    if (pMouse.active && dist < 125) {
-                        const force = (125 - dist) / 125;
-                        p.vx += (dx / dist) * force * 0.085;
-                        p.vy += (dy / dist) * force * 0.085;
-                    } else {
-                        p.vx += ((p.vx > 0 ? 0.15 : -0.15) - p.vx) * 0.02;
-                        p.vy += ((p.vy > 0 ? 0.15 : -0.15) - p.vy) * 0.02;
-                    }
-                    
-                    pCtx.beginPath();
-                    pCtx.fillStyle = isLight ? "rgba(230, 0, 122, 0.22)" : "rgba(255, 0, 160, 0.35)";
-                    pCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                    pCtx.fill();
-                }
-                frameId2D = requestAnimationFrame(draw2DParticles);
-            }
-            draw2DParticles();
-        });
-    </script>
+        <!-- MODULAR CORE FRAMEWORK SCRIPTS -->
+    <script defer src="js/ai-chat-scheduler.js"></script>
 
     <!-- Modal: Interactive Skill Tree Detail Drawer -->
     <div id="skill-detail-modal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden opacity-0 pointer-events-none transition-all duration-300 bg-void/80 backdrop-blur-xl flex items-center justify-center p-4">
@@ -6948,33 +5275,7 @@
     <script defer src="js/skill-tree.js"></script>
     <script defer src="js/mockup-engines.js"></script>
 
-    <script>
-    function toggleProblemDiamond() {
-        const subpanel = document.getElementById('problem-diamond-subpanel');
-        const facet = document.getElementById('problem-diamond-facet');
-        if (subpanel) {
-            subpanel.classList.toggle('hidden');
-            if (facet) {
-                facet.classList.toggle('scale-110');
-                facet.classList.toggle('shadow-[0_0_35px_rgba(0,243,255,0.6)]');
-            }
-            if (typeof playSyntheticClick === 'function') playSyntheticClick('click');
-        }
-    }
-
-    function toggleSolutionDiamond() {
-        const subpanel = document.getElementById('solution-diamond-subpanel');
-        const facet = document.getElementById('solution-diamond-facet');
-        if (subpanel) {
-            subpanel.classList.toggle('hidden');
-            if (facet) {
-                facet.classList.toggle('scale-110');
-                facet.classList.toggle('shadow-[0_0_35px_rgba(255,0,160,0.6)]');
-            }
-            if (typeof playSyntheticClick === 'function') playSyntheticClick('click');
-        }
-    }
-    </script>
+    
     
     <script src="js/liquid-metal-shader.js" defer></script>
     <script src="js/tubes-background.js" defer></script>

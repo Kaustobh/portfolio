@@ -149,7 +149,7 @@
 
         let width = 0;
         let height = 0;
-        let dpr = Math.min(Math.min(window.devicePixelRatio || 1, 1.5), 2);
+        let dpr = Math.min(Math.min(Math.min(window.devicePixelRatio || 1, window.innerWidth < 768 ? 1.5 : 2.0) || 1, 1.5), 2);
 
         function resize() {
             const rect = section.getBoundingClientRect();

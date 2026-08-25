@@ -17,7 +17,7 @@
     }
 
     const isLowPower = (navigator.hardwareConcurrency || 4) <= 4 || window.innerWidth < 768;
-    const dpr = Math.min(window.devicePixelRatio || 1, isLowPower ? 1.0 : 1.5);
+    const dpr = Math.min(Math.min(window.devicePixelRatio || 1, window.innerWidth < 768 ? 1.5 : 2.0) || 1, isLowPower ? 1.0 : 1.5);
 
     const vertexShaderSource = `
         attribute vec2 aPosition;

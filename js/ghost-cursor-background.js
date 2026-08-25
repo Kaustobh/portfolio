@@ -250,7 +250,7 @@
 
         function resize() {
             const isLowGPU = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
-        const dpr = isLowGPU ? 1.0 : Math.min(window.devicePixelRatio || 1, 1.5);
+        const dpr = isLowGPU ? 1.0 : Math.min(Math.min(window.devicePixelRatio || 1, window.innerWidth < 768 ? 1.5 : 2.0) || 1, 1.5);
             const w = Math.floor(section.clientWidth * dpr);
             const h = Math.floor(section.clientHeight * dpr);
 
